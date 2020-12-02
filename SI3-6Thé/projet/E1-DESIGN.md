@@ -9,7 +9,7 @@
 
 - Storage utilisée : Sérialisation des données dans fichiers en local
 
-<img src="images/MCD.png" width="200"/>
+<img src="images/MCD.PNG" width="200"/>
 
 
 ## Stack de technique
