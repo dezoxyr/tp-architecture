@@ -7,4 +7,4 @@ Choix du design :
 
 ### Architecture
 - Pour l'architecture nous avons choisi une architecture 3 tiers monolithique, nos choix de départ se portaient sur l'architecture micro-services ou l'architecture 3 tiers.
-Nous avons donc choisi cette dernière, l'architecture micro-service ne nous semblait pas pertinente vu le peu de fonctionnalités à implémenter.
+Nous avons donc choisi cette dernière, l'architecture micro-service ne nous se semblant pas pertinente au vu du peu de fonctionnalités à implémenter.
