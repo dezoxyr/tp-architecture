@@ -1,6 +1,6 @@
-NGUYEN Kevin
-BROUASSIN Tanguy
-TURGUT Nergiz
-ALAUDDIN Ouahiza
-VELIN Nicolas
-RAZAFIMAHEFA Axel
+- NGUYEN Kevin
+- BROUASSIN Tanguy
+- TURGUT Nergiz
+- ALAUDDIN Ouahiza
+- VELIN Nicolas
+- RAZAFIMAHEFA Axel
