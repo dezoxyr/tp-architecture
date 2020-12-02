@@ -1,0 +1,23 @@
+version: "3"
+
+networks:
+  tp-architecture:
+
+volumes:
+  db-data:
+
+services:
+  postgres:
+    image: postgres:10
+    tty: true
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=tp-architecture
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+    ports:
+      - "5000:5432"
+    networks:
+      - tp-architecture
+    restart: unless-stopped
