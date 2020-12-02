@@ -20,4 +20,4 @@ Nous avons décidé de représenter chacun des éléments sous forme d'objets av
 ## Stack technique
 Nous avons choisi PHP après un vote entre les technologies Java, Javascript et PHP, qui nous semblaient toutes pertinentes.
 Par ailleurs, nous avons également choisi d'utiliser le framework Symfony car ce dernier permet de contruire facilement et rapidement des applications avec l'architecture REST.  
-Concernant la base de donnée, nous avons choisi une base relationnelle SQL (ce qui est très courant et éprouvé). Pour le SGBD en lui-même, le choux de MySQL s'est fait car les membres étaient habituer à travailler avec.
+Concernant la base de donnée, nous avons choisi une base relationnelle SQL (ce qui est très courant et éprouvé). Pour le SGBD en lui-même, le choix de MySQL s'est fait car les membres étaient habituer à travailler avec.
