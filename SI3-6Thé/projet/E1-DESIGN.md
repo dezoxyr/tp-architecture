@@ -2,7 +2,7 @@
 
 ## Diagramme d'architecture
 
-
+<img src = "images/Diagramme_architecture.png"/>
 
 
 ## Modèle de données
