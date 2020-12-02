@@ -1,5 +1,11 @@
 # projet architecture 
 
+
+# Conception
+
+## Modèle de données
+
+# Stack
 ## Backend
 - Java (Spring boot)
 
@@ -7,4 +13,4 @@
 - JavaScript (VueJS)
 
 ## Base de données
-- SQLite
+- PostgreSQL 10
