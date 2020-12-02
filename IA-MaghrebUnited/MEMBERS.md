@@ -1,5 +1,6 @@
 # TP Architecture Distribué 
-# Groupe : MaghredUnited
+
+## Groupe : MaghredUnited
 
 Membre du groupe :
 Hamza BOUKHRISS
