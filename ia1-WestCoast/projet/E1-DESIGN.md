@@ -10,5 +10,5 @@ Nous avons décidé d'utiliser une architecture 3-tiers:
   - les billets, qui contiennent code départ, code destination et un prix, sous la forme CDG-JFK 400
   
 3 - La stack technique :
-  - Application et data : html, css, jquery, php, javascript, MySQL
+  - Application et data : html, css, jquery, php, javascript, MySQL, Json, Ajax
   - DevOps : github
