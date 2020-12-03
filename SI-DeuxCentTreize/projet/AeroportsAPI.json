@@ -1,18 +1,9 @@
 {
-	"aeroports" :[
-		{
-			"name":"New York",
-			"code":"JFK"
+	"aeroports" :{
+			"New York":"JFK",
+			"CDG Paris":"CDG",
+			"Detroit":"DTW"
 		},
-		{
-			"name":"CDG Paris",
-			"code":"CDG"
-		},
-		{
-			"name":"Detroit",
-			"code":"DTW"
-		}
-	],
 	"vols" :[
 		{
 			"depart":"JFK",
