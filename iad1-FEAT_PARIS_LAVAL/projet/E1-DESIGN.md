@@ -30,7 +30,7 @@ Pour stocker les données, nous allons utiliser un SGBD car c'est la solution na
 
 Nous avons choisi le web (HTML/CSS/JS) pour le front-end car ce format nous permet de distribuer l'application sur plusieurs plateformes tels que les smartphones, tablettes ou ordinateurs, sans besoin d'installer un applicatif.
 
-Nous avons choisi le framework Express pour le back-end afin d'aussi utiliser le JS car le JavaScript est un langage simple à utiliser et à mettre en place. De plus, le langage est asynchrone, dispose d'une très bonne documentation et d'une communauté active. Tous ces éléments permettront la maintenabilité du projet.
+Nous avons choisi le framework Express pour le back-end afin utiliser le même langage que le front-end (JS) et parce que le JavaScript est un langage simple à utiliser / à mettre en place. De plus, le langage est asynchrone, dispose d'une très bonne documentation et d'une communauté active. Tous ces éléments permettront la maintenabilité du projet.
 
 Le SGBD que nous avons choisi est MariaDB car c'est le SGBD que tous les membres du groupe le maîtrisent.
 
