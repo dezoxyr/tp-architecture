@@ -1,0 +1,6 @@
+1|MARTIN|Diane|Diane123|martin@et.esiea.fr
+2|LLEDO|Elise|Elise456|lledo@et.esiea.fr
+3|LEHOUELLEUR|Florian|Florian789|lehouelleur@et.esiea.fr
+4|NEVOUX|Guillaume|Guillaume10|nevoux@et.esiea.fr
+5|LAM|Céline|Celine11|lam@et.esiea.fr
+6|MC LEAN|Téo|Téo12|mclean@et.esiea.fr
