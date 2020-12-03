@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/*****************************************************************************/
+/*********** style.css - TP - Prog distribuee - Groupe WestCoast *************/
+/*****************************************************************************/
+
+body{
+	padding: 15px;
+	background: #ffffff;
+}
+
+/********************** Mise en forme des billets ****************************/
+#section_billets{
+	padding: 30px;
+	text-align: center;
+	align-items: center;
+}
+
+#billets{
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	border:1.5px solid black;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.billet{
+	padding-top: 5px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+#billets div{
+	border-top:1.5px solid black;
+}
+
+#billets div:first-child{
+	border:none;
+}
+#billets div:last-child{
+	padding-bottom: 10px;
+}
+/*****************************************************************************/
