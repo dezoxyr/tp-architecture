@@ -19,21 +19,13 @@ Pour stocker les données, nous allons utiliser un SGBD car c'est la solution na
 
 ## La stack technique
 
-- GitHub  
-  - Travail en équipe  
-  - Versioning  
-- NodeJS  
-  - Back-end  
-- NPM  
-  - Gestionnaire de paquets pour NodeJS  
-- Express  
-  - Serveur web  
-- HTML/CSS/JS  
-  - Front-end  
-- Bootstrap  
-  - Framework front-end  
-- JSON  
-  - Modèle de données  
+- GitHub (Travail en équipe, versioning)
+- NodeJS (Back-end)
+- NPM (Gestionnaire de paquets pour NodeJS)
+- Express (Serveur web)
+- HTML/CSS/JS (Front-end)
+- Bootstrap (Framework front-end)
+- JSON (Modèle de données)
 
 ## Explications des choix réalisés
 
