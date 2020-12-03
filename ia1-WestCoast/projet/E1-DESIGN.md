@@ -8,6 +8,8 @@ Nous avons décidé d'utiliser une architecture 3-tiers:
 2 tables de données :
   - les aéroports, qui contiennent nom et code (ex : Paris, CDG)
   - les billets, qui contiennent code départ, code destination et un prix, sous la forme CDG-JFK 400
+
+![alt text](UML.png)
   
 3 - La stack technique :
   - Application et data : html, css, jquery, php, javascript, MySQL, Json, Ajax
