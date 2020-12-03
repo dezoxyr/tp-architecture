@@ -1,10 +1,3 @@
-*{
-
-margin:0;
-
-padding:0;
-
-}
 html, body{	
 	font-family: "Montserrat", sans-serif;
 	height: 100%;
@@ -16,19 +9,17 @@ html, body{
 
 body{
 	background-color:#CCC;
-	background-image:url("Images/fond.jpg");
-	background-size:cover;
-	min-height:100%;
-	min-width:auto;
+	/*background-image:url(images/fond.jpg);
 	background-repeat:no-repeat;
-	position: relative;
+	image: 
+	position: relative;*/
 }
 
 header{
 	width:60%;
 	margin:0 auto 0 auto;
 	padding:0 0 0 0;
-	/*background-color:white;*/
+	background-color:white;
 }
 
 #banniere{
@@ -37,7 +28,7 @@ header{
 	padding:0 0 0 0;
 	font-size:3em;
 	line-height:100px;
-	color: white;
+	color: #00001f;
 	
 }
 
@@ -49,18 +40,16 @@ header{
 
 nav
 {
-	background-color:#00001f; 
-	font-size:1em;
-	height:40px;
-	width: 100%;
+	background-color:#a2a28f;
+	font-size:1.5em;
+	height:70px;
 }
 
 #onglets
 {
-	line-width: 100%;
-	margin:auto auto auto auto;
+	margin:0 0 0 0;
 	padding:0 0 0 0;
-	line-height:40px;
+	line-height:70px;
 	list-style-type:none;
 }
 
@@ -68,7 +57,6 @@ nav
 {
 /*Empeche le retour à la ligne*/
 	display:inline-block;
-	
 }
 
 #onglets a
@@ -83,20 +71,35 @@ nav
 
 #onglets a:hover
 {
-	color: #00001f;
+	color: black;
 	background-color: white;
+}
+
+#accueil
+{
+	background:url("Images/accueil.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px 40px;
+	width:70px;
+}
+
+#accueil:hover
+{
+	background:url("Images/accueil_hover.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px 40px;
 }
 
 footer
 {
-	width:100%;
-	height:50px;
+	width:60%;
+	height:100px;
 	margin:0 auto 0 auto;
 	padding:0 0 0 0;
-	background-color:#00001f; /* a19a77 */
+	background-color:#a2a28f;
 	font-size:0.7em;
-	position: absolute; 
-	bottom: 0;	
 }
 
 #contacts
@@ -105,26 +108,6 @@ footer
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
-}
-#C1 /*N° vol*/
-{
-	width:10%;
-}
-#C2 /*Date*/
-{
-	width:20%;
-}
-#C3 /*Aéroport départ*/
-{
-	width:40%;
-}
-#C4 /*Aéroport Arrivée*/
-{
-	width:40%;
-}
-#C5 /*Prix*/
-{
-	width:10%;
 }
 
 .contact
@@ -144,6 +127,10 @@ footer
 	text-decoration: underline;
 }
 
+#th
+{
+	width: 70%;
+}
 #main
 {
 	background-color: white;
@@ -160,12 +147,29 @@ footer
 	margin:0 auto 0 auto;
 }
 
+#main2
+{
+	background-color: white;
+	width:60%;
+	min-height:calc(100% - 270px);
+	margin:0 auto 0 auto;
+}
+
+
 #main3
 {
 	background-color: white;
 	width:60%;
 	min-height:calc(100% - 370px);
 	margin:0 auto 0 auto;
+}
+
+.lecteur_video
+{
+	display:block;
+	width:640px;
+	height:480px;
+	margin: 40px auto auto auto;
 }
 
 .img1{
@@ -175,6 +179,19 @@ footer
 	margin: 5px 15px 15px 5px;
 }
 
+.img2{
+	width: 45%;
+	float: left;
+	border-radius: 5px;
+	margin: 5px 5px 15px 15px;
+}
+
+.img3{
+	width: 30%;
+	float: right;
+	border-radius: 100px;
+	margin: 45px 15px 15px 15px;
+}
 
 h2{
 		text-align: center;
@@ -182,7 +199,23 @@ h2{
 		background-color: white;
 }
 
-.styled {	/* Bouton main page vers réservation */
+#paragraphe1{
+		margin: 50px 5px 5px 15px;
+		horizontal-align: middle;
+}
+
+#paragraphe2{
+		margin: 50px 5px 5px 15px;
+		horizontal-align: middle;
+}
+
+#paragraphe3{
+		margin: 0px 50px 5px 15px;
+		horizontal-align: left;
+		font-size: 20px;
+}
+
+.styled {
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
@@ -194,7 +227,7 @@ h2{
 }
 
 .styled:hover {
-    background-color: #ffffe0;
+    background-color: #c0c0c0;
 	color: #00001f;
 }
 
