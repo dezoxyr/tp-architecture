@@ -26,6 +26,24 @@
     }
 
     [class$="-light"] {
-        color: #78909C;
+        color: #1c313a;
     }
+
+    [class$="-dark"] {
+        color: #f4f4f4;
+    }
+
+    #theme-selector {
+        margin-left: 50vw;
+    }
+}
+
+[id^="component-viewer"] {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+#component-viewer-dark {
+    background-color: #263238;
 }
