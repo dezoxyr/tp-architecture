@@ -2,11 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Country;
-use App\Entity\City;
-use App\Entity\Ticket;
-use App\Entity\Airport;
-use App\Entity\Customer;
 use App\Repository\BookingRepository;
 use App\Entity\Booking;
 use App\Repository\CustomerRepository;
