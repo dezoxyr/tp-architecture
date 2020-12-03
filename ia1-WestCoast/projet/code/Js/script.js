@@ -9,7 +9,7 @@ window.onload = function() {
 	client[0] = user;
 	client[1] = new Array();
 	$(document).ready(function() {
-		$(document).on('click','.bouton', function()
+		$(document).on('click','.billet', function()
 		{
 			var nouveau = $(this).attr("id");
    			$.ajax({
@@ -19,7 +19,7 @@ window.onload = function() {
 			   	success: function(rep){
 					result = JSON.parse(rep);
 			        	client[1] = result.liste_billets;
-					$('#Panier').prop("value", "Panier (" + (client[1].length + 1)+ ")");
+					$('#Panier').prop("value", "Panier (" + client[1].length + ")");
 			    	},
 			    	error:function(err){
 			        	alert("erreur ! "+JSON.stringify(err)) ;
@@ -90,7 +90,7 @@ window.onload = function() {
 	        	
 	        $.each(result, function(i, val) {
 	        	console.log(rep);
-		        $('#billets').append("<div id='"+i+"' class='billet'>"+val['depart']+ " -> " + val['arrive'] + " " + val['prix'] + "<span class='bouton' id='"+i+"'> Acheter</span></div>");
+		        $('#billets').append("<div id='"+i+"' class='billet'>"+val['depart']+ " -> " + val['arrive'] + " " + val['prix'] + "</div>");
 		    });
 	        if(result.length > 0){
 	            $('#billets').show();
