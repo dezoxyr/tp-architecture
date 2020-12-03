@@ -106,6 +106,26 @@ footer
 	top: 50%;
 	transform: translateY(-50%);
 }
+#C1 /*N° vol*/
+{
+	width:10%;
+}
+#C2 /*Date*/
+{
+	width:20%;
+}
+#C3 /*Aéroport départ*/
+{
+	width:40%;
+}
+#C4 /*Aéroport Arrivée*/
+{
+	width:40%;
+}
+#C5 /*Prix*/
+{
+	width:10%;
+}
 
 .contact
 {
