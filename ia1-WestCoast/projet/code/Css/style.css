@@ -11,6 +11,8 @@ body{
 
 /********** On organise l'en-tête et le corps de la page en flexbox **********/
 .wrapperR{
+	font-family: arial;
+	font-weight: bold;
 	margin:  0 1vw ;
 	display: flex;
 	flex-direction: row;
@@ -27,6 +29,7 @@ body{
 
 #billets{
 	margin: 5px;
+	padding: 16px 0;
 	text-align: center;
 	border:3px solid #29ABDF;
 	border-radius: 10px;
@@ -43,7 +46,7 @@ body{
 	margin :1.5vh 1.5vw;
 	padding: 10px;
 	min-width: 5vw;
-	min-height: 10vh;
+	min-height: 6vh;
 
 	font-family: arial;
 	font-size: 18px;

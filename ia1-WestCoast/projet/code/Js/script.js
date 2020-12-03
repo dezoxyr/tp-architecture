@@ -3,7 +3,10 @@
 /*****************************************************************************/
 
 window.onload = function() {
-	var user = window.prompt("Entrez votre nom");
+	do{
+		var user = window.prompt("Entrez votre nom");
+	}while (user === "" || user === null);
+	console.log(user);
 	var liste_billets;
 	var client = new Array();
 	client[0] = user;
@@ -19,7 +22,7 @@ window.onload = function() {
 			   	success: function(rep){
 					result = JSON.parse(rep);
 			        	client[1] = result.liste_billets;
-					$('#Panier').prop("value", "Panier (" + client[1].length + ")");
+					$('#Panier').prop("value", "Profil (" + client[1].length + ")");
 			    	},
 			    	error:function(err){
 			        	alert("erreur ! "+JSON.stringify(err)) ;

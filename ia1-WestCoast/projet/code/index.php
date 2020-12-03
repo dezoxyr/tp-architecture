@@ -1,9 +1,3 @@
- <?php
-    //======================================================================
-    // INDEX.PHP       TP - Prog distribuee       GROUPE - WestCoast
-    //======================================================================
-?>
-
 
 
 <!DOCTYPE html>
@@ -22,7 +16,7 @@
         <!-- Création du bloc d'en-tête: le logo et un slogan -->
         <header class="wrapperR">
             <h1 id="headerRight">West Coast</h1>
-            <div class="button_cont" align="center"><input type="submit" class="example_c" value="Panier" id="Panier"></div>
+            <div class="button_cont" align="center"><input type="submit" class="example_c" value="Profil" id="Panier"></div>
             <div class="button_rev" align="center"><input type="submit" class="example_c" value="Boutique" id="Boutique"></div>
         </header>
 
