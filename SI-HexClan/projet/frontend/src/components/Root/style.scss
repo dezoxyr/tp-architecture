@@ -2,3 +2,10 @@
     text-align: center;
     width: 100%;
 }
+
+#root {
+    [class^="link"] {
+        margin-left: 2vw;
+        text-decoration: none;
+    }
+}

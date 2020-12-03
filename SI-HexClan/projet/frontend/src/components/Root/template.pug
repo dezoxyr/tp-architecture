@@ -3,9 +3,10 @@ b-container(fluid)#root
         .col.p-0
             b-navbar(type = "dark" variant = "dark")#navbar
                 b-navbar-brand HexClan
-                //- router-link(to="/")
-                //-     b-nav-item(href="/") Home
-                //- router-link(to="/")
+                router-link(to="/").link Home
+                router-link(to="/login" v-if="notLogged").link Sign In
+                router-link(to="/regoster" v-if="notLogged").link Sign Up
+
                 //-     b-nav-item(href="/login") Login
         //- b-navbar(toggleable="lg" type="dark" variant="info")
         //-     b-navbar-brand HexClan
