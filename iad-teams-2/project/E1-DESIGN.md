@@ -6,4 +6,4 @@
 
 
 <h2>Stack Technique</h2>
-
+<img src="image/StackARCHITECTURE.png">
