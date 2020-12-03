@@ -1,2 +1,12 @@
-Etape 1 
+<h1>Design du projet : réservation de billet d’avion</h1>
 
+<h2> Le projet sera sous la forme d’un site : <h2>
+
+
+1)	Tout d’abord une page d’accueil présentant les vols disponibles pour les trois aéroports JFK, CDG et DTW. Un tableau sous cette forme représentera les billets :
+
+Code départ	Code arrivé	Prix (euro)	Code vol
+
+|   Code départ    |   Code arrivée    |   Prix(euro)    | Code vol     |
+|---               |:-:                |:-:              |--:           |
+|       JFK        |       CDG         |      400        |  PREM        |
