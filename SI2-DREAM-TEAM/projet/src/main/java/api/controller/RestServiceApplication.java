@@ -22,13 +22,17 @@ public class RestServiceApplication {
 
         Date date1 = new GregorianCalendar(2020, Calendar.FEBRUARY, 11).getTime();
         Date date2 = new GregorianCalendar(2020, Calendar.JUNE, 14).getTime();
-        Date date3 = new GregorianCalendar(2020, Calendar.DECEMBER, 28).getTime();
+        Date date3 = new GregorianCalendar(2020, Calendar.AUGUST, 3).getTime();
         Date date4 = new GregorianCalendar(2020, Calendar.DECEMBER, 28).getTime();
+        Date date5 = new GregorianCalendar(2020, Calendar.SEPTEMBER, 11).getTime();
+        Date date6 = new GregorianCalendar(2020, Calendar.JANUARY, 16).getTime();
 
-        company.addFlight(new Flight(516, date1, paris, newyork, 700. ));
-        company.addFlight(new Flight(1516, date2, paris, detroit, 845. ));
-        company.addFlight(new Flight(216, date3, newyork, detroit, 325. ));
-        company.addFlight(new Flight(0, date4, newyork, detroit, 325. ));
+        company.addFlight(new Flight(516, date1, paris, newyork, 710. ));
+        company.addFlight(new Flight(1516, date2, paris, detroit, 804. ));
+        company.addFlight(new Flight(216, date3, newyork, detroit, 871. ));
+        company.addFlight(new Flight(310, date4, newyork, paris, 325. ));
+        company.addFlight(new Flight(243, date5, detroit, newyork, 556. ));
+        company.addFlight(new Flight(19, date6, detroit, paris, 423. ));
 
         SpringApplication.run(RestServiceApplication.class, args);
     }
