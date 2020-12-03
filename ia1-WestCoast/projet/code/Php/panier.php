@@ -1,4 +1,5 @@
 <?php
+
 include 'classe.php';
 function billets_achetes($client, $liste_entiere){
 	$liste_a = array();
@@ -20,5 +21,4 @@ if (isset($_POST["liste_billets"]) && isset($_POST["client"])){
 	}
 	echo json_encode(billets_achetes($client, $liste_billets));
 }
-
 ?>

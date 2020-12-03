@@ -19,6 +19,7 @@ window.onload = function() {
 			   	success: function(rep){
 					result = JSON.parse(rep);
 			        	client[1] = result.liste_billets;
+					$('#Panier').prop("value", "Panier (" + (client[1].length + 1)+ ")");
 			    	},
 			    	error:function(err){
 			        	alert("erreur ! "+JSON.stringify(err)) ;
@@ -29,7 +30,7 @@ window.onload = function() {
 			    	}
 			});
 		});
-		$(document).on('click','#panier', function()
+		$(document).on('click','#Panier', function()
 		{
 			$.ajax({
 				type: 'POST',
@@ -38,14 +39,22 @@ window.onload = function() {
 				success: function(rep){
 					result = JSON.parse(rep);
 					console.log(result);
+	        			$('#achats').empty();
+	        			$.each(result, function(i, val) {
+		        			$('#achats').append("<div class='billet'>"+val['depart']+" -> "+val['arrive'] + " " + val['prix']);
+		    			});
+	        			if(result.length > 0){
+	            				$('#achats').show();
+	       				}
+	        			else {$('#achats').empty(); $('#achats').hide();}
 				},
-			    error:function(err){
-			        alert("erreur ! "+JSON.stringify(err)) ;
-			        $('#billets').hide();
-			    },
-			    complete:function(){
-			        ///alert("Terminé! ") ;
-			    }
+			    	error:function(err){
+			        	alert("erreur ! "+JSON.stringify(err)) ;
+			        	$('#billets').hide();
+			    	},
+			    	complete:function(){
+			        	///alert("Terminé! ") ;
+			    	}
 			});
 		});
 

@@ -34,7 +34,7 @@
 
         <!-- Affichage du panier -->
         <section id="section_achats">
-            <span id="billets">
+            <span id="achats">
             </span>
         </section>
     </body>
