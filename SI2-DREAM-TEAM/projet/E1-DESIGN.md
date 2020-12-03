@@ -1,0 +1,5 @@
+Désign de notre APi WEB : 
+
+1)Architecture Global
+
+https://eu-prod.asyncgw.teams.microsoft.com/v1/objects/0-weu-d5-d7b4ea012b31a0fe60cd9478b4dd9140/views/imgpsh_mobile_save
