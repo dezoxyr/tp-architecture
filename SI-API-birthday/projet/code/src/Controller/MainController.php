@@ -2,22 +2,56 @@
 
 namespace App\Controller;
 
+use App\Entity\Booking;
+use App\Repository\CustomerRepository;
 use App\Repository\TicketRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class MainController extends AbstractController
 {
     /**
-     * @Route("/tickets/available", name="ticket_available")
+     * @Route("/tickets/available", name="ticket_available", methods={"GET"})
      */
     public function ticket_available(SerializerInterface $serializer, TicketRepository $ticket_repo): Response
     {
         $models = $ticket_repo->findWithoutBooking();
         $ret = $serializer->serialize($models, 'json', ['groups' => 'tickets_available']);
         return new Response($ret, 200, ['Content-Type' => 'application/json']);
+    }
+
+    /**
+     * @Route("/tickets/booking", name="booking_ticket", methods={"GET"})
+     */
+    public function booking_ticket(SerializerInterface $serializer, TicketRepository $ticket_repo, CustomerRepository $customer_repo, EntityManagerInterface $em, Request $req): Response
+    {
+        if(!intval($req->get('id_customer')) || !intval($req->get('id_ticket')))
+        {
+            throw new BadRequestHttpException('Missing parameters');
+        }
+
+        $customer = $customer_repo->findById(intval($req->get('id_customer')));
+        $ticket = $ticket_repo->findById(intval($req->get('id_ticket')));
+        if($customer == null || $ticket == null)
+        {
+            throw new NotFoundHttpException('Ticket or customer not found');
+        }
+        $booking = new Booking();
+        $booking->setCustomer($customer);
+        $booking->setTicket($ticket);
+        $ticket->setBooking($booking);
+
+        $em->persist($booking);
+        $em->persist($ticket);
+        $em->flush();
+
+        return new Response();
     }
 
     /*
