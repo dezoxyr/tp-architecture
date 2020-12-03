@@ -18,4 +18,17 @@ $(document).ready(function () {
             $("#available_flights_tab").append(row);
         });
     });
+
+    $.getJSON("http://localhost:8080/available_flights", function (data) {
+        console.log(data);
+        $.each(data, function (i, item) {
+
+            //console.log("N°"+item["id"]+" "+item["departure"]["code"]+"-"+item["destination"]["code"]+" "+item["price"]);
+            var SelectData1 = $('<option></option>').text("N°"+item["id"]+" "+item["departure"]["code"]+"-"+item["destination"]["code"]+" "+item["price"]+"€");
+
+            $("#available_flights_select").append(SelectData1);
+        });
+    });
+
+
 });
