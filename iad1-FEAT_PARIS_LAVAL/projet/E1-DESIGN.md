@@ -20,18 +20,17 @@ Pour stocker les données, nous allons utiliser un SGBD car c'est la solution na
 ## La stack technique
 
 - GitHub (Travail en équipe, versioning)
-- NodeJS (Back-end)
 - NPM (Gestionnaire de paquets pour NodeJS)
-- Express (Serveur web)
+- Express (Framework Back-end)
 - HTML/CSS/JS (Front-end)
 - Bootstrap (Framework front-end)
 - MariaDB (SGBD)
 
 ## Explications des choix réalisés
 
-Nous avons choisi NodeJS pour le back-end et JS pour le front-end car JavaScript est un langage simple à utiliser et à mettre en place. De plus, le langage est asynchrone, dispose d'une très bonne documentation et d'une communauté active. Tous ces éléments permettront la maintenabilité du projet.
+Nous avons choisi le web (HTML/CSS/JS) pour le front-end car ce format nous permet de distribuer l'application sur plusieurs plateformes tels que les smartphones, tablettes ou ordinateurs, sans besoin d'installer un applicatif.
 
-Nous avons choisi le web pour le front-end car ce format nous permet de distribuer l'application sur plusieurs plateformes tels que les smartphones, tablettes ou ordinateurs sans besoin d'installer un applicatif.
+Nous avons choisi le framework Express pour le back-end afin d'aussi utiliser le JS car le JavaScript est un langage simple à utiliser et à mettre en place. De plus, le langage est asynchrone, dispose d'une très bonne documentation et d'une communauté active. Tous ces éléments permettront la maintenabilité du projet.
 
 Le SGBD que nous avons choisi est MariaDB car c'est le SGBD que tous les membres du groupe le maîtrisent.
 
