@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/flight-ticket")
@@ -52,13 +53,24 @@ public class FlightTicketController {
     @GetMapping("/")
     public ResponseEntity<?> getAllAvailableFlights(
             @RequestParam(name = "depart_airport", required = false) String departAirport,
-            @RequestParam(name = "arrival_airport", required = false) String arrivalAirport) {
+            @RequestParam(name = "arrival_airport", required = false) String arrivalAirport,
+            @RequestParam(name = "date_depart", required = false) String dateDepart) {
 
         if (departAirport == null || arrivalAirport == null) {
             return ResponseEntity.ok(flightTicketService.findAllAvailableFlights());
         }
 
-        return ResponseEntity.ok(flightTicketService.findAvailableFlightsFor(departAirport.toUpperCase(), arrivalAirport.toUpperCase()));
+        List<FlightTicket> flights = flightTicketService.findAvailableFlightsFor(departAirport.toUpperCase(), arrivalAirport.toUpperCase());
+
+        if (dateDepart != null) {
+            try {
+                flights = flightTicketService.filterByDateDepart(flights, LocalDate.parse(dateDepart));
+            } catch (Exception e) {
+                throw new BadRequestException("Date departure is invalid (YYYY-MM-DD)");
+            }
+        }
+
+        return ResponseEntity.ok(flights);
     }
 
     @PostMapping("/{idFlight}")

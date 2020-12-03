@@ -89,9 +89,4 @@ public class UserController {
             throw new BadRequestException("Invalid id");
         }
     }
-
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello world";
-    }
 }
