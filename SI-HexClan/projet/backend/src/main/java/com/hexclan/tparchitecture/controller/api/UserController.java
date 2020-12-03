@@ -28,14 +28,15 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody Map<String, Object> request)
             throws BadRequestException {
-        if (!request.containsKey("username") || !request.containsKey("password")) {
-            throw new BadRequestException("Username and password must be provided");
+        if (!request.containsKey("username") || !request.containsKey("email") || !request.containsKey("password")) {
+            throw new BadRequestException("Username, email and password must be provided");
         }
 
         String username = (String) request.get("username");
         String password = (String) request.get("password");
+        String email = (String) request.get("email");
 
-        return new ResponseEntity<>(userService.register(username, password), HttpStatus.CREATED);
+        return new ResponseEntity<>(userService.register(username, email, password), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")

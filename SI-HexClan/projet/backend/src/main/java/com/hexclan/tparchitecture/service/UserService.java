@@ -21,13 +21,18 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public User register(String username, String password) throws BadRequestException {
+    public User register(String username, String password, String email) throws BadRequestException {
         // test if username already taken
         Optional<User> uExists = repository.findByUsername(username);
         if (uExists.isPresent())
             throw new BadRequestException("Username is already taken");
 
-        User u = new User(username, passwordEncoder.encode(password));
+        // test if email already taken
+        uExists = repository.findByEmail(email);
+        if (uExists.isPresent())
+            throw new BadRequestException("Email is already taken");
+
+        User u = new User(username, email, passwordEncoder.encode(password));
         return repository.save(u);
     }
 
@@ -40,6 +45,15 @@ public class UserService {
 
         if (u.isEmpty()) {
             throw new BadRequestException("User=" + username + " not found");
+        }
+        return repository.getOne(u.get().getId());
+    }
+
+    public User findByEmail(String email) throws BadRequestException {
+        Optional<User> u = repository.findByEmail(email);
+
+        if (u.isEmpty()) {
+            throw new BadRequestException("User=" + email + " not found");
         }
         return repository.getOne(u.get().getId());
     }

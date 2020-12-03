@@ -5,7 +5,7 @@ b-container(fluid)#root
                 b-navbar-brand HexClan
                 router-link(to="/" :class="'link-' + $store.state.theme") Home
                 router-link(to="/login" v-if="notLogged" :class="'link-' + $store.state.theme") Sign In
-                router-link(to="/regoster" v-if="notLogged" :class="'link-' + $store.state.theme") Sign Up
+                router-link(to="/register" v-if="notLogged" :class="'link-' + $store.state.theme") Sign Up
 
                 //-     b-nav-item(href="/login") Login
         //- b-navbar(toggleable="lg" type="dark" variant="info")

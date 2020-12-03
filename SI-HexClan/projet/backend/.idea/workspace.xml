@@ -28,13 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1318019-e9ce-499c-bc37-db310a8ce79d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/JsonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/FlightTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/FlightTicketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/security/jwt/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/security/jwt/JwtProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/FlightTicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/FlightTicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/insomnia.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/insomnia.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
