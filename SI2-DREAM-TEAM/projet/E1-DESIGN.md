@@ -2,7 +2,8 @@ Désign de notre API WEB :
 
 
 1)Architecture Globale
-![img](https://github.com/T2Clubber/tp-architecture/blob/SI2-DREAM-TEAM/SI2-DREAM-TEAM/projet/IMG/Architecture%20Global.jpg)
+![img](https://github.com/T2Clubber/tp-architecture/blob/SI2-DREAM-TEAM/SI2-DREAM-TEAM/projet/IMG/Architecture%20Global.jpg)*
+<img align="center">
 
 
 
