@@ -1,11 +1,11 @@
 # si3-DDistrib - Design
 
 ## Schema architecture
-<img href="./assets/schema_architecture.png" with="100px" />
+<img src="./assets/schema_architecture.png" with="100px" />
 (Paragraphe explication)
 
 ## Modèle de donnéepngs de stockage
-<img href="./assets/data_model." with="100px" />
+<img src="./assets/data_model." with="100px" />
 (Paragraphe explicatif)
 
 ## Définition du stack technique
