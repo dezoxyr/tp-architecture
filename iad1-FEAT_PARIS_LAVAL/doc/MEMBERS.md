@@ -1,6 +1,0 @@
-BOUKAIS Enzo
-CHESNAIS Loïc
-DENIS Kevin
-DOUGUET Marie
-GERARDI Lorenzo
-LAIGO Brice
