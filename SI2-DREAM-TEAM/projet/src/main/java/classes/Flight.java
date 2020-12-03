@@ -3,7 +3,8 @@ package classes;
 import java.util.Date;
 
 public class Flight {
-
+    private static int cpt =0;
+    private int id;
     private int seats;
     private Double price;
     private Date departureDate;
@@ -16,6 +17,7 @@ public class Flight {
         this.departure = departure;
         this.destination = destination;
         this.price = price;
+        this.id = ++cpt;
     }
 
     public int getSeats() {
@@ -36,6 +38,10 @@ public class Flight {
 
     public Double getPrice() {
         return price;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

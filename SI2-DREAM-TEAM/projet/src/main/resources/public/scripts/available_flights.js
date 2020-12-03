@@ -8,11 +8,13 @@ $(document).ready(function () {
             // console.log(item["destination"]["name"].concat(" (", item["destination"]["code"], ")"));
             // console.log(item["price"].toString().concat("€"));
 
-            var rowData1 = $('<td></td>').text(item["departure"]["name"].concat(" (", item["departure"]["code"], ")"));
-            var rowData2 = $('<td></td>').text(item["destination"]["name"].concat(" (", item["destination"]["code"], ")"));
-            var rowData3 = $('<td></td>').text(item["price"].toString().concat("€"));
+            var rowData1 = $('<td></td>').text(item["id"]);
+            var rowData2 = $('<td></td>').text(item["departureDate"].substring(0,9));
+            var rowData3 = $('<td></td>').text(item["departure"]["name"].concat(" (", item["departure"]["code"], ")"));
+            var rowData4 = $('<td></td>').text(item["destination"]["name"].concat(" (", item["destination"]["code"], ")"));
+            var rowData5 = $('<td></td>').text(item["price"].toString().concat("€"));
 
-            row.append(rowData1, rowData2, rowData3);
+            row.append(rowData1, rowData2, rowData3, rowData4, rowData5);
             $("#available_flights_tab").append(row);
         });
     });
