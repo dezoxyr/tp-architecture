@@ -25,11 +25,11 @@ Pour stocker les données, nous allons utiliser un SGBD car c'est la solution na
 - Express (Serveur web)
 - HTML/CSS/JS (Front-end)
 - Bootstrap (Framework front-end)
-- JSON (Modèle de données)
+- MariaDB (SGBD)
 
 ## Explications des choix réalisés
 
-Nous avons choisi NodeJS pour le back-end et JS pour le front-end car JavaScript est un langage simple à utiliser et à mettre en place. De plus, le langage permet l'asynchronisme, dispose d'une très bonne documentation et d'une communauté active. Tous ces éléments permettront la maintenabilité du projet.
+Nous avons choisi NodeJS pour le back-end et JS pour le front-end car JavaScript est un langage simple à utiliser et à mettre en place. De plus, le langage est asynchrone, dispose d'une très bonne documentation et d'une communauté active. Tous ces éléments permettront la maintenabilité du projet.
 
 Nous avons choisi le web pour le front-end car ce format nous permet de distribuer l'application sur plusieurs plateformes tels que les smartphones, tablettes ou ordinateurs sans besoin d'installer un applicatif.
 
