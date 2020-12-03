@@ -3,30 +3,11 @@ b-container(fluid)#root
         .col.p-0
             b-navbar(type = "dark" variant = "dark")#navbar
                 b-navbar-brand HexClan
-                router-link(to="/" :class="'link-' + $store.state.theme") Home
-                router-link(to="/login" v-if="notLogged" :class="'link-' + $store.state.theme") Sign In
-                router-link(to="/register" v-if="notLogged" :class="'link-' + $store.state.theme") Sign Up
-
-                //-     b-nav-item(href="/login") Login
-        //- b-navbar(toggleable="lg" type="dark" variant="info")
-        //-     b-navbar-brand HexClan
-        //-     b-navbar-toggle(target="nav-collapse")
-        //-     b-collapse#nav-collapse
-        //-         b-navbar-nav
-        //-             router-link(to="/")
-        //-                 b-nav-item(href="/") Home
-        //-             router-link(to="/login")
-        //-                 b-nav-item(href="/login") Login
-        //-             router-link(to="/register")
-        //-                 b-nav-item(href="/register") Sign Up
-        //-         b-navbar-nav(class="ml-auto")
-        //-             b-nav-form
-        //-                 b-form-input(size="sm" class="mr-sm-2" placeholder="Search")
-        //-                 b-button(size="sm" class="my-2 my-sm-0" type="submit") Search
-        //-             b-nav-item-dropdown(right)
-        //-                 template(#button-content)
-        //-                     em User
-        //-                 b-dropdown-item(href="#") Profile
-        //-                 b-dropdown-item(href="#") Sign out
+                    router-link(to="/")
+                        b-link(href="/" :class="'link-' + $store.state.theme") Home
+                    router-link(to="/login" v-if="$store.state.notLogged")
+                         b-link(href="/login" :class="'link-' + $store.state.theme") Sign In
+                    router-link(to="/register" v-if="$store.state.notLogged")
+                        b-link(href="/register" :class="'link-' + $store.state.theme") Sign Up
     .row
         router-view

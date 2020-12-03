@@ -2,14 +2,30 @@
     text-align: center;
     width: 100%;
 
-    [class$="-light"] {
-        color: #78909C;
+    a {
+        :hover {
+            text-decoration: none;
+        }
+        :visited {
+            text-decoration: none;
+        }
+        :active {
+            text-decoration: none;
+        }
+        :link {
+            text-decoration: none;
+        }
+        :focus {
+            text-decoration: none;
+        }
     }
-}
 
-#root {
     [class^="link"] {
         margin-left: 2vw;
         text-decoration: none;
+    }
+
+    [class$="-light"] {
+        color: #78909C;
     }
 }

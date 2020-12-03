@@ -15,6 +15,7 @@ Vue.use(VueToast);
 
 axios.defaults.baseURL = "http://localhost:8080/api";
 Vue.prototype.$axios = axios;
+Vue.prototype.$store = store
 
 new Vue({
     router,
