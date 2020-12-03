@@ -47,6 +47,15 @@ class TicketRepository extends ServiceEntityRepository
         ;
     }*/
 
+    public function findById(int $id) : ?Ticket
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     public function findWithoutBooking()
     {
         return $this->createQueryBuilder('t')
