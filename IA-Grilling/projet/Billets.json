@@ -1,0 +1,49 @@
+{
+  "results":
+[
+  {
+    "billet": "CDG-DTW 500"
+  },
+  {
+    "billet": "DTW-CDG 530"
+  },
+  {
+    "billet": "JFK-DTW 250"
+  },
+  {
+    "billet": "DTW-JFK 175"
+  },
+  {
+    "billet": "CDG-JFK 600"
+  },
+  {
+    "billet": "JFK-CDG 450"
+  },
+  {
+    "billet": "JFK-CDG 400"
+  {
+    "billet": "DTW-CDG 650"
+  },
+  {
+    "billet": "DTW-JFK 200"
+  },
+  {
+    "billet": "CDG-DTW 420"
+  },
+  {
+    "billet": "CDG-JFK 425"
+  },
+  {
+    "billet": "DTW-CDG 615"
+  },
+  {
+    "billet": "DTW-JFK 230"
+  },
+  {
+    "billet": "DTW-JFK 240"
+  },
+  {
+    "billet": "JFK-DTW 180"
+  }
+]
+}
