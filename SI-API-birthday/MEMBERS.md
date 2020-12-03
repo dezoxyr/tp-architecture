@@ -1,5 +1,0 @@
-- Mouslim Chahidov
-- Aymeric Delaunay
-- Marc Jisen Ricci Eteme
-- Valentin Le Floch
-- Clément Morin

@@ -1,5 +1,0 @@
-# Logs and cache (Symfony4)
-var/log/*
-var/cache/*
-!var/log/.gitkeep
-
