@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TicketRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=TicketRepository::class)
@@ -20,17 +21,20 @@ class Ticket
     /**
      * @ORM\ManyToOne(targetEntity=Airport::class, inversedBy="arrival", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"tockets_available"})
      */
     private $departure;
 
     /**
      * @ORM\ManyToOne(targetEntity=Airport::class, inversedBy="tickets", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"tockets_available"})
      */
     private $arrival;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"tockets_available"})
      */
     private $price;
 
