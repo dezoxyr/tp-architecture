@@ -3,11 +3,4 @@ MCD :
 
 
 Stack Technique : 
-Pour la Base de Données : 
-    PhpMyAdmin
-    Wamp
-    SQL
-    Python
-Editeur de Texte : 
-    Atom
-    Sublim Text
+![Screenshot](Stack_technique.PNG)
