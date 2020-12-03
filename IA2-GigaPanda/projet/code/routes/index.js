@@ -24,6 +24,9 @@ router.get('/', (req, res, next) => {
     res.render('airport/index', { 
         title: 'La faille de la Galerie'
     });
+    //res.render('users/signin', { 
+       // title: 'La faille de la Galerie'
+   // });
 });
 
 /*router.post('/reservation', (req, res, next) => {

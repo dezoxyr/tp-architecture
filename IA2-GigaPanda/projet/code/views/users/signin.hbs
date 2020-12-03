@@ -1,1 +1,26 @@
-<h1>/user/signin</h1>
+
+{{username}}
+{{password}}
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      body
+      {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  <title>Login page</title>
+</head>
+<body>
+    <h1>Login</h1>
+<form name="Login" action="airport/index.hbs" method="get">
+  <p>
+ <br> Type your username :<br />
+<input type="text" name="username" value="" />
+ <br> Type your password :<br />
+<input type="password" name="password" value="" /><br>
+</p>
+<input type="submit" value="Login" />
+</form>
+</body>
