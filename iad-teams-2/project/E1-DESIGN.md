@@ -1,5 +1,5 @@
 <h2>Schéma d'architecture</h2>
-![](SchemaBDD2.png)
+<img src="SchemaBDD2.png">
 
 
 
