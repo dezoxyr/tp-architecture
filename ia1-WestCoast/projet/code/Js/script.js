@@ -32,6 +32,25 @@ window.onload = function() {
 	        ///alert("Terminé! ") ;
 	    }
 	});
-    
+	var client = new Array();
+	client[0] = "valentin";
+	client[1] = [0,1,2];
+	console.log(client);
+	$.ajax({
+		type: 'POST',
+		url: 'Php/panier.php',
+		data:{liste_billets: liste_billets},
+		success: function(rep){
+			result = JSON.parse(rep);
+			console.log(result);
+		},
+	    error:function(err){
+	        alert("erreur ! "+JSON.stringify(err)) ;
+	        $('#billets').hide();
+	    },
+	    complete:function(){
+	        ///alert("Terminé! ") ;
+	    }
+	});
    	/*******************************************************************************/
 }
