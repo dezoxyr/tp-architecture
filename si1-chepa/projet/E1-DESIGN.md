@@ -3,4 +3,7 @@ MCD :
 
 
 Stack Technique : 
+
+
+
 ![Screenshot](Stack_technique.PNG)
