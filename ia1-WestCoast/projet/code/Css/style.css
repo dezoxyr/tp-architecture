@@ -120,3 +120,11 @@ transition: all 0.4s ease 0s;
 	text-align: center;
 }
 /*****************************************************************************/
+
+#section_achats{
+	display: none;
+}
+
+.button_rev{
+	display: none;
+}

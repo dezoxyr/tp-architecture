@@ -22,11 +22,18 @@
         <!-- Création du bloc d'en-tête: le logo et un slogan -->
         <header class="wrapperR">
             <h1 id="headerRight">West Coast</h1>
-            <form class="button_cont" align="center"><input type="submit" class="example_c" value="Panier" id="panier"></form>
+            <div class="button_cont" align="center"><input type="submit" class="example_c" value="Panier" id="Panier"></div>
+            <div class="button_rev" align="center"><input type="submit" class="example_c" value="Boutique" id="Boutique"></div>
         </header>
 
         <!-- Affichage des billets -->
         <section id="section_billets">
+            <span id="billets">
+            </span>
+        </section>
+
+        <!-- Affichage du panier -->
+        <section id="section_achats">
             <span id="billets">
             </span>
         </section>

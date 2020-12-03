@@ -48,6 +48,24 @@ window.onload = function() {
 			    }
 			});
 		});
+
+		$( ".button_cont" ).click(function() {
+		   	$( "#section_billets:visible" ).slideUp("fast",function() {
+	  			$( "#section_achats:hidden" ).slideDown("fast");	
+			});
+			$( ".button_cont:visible" ).slideUp("fast",function() {
+	  			$( ".button_rev:hidden" ).slideDown("fast");	
+			});	
+		});
+
+		$( ".button_rev" ).click(function() {
+		   	$( "#section_achats:visible" ).slideUp("fast",function() {
+	  			$( "#section_billets:hidden" ).slideDown("fast");	
+			});
+			$( ".button_rev:visible" ).slideUp("fast",function() {
+	  			$( ".button_cont:hidden" ).slideDown("fast");	
+			});	
+		});
 	});
 
 	
