@@ -27,7 +27,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/tickets/booking", name="booking_ticket", methods={"GET"})
+     * @Route("/tickets/booking", name="booking_ticket", methods={"PATCH"})
      */
     public function booking_ticket(SerializerInterface $serializer, TicketRepository $ticket_repo, CustomerRepository $customer_repo, EntityManagerInterface $em, Request $req): Response
     {
