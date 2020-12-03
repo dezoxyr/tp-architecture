@@ -47,4 +47,11 @@ class BookingRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function finbByCustomerId($value){
+        return $this->createQueryBuilder('b')
+            ->where('b.customer.id = ?1')
+            ->setParameter(1,$value)
+            ->getQuery()
+            ->getResult();
+    }
 }

@@ -2,11 +2,19 @@
 
 namespace App\Controller;
 
+use App\Entity\Country;
+use App\Entity\City;
+use App\Entity\Ticket;
+use App\Entity\Airport;
+use App\Entity\Customer;
+use App\Repository\BookingRepository;
 use App\Repository\TicketRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class MainController extends AbstractController
 {
@@ -26,7 +34,8 @@ class MainController extends AbstractController
     /*
      * @Route("/create", name="create")
      */
-    /*public function create(EntityManagerInterface $em) : Response
+    /*
+    public function create(EntityManagerInterface $em) : Response
     {
         $france = new Country();
         $france->setName('France');
@@ -122,4 +131,13 @@ class MainController extends AbstractController
 
         return JsonResponse::create([]);
     }*/
+    /**
+     * @Route("/booking/{id}", name="ticket_available")
+     */
+    public function booking_customer(SerializerInterface $serializer, BookingRepository $bookingRepository,int $id): Response{
+
+        $models = $bookingRepository->finbByCustomerId($id);
+        $ret = $serializer->serialize($models, 'json', ['groups' => 'booking_customer']);
+        return new Response($ret, 200, ['Content-Type' => 'application/json']);
+    }
 }
