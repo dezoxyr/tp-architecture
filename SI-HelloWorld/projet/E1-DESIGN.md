@@ -37,9 +37,11 @@ Notre modèle de données contiendra les entités et attributs suivants :
 
 ### Stack technique
  - Pour l'application web mise à destination du client (navigateur) :
-   - HTML/CSS
-   - JavaScript
+   - HTML/CSS/JS
+   - Bootstrap
+   - AJAX
  - Pour l'API web traitant les requêtes HTTPS du client :
    - Node.js
+   - Express
  - Pour la base de données relationnelle :
    - MySQL
