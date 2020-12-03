@@ -9,11 +9,11 @@ import axios from "axios";
 import VueToast from "vue-toast-notification";
 
 Vue.use(BootstrapVue);
-
+Vue.use(axios)
 Vue.config.productionTip = false;
 Vue.use(VueToast);
 
-axios.defaults.baseURL = "http://localhost:8080/api";
+axios.defaults.baseURL = "http://localhost:8081/api";
 Vue.prototype.$axios = axios;
 Vue.prototype.$store = store
 

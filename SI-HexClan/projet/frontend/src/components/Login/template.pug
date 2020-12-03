@@ -5,7 +5,7 @@
                 h2 Login
                 b-form(@submit="onSubmit" @onreset="onReset")
                     b-form-group(label="Login : " label-for="input-1" id="input-group-1")
-                        b-form-input(id="input-1" v-model="form.login" type="text")
+                        b-form-input(id="input-1" v-model="form.username" type="text")
                     b-form-group(label="Password : " label-for="input-2" id="input-group-2")
                         b-form-input(id="input-2" v-model="form.password" type="password")
                     b-button(type="submit" variant="success").buttons.rounded-pill Submit
