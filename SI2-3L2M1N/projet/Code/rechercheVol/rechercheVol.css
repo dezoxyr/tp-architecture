@@ -7,3 +7,10 @@ input,
 label {
     margin: .4rem 0;
 }
+
+P.blocktext {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+}

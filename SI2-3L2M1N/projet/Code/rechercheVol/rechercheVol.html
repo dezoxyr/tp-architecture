@@ -1,63 +1,52 @@
 <!DOCTYPE HTML>
 <html lang="fr">
     <head>
-		<meta charset="utf-8"  
+		<meta charset="utf-8"> 
 		<script type="text/javascript" src="calendrier.js"></script>
-		<link rel="stylesheet" media="screen" type="text/css" title="Design" href="design.css" />       
-        <title>Choose your fly !</title>
- 
+		<link rel="stylesheet" media="screen" type="text/css" title="Design" href="design.css">       
+        <title>Trouvez votre vol !</title>
 	</head>
  
 	<body>
- 
-			<!-- Formulaire pour trouver un vol -->
+	<!-- Formulaire pour trouver un vol -->
 	<table width=400 height=200>
 		<br>
-        <caption><B> TROUVER UN VOL </B></caption>
+        <caption class="blocktext"><B><h1> TROUVER UN VOL </h1></B></caption>
 		<br>
-		<form method="post" action="flights.html">
+		<form class="blocktext" method="post" action="page2.html">
  
-			<tr><td>
-			<label for="Aéroport de départ">Aéroport de départ:</label> : <br><select name="Aéroport de départ" id="aéroport">
- 				<option value="1">JFK</option>
-				   <option value="2">CDG</option>
-				   <option value="3">DTW<option>
-				   
-				</select></td>
-			</td>
-			<td>
-
-			<label>Aéroport d'arrivée</label> : <br>
-			<select name="Aéroport d'arrivée" id="aéroport">
- 				<option value="1">JFK</option>
-				   <option value="2">CDG</option>
-				   <option value="3">DTW<option>
-				   
-				</select></td>
-			</tr></td>
- 
-			<tr><td>
-			<!-- Tableau qui contiendra le calendrier ! -->
-			<table class="ds_box" cellpadding="0" cellspacing="0" id="ds_conclass" style="display: none;">
 			<tr>
-				<td id="ds_calclass"></td>
+				<td>
+					<label for="Aéroport de départ">Aéroport de départ:</label> : 
+					<br><br>
+					<select name="Aéroport de départ" id="aéroport">
+						<option value="1">JFK</option>
+						<option value="2">CDG</option>
+						<option value="3">FTW</option>  
+					</select>
+				</td>
+				<td>
+					<label>Aéroport d'arrivée</label> : 
+					<br><br>
+					<select name="Aéroport d'arrivée" id="aéroport">
+						<option value="1">JFK</option>
+						<option value="2">CDG</option>
+						<option value="3">FTW</option>
+					</select>
+				</td>
+				<td>
+					<!-- Tableau qui contiendra le calendrier ! -->	 
+					<tr>
+						<td>
+							<label>Date de départ :</label>
+							<br><br>
+							<input type="date" name="date">
+						</td>	
+					</tr>
+				</td>
 			</tr>
-			</table>	 
-
-			<!--<tr><td>
-			<label>Date de départ :<br></label><input type="text" name="date" onclick="ds_sh(this);" />
-			<tr><td>-->
-				
-
-	<label for="start">Date de départ:</label>
-
-	<input type="date" id="start" name="trip-start"
-       	value="2018-07-22"
-       	min="2018-01-01" max="2018-12-31">
-
-       <input type="submit" value="Rechercher un vol" />
-
-			</tr></td>
-		</table>
-    </body>
+		</form>
+	</table>
+	<input type="submit" value="Rechercher un vol">
+</body>
 </html>
