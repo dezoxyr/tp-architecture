@@ -22,20 +22,20 @@ class Airport
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=3)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $code;
 
     /**
      * @ORM\ManyToOne(targetEntity=City::class, inversedBy="airports", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $city;
 

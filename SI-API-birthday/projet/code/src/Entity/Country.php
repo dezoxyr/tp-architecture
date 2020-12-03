@@ -22,7 +22,7 @@ class Country
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $name;
 

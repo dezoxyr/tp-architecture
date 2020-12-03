@@ -22,14 +22,14 @@ class City
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="cities", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $country;
 

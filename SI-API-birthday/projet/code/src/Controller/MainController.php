@@ -60,6 +60,22 @@ class MainController extends AbstractController
         return new Response();
     }
 
+    /**
+     * @Route("/booking/customer/{id}", name="booking_customer", requirements={"id"="\d+"})
+     */
+    public function booking_customer(SerializerInterface $serializer, BookingRepository $bookingRepository, CustomerRepository $customer_repo, int $id): Response{
+
+        $customer = $customer_repo->findById($id);
+        if($customer == null)
+        {
+            throw new NotFoundHttpException('Customer not found');
+        }
+        $models = $bookingRepository->finbByCustomer($customer);
+
+        $ret = $serializer->serialize($models, 'json', ['groups' => 'booking_customer']);
+        return new Response($ret, 200, ['Content-Type' => 'application/json']);
+    }
+
     /*
      * @Route("/create", name="create")
      */
@@ -160,13 +176,4 @@ class MainController extends AbstractController
 
         return JsonResponse::create([]);
     }*/
-    /**
-     * @Route("/booking/{id}", name="ticket_available")
-     */
-    public function booking_customer(SerializerInterface $serializer, BookingRepository $bookingRepository,int $id): Response{
-
-        $models = $bookingRepository->finbByCustomerId($id);
-        $ret = $serializer->serialize($models, 'json', ['groups' => 'booking_customer']);
-        return new Response($ret, 200, ['Content-Type' => 'application/json']);
-    }
 }

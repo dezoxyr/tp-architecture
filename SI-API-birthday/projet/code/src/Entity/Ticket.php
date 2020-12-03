@@ -21,20 +21,20 @@ class Ticket
     /**
      * @ORM\ManyToOne(targetEntity=Airport::class, inversedBy="arrival", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $departure;
 
     /**
      * @ORM\ManyToOne(targetEntity=Airport::class, inversedBy="tickets", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $arrival;
 
     /**
      * @ORM\Column(type="float")
-     * @Groups({"tickets_available"})
+     * @Groups({"tickets_available", "booking_customer"})
      */
     private $price;
 

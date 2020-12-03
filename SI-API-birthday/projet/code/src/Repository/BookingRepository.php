@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Booking;
+use App\Entity\Customer;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -47,10 +48,11 @@ class BookingRepository extends ServiceEntityRepository
         ;
     }
     */
-    public function finbByCustomerId($value){
+    public function finbByCustomer(Customer $value)
+    {
         return $this->createQueryBuilder('b')
-            ->where('b.customer.id = ?1')
-            ->setParameter(1,$value)
+            ->andWhere('b.customer = :c')
+            ->setParameter('c', $value)
             ->getQuery()
             ->getResult();
     }
