@@ -8,6 +8,7 @@ Nous avons décidé d'utiliser une architecture 3-tiers:
 2 tables de données :
   - les aéroports, qui contiennent nom et code (ex : Paris, CDG)
   - les billets, qui contiennent code départ, code destination et un prix, sous la forme CDG-JFK 400
+  - Le client qui a un nom et une liste de billets
 
 ![alt text](UML.png)
   
