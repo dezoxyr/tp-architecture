@@ -16,13 +16,12 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.Arrays;
-
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtFilter jwtFilter;
@@ -32,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().httpBasic().disable().csrf().disable().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/api/user/register").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/user/login").permitAll().antMatchers("/site/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/json/*").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/user/login").permitAll()
                 .anyRequest().authenticated().and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class).logout()
                 .logoutUrl("/api/user/logout").permitAll()

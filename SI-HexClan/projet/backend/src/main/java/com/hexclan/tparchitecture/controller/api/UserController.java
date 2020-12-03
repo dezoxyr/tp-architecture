@@ -39,14 +39,14 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable(name = "id") String id) throws BadRequestException {
+    public ResponseEntity<?> getUser(@PathVariable(name = "id") String id) throws BadRequestException {
         try {
             Integer idInt = Integer.parseInt(id);
             Optional<User> u = userService.findById(idInt);
             if (u.isEmpty())
                 throw new BadRequestException("User=" + id + " not found");
 
-            return u.get();
+            return ResponseEntity.ok(u.get());
 
         } catch (NumberFormatException e) {
             throw new BadRequestException("Invalid id");
@@ -88,10 +88,5 @@ public class UserController {
         } catch (NumberFormatException e) {
             throw new BadRequestException("Invalid id");
         }
-    }
-
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello world";
     }
 }
