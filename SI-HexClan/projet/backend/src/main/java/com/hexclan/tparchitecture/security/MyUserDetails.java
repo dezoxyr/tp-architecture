@@ -10,6 +10,10 @@ import java.util.stream.Collectors;
 
 public class MyUserDetails implements org.springframework.security.core.userdetails.UserDetails {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private String username;
     private String password;
     private Collection<? extends GrantedAuthority> grantedAuthorities;
