@@ -18,9 +18,6 @@ class MainController extends AbstractController
         $models = $ticket_repo->findWithoutBooking();
         $ret = $serializer->serialize($models, 'json', ['groups' => 'tickets_available']);
         return new Response($ret, 200, ['Content-Type' => 'application/json']);
-        /*return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);*/
     }
 
     /*
