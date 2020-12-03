@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Menu</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="main.css">
+	<meta charset="UTF-8">
+</head>
+
+<body class="bg">
+	<div class="text-center" style="margin-top: 40px">
+		<h4 id="email"></h4>
+	</div>
+	<div class="text-center" style="margin-top: 40px">
+		<button class="btn btn-outline-dark" onclick="disconnect()">Se déconnecter</button>
+	</div>
+	<div class="text-center">
+		<button type="button" class="block btn btn-secondary" style="margin-top: 40px" onclick="openFlights()">Vols
+			disponibles</button>
+	</div>
+	<div class="text-center">
+		<button type="button" class="block btn btn-secondary" style="margin-top: 40px" onclick="openBooking()">Mes
+			réservations</button>
+	</div>
+
+	<script>
+		const email = localStorage.getItem('email');
+
+		document.getElementById("email").innerHTML = "Utilisateur connecté : " + email;
+
+		function disconnect() {
+			// TODO : déconnecter l'utilisateur côté serveur
+			localStorage.removeItem('email');
+			window.location.href = 'index.html';
+		}
+
+		function openFlights() {
+			window.location.href = 'flights.html';
+		}
+
+		function openBooking() {
+			window.location.href = 'booking.html';
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+.bg{
+	background-image: url("background.jpg");
+	height: 100%;
+	background-position: center;
+  	background-size: cover;
+  	background-attachment: fixed;
+}
+
+.main-form{
+	width: 450px;
+	margin: auto;
+	margin-top: 80px;
+}
+
+.button-form{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.block {
+  display: block;
+  height: 200px;
+  width: 50%;
+  border: none;
+  background-color: #7A7A7A;
+  padding: 14px 28px;
+  font-size: 40px;
+  cursor: pointer;
+  text-align: center;
+  margin: auto;
+}
