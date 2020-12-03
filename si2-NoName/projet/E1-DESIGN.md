@@ -1,1 +1,1 @@
-![alt text](https://github.com/AdelePaillard/tp-architecture/blob/si2-NoName/projet/mcd.png?raw=true)
+![alt text](https://github.com/AdelePaillard/tp-architecture/si2-NoName/projet/mcd.png)
