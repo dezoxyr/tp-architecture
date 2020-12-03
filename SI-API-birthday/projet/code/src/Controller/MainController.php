@@ -43,6 +43,10 @@ class MainController extends AbstractController
         {
             throw new NotFoundHttpException('Ticket or customer not found');
         }
+        if($ticket->getBooking() != null)
+        {
+            throw new BadRequestHttpException('Ticket already sold');
+        }
         $booking = new Booking();
         $booking->setCustomer($customer);
         $booking->setTicket($ticket);
