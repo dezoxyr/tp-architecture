@@ -1,6 +1,8 @@
 <h2>Schéma d'architecture</h2>
-<img src="SchemaBDD2.png">
+<img src="Architecture.png">
 
+<h2>Modèle de base de données</h2>
+<img src="BDD.png">
 
 
 
