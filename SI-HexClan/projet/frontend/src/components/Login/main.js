@@ -23,7 +23,7 @@ export default {
             this.form.password=""
         }
     },
-    mounted: {
+    mounted: () => {
         
     },
     components: {
