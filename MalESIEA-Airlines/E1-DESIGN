@@ -6,9 +6,7 @@
 1)	Tout d’abord une page d’accueil présentant les vols disponibles pour les trois aéroports JFK, CDG et DTW. Un tableau sous cette forme représentera les billets :
 
 Code départ	Code arrivé	Prix (euro)	Code vol
-| Tables | Are | Cool | |----------|:-------------:|------:| 
-| col 1 is| left-aligned | $1600 |
 
-| Code départ  | Code arrivée          | Prix(euro) | Code vol |
-| :--------------- |:---------------:|:---------------:| -----:|
-| JFK     |   CDG       |  400 | PREM|
+| Tables   | Are           | Cool  |
+|----------|:-------------:|------:|
+| col 1 is | left-aligned  | $1600 |
