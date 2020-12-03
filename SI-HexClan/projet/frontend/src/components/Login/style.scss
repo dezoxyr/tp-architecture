@@ -1,7 +1,28 @@
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
-.login{
-
+.login {
     background-color: aqua;
+}
+
+.buttons {
+    margin: 0.5vw;
+}
+
+#test {
+    border: 5px solid black;
+}
+
+#centered_text {
+    text-align: center;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.form_login {
+    padding-top: 6vw;
+}
+
+.card_login {
+    border: 2px solid gray;
 }
