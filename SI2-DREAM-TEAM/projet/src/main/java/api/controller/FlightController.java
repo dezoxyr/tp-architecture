@@ -33,7 +33,7 @@ public class FlightController {
         LinkedList<Flight> flights = new LinkedList<>();
 
         for (Flight flight : company.getFlightlist())
-            if (flight.getDeparture().after(new Date()) && flight.getSeats() > 0)
+            if (flight.getDepartureDate().after(new Date()) && flight.getSeats() > 0)
                 flights.add(flight);
 
         return flights;

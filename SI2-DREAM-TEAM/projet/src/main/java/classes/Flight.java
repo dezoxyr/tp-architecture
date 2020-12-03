@@ -6,15 +6,15 @@ public class Flight {
 
     private int seats;
     private Double price;
-    private Date departure;
-    private Airport depart;
-    private Airport arrive;
+    private Date departureDate;
+    private Airport departure;
+    private Airport destination;
 
-    public Flight(int seats, Date departure, Airport depart, Airport arrive, Double price) {
+    public Flight(int seats, Date departureDate, Airport departure, Airport destination, Double price) {
         this.seats = seats;
+        this.departureDate = departureDate;
         this.departure = departure;
-        this.depart = depart;
-        this.arrive = arrive;
+        this.destination = destination;
         this.price = price;
     }
 
@@ -22,16 +22,16 @@ public class Flight {
         return seats;
     }
 
-    public Date getDeparture() {
+    public Date getDepartureDate() {
+        return departureDate;
+    }
+
+    public Airport getDeparture() {
         return departure;
     }
 
-    public Airport getDepart() {
-        return depart;
-    }
-
-    public Airport getArrive() {
-        return arrive;
+    public Airport getDestination() {
+        return destination;
     }
 
     public Double getPrice() {
@@ -40,6 +40,6 @@ public class Flight {
 
     @Override
     public String toString() {
-        return  depart.getCode()+'-'+arrive.getCode();
+        return  departure.getCode()+'-'+ destination.getCode();
     }
 }
