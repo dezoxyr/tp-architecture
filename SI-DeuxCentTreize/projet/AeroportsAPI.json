@@ -6,16 +6,18 @@
 		},
 	"vols" :{
 		"JFK" :{
-			"CDG":{
-				"date":"04/12/2020",
-				"prix":300,
-				"code":"CDG-JFK 300"
-			},
-			"CDG":{
-				"date":"04/12/2020",
-				"prix":400,
-				"code":"CDG-JFK 400"
-			},
+			"CDG":[
+				{
+					"date":"04/12/2020",
+					"prix":300,
+					"code":"CDG-JFK 300"
+				},
+				{
+					"date":"04/12/2020",
+					"prix":400,
+					"code":"CDG-JFK 400"
+				}
+			],
 			"DTW":{
 				"date":"06/12/2020",
 				"prix":700,
