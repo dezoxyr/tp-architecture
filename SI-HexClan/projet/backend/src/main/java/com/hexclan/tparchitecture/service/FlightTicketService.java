@@ -3,6 +3,7 @@ package com.hexclan.tparchitecture.service;
 import com.hexclan.tparchitecture.entity.Airport;
 import com.hexclan.tparchitecture.entity.FlightTicket;
 import com.hexclan.tparchitecture.entity.User;
+import com.hexclan.tparchitecture.exception.apirequestexception.ForbiddenException;
 import com.hexclan.tparchitecture.exception.apirequestexception.NotFoundException;
 import com.hexclan.tparchitecture.repository.AirportRepository;
 import com.hexclan.tparchitecture.repository.FlightTicketRepository;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,28 +47,42 @@ public class FlightTicketService {
             throw new NotFoundException(String.format("Airport=%s not found", arrivalAirportCode));
         }
 
-        return flightTicketRepository.findAll().stream().filter(flightTicket -> flightTicket.getDepartureAirport().equals(departAirport) && flightTicket.getArrivalAirport().equals(arrivalAirport)).collect(Collectors.toList());
+        return flightTicketRepository.findAll()
+                .stream()
+                .filter(flightTicket -> flightTicket.isAvailable())
+                .filter(flightTicket -> flightTicket.getDepartureAirport().equals(departAirport.get()) && flightTicket.getArrivalAirport()
+                        .equals(arrivalAirport.get())).collect(Collectors.toList());
     }
 
     public FlightTicket bookFlightTicket(Integer idFlight, User passenger) {
-        FlightTicket flightTicket = flightTicketRepository.getOne(idFlight);
-        if (flightTicket == null) {
+        Optional<FlightTicket> flightTicketOptional = flightTicketRepository.findById(idFlight);
+        if (flightTicketOptional.isEmpty()) {
             throw new NotFoundException(String.format("Flight=%s not found", idFlight));
         }
 
-        flightTicket.book(passenger);
-        return flightTicket;
+        FlightTicket ft = flightTicketOptional.get();
+
+        if (!ft.isAvailable()) {
+            throw new ForbiddenException(String.format("Flight=%s already booked", idFlight));
+        }
+
+        ft.book(passenger);
+        return ft;
     }
 
     public List<FlightTicket> findReservationsFor(User passenger) {
         return flightTicketRepository.findAll()
                 .stream()
-                .filter(flightTicket -> flightTicket.getPassenger().equals(passenger))
+                .filter(flightTicket -> !flightTicket.isAvailable() && flightTicket.getPassenger().equals(passenger))
                 .sorted((o1, o2) -> o1.getDateDeparture().compareTo(o2.getDateDeparture()))
                 .collect(Collectors.toList());
     }
 
-    public FlightTicket save(FlightTicket flightTicket){
+    public List<FlightTicket> filterByDateDepart(List<FlightTicket> flights, LocalDate dateDepart) {
+        return flights.stream().filter(flightTicket -> flightTicket.getDateDeparture().isEqual(dateDepart) || flightTicket.getDateDeparture().isAfter(dateDepart)).collect(Collectors.toList());
+    }
+
+    public FlightTicket save(FlightTicket flightTicket) {
         return flightTicketRepository.save(flightTicket);
     }
 }

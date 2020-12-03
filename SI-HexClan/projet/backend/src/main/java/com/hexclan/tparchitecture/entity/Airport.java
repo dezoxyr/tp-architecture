@@ -22,7 +22,7 @@ public class Airport {
 
     public Airport(String name, String code) {
         this.name = name;
-        this.code = code;
+        this.code = code.toUpperCase();
     }
 
     public Airport() {

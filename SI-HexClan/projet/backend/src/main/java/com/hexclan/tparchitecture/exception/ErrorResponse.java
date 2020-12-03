@@ -1,8 +1,8 @@
 package com.hexclan.tparchitecture.exception;
 
-import org.springframework.http.HttpStatus;
-
 import java.time.ZonedDateTime;
+
+import org.springframework.http.HttpStatus;
 
 public class ErrorResponse {
     private final String message;
