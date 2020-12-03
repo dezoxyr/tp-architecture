@@ -29,6 +29,7 @@ window.onload = function() {
 			        	///alert("Terminé! ") ;
 			    	}
 			});
+			$(this).addClass("grey");
 		});
 		$(document).on('click','#Panier', function()
 		{
