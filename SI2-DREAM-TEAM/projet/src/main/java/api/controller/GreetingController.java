@@ -1,4 +1,4 @@
-package com.example;
+package api.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
