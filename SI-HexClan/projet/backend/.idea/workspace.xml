@@ -28,14 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1318019-e9ce-499c-bc37-db310a8ce79d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/insomnia.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/insomnia.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Register/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Register/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,71 +128,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="733" y="122" key="#Auto_Import" timestamp="1606905830297">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="733" y="122" key="#Auto_Import/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606905830297" />
-    <state x="839" y="419" key="#Custom_Plugin_Repositories" timestamp="1606904327986">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="839" y="419" key="#Custom_Plugin_Repositories/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904327986" />
-    <state x="546" y="157" key="#Plugins" timestamp="1606904961399">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="546" y="157" key="#Plugins/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904961399" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1606989381203">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606989381203" />
-    <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606926699326">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606926699326" />
-    <state width="1877" height="162" key="GridCell.Tab.0.bottom" timestamp="1606997039468">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606997039468" />
-    <state width="1877" height="162" key="GridCell.Tab.0.center" timestamp="1606997039468">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606997039468" />
-    <state width="1877" height="162" key="GridCell.Tab.0.left" timestamp="1606997039468">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606997039468" />
-    <state width="1877" height="162" key="GridCell.Tab.0.right" timestamp="1606997039468">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="162" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606997039468" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1606904221280">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904221280" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1606904221280">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904221280" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1606904221280">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904221280" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1606904221280">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904221280" />
-    <state x="681" y="261" width="540" height="524" key="StructurePopup" timestamp="1606904378072">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="681" y="261" width="540" height="524" key="StructurePopup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904378072" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1606903340793">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606903340793" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606904908277">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606904908277" />
   </component>
 </project>

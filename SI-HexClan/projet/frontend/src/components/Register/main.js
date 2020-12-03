@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-import axios from "axios";
-
 export default {
     name: "Register",
     data: function() {
@@ -14,15 +12,16 @@ export default {
     },
     computed: {},
     methods: {
-        onSubmit(evt) {
-            console.log("hello");
+        async onSubmit(evt) {
             evt.preventDefault();
-            axios
-                .post("http://localhost:8080/api/user/register", this.form)
+            await this.$axios
+                .post("/user/register", this.form)
                 .then(() => {
                     this.$toast.success("Registration successful");
+                    this.$router.push({ name: "Login" });
                 })
                 .catch((error) => {
+                    console.log(error);
                     if (error.response) {
                         this.$toast.error(error.response.data.message);
                     } else {

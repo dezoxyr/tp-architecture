@@ -1,12 +1,11 @@
-.register
-    b-form(@submit="onSubmit" reset="onReset")
-        b-form-group(id="input-group-1" label="Email address:" label-for="input-1" description="We'll never share your email with anyone else.")
-            b-form-input(id="input-1" v-model="form.email" type="email" required placeholder="Enter email")
-        b-form-group(id="input-group-2" label="Username:" label-for="input-2")
-            b-form-input(id="input-2" v-model="form.username" required placeholder="Enter username")
-        b-form-group(id="input-group-3" label="Password:" label-for="input-3" description="We'll never share your email with anyone else.")
-            b-form-input(id="input-3" v-model="form.password" type="password" required placeholder="Enter password")    
-        b-button(type="submit" variant="primary") Sign Up
-        b-button(type="reset" variant="danger") Reset
-
-
+b-container(id="b-container").pt-3
+    b-row
+        b-form(@submit="onSubmit" reset="onReset")
+            b-form-group(id="input-group-1" label="Email address:" label-for="input-1" description="We'll never share your email with anyone else.")
+                b-form-input(id="input-1" v-model="form.email" type="email" required placeholder="Enter email")
+            b-form-group(id="input-group-2" label="Username:" label-for="input-2")
+                b-form-input(id="input-2" v-model="form.username" required placeholder="Enter username")
+            b-form-group(id="input-group-3" label="Password:" label-for="input-3" description="We'll never share your email with anyone else.")
+                b-form-input(id="input-3" v-model="form.password" type="password" required placeholder="Enter password")    
+            b-button(type="submit" variant="primary") Sign Up
+            b-button(type="reset" variant="danger") Reset

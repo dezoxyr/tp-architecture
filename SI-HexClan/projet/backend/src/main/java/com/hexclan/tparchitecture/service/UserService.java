@@ -21,7 +21,7 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public User register(String username, String password, String email) throws BadRequestException {
+    public User register(String username, String email, String password) throws BadRequestException {
         // test if username already taken
         Optional<User> uExists = repository.findByUsername(username);
         if (uExists.isPresent())
