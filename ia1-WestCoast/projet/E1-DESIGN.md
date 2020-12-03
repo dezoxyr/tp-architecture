@@ -3,6 +3,8 @@ Nous avons décidé d'utiliser une architecture 3-tiers:
   - une interface web pour le front-end
   - l'API pour le back-end
   - une base de données
+
+![alt text](Architecture.PNG)
  
 2 - Le modele de donnée stocké :
 2 tables de données :
