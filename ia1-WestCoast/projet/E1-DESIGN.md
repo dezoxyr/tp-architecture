@@ -10,7 +10,7 @@ Nous avons décidé d'utiliser une architecture 3-tiers:
   - les billets, qui contiennent code départ, code destination et un prix, sous la forme CDG-JFK 400
   - Le client qui a un nom et une liste de billets
 
-![alt text](UML.png)
+![alt text](UML.PNG)
   
 3 - La stack technique :
   - Application et data : html, css, jquery, php, javascript, MySQL, Json, Ajax
