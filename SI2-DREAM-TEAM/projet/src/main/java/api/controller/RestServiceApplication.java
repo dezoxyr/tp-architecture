@@ -28,6 +28,10 @@ public class RestServiceApplication {
         Date date6 = new GregorianCalendar(2021, Calendar.JANUARY, 22).getTime();
         Date date7 = new GregorianCalendar(2021, Calendar.APRIL, 4).getTime();
         Date date8 = new GregorianCalendar(2021, Calendar.MARCH, 20).getTime();
+        Date date9 = new GregorianCalendar(2020, Calendar.AUGUST, 3).getTime();
+        Date date10 = new GregorianCalendar(2020, Calendar.DECEMBER, 28).getTime();
+        Date date11 = new GregorianCalendar(2020, Calendar.SEPTEMBER, 11).getTime();
+        Date date12 = new GregorianCalendar(2020, Calendar.JANUARY, 16).getTime();
 
         company.addFlight(new Flight(516, date1, paris, newyork, 700. ));
         company.addFlight(new Flight(1516, date2, paris, detroit, 845. ));
@@ -37,6 +41,10 @@ public class RestServiceApplication {
         company.addFlight(new Flight(200, date6, detroit,  newyork, 745. ));
         company.addFlight(new Flight(0, date7, newyork, detroit, 155. ));
         company.addFlight(new Flight(125, date8, paris, detroit, 613. ));
+        company.addFlight(new Flight(216, date9, newyork, detroit, 871. ));
+        company.addFlight(new Flight(310, date10, newyork, paris, 325. ));
+        company.addFlight(new Flight(243, date11, detroit, newyork, 556. ));
+        company.addFlight(new Flight(19, date12, detroit, paris, 423. ));
 
         SpringApplication.run(RestServiceApplication.class, args);
     }
