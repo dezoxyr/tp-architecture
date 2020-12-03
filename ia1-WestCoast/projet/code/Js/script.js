@@ -3,13 +3,16 @@
 /*****************************************************************************/
 
 window.onload = function() {
+	var user = window.prompt("Entrez votre nom");
+	var liste_billets;
+
 	$(document).ready(function() {
 		$(document).on('click','.bouton', function()
 		{
    			$.ajax({
 			   	type: 'POST',
 			   	url:'Php/achat.php',
-			   	data:{list:liste_billets},
+			   	data:{list:JSON.stringify(liste_billets)},
 			   	success: function(rep){
 			   		
 			        if(result.length > 0){
@@ -35,7 +38,7 @@ window.onload = function() {
 			$.ajax({
 				type: 'POST',
 				url: 'Php/panier.php',
-				data:{liste_billets: liste_billets},
+				data:{liste_billets: JSON.stringify(liste_billets)},
 				success: function(rep){
 					result = JSON.parse(rep);
 					console.log(result);
@@ -51,7 +54,7 @@ window.onload = function() {
 		});
 	});
 
-	var liste_billets;
+	
 	/******************** Chargement de la liste de billets **************************/
     $.ajax({
 	   	type: 'POST',
