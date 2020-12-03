@@ -1,5 +1,0 @@
-BAHOU Adil
-DEKKICHE Racha
-LAURENCE Camille
-MAITROT Maxime
-MOMBO MOMBO Daël
