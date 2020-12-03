@@ -1,6 +1,10 @@
 #navbar {
     text-align: center;
     width: 100%;
+
+    [class$="-light"] {
+        color: #78909C;
+    }
 }
 
 #root {

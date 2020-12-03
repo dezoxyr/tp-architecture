@@ -3,9 +3,9 @@ b-container(fluid)#root
         .col.p-0
             b-navbar(type = "dark" variant = "dark")#navbar
                 b-navbar-brand HexClan
-                router-link(to="/").link Home
-                router-link(to="/login" v-if="notLogged").link Sign In
-                router-link(to="/regoster" v-if="notLogged").link Sign Up
+                router-link(to="/" :class="'link-' + $store.state.theme") Home
+                router-link(to="/login" v-if="notLogged" :class="'link-' + $store.state.theme") Sign In
+                router-link(to="/regoster" v-if="notLogged" :class="'link-' + $store.state.theme") Sign Up
 
                 //-     b-nav-item(href="/login") Login
         //- b-navbar(toggleable="lg" type="dark" variant="info")
