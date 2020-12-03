@@ -1,0 +1,39 @@
+{
+	"aeroports" :[
+		{
+			"name":"New York",
+			"code":"JFK"
+		},
+		{
+			"name":"CDG Paris",
+			"code":"CDG"
+		},
+		{
+			"name":"Detroit",
+			"code":"DTW"
+		}
+	],
+	"vols" :[
+		{
+			"depart":"JFK",
+			"arrivé":"CDG",
+			"date":"2020-12-04T00:00:00.000Z",
+			"prix":400,
+			"code":"JFK-CDG 400"
+		},
+		{
+			"depart":"CDG",
+			"arrivé":"JFK",
+			"date":"2020-15-04T00:00:00.000Z",
+			"prix":600,
+			"code":"CDG-JFK 600"
+		},
+		{
+			"depart":"CDG",
+			"arrivé":"DTW",
+			"date":"2020-12-04T00:00:00.000Z",
+			"prix":500,
+			"code":"CDG-DTW 500"
+		}
+	]
+}
