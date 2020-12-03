@@ -1,0 +1,1 @@
+![alt text](https://github.com/AdelePaillard/tp-architecture/blob/si2-NoName/image.jpg?raw=true)
