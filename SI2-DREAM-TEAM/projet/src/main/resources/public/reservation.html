@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css"/>
+    <center>
+        <title>DREAM-TEAM Airlines</title>
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script src="./scripts/available_flights.js"></script>
+</head>
+
+<header>
+    <div id="banniere">
+        <strong>DREAM-TEAM Airlines</strong>
+    </div>
+    <nav>
+        <ul id="onglets">
+            <a href="index.html">
+                <li class="onglet">Accueil</li>
+            </a>
+            <a href="reservation.html">
+                <li class="onglet">Réserver un vol</li>
+            </a>
+            <a href="mesvols.html">
+                <li class="onglet">Vols réservés</li>
+            </a>
+        </ul>
+    </nav>
+</header>
+
+<body>
+<div id="main1">
+    <!-- <h2> Vols disponibles </h2> -->
+    <br> </br>
+    <center>
+        <table border="1" width="80%" cellspacing="0" cellpadding="6">
+            <thead>
+            <tr>
+                <th>Aéroport de départ</th>
+                <th width="50%">Aéroport d'arrivée</th>
+                <th width="70%">Prix(€)</th>
+            </tr>
+            </thead>
+            <tbody id="available_flights_tab">
+<!--            				  <tr>-->
+<!--            					 <td>New-york (JDK)</td>-->
+<!--            					 <td width="50%">Paris (CDG)</td>-->
+<!--            					 <td width="50%">300</td>-->
+<!--            				  </tr>-->
+<!--            				  <tr>-->
+<!--            					 <td width="50%">New-York (JDK)</td>-->
+<!--            					 <td width="50%">Détroit (DTW)</td>-->
+<!--            					 <td width="50%">115</td>-->
+<!--            				  </tr>-->
+<!--            				  <tr>-->
+<!--            					 <td width="50%">Paris (CDG)</td>-->
+<!--            					 <td width="50%">New-York (JDK)</td>-->
+<!--            					 <td width="50%">310</td>-->
+<!--            				  </tr>-->
+<!--            				  <tr>-->
+<!--            					 <td width="50%">Paris (CDG)</td>-->
+<!--            					 <td width="50%">Détroit (DTW)</td>-->
+<!--            					 <td width="50%">250</td>-->
+<!--            				  </tr>-->
+<!--            				  <tr>-->
+<!--            					 <td width="50%">Détroit (DTW)</td>-->
+<!--            					 <td width="50%">Paris (CDG)</td>-->
+<!--            					 <td width="50%">275</td>-->
+<!--            				  </tr>-->
+<!--            				  <tr>-->
+<!--            					 <td width="20%">Détroit (DTW)</td>-->
+<!--            					 <td width="50%">New-york (JDK)</td>-->
+<!--            					 <td width="50%">100</td>-->
+<!--            				  </tr>-->
+            </tbody>
+        </table>
+    </center>
+    <br> </br>
+
+</div>
+<div id="main1">
+    <!--<h2> Réserver un vol </h2>*/ -->
+    <br> </br>
+    <p>
+        <label for="flight-select">Aéroport de départ:</label>
+        <select name="flights" id="flight-select">
+            <option value="">--Choisissez un aéroport s'il vous plaît--</option>
+            <option value="JFK">New-York JFK</option>
+            <option value="CGD">Paris Charles de Gaulle CDG</option>
+            <option value="DTW">Detroit DTW</option>
+        </select>
+    </p>
+    <p>
+        <label for="flight-select">Aéroport d'arrivée:</label>
+        <select name="flights" id="flight-select">
+            <option value="">--Choisissez un aéroport s'il vous plaît--</option>
+            <option value="JFK">New-York JFK</option>
+            <option value="CGD">Paris Charles de Gaulle CDG</option>
+            <option value="DTW">Detroit DTW</option>
+        </select>
+    </p>
+    <p>
+        <label for="name">Nom:</label>
+
+        <input type="text" id="name" name="name" required
+               minlength="3" maxlength="60" size="60">
+    </p>
+    <p>
+        <button class="favorite styled"
+                type="button">
+            Réserver
+        </button>
+    </p>
+</div>
+
+
+</body>
+
+<footer>
+    <ul id="contacts">
+        <li><a class="contact" href="https://github.com/T2Clubber/tp-architecture/tree/SI2-DREAM-TEAM">Notre repository
+            Git</a></li>
+        <br> </br>
+        <p class="contact2">DREAM-TEAM Corporation</p>
+    </ul>
+</footer>
+
+
+

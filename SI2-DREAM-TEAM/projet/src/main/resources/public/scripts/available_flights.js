@@ -1,0 +1,19 @@
+$(document).ready(function () {
+    $.getJSON("http://localhost:8080/available_flights", function (data) {
+        console.log(data);
+        $.each(data, function (i, item) {
+            var row = $('<tr></tr>');
+
+            // console.log(item["departure"]["name"].concat(" (", item["departure"]["code"], ")"));
+            // console.log(item["destination"]["name"].concat(" (", item["destination"]["code"], ")"));
+            // console.log(item["price"].toString().concat("€"));
+
+            var rowData1 = $('<td></td>').text(item["departure"]["name"].concat(" (", item["departure"]["code"], ")"));
+            var rowData2 = $('<td></td>').text(item["destination"]["name"].concat(" (", item["destination"]["code"], ")"));
+            var rowData3 = $('<td></td>').text(item["price"].toString().concat("€"));
+
+            row.append(rowData1, rowData2, rowData3);
+            $("#available_flights_tab").append(row);
+        });
+    });
+});
