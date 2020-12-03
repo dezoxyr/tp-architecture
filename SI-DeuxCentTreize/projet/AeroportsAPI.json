@@ -6,25 +6,40 @@
 		},
 	"vols" :{
 		"JFK" :{
-			"depart":"JFK",
-			"arrive":"CDG",
-			"date":"2020-12-04T00:00:00.000Z",
-			"prix":400,
-			"code":"JFK-CDG 400"
+			"CDG":{
+				"date":"2020-14-04T00:00:00.000Z",
+				"prix":300,
+				"code":"CDG-JFK 600"
+			},
+			"DTW":{
+				"date":"2020-12-04T00:00:00.000Z",
+				"prix":700,
+				"code":"CDG-DTW 500"
+			}
 		},
 		"CDG" :{
-			"depart":"CDG",
-			"arrive":"JFK",
-			"date":"2020-15-04T00:00:00.000Z",
-			"prix":600,
-			"code":"CDG-JFK 600"
+			"JFK":{
+				"date":"2020-16-04T00:00:00.000Z",
+				"prix":450,
+				"code":"CDG-JFK 600"
+			},
+			"DTW":{
+				"date":"2020-14-04T00:00:00.000Z",
+				"prix":290,
+				"code":"CDG-DTW 500"
+			}
 		},
-		"CDG" :{
-			"depart":"CDG",
-			"arrive":"DTW",
-			"date":"2020-12-04T00:00:00.000Z",
-			"prix":500,
-			"code":"CDG-DTW 500"
+		"DTW" :{
+			"JFK":{
+				"date":"2020-15-04T00:00:00.000Z",
+				"prix":485,
+				"code":"CDG-JFK 600"
+			},
+			"CDG":{
+				"date":"2020-12-04T00:00:00.000Z",
+				"prix":120,
+				"code":"CDG-DTW 500"
+			}
 		}
 	}
 }
