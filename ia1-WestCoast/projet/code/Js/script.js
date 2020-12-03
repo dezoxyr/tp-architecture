@@ -5,40 +5,36 @@
 window.onload = function() {
 	var user = window.prompt("Entrez votre nom");
 	var liste_billets;
-
+	var client = new Array();
+	client[0] = user;
+	client[1] = new Array();
 	$(document).ready(function() {
 		$(document).on('click','.bouton', function()
 		{
+			var nouveau = $(this).attr("id");
    			$.ajax({
 			   	type: 'POST',
 			   	url:'Php/achat.php',
-			   	data:{list:JSON.stringify(liste_billets)},
+			   	data:{'client': JSON.stringify(client), nouveau: nouveau},
 			   	success: function(rep){
-			   		
-			        if(result.length > 0){
-			            $('#billets').show();
-			        }
-			        else {$('#billets').empty(); $('#billet').hide();}
-			    },
-			    error:function(err){
-			        alert("erreur ! "+JSON.stringify(err)) ;
-			        $('#billets').hide();
-			    },
-			    complete:function(){
-			        ///alert("Terminé! ") ;
-			    }
+					result = JSON.parse(rep);
+			        	client[1] = result.liste_billets;
+			    	},
+			    	error:function(err){
+			        	alert("erreur ! "+JSON.stringify(err)) ;
+			        	$('#billets').hide();
+			    	},
+			    	complete:function(){
+			        	///alert("Terminé! ") ;
+			    	}
 			});
 		});
 		$(document).on('click','#panier', function()
 		{
-			var client = new Array();
-			client[0] = "valentin";
-			client[1] = [0,1,2];
-			console.log(client);
 			$.ajax({
 				type: 'POST',
 				url: 'Php/panier.php',
-				data:{liste_billets: JSON.stringify(liste_billets)},
+				data:{liste_billets: JSON.stringify(liste_billets), client: JSON.stringify(client)},
 				success: function(rep){
 					result = JSON.parse(rep);
 					console.log(result);

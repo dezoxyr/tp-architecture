@@ -17,7 +17,6 @@ foreach ($tab[1] as $b) {
 }
 
 $billet = $_POST["nouveau"];
-$billet = json_decode("$billet",true);
 
 acheter_indice($client, $billet);
 echo json_encode($client);
