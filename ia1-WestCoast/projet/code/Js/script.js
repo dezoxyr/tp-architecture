@@ -38,10 +38,9 @@ window.onload = function() {
 				data:{liste_billets: JSON.stringify(liste_billets), client: JSON.stringify(client)},
 				success: function(rep){
 					result = JSON.parse(rep);
-					console.log(result);
 	        			$('#achats').empty();
 	        			$.each(result, function(i, val) {
-		        			$('#achats').append("<div class='billet'>"+val['depart']+" -> "+val['arrive'] + " " + val['prix']);
+		        			$('#achats').append("<div class='billet'>"+val['depart']+" - "+val['arrive'] + " " + val['prix']);
 		    			});
 	        			if(result.length > 0){
 	            				$('#achats').show();
@@ -90,7 +89,7 @@ window.onload = function() {
 	        	
 	        $.each(result, function(i, val) {
 	        	console.log(rep);
-		        $('#billets').append("<div id='"+i+"' class='billet'>"+val['depart']+ " -> " + val['arrive'] + " " + val['prix'] + "</div>");
+		        $('#billets').append("<div id='"+i+"' class='billet'>"+val['depart']+ " - " + val['arrive'] + " " + val['prix'] + "</div>");
 		    });
 	        if(result.length > 0){
 	            $('#billets').show();

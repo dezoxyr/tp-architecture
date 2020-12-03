@@ -17,8 +17,9 @@ if (isset($_POST["liste_billets"]) && isset($_POST["client"])){
 	$recup_client = json_decode("$recup_client", true);
 	$client = new Client($recup_client[0]);
 	forEach($recup_client[1] as $v){
-		$client->add_billet($liste_billets[$v]);
+		$client->add_billet($v);
 	}
 	echo json_encode(billets_achetes($client, $liste_billets));
 }
+
 ?>
