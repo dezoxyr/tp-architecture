@@ -1,0 +1,21 @@
+b-container(fluid)  
+    b-row
+        b-navbar(toggleable="lg" type="dark" variant="info")
+            b-navbar-brand HexClan
+            b-navbar-toggle(target="nav-collapse")
+            b-collapse#nav-collapse
+                b-navbar-nav
+                    b-nav-item(href="#") Home
+                    b-nav-item(href="#/login") Login
+                b-navbar-nav(class="ml-auto")
+                    b-nav-form
+                        b-form-input(size="sm" class="mr-sm-2" placeholder="Search")
+                        b-button(size="sm" class="my-2 my-sm-0" type="submit") Search
+                    b-nav-item-dropdown(text="Lang" right)
+                        b-dropdown-item(href="#") EN
+                        b-dropdown-item(href="#") FR
+                    b-nav-item-dropdown(right)
+                        template(#button-content)
+                            em User
+                        b-dropdown-item(href="#") Profile
+                        b-dropdown-item(href="#") Sign out
