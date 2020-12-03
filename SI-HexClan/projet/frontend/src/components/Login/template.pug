@@ -1,0 +1,13 @@
+.login
+    b-form(submit="onSubmit" reset="onReset" v-if="show")
+        b-form-group(id="input-group-2" label="Your Name:" label-for="input-2")
+            b-form-input(id="input-2" v-model="form.name" required placeholder="Enter name")
+        b-form-group(id="input-group-3" label="Password:" label-for="input-3" description="We'll never share your email with anyone else.")
+            b-form-input(id="input-3" v-model="form.password" type="password" required placeholder="Enter password")   
+        b-form-checkbox(class="mb-2 mr-sm-2 mb-sm-0") Remember me
+        b-button(type="submit" variant="primary") Sign In
+        b-button(type="reset" variant="danger") Reset
+        
+
+//- .login
+//-     h1 Login

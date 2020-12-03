@@ -1,21 +1,42 @@
 b-container(fluid)  
-    b-row
+    .row
         b-navbar(toggleable="lg" type="dark" variant="info")
             b-navbar-brand HexClan
             b-navbar-toggle(target="nav-collapse")
             b-collapse#nav-collapse
                 b-navbar-nav
-                    b-nav-item(href="#") Home
-                    b-nav-item(href="#/login") Login
+                    router-link(to="/")
+                        b-nav-item(href="/") Home
+                    router-link(to="/login")
+                        b-nav-item(href="/login") Login
+                    router-link(to="/register")
+                        b-nav-item(href="/register") Sign Up
                 b-navbar-nav(class="ml-auto")
                     b-nav-form
                         b-form-input(size="sm" class="mr-sm-2" placeholder="Search")
                         b-button(size="sm" class="my-2 my-sm-0" type="submit") Search
-                    b-nav-item-dropdown(text="Lang" right)
-                        b-dropdown-item(href="#") EN
-                        b-dropdown-item(href="#") FR
                     b-nav-item-dropdown(right)
                         template(#button-content)
                             em User
                         b-dropdown-item(href="#") Profile
                         b-dropdown-item(href="#") Sign out
+    .row
+        router-view
+    //- b-template
+    //- b-form(submit="onSubmit" reset="onReset" v-if="show")
+    //-     b-form-group(id="input-group-1" label="Email address:" label-for="input-1" description="We'll never share your email with anyone else.")
+    //-         b-form-input(id="input-1" v-model="form.email" type="email" required placeholder="Enter email")
+    //-     b-form-group(id="input-group-2" label="Your Name:" label-for="input-2")
+    //-         b-form-input(id="input-2" v-model="form.name" required placeholder="Enter name")
+    //-     b-form-group(id="input-group-3" label="Password:" label-for="input-3" description="We'll never share your email with anyone else.")
+    //-         b-form-input(id="input-3" v-model="form.password" type="password" required placeholder="Enter password")    
+    //-     b-button(type="submit" variant="primary") Sign Up
+
+    //- b-template
+    //- b-form(submit="onSubmit" reset="onReset" v-if="show")
+    //-     b-form-group(id="input-group-2" label="Your Name:" label-for="input-2")
+    //-         b-form-input(id="input-2" v-model="form.name" required placeholder="Enter name")
+    //-     b-form-group(id="input-group-3" label="Password:" label-for="input-3" description="We'll never share your email with anyone else.")
+    //-         b-form-input(id="input-3" v-model="form.password" type="password" required placeholder="Enter password")   
+    //-     b-form-checkbox(class="mb-2 mr-sm-2 mb-sm-0") Remember me
+    //-     b-button(type="submit" variant="primary") Sign In
