@@ -2,17 +2,13 @@ package classes;
 
 public class Ticket {
 
-    private Double price;
+
     private Flight flight;
 
-    public Ticket(Double price, Flight flight) {
-        this.price = price;
+    public Ticket(Flight flight) {
         this.flight = flight;
     }
 
-    public Double getPrice() {
-        return price;
-    }
 
     public Flight getFlight() {
         return flight;
@@ -20,6 +16,6 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return flight.toString()+' '+price;
+        return flight.toString()+' '+flight.getPrice();
     }
 }
