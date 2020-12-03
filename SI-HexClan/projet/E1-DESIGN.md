@@ -4,7 +4,7 @@
 
 ## Architecture globale
 
-// TODO
+![architecture diagram](Diagram_Architecture.png)
 ## Modèle de données
 
 ![class diagram](Entities.jpg)

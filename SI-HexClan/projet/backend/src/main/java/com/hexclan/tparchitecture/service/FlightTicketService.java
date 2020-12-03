@@ -45,7 +45,10 @@ public class FlightTicketService {
             throw new NotFoundException(String.format("Airport=%s not found", arrivalAirportCode));
         }
 
-        return flightTicketRepository.findAll().stream().filter(flightTicket -> flightTicket.getDepartureAirport().equals(departAirport) && flightTicket.getArrivalAirport().equals(arrivalAirport)).collect(Collectors.toList());
+        return flightTicketRepository.findAll()
+                .stream()
+                .filter(flightTicket -> flightTicket.getDepartureAirport().equals(departAirport.get()) && flightTicket.getArrivalAirport()
+                        .equals(arrivalAirport.get())).collect(Collectors.toList());
     }
 
     public FlightTicket bookFlightTicket(Integer idFlight, User passenger) {
@@ -66,7 +69,7 @@ public class FlightTicketService {
                 .collect(Collectors.toList());
     }
 
-    public FlightTicket save(FlightTicket flightTicket){
+    public FlightTicket save(FlightTicket flightTicket) {
         return flightTicketRepository.save(flightTicket);
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 
@@ -27,6 +28,27 @@ public class FlightTicketController {
     @Autowired
     private AirportRepository airportRepository;
 
+    @PostConstruct
+    public void init() {
+        Airport airport1 = new Airport("New York", "JFK");
+        Airport airport2 = new Airport("Charles de Gaulle", "CDG");
+        Airport airport3 = new Airport("Detroit", "DTW");
+
+        airportRepository.saveAndFlush(airport1);
+        airportRepository.saveAndFlush(airport2);
+        airportRepository.saveAndFlush(airport3);
+
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+    }
+
     @GetMapping("/")
     public ResponseEntity<?> getAllAvailableFlights(
             @RequestParam(name = "depart_airport", required = false) String departAirport,
@@ -36,7 +58,7 @@ public class FlightTicketController {
             return ResponseEntity.ok(flightTicketService.findAllAvailableFlights());
         }
 
-        return ResponseEntity.ok(flightTicketService.findAvailableFlightsFor(departAirport, arrivalAirport));
+        return ResponseEntity.ok(flightTicketService.findAvailableFlightsFor(departAirport.toUpperCase(), arrivalAirport.toUpperCase()));
     }
 
     @PostMapping("/{idFlight}")
@@ -58,17 +80,5 @@ public class FlightTicketController {
         String username = (String) httpRequest.getAttribute("username");
         User passenger = userService.findByUsername(username);
         return ResponseEntity.ok(flightTicketService.findReservationsFor(passenger));
-    }
-
-    @PostMapping("/load-fake-flights")
-    public ResponseEntity<?> loadFakeFlights(){
-//        airportRepository.saveAndFlush(new Airport("Charles de Gaulle", "CDG"));
-//        airportRepository.saveAndFlush(new Airport("New York", "JFK"));
-
-        flightTicketService.save(new FlightTicket(airportRepository.getOne(2), airportRepository.getOne(3), 300.0, LocalDate.now()));
-        flightTicketService.save(new FlightTicket(airportRepository.getOne(3), airportRepository.getOne(2), 300.0, LocalDate.now()));
-        flightTicketService.save(new FlightTicket(airportRepository.getOne(3), airportRepository.getOne(2), 300.0, LocalDate.now()));
-
-        return ResponseEntity.ok().build();
     }
 }

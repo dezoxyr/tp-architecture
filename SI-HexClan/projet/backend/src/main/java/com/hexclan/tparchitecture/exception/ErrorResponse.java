@@ -1,5 +1,6 @@
 package com.hexclan.tparchitecture.exception;
 
+import com.hexclan.tparchitecture.exception.apirequestexception.BadRequestException;
 import org.springframework.http.HttpStatus;
 
 import java.time.ZonedDateTime;

@@ -37,7 +37,7 @@ public class FlightTicket {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
         this.fare = fare;
-        this.code = String.format("%s-%s %f", departureAirport.getCode(), arrivalAirport.getCode(), fare);
+        this.code = String.format("%s-%s %.0f", departureAirport.getCode(), arrivalAirport.getCode(), fare);
         this.dateDeparture = dateDeparture;
     }
 
