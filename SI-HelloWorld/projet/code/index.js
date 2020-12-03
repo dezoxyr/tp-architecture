@@ -5,8 +5,15 @@ const flightsHandler = require("./flights_handler")
 const reservationsHandler = require("./reservations_handler")
 
 app.use(express.json())
+app.use(express.urlencoded());
 
 app.use(express.static(__dirname + '/public'));
+
+var bodyParser = require('body-parser')
+app.use(bodyParser.json()); // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+    extended: true
+}));
 
 // La page d'accueil redirige vers la page de la liste des vols.
 app.get(["/", "/index.html"], flightsHandler.showAll)
@@ -23,6 +30,9 @@ app.get('/flights/:id', flightsHandler.showOneById)
 
 // Renvoie les détails d'un vol au format JSON.
 app.get('/api/flights/:id', flightsHandler.getOneById)
+
+// Permet de réserver un billet.
+app.post('/api/flights/:id/book', reservationsHandler.add)
 
 // = GESTION DES RESERVATIONS =
 // Renvoie la page HTML de la liste des réservations de l'utilisateur.

@@ -1,4 +1,5 @@
 const flights = require("./flights.json")
+const reservations = require("./reservations.json")
 
 function showAll(req, res) {
     var templateParameters = {
@@ -15,7 +16,10 @@ function getAll(req, res) {
 // Renvoie la page HTML des détails d'un vol.
 function showOneById(req, res) {
     const id = parseInt(req.params.id)
-    res.status(200).send("<h1>Détails du vol " + id + "</h1>")
+    var templateParameters = {
+        flight: flights[id]
+    };
+    res.render(__dirname + '/templates/flight_details.ejs', templateParameters);
 }
 
 // Renvoie les détails d'un vol au format JSON.

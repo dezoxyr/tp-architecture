@@ -3,12 +3,40 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Liste des vols disponibles</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Détails du vol</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <h1>Liste des vols disponibles</h1>
+    <%- include('navbar.ejs') %>
+        <div id="main">
+            <h1>Liste des vols disponibles</h1>
+            <% for (var i = 0; i < flights.length; i++) { %>
+                <div class="card mb-3">
+                    <img class="card-img-top" src="https://picsum.photos/1180/180?random=<%= i %>" alt="Card image cap">
+                    <div id="flight-card" class="card-body">
+                        <h5 class="card-title">
+                            ✈
+                            <%= flights[i].code_airport_dep %> (
+                                <%= flights[i].dep_time %>) →
+                                    <%= flights[i].code_airport_dest %> (
+                                        <%= flights[i].arrival_time %>)
+                        </h5>
+                        <p class="card-text"><b>Compagnie :</b>
+                            <%= flights[i].company %>
+                        </p>
+                        <p class="card-text"><b>Prix : </b>
+                            <%= flights[i].price %>
+                        </p>
+                        <p class="card-text"><i>Encore
+                    <%= flights[i].nb_seats %> places disponibles !</i>
+                        </p>
+                        <a href="<%= '/flights/' + flights[i].id %>" class="btn btn-primary">Plus de détails</a>
+                    </div>
+                </div>
+                <%}%>
+        </div>
 </body>
 
 </html>

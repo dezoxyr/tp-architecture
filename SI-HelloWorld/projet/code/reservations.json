@@ -7,7 +7,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 1,
@@ -25,7 +25,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 1,
@@ -43,7 +43,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 2,
@@ -61,7 +61,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 2,
@@ -79,7 +79,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 2,
@@ -97,7 +97,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 1,
@@ -115,7 +115,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 1,
@@ -133,7 +133,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 2,
@@ -151,7 +151,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 2,
@@ -169,7 +169,7 @@
             "dep_time": "12/24/2020 10:15:00",
             "arrival_time": "12/24/2020 12:15:00",
             "price": 90.0,
-            "id_company": 2,
+            "company": "Air France",
             "nb_seats": 63
         },
         "id_reservation_status": 2,

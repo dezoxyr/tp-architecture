@@ -1,9 +1,10 @@
 const reservations = require("./reservations.json")
+var qs = require('querystring');
 
 // Renvoie la page HTML de la liste des réservations de l'utilisateur.
 function showAll(req, res) {
     var templateParameters = {
-        reservations: reservations
+        reservations: reservations.reverse()
     };
     res.render(__dirname + '/templates/reservations_list.ejs', templateParameters);
 }
@@ -11,6 +12,35 @@ function showAll(req, res) {
 // Renvoie la liste des réservations de l'utilisateur au format JSON.
 function getAll(req, res) {
     res.status(200).json(reservations)
+}
+
+// Permet d'ajouter une réservation.
+// Renvoie 200 si le billet a bien été réservé, sinon 500.
+function add(req, res) {
+    const flightId = parseInt(req.params.id)
+    const nbPassengers = req.body.nbPassengers
+
+    const flights = require("./flights.json")
+    const theFlight = flights.find(flight => flight.id === flightId)
+
+    console.log("nbPassengers : " + nbPassengers)
+    console.log("parseInt(theFlight.price * nbPassengers) : " + parseInt(theFlight.price * nbPassengers))
+
+    var newReservation = {
+        "id": reservations.length + 1,
+        "flight": theFlight,
+        "id_reservation_status": 1,
+        "nb_passengers": nbPassengers,
+        "amount_paid": parseInt(theFlight.price * nbPassengers),
+        "date_paid": "12/03/2020 09:35:43",
+        "is_flight_cancelled": "false"
+    };
+
+    reservations.push(newReservation);
+
+    console.log(reservations)
+
+    res.status(200).json("")
 }
 
 // Renvoie la page HTML des détails d'une réservation.
@@ -28,5 +58,6 @@ function getOneById(req, res) {
 
 exports.showAll = showAll;
 exports.getAll = getAll;
+exports.add = add;
 exports.showOneById = showOneById;
 exports.getOneById = getOneById;

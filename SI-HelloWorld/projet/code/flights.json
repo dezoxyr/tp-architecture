@@ -1,1 +1,31 @@
-[]
+[{
+        "id": 1,
+        "code_airport_dep": "JFK",
+        "code_airport_dest": "DTW",
+        "dep_time": "12/24/2020 10:15:00",
+        "arrival_time": "12/24/2020 12:15:00",
+        "price": 90.0,
+        "company": "Air France",
+        "nb_seats": 63
+    },
+    {
+        "id": 1,
+        "code_airport_dep": "JFK",
+        "code_airport_dest": "DTW",
+        "dep_time": "12/24/2020 10:15:00",
+        "arrival_time": "12/24/2020 12:15:00",
+        "price": 90.0,
+        "company": "Easy Jet",
+        "nb_seats": 63
+    },
+    {
+        "id": 1,
+        "code_airport_dep": "JFK",
+        "code_airport_dest": "DTW",
+        "dep_time": "12/24/2020 10:15:00",
+        "arrival_time": "12/24/2020 12:15:00",
+        "price": 90.0,
+        "company": "Ryanair",
+        "nb_seats": 63
+    }
+]

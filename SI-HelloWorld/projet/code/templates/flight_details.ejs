@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Liste des vols disponibles</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <%- include('navbar.ejs') %>
+        <div id="main">
+            <script src="../js/flights_manager.js"></script>
+            <div class="card-body">
+                <h5 class="card-title">
+                    ✈
+                    <%= flight.code_airport_dep %> (
+                        <%= flight.dep_time %>) →
+                            <%= flight.code_airport_dest %> (
+                                <%= flight.arrival_time %>)
+                </h5>
+                <p class="card-text"><b>Compagnie :</b>
+                    <%= flight.company %>
+                </p>
+                <p class="card-text"><b>Prix : </b>
+                    <%= flight.price %>
+                </p>
+                <p class="card-text"><i>Encore
+        <%= flight.nb_seats %> places disponibles !</i>
+                </p>
+                <div class="form-group row">
+                    <label for="example-number-input" class="col-2 col-form-label">Nombre de passagers : </label>
+                    <div class="col-1">
+                        <input id="num-nb-passengers" class="form-control" type="number" value="1" min="1" max="<%= flight.nb_seats %>">
+                    </div>
+                </div>
+                <a id="btn-book" class="btn btn-primary" onclick="bookFlight('<%= flight.id %>')">Réserver</a>
+                <p id="book-message"></p>
+            </div>
+        </div>
+</body>
+
+</html>
