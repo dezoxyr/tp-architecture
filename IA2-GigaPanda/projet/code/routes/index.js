@@ -19,11 +19,11 @@ const userRoutes = require('./routes/reservation');
 
 router.get('/', (req, res, next) => {
     
-    res.send("GigaPanda Index");
+    //res.send("GigaPanda Index");
 
-    /*res.render('airport/index', { 
+    res.render('airport/index', { 
         title: 'La faille de la Galerie'
-    });*/
+    });
 });
 
 /*router.post('/reservation', (req, res, next) => {
