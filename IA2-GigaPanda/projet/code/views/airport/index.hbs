@@ -1,33 +1,204 @@
-<h1>AIRPORT CONNECT</h1>
 
-{{firstname}}
-{{lastname}}
+{{username}}
+{{password}}
 
-<head>
-    <meta charset="UTF-8">
-    <style type="text/css">
-      body
-      {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-    </style>
-  <title>Airports page</title>
-</head>
-<body>
+<html>
 
-<h2>Welcome to the airport page, you can choose a flight</h2>
-<br>
-<p>New York - Paris CDG</p>
- <input type="button" value="Choose this flight">
-<p>Paris CDG - New York</p>
-<input type="button" value="Choose this flight">
-<p>Detroit - Paris CDG</p>
-<input type="button" value="Choose this flight">
-<p>Paris CDG - Detroit</p>
-<input type="button" value="Choose this flight">
-<p>New York - Detroit</p>
-<input type="button" value="Choose this flight">
-<p>Detroit - New York</p>
-<input type="button" value="Choose this flight">
+ <style type="text/css">
 
-</body>
+*{ font-family: 'Open Sans', sans-serif;}
+body {
+      background: #ffffff ;
+}
+
+h1 {
+  margin: 70px;
+  color: rgb(15, 9, 9);
+  display: flex;
+  justify-content: center;
+}
+
+
+.content-table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+  align-self: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+ 
+}
+
+.content-table thead tr{
+  background-color: #076296;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+.content-table th, .content-table td{
+  padding: 12px 15px;
+}
+.content-table tbody tr{
+  border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even){
+  background-color: #f3f3f3;
+}
+.content-table tbody tr:last-of-type{
+  border-bottom: 2px solid #076296;
+}
+ .btn1{
+    background: #9bcae9 ;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #9bcae9  1px solid;
+    float:left;
+    font-weight:800;
+    font-size:0.8em;
+  }
+   .btn1:hover{
+    background: #9bcae9 ; 
+  }
+   .btn2{
+    background: #9bcae9 ;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #9bcae9  1px solid;
+    float:left;
+    font-weight:800;
+    font-size:0.8em;
+  }
+   .btn2:hover{
+    background: #9bcae9 ; 
+  }
+    .btn3{
+    background: #9bcae9 ;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #9bcae9  1px solid;
+    float:left;
+    font-weight:800;
+    font-size:0.8em;
+  }
+   .btn3:hover{
+    background: #9bcae9 ; 
+  }
+    .btn4{
+    background: #9bcae9 ;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #9bcae9  1px solid;
+    float:left;
+    font-weight:800;
+    font-size:0.8em;
+  }
+   .btn4:hover{
+    background: #9bcae9 ; 
+  }
+   .btn5{
+    background: #9bcae9 ;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #9bcae9  1px solid;
+    float:left;
+    font-weight:800;
+    font-size:0.8em;
+  }
+   .btn5:hover{
+    background: #9bcae9 ; 
+  }
+    .btn6{
+    background: #9bcae9 ;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #9bcae9  1px solid;
+    float:left;
+    font-weight:800;
+    font-size:0.8em;
+  }
+   .btn6:hover{
+    background: #9bcae9 ; 
+  }
+ 
+ 
+ 
+</style>
+  <head>
+    <title>Flights</title>
+     <h1>Choose a flight</h1>
+  </head>
+  <body>
+    
+</div>
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Departure</th>
+          <th>Destination</th>
+          <th>Airport Departure</th>
+          <th>Buy flight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paris</td>
+          <td>New York</td>
+          <td>CDG</td>
+          <td><button class="btn1">Choose</button></td>
+        </tr>
+        <tr>
+          <td>New York</td>
+          <td>Paris</td>
+          <td>JFK</td>
+          <td><button class="btn2">Choose</button></td>
+        </tr>
+        <tr>
+          <td>Paris</td>
+          <td>Detroit</td>
+          <td>CDG</td>
+          <td><button class="btn3">Choose</button></td>
+        </tr>
+        <tr>
+          <td>Detroit</td>
+          <td>Paris</td>
+          <td>DTW</td>
+          <td><button class="btn4">Choose</button></td>
+        </tr>
+        <tr>
+          <td>Detroit</td>
+          <td>New York</td>
+          <td>DTW</td>
+          <td><button class="btn5">Choose</button></td>
+        </tr>
+          <td>New York</td>
+          <td>Detroit</td>
+          <td>JFK</td>
+          <td><button class="btn6">Choose</button></td>
+      </tbody>
+    </table>
+  </body>
+</html>

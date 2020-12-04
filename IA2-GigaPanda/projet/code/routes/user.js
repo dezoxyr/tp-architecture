@@ -14,6 +14,7 @@ router.get('/', (req, res, next) => {
     res.redirect("/user/signin");
 });
 
+
 router.get('/signin', (req, res, next) => {
     
     //res.send("GigaPanda Sign In");
@@ -22,36 +23,39 @@ router.get('/signin', (req, res, next) => {
     })
 });
 
+
 router.post('/signin', (req, res, next) => {
     console.log(req);
-    let firstname = req.body.firstname;
-    let lastname = req.body.lastname;
+    let username = req.body.username;
+    let password = req.body.password;
 
     console.log('Got body:', req.body);
     //res.sendStatus(200);
-    console.log(firstname);
-    console.log(lastname);
+    console.log(username);
+    console.log(password);
     //res.json({firstname:firstname, lastname:lastname});
     res.render('airport/index', {
         title: 'Airport',
-        firstname: firstname,
-        lastname: lastname
+        username: username,
+        password: password
     })
 });
 
+
 router.post('/signin/panda', (req, res, next) => {
     console.log(req);
-    let firstname = req.query.firstname;
-    let lastname = req.query.lastname;
+    let username = req.query.username;
+    let password = req.query.password;
 
     console.log(req.body);
 
 
+
     //res.json({firstname:firstname, lastname:lastname});
     res.render('airport/index', {
         title: 'Airport',
-        firstname: firstname,
-        lastname: lastname
+        username: username,
+        password: password
     })
 });
 
