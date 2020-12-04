@@ -3,19 +3,7 @@
     width: 100%;
 
     a {
-        :hover {
-            text-decoration: none;
-        }
-        :visited {
-            text-decoration: none;
-        }
-        :active {
-            text-decoration: none;
-        }
-        :link {
-            text-decoration: none;
-        }
-        :focus {
+        &:hover,&:visited,&:active,&:focus,&:link {
             text-decoration: none;
         }
     }
