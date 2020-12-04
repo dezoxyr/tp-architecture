@@ -12,7 +12,8 @@
 <body>
     <div id="app">
         <v-app>
-            <v-data-table :headers="headers" :items="aeroports"></v-data-table>
+            <v-data-table :headers="headersAeroports" :items="aeroports"></v-data-table>
+            <v-data-table :headers="headersVols" :items="vols"></v-data-table>
         </v-app>
     </div>
 
@@ -24,9 +25,17 @@
             vuetify: new Vuetify(),
             data: {
                 aeroports: [],
-                headers: [
+                vols: [],
+                headersAeroports: [
                     {text: 'Ville', value: 'ville'},
                     {text: 'Code', value: 'code'}
+                ],
+                headersVols: [
+                    {text: 'Ville de Départ', value: 'depart.ville'},
+                    {text: 'Ville d\'Arrivée', value: 'arrivee.ville'},
+                    {text: 'Date de Départ', value: 'date_depart'},
+                    {text: 'Date d\'Arrivée', value: 'date_arrivee'},
+                    {text: 'Nombre de places disponibles', value: 'nombre_billets'}
                 ]
             },
             mounted: function(){
@@ -35,6 +44,12 @@
                     return response.json()
                 }).then((json) =>
                     this.aeroports = json //Pourquoi ça marche, on ne sait pas. function ne fonctionne pas
+                )
+                fetch("http://localhost:5000/vol/all")
+                .then(function(response){
+                    return response.json()
+                }).then((json) =>
+                    this.vols = json //Pourquoi ça marche, on ne sait pas. function ne fonctionne pas
                 )
             }
         })
