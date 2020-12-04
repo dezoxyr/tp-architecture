@@ -1,2 +1,5 @@
-.container-fluid
-    h1(align = "center") Test
+b-container
+    b-row.mt-5
+        b-card-group(deck)
+            b-card(bg-variant="primary" text-variant="white" header="Primary" class="text-center" v-for="flight in flightTickets" :key="flight")
+                b-card-text Hello World!
