@@ -29,11 +29,11 @@ Page de connexion :
 
 
 
-Modèle de données stockées :
+## Modèle de données stockées :
 
 ![](/SI-IAlsoHaveNoName/Projet/pres/image.png)
 
-Stack technique :
+## Stack technique :
 
 - Rendu visuel de l'API -> Python
 - Gestion de la base de données -> SQL (Php My Admin)
