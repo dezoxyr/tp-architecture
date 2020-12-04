@@ -21,7 +21,8 @@ window.onload = function() {
 			   	data:{'client': JSON.stringify(client), nouveau: nouveau},
 			   	success: function(rep){
 					result = JSON.parse(rep);
-			        	client[1] = result.liste_billets;
+					console.log(result);
+			        client[1] = result.liste_billets;
 					$('#Panier').prop("value", "Profil (" + client[1].length + ")");
 			    	},
 			    	error:function(err){

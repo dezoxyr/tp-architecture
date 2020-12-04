@@ -6,10 +6,11 @@ function creer_billets($aeroports){
 		$prix = rand (400 ,800);
 		$a1 = rand (0, 2);
 		$a2 = rand (0, 2);
+		$nbPlace = rand (1, 80);
 		while ($a1 == $a2) {
 	    	$a2 = rand (0, 2);
 		}
-	   	array_push($liste_billets, new Billet($aeroports[$a1]["code"], $aeroports[$a2]["code"], $prix,$i));	
+	   	array_push($liste_billets, new Billet($aeroports[$a1]["code"], $aeroports[$a2]["code"], $prix,$i, $nbPlace));	
 	}
 	return $liste_billets;
 }

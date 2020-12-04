@@ -4,19 +4,25 @@ class Billet
 	public $depart;
 	public $arrive;
 	public $prix;
+  public $nbPlace;
 	public $indice;
 
-	function __construct($depart, $arrive, $prix, $i)
+	function __construct($depart, $arrive, $prix, $i, $nbPlace)
    	{
        	$this->depart = $depart;
        	$this->arrive = $arrive;
        	$this->prix = $prix;
-    	$this->indice = $i;
+    	  $this->indice = $i;
+        $this->nbPlace = $nbPlace;
    	}
    	function get_indice()
    	{
     	return $this->indice;
    	}
+    function reservationVol()
+    {
+      $this->nbPlace = $this->nbPlace - 1;
+    }
 }
 
 class Client
