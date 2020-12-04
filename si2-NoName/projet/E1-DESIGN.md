@@ -16,4 +16,4 @@ Dans notre modele stocké on y trouve 4 tables.
 3 - La stack technique :
  - Data : php
  - Framework : slim
- - DevOps : gitHub, Visual Studio Code et VisualShare
+ - DevOps : gitHub, Visual Studio Code et LiveShare
