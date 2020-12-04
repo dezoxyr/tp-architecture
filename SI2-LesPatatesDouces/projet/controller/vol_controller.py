@@ -8,7 +8,7 @@ class VolController :
     def get_all(self):
         # TODO faire les check
         list_vol = []
-        for vol in self.bdd.get_list_aeroport():
-            list_aeroport.append(aeroport.to_dict())
+        for vol in self.bdd.get_list_vol():
+            list_vol.append(vol.to_dict())
 
-        return jsonify(list_aeroport) # Les met en forme pour la vue
+        return jsonify(list_vol) # Les met en forme pour la vue
