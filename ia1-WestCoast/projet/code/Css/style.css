@@ -24,7 +24,27 @@ body{
 /********************** Mise en forme des billets ****************************/
 #section_billets{
 	padding: 30px;
+	align-items: left;
+	display: flex;
+	flex-direction: column;
+}
+
+#section_achats{
+	padding: 30px;
 	align-items: center;
+	display: none;
+	flex-direction: column;
+}
+
+#title{
+	font-family: arial;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 1vw ;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 #billets{
@@ -134,10 +154,6 @@ transition: all 0.4s ease 0s;
 	text-align: center;
 }
 /*****************************************************************************/
-
-#section_achats{
-	display: none;
-}
 
 .button_rev{
 	display: none;
