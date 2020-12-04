@@ -1,4 +1,3 @@
-from BDD.bdd import BDD
 from flask import jsonify
 
 class VolController :

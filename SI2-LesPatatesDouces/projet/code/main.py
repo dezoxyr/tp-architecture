@@ -1,6 +1,6 @@
 from flask import Flask
-from controller.aeroport_controller import AeroportController
-from BDD.bdd import BDD
+from .BDD.bdd import BDD
+from .controller.aeroport_controller import AeroportController
 from flask_cors import CORS
 
 bdd = BDD()

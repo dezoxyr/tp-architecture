@@ -1,5 +1,5 @@
-from model.aeroport import Aeroport
-from model.vol import Vol
+from ..model.aeroport import Aeroport
+from ..model.vol import Vol
 
 
 class BDD:
