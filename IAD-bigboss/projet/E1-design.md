@@ -1,4 +1,4 @@
-#Contraintes
+# Contraintes
 
 * Le client doit avoir accès aux Vols disponibles
 	* Comment voir les vols disponibles ? 
@@ -8,7 +8,7 @@
 	* Qui réserve combien de vols et lesquels ? 
 	* Comment va-t-il faire pour consulter ses réservations ? 
 
-#Implications 
+# Implications 
 
 - La plupart de ces questions impliquent l'existence d'une identification client 
 -> Espace de connexion/déconnexion
