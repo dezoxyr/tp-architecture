@@ -1,5 +1,7 @@
 b-container
     b-row.mt-5
-        b-card-group(deck)
-            b-card(bg-variant="primary" text-variant="white" header="Primary" class="text-center" v-for="flight in flightTickets" :key="flight")
-                b-card-text Hello World!
+        b-card-group(deck v-for="index in flights.length % 4")
+            b-card(bg-variant="primary" text-variant="white" :header="flight.code" :class="'flights-' + $store.state.theme" v-for="(flight,index) in flights" :key="flight.id").text-center
+                b-card-text Departure: {{ flight.departureAirport.name }} {{ flight.departureAirport.code }}
+                b-card-text Arrival: {{ flight.arrivalAirport.name }} {{ flight.arrivalAirport.code }}
+                b-card-text Departure date: {{ flight.dateDeparture }}

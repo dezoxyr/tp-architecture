@@ -3,7 +3,7 @@ export default {
     name: 'Home',
     data: function() {
         return {
-            flightTickets: []
+            flights: []
         }
     },
     computed: {
@@ -14,9 +14,11 @@ export default {
             this.$store.commit('updateTheme', value)
         }
     },
-    mounted:() => {
+    mounted: function() {
         this.$axios.get("/flight-ticket/").then((response)=>{
-            console.log(response)
+            // console.log(response)
+            this.flights = response.data
+            console.log(this.flights)
         }).catch((error) => {
             console.log(error)
         })
