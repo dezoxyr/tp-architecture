@@ -6,9 +6,15 @@ Page d'acceuil :
 
 - Affiche les vols disponibles en son centre, avec le nombre de billets restants.
 - Contient une barre de recherche pour trouver le vol souhaité.
+- Permet de selectionner un vol et de passer à la page de réservation.
 - Possibilité de se connecter à son compte via un bouton « se connecter ».
-- Possibilité de se crée un compte via un bouton « s&#39;inscrire ».
+- Possibilité de se crée un compte via un bouton « s'inscrire ».
 - Si déjà connecté, possibilité de se déconnecter.
+
+Page de réservation du billet :
+
+- Affiche les informations sur le billet.
+- Permet d'acheter un billet.
 
 Page d'inscription :
 
@@ -21,20 +27,14 @@ Page de connexion :
 - Connecte un utilisateur à sa session.
 - Accessible depuis toutes les pages lorsque l'on n'est pas connecté.
 
-Page utilisateur :
 
--
-
-Page d'achat :
-
--
 
 Modèle de données stockées :
 
-![](/Users/nathan/Documents_Session/ETUDES/ESIEA/Programmation Distib/image.png)
+![]()
 
 Stack technique :
 
 - Rendu visuel de la page web -> HTML/CSS
-- Gestion de la base donnée -> SQL (Php My Admin)
-- Fonctionnalités et interaction avec la base de données -> php
+- Gestion de la base de données -> SQL (Php My Admin)
+- Fonctionnalités et interaction avec la base de données -> PHP
