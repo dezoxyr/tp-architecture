@@ -1,7 +1,7 @@
 Architecture : 
 modele MVC 
 
-![Screenshot](MVC.PNG)
+![Screenshot](MCV.PNG)
 
 
 
