@@ -27,7 +27,11 @@ public class FlightTicketService {
     private AirportRepository airportRepository;
 
     public List<FlightTicket> findAllAvailableFlights() {
-        return flightTicketRepository.findAll().stream().filter(flightTicket -> flightTicket.isAvailable()).collect(Collectors.toList());
+        return flightTicketRepository.findAll()
+                .stream()
+                .filter(flightTicket -> flightTicket.isAvailable())
+                .sorted((o1, o2) -> o1.getId().compareTo(o2.getId()))
+                .collect(Collectors.toList());
     }
 
     /**

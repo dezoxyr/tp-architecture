@@ -48,6 +48,25 @@ public class FlightTicketController {
         flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
         flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
         flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
     }
 
     @GetMapping("/")
