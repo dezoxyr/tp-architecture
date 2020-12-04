@@ -24,6 +24,7 @@ export default {
                     obj.$session.start()
                     var token = response.data['token']
                     obj.$session.set('Token', token)
+                    //obj.$store.updateLoggedState('true');
                 } else {
                     console.log("error")
                 }
