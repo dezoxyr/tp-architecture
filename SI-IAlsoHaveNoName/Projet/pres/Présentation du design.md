@@ -35,6 +35,6 @@ Modèle de données stockées :
 
 Stack technique :
 
-- Rendu visuel de la page web -> HTML/CSS
+- Rendu visuel de l'API -> Python
 - Gestion de la base de données -> SQL (Php My Admin)
-- Fonctionnalités et interaction avec la base de données -> PHP
+- Fonctionnalités et interaction avec la base de données -> Python
