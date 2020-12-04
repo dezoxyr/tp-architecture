@@ -1,1 +1,1 @@
-![alt text](../../images/Capture d’écran 2020-12-04 à 17.27.38.png)
+![alt text](https://raw.githubusercontent.com/K0RBEY/tp-architecture-1/IA-AVENGERS/images/Capture%20d’écran%202020-12-04%20à%2017.31.58.png)
