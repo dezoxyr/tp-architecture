@@ -14,6 +14,6 @@ Pour ce projet nous avons décidé de prendre une architecture 3-tiers, voici le
 Dans notre modele stocké on y trouve 4 tables.
 
 3 - La stack technique :
- - Data : php
+ - Application et Data : php, html, css, MySQL, JavaScript, Ajax
  - Framework : slim
  - DevOps : gitHub, Visual Studio Code et LiveShare
