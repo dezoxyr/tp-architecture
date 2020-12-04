@@ -1,6 +1,6 @@
 1 -  L'architecture globale : 
 
-![alt text](architecture_globale.png)
+![alt text](architecture_globale.PNG)
 
 Pour ce projet nos avons décidé de prendre une architecture 3-tiers, voici les 3 parties :
 - On aura une interface plus ou moins élaboré pour le front-end.
