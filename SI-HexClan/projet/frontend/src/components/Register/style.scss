@@ -2,9 +2,5 @@
 @import "node_modules/bootstrap-vue/src/index.scss";
 
 #b-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 100vh;
+    width: 500px;
 }

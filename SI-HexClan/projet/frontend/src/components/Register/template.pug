@@ -1,5 +1,6 @@
 b-container(id="b-container").pt-3
-    b-row
+    div.p-5.border.border-dark
+        h2 Register
         b-form(@submit="onSubmit" reset="onReset")
             b-form-group(id="input-group-1" label="Email address:" label-for="input-1" description="We'll never share your email with anyone else.")
                 b-form-input(id="input-1" v-model="form.email" type="email" required placeholder="Enter email")

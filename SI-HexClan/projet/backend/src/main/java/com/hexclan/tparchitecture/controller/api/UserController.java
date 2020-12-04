@@ -36,6 +36,10 @@ public class UserController {
         String password = (String) request.get("password");
         String email = (String) request.get("email");
 
+        if (username.equals("") || password.equals("") || email.equals("")) {
+            throw new BadRequestException("Username, email and password must be provided");
+        }
+
         return new ResponseEntity<>(userService.register(username, email, password), HttpStatus.CREATED);
     }
 

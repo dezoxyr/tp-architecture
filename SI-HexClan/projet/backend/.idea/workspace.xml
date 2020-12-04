@@ -29,9 +29,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c1318019-e9ce-499c-bc37-db310a8ce79d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/controller/api/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hexclan/tparchitecture/security/SecurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Register/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Register/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/insomnia.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/insomnia.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Register/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Register/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Register/template.pug" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Register/template.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
