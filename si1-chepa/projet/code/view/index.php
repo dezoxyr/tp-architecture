@@ -4,7 +4,7 @@
 	require_once __DIR__ . '/db.class.php';
 	$DB = new DB();
 
-	$Vols = $DB->query('SELECT * FROM Vol');
+	$vols = $DB->query('SELECT * FROM vol');
 
 	echo "<table>";
 		echo "<tr>";
@@ -22,13 +22,13 @@
 		echo "</td>";
 
 		echo "<td>";
-		echo "Prix";
+		echo "Nom";
 		echo "</td>";
 
 
 		echo "</tr>";
 
-	foreach ($Vols as $Vol) {
+	foreach ($vols as $vol) {
 
 		echo "<tr>";
 
@@ -41,17 +41,17 @@
 		echo "</td>";
 
 		echo "<td>";
-		echo $vol->A_Arrivee;
+		echo $vol->A_Arrive;
 		echo "</td>";
 
 		echo "<td>";
-		echo $vol->B_Vol;
+		echo $vol->V_Nom;
 		echo "</td>";
 
-		$acteurs = $DB->query('SELECT jouer_par.ID_Act As Id, acteur.A_Nom FROM jouer_par JOIN acteur ON jouer_par.ID_Act = acteur.ID_Act WHERE jouer_par.ID_Film =:id', array('id' => $film->ID_Film));
+		$billets = $DB->query('SELECT billet.Id_Vol As Id, B_Prix FROM billet JOIN vol ON billet.Id_Vol = vol.Id_Vol');
 		echo "<td>";
-		foreach ($acteurs as $acteur) {
-			echo "<a href='/FILM/Acteur.php?id=$acteur->Id'>$acteur->A_Nom</a>";
+		foreach ($billets as $billet) {
+			echo "<a href='/FILM/Acteur.php?id=$billet->Id'>$billet->V_Nom</a>";
 			echo " ; ";
 		}
 		echo "</td>";
