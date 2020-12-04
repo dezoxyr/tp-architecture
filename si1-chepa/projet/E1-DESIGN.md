@@ -1,3 +1,11 @@
+Architecture : 
+modele MVC 
+
+![Screenshot](MVC.PNG)
+
+
+
+
 MCD : 
 ![Screenshot](MCD_MLD.PNG)
 
