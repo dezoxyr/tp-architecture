@@ -25,19 +25,25 @@ router.get('/signin', (req, res, next) => {
 
 
 router.post('/signin', (req, res, next) => {
-    console.log(req);
-    let username = req.body.username;
-    let password = req.body.password;
+    //console.log(req);
+    //let username = req.body.username;
+   // let password = req.body.password;
 
-    console.log('Got body:', req.body);
+   // console.log(req.body);
     //res.sendStatus(200);
-    console.log(username);
-    console.log(password);
+    //console.log(username);
+    //console.log(password);
     //res.json({firstname:firstname, lastname:lastname});
     res.render('airport/index', {
         title: 'Airport',
-        username: username,
-        password: password
+        //username: username,
+       // password: password
+    })
+});
+
+router.get('/account', (req, res, next) => {
+    res.render('users/account', {
+        title: 'Account',
     })
 });
 
