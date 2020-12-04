@@ -2,8 +2,7 @@ package api.controller;
 
 import classes.Company;
 import classes.Flight;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -38,4 +37,15 @@ public class FlightController {
 
         return flights;
     }
+
+    /*@RequestMapping(method = RequestMethod.POST, value="/reservation")
+    public String getReservation() {
+        return "coucou";
+    }*/
+
+   /* @GetMapping("/reservation")
+    public String getReservation() {
+        return "coucou";
+    }*/
+
 }
