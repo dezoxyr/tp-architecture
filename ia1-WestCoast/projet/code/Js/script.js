@@ -26,7 +26,7 @@ window.onload = function() {
 					if (result.chgt !== undefined){
 			       			 client[1] = result.liste_billets;
 						liste_billets[nouveau]["nbPlace"] = result.chgt;
-
+						$('#'+nouveau+' span').text(result.chgt);	
 						console.log(liste_billets[nouveau]["nbPlace"]);
 						$('#Panier').prop("value", "Profil (" + client[1].length + ")");
 			    		}
@@ -100,7 +100,7 @@ window.onload = function() {
 	        	
 	        $.each(result, function(i, val) {
 	        	console.log(rep);
-		        $('#billets').append("<div id='"+i+"' class='billet'>"+val['depart']+ " - " + val['arrive'] + " " + val['prix'] + "</div>");
+		        $('#billets').append("<div id='"+i+"' class='billet'>"+val['depart']+ " - " + val['arrive'] + " " + val['prix'] + "</br>Place(s) restante(s) <span>" +val['nbPlace']+"</span></div>");
 		    });
 	        if(result.length > 0){
 	            $('#billets').show();
