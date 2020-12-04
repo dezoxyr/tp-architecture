@@ -1,18 +1,8 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Dec  2 20:48:58 2020
-
-@author: Hamza
-"""
 
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 import DB_Connector as DB 
-"""
-http://localhost:5000/billets
-http://localhost:5000/users
-http://127.0.0.1:5000/users?Nom=NOM_TEST&Prenom=Prenom_TEST
-"""
 
 class Billet(Resource):
     def get(self):
@@ -45,8 +35,6 @@ api = Api(app)
 
 api.add_resource(Users, '/users')  
 api.add_resource(Billet, '/billets') 
-
-
 
 app.run()
 #Connection.Close()
