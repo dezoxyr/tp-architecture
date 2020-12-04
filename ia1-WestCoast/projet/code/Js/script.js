@@ -15,16 +15,22 @@ window.onload = function() {
 		$(document).on('click','.billet', function()
 		{
 			var nouveau = $(this).attr("id");
+			console.log(liste_billets[nouveau]["nbPlace"]);
    			$.ajax({
 			   	type: 'POST',
 			   	url:'Php/achat.php',
-			   	data:{'client': JSON.stringify(client), nouveau: nouveau},
+			   	data:{'client': JSON.stringify(client), nouveau: nouveau, liste: JSON.stringify(liste_billets)},
 			   	success: function(rep){
 					result = JSON.parse(rep);
-					console.log(result);
-			        client[1] = result.liste_billets;
-					$('#Panier').prop("value", "Profil (" + client[1].length + ")");
-			    	},
+					console.log(result.chgt);
+					if (result.chgt !== undefined){
+			       			 client[1] = result.liste_billets;
+						liste_billets[nouveau]["nbPlace"] = result.chgt;
+
+						console.log(liste_billets[nouveau]["nbPlace"]);
+						$('#Panier').prop("value", "Profil (" + client[1].length + ")");
+			    		}
+				},
 			    	error:function(err){
 			        	alert("erreur ! "+JSON.stringify(err)) ;
 			        	$('#billets').hide();
