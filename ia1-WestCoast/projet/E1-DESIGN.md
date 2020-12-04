@@ -15,5 +15,5 @@ Nous avons décidé d'utiliser une architecture 3-tiers:
 ![alt text](UML.PNG)
   
 3 - La stack technique :
-  - Application et data : html, css, jquery, php, javascript, MySQL, Json, Ajax
+  - Application et data : html, css, jquery, php, MySQL
   - DevOps : github
