@@ -3,7 +3,11 @@
 <img src="https://raw.githubusercontent.com/K0RBEY/tp-architecture-1/IA-AVENGERS/images/Capture%20d’écran%202020-12-04%20à%2017.31.58.png">
 <h1>Le modèle de données stockées</h1>
 <br>
+<img src="https://raw.githubusercontent.com/K0RBEY/tp-architecture-1/IA-AVENGERS/images/Capture%20d’écran%202020-12-04%20à%2017.27.38.png">
+<br>
 <h1>La stack technique</h1>
+<br>
+<img src="https://raw.githubusercontent.com/K0RBEY/tp-architecture-1/IA-AVENGERS/images/Capture%20d’écran%202020-12-04%20à%2017.31.39.png">
 <br>
 <p>Concernant la stack technique et le modèle de données stockées:<br>
 	- UI: Nous allons utiliser l'HTML qui est le langage conçu pour représenter les pages webs (c'est le standard dans ce domaine, donc un must-have pour ce projet). Ensuite nous allons utiliser javascript, pour rendre notre page web dynamique (nous n'excluons pas d'utiliser des bibliothèques JavaScript telles que JQuery). Enfin nous allons utiliser du php, notamment pour faire les appels API.<br>
