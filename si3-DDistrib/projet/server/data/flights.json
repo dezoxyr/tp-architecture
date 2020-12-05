@@ -1,0 +1,62 @@
+[
+	{
+		"id": 1,
+		"from": "New York",
+		"to": "Charles de Gaulle (Paris)",
+		"price": 500,
+		"date": "01/01/2021",
+		"departure_time": "10h00",
+		"arrival_time": "18h00",
+		"seats_count": 80
+	},
+	{
+		"id": 2,
+		"from": "Charles de Gaulle (Paris)",
+		"to": "New York",
+		"price": 800,
+		"date": "15/01/2021",
+		"departure_time": "10h00",
+		"arrival_time": "18h00",
+		"seats_count": 80
+	},
+	{
+		"id": 3,
+		"from": "Detroit",
+		"to": "New York",
+		"price": 250,
+		"date": "15/01/2021",
+		"departure_time": "10h00",
+		"arrival_time": "14h15",
+		"seats_count": 80
+	},
+	{
+		"id": 4,
+		"to": "Detroit",
+		"from": "New York",
+		"price": 250,
+		"date": "18/01/2021",
+		"departure_time": "10h00",
+		"arrival_time": "14h15",
+		"seats_count": 80
+	},
+	{
+		"id": 5,
+		"from": "Detroit",
+		"to": "Charles de Gaulle (Paris)",
+		"price": 900,
+		"date": "19/01/2021",
+		"departure_time": "10h00",
+		"arrival_time": "19h00",
+		"seats_count": 80
+	},
+	{
+		"id": 6,
+		"from": "Charles de Gaulle (Paris)",
+		"to": "Detroit",
+		"price": 900,
+		"date": "10/01/2021",
+		"departure_time": "10h00",
+		"arrival_time": "19h00",
+		"seats_count": 80
+	}
+]

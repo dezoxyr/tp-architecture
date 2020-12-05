@@ -11,16 +11,18 @@ Le server NodeJS contient Express, une Interface API REST. Elle va gérer les re
 La base de données dans notre cas est uniquement fais de fichiers locaux en JSON qui seront mis à jours avec Express.
 
 
-## Modèle de donnéepngs de stockage
+## Modèle de données de stockage
 <img src="./assets/data_model.png" with="100px" />
 La base de données a été créé dans l'optique d'être intégré à une base de données relationnelle.
 
 
 ## Définition du stack technique
-- NodeJS : Server
-- Express : Interface API
-- Database : fichier JSON
-- Python : Interface Graphique client
+- NodeJS 
+- ExpressJS
+- MySQL
+- ReactJS
 
 ## Démonstration
-- node server.js
+- node server.js	-- lancer l'API 
+- cd ./projet/client/si3-ddistrib-client 	-- se déplacer dans le repertoire client
+- nmp start		-- lancer l'interface client

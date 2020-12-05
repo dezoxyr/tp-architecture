@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/site.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+	    <script src="./js/manageHomeView.js"></script>
+        <div>
+            <div class="gauche">
+                <h1>Chercher un billet :</h1>
+                <!-- *********************************************************** -->
+                <div class="recherche">
+                    <form action="" method="GET">
+                        <label for="depuis">Depuis :</label>
+                        <select id="rechercheFrom">
+						<option id="from_Tous" value="Tous">Tous</option>
+						<option id="from_Charles_de_Gaulle_(Paris)" value="Charles_de_Gaulle_(Paris)">Charles de Gaulle</option>
+						<option id="from_New_York" value="New_York">New York</option>
+						<option id="from_Detroit" value="Detroit">Detroit</option>
+                        </select>
+                        <label for="vers">vers :</label>
+                       <select id="rechercheTo">
+						<option id="to_Tous" value="Tous">Tous</option>
+						<option id="to_Charles_de_Gaulle_(Paris)" value="Charles_de_Gaulle_(Paris)">Charles de Gaulle</option>
+						<option id="to_New_York" value="New_York">New York</option>
+						<option id="to_Detroit" value="Detroit">Detroit</option>
+                       </select>
+                       <input type="button" value="Rechercher" onclick="rechercheButtonAction()"></input>
+                    </form>
+                </div>
+                <!-- *********************************************************** -->
+
+                <!-- *********************************************************** -->
+                <div id="lesBillets">
+                    
+                </div>
+                <!-- *********************************************************** -->
+            </div>
+            
+            <div class="droite">
+                <h1>Mes billets :</h1>
+                <div id="mesBillets">
+
+			 </div>
+		  </div> 
+		  <script>
+			  printBillets();
+			  initDestLabels();
+		  </script>
+        </div>
+    </body>
+</html>

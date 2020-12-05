@@ -1,0 +1,56 @@
+
+.gauche {
+    width: 65%;
+    height: 100%;
+    float: left;
+    background-color: bisque;
+}
+.droite {
+    width: 25%;
+    height: 100%;
+    float: right;
+    background-color: aqua;
+}
+
+.recherche {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.billet {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: darksalmon;
+}
+
+.textArea {
+    background-color: aquamarine;
+    float: left;
+}
+.price {
+    background-color: cornflowerblue;
+    text-align: center;
+}
+
+.addButton {
+    background-color: darkorange;
+    float: right;
+}
+
+.billetClientTopPrice {
+    float: right;
+}
+
+.billetClient {
+    background-color: red;
+    border-color: black;
+    padding: 10px;
+}
+
+.billetClient2 {
+    background-color: green;
+    border-color: black;
+    padding: 10px;
+}
