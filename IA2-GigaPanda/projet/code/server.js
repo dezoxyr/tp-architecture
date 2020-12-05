@@ -35,13 +35,19 @@ app.use((req, res, next) => {
     next();
 });
 
+
+/**
+ * Server using
+ */
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
 
-app.use(express.static(path.join(__dirname, 'public/')));
+//app.use(flash());
+//app.use(express.static(path.join(__dirname, 'public/')));
+
 
 /**
  * Catch 404 Error and Forward to Error Handler
