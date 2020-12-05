@@ -1,204 +1,144 @@
+<p id="firstname">{{firstname}}</p>
+<p id="lastname">{{lastname}}</p>
 
-{{username}}
-{{password}}
+<style type="text/css">
 
-<html>
-
- <style type="text/css">
-
-*{ font-family: 'Open Sans', sans-serif;}
-body {
-      background: #ffffff ;
-}
-
-h1 {
-  margin: 70px;
-  color: rgb(15, 9, 9);
-  display: flex;
-  justify-content: center;
-}
-
-
-.content-table{
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
-  align-self: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
- 
-}
-
-.content-table thead tr{
-  background-color: #076296;
-  color: white;
-  text-align: left;
-  font-weight: bold;
-}
-.content-table th, .content-table td{
-  padding: 12px 15px;
-}
-.content-table tbody tr{
-  border-bottom: 1px solid #dddddd;
-}
-.content-table tbody tr:nth-of-type(even){
-  background-color: #f3f3f3;
-}
-.content-table tbody tr:last-of-type{
-  border-bottom: 2px solid #076296;
-}
- .btn1{
-    background: #9bcae9 ;
-    width:125px;
-    padding-top:5px;
-    padding-bottom:5px;
-    color:white;
-    border-radius:4px;
-    border: #9bcae9  1px solid;
-    float:left;
-    font-weight:800;
-    font-size:0.8em;
-  }
-   .btn1:hover{
-    background: #9bcae9 ; 
-  }
-   .btn2{
-    background: #9bcae9 ;
-    width:125px;
-    padding-top:5px;
-    padding-bottom:5px;
-    color:white;
-    border-radius:4px;
-    border: #9bcae9  1px solid;
-    float:left;
-    font-weight:800;
-    font-size:0.8em;
-  }
-   .btn2:hover{
-    background: #9bcae9 ; 
-  }
-    .btn3{
-    background: #9bcae9 ;
-    width:125px;
-    padding-top:5px;
-    padding-bottom:5px;
-    color:white;
-    border-radius:4px;
-    border: #9bcae9  1px solid;
-    float:left;
-    font-weight:800;
-    font-size:0.8em;
-  }
-   .btn3:hover{
-    background: #9bcae9 ; 
-  }
-    .btn4{
-    background: #9bcae9 ;
-    width:125px;
-    padding-top:5px;
-    padding-bottom:5px;
-    color:white;
-    border-radius:4px;
-    border: #9bcae9  1px solid;
-    float:left;
-    font-weight:800;
-    font-size:0.8em;
-  }
-   .btn4:hover{
-    background: #9bcae9 ; 
-  }
-   .btn5{
-    background: #9bcae9 ;
-    width:125px;
-    padding-top:5px;
-    padding-bottom:5px;
-    color:white;
-    border-radius:4px;
-    border: #9bcae9  1px solid;
-    float:left;
-    font-weight:800;
-    font-size:0.8em;
-  }
-   .btn5:hover{
-    background: #9bcae9 ; 
-  }
-    .btn6{
-    background: #9bcae9 ;
-    width:125px;
-    padding-top:5px;
-    padding-bottom:5px;
-    color:white;
-    border-radius:4px;
-    border: #9bcae9  1px solid;
-    float:left;
-    font-weight:800;
-    font-size:0.8em;
-  }
-   .btn6:hover{
-    background: #9bcae9 ; 
-  }
- 
- 
- 
+    * { 
+        font-family: 'Open Sans', 
+        sans-serif;
+    }
+    body {
+        background: #ffffff ;
+    }
+    h1 {
+        margin: 70px;
+        color: rgb(15, 9, 9);
+        display: flex;
+        justify-content: center;
+    }
+    .content-table{
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+        align-self: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .content-table thead tr{
+        background-color: #076296;
+        color: white;
+        text-align: left;
+        font-weight: bold;
+    }
+    .content-table th, .content-table td{
+        padding: 12px 15px;
+    }
+    .content-table tbody tr{
+        border-bottom: 1px solid #dddddd;
+    }
+    .content-table tbody tr:nth-of-type(even){
+        background-color: #f3f3f3;
+    }
+    .content-table tbody tr:last-of-type{
+        border-bottom: 2px solid #076296;
+    }
+    .btn{
+        background: #9bcae9 ;
+        width:125px;
+        padding-top:5px;
+        padding-bottom:5px;
+        color:white;
+        border-radius:4px;
+        border: #9bcae9  1px solid;
+        float:left;
+        font-weight:800;
+        font-size:0.8em;
+    }
+    .btn:hover{
+        background: #9bcae9 ; 
+    }
 </style>
-  <head>
-    <title>Flights</title>
-     <h1>Choose a flight</h1>
-  </head>
-  <body>
-    
-</div>
-    <table class="content-table">
-      <thead>
+
+<h1>Choose a flight</h1>
+
+<table class="content-table">
+    <thead>
         <tr>
-          <th>Departure</th>
-          <th>Destination</th>
-          <th>Airport Departure</th>
-          <th>Buy flight</th>
+            <th>Departure</th>
+            <th>Destination</th>
+            <th>Airport Departure</th>
+            <th>Buy flight</th>
         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Paris</td>
-          <td>New York</td>
-          <td>CDG</td>
-          <td><button class="btn1">Choose</button></td>
-        </tr>
-        <tr>
-          <td>New York</td>
-          <td>Paris</td>
-          <td>JFK</td>
-          <td><button class="btn2">Choose</button></td>
-        </tr>
-        <tr>
-          <td>Paris</td>
-          <td>Detroit</td>
-          <td>CDG</td>
-          <td><button class="btn3">Choose</button></td>
-        </tr>
-        <tr>
-          <td>Detroit</td>
-          <td>Paris</td>
-          <td>DTW</td>
-          <td><button class="btn4">Choose</button></td>
-        </tr>
-        <tr>
-          <td>Detroit</td>
-          <td>New York</td>
-          <td>DTW</td>
-          <td><button class="btn5">Choose</button></td>
-        </tr>
-          <td>New York</td>
-          <td>Detroit</td>
-          <td>JFK</td>
-          <td><button class="btn6">Choose</button></td>
-      </tbody>
-    </table>
-  </body>
-</html>
+    </thead>
+    <tbody>
+        <form action="/airport" method="post">
+
+            <input id="megafirstname" name="megafirstname" type="hidden" value="{{firstname}}">
+            <input id="megalastname" name="megalastname" type="hidden" value="{{lastname}}">
+            
+            <tr>
+                <td id="departure" name="departure" type="text" value="Paris">Paris</td>
+                <td id="destination" name="destination" type="text" value="New York">New York</td>
+                <td id="code" name="code" type="text" value="CDG">CDG</td>
+
+                
+                <td>
+                    <input id="btn1" type="submit" value="Choose" class="btn"/>
+                </td>
+            </tr>
+        </form>
+
+        <form action="/airport" method="post">
+            <tr>
+                <td id="departure" name="departure" type="text" value="New York">New York</td>
+                <td id="destination" name="destination" type="text" value="Paris">Paris</td>
+                <td id="code" name="code" type="text" value="JFK">JFK</td>
+                <td><input id="btn2" type="submit" value="Choose" class="btn"/></td>
+            </tr>
+        </form>
+
+
+        <form action="/airport" method="post">
+            <tr>
+                <td id="departure" name="departure" type="text" value="Paris">Paris</td>
+                <td id="destination" name="destination" type="text" value="Detroit">Detroit</td>
+                <td id="code" name="code" type="text" value="CDG">CDG</td>
+                <td><input id="btn3" type="submit" value="Choose" class="btn"/></td>
+            </tr>
+        </form>
+
+        <form action="/airport" method="post">
+            <tr>
+                <td id="departure" name="departure" type="text" value="Detroit">Detroit</td>
+                <td id="destination" name="destination" type="text" value="Paris">Paris</td>
+                <td id="code" name="code" type="text" value="DTW">DTW</td>
+                <td><input id="btn4" type="submit" value="Choose" class="btn"/></td>
+            </tr>
+        </form>
+
+        <form action="/airport" method="post">
+            <tr>
+                <td id="departure" name="departure" type="text" value="Detroit">Detroit</td>
+                <td id="destination" name="destination" type="text" value="New York">New York</td>
+                <td id="code" name="code" type="text" value="DTW">DTW</td>
+                <td><input id="btn5" type="submit" value="Choose" class="btn"/></td>
+            </tr>
+        </form>
+
+        <form action="/airport" method="post">
+            <tr>
+                <td id="departure" name="departure" type="text" value="New York">New York</td>
+                <td id="destination" name="destination" type="text" value="Detroit">Detroit</td>
+                <td id="code" name="code" type="text" value="JFK">JFK</td>
+                <td><input id="btn6" type="submit" value="Choose" class="btn"/></td>
+            </tr>
+        </form>
+        
+    </tbody>
+</table>

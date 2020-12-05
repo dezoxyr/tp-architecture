@@ -16,8 +16,7 @@ router.get('/', (req, res, next) => {
 
 
 router.get('/signin', (req, res, next) => {
-    
-    //res.send("GigaPanda Sign In");
+
     res.render('users/signin', {
         title: 'hello'
     })
@@ -26,20 +25,10 @@ router.get('/signin', (req, res, next) => {
 
 router.post('/signin', (req, res, next) => {
     console.log(req.body);
-    //let username = req.body.username;
-   // let password = req.body.password;
-
-   // console.log(req.body);
-    //res.sendStatus(200);
-    //console.log(username);
-    //console.log(password);
-    //res.json({firstname:firstname, lastname:lastname});
-    res.render('airport/index', {
-        title: 'Airport',
-        username: req.body.username,
-        password: req.body.password
-    })
+    
+    return res.redirect('/airport/'+req.body.firstname+'&'+req.body.lastname);
 });
+
 
 router.get('/account', (req, res, next) => {
     res.render('users/account', {
@@ -48,21 +37,28 @@ router.get('/account', (req, res, next) => {
 });
 
 
-router.post('/signin/panda', (req, res, next) => {
-    console.log(req);
-    let username = req.query.username;
-    let password = req.query.password;
+router.get('/billet/:id', (req, res, next) => {
+    console.log(req.params.id)
 
-    console.log(req.body);
+    let airport = [
+        {departure:'Paris', destination:'New York', code:'CDG'},
+        {departure:'New York', destination:'Paris', code:'JFK'},
+        {departure: 'Paris', destination:'Detroit', code:'CDG'},
+        {departure: 'Detroit', destination:'Paris', code:'DTW'},
+        {departure: 'Detroit', destination:'New York', code:'DTW'},
+        {departure: 'New York', destination:'Detroit', code:'JFK'}
+    ]
+    console.log(req.query)
 
-
-
-    //res.json({firstname:firstname, lastname:lastname});
-    res.render('airport/index', {
-        title: 'Airport',
-        username: username,
-        password: password
+    res.render('users/billet', {
+        title: 'Billet réservé ! 🐼',
+        firstname: req.query.firstname,
+        lastname: req.query.lastname,
+        departure: airport[req.params.id-1].departure,
+        destination: airport[req.params.id-1].destination,
+        code: airport[req.params.id-1].code,
     })
 });
+
 
 module.exports = router;
