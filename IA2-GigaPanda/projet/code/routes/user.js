@@ -25,7 +25,7 @@ router.get('/signin', (req, res, next) => {
 
 
 router.post('/signin', (req, res, next) => {
-    //console.log(req);
+    console.log(req.body);
     //let username = req.body.username;
    // let password = req.body.password;
 
@@ -36,8 +36,8 @@ router.post('/signin', (req, res, next) => {
     //res.json({firstname:firstname, lastname:lastname});
     res.render('airport/index', {
         title: 'Airport',
-        //username: username,
-       // password: password
+        username: req.body.username,
+        password: req.body.password
     })
 });
 
