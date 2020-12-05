@@ -186,6 +186,8 @@ app.post('/bookings', (req, res) => {
         id_user: user.id_user,
         booking_date: booking_date
     });
+
+    flight.tickets -= 1
     res.status(200).send();
 });
 
