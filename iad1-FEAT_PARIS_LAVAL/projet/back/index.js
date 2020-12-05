@@ -1,5 +1,6 @@
 const express = require('express');
 const joi = require('joi');
+const cors = require('cors');
 
 const app = express();
 
@@ -40,7 +41,7 @@ const FLIGHTS = [
         id_flight: 2,
         id_airport_source: 1,
         id_airport_destination: 3,
-        flight_date : new Date(2028, 11, 24, 10, 33, 30, 0),
+        flight_date : new Date(2028, 9, 11, 10, 33, 30, 0),
         price: 125,
         tickets : 128
     },
@@ -48,7 +49,7 @@ const FLIGHTS = [
         id_flight: 3,
         id_airport_source: 2,
         id_airport_destination: 3,
-        flight_date : new Date(2028, 11, 24, 10, 33, 30, 0),
+        flight_date : new Date(2023, 8, 24, 10, 33, 30, 0),
         price: 200, 
         tickets : 5000
     }
@@ -82,6 +83,7 @@ function findUserByMail(mail) {
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 //Récupérer utilisateur
 app.get('/users', (req,res) => {
@@ -133,7 +135,7 @@ app.get('/bookings', (req, res) => {
     if (!input.error) {
         const mail = input.value.mail;
         const user = findUserByMail(mail);
-        console.log(user);
+        
         if (user != null) {
             const bookings = BOOKINGS
                              .filter(b => b.id_user === user.id_user)
@@ -144,11 +146,10 @@ app.get('/bookings', (req, res) => {
             let ret = []
             bookings.forEach(e => {
                 ret.push({
-                    airport_source : AIRPORTS.find(i => i.id_airport === e.flight.id_airport_source).name,
-                    airport_destination : AIRPORTS.find(i => i.id_airport === e.flight.id_airport_destination).name,
+                    airport_source : AIRPORTS.find(i => i.id_airport === e.flight.id_airport_source),
+                    airport_destination : AIRPORTS.find(i => i.id_airport === e.flight.id_airport_destination),
                     flight_date: e.flight.flight_date,
-                    price : e.flight.price,
-                    tickets: e.flight.tickets
+                    price : e.flight.price
                 })
             });
             res.status(200).send(ret);
@@ -170,7 +171,7 @@ app.post('/bookings', (req, res) => {
     const id_flight = booking_input.value.id_flight;
     const user_mail = booking_input.value.mail;
     const user = USERS.find(f => f.mail === user_mail);
-    if(user == null){
+    if (user == null) {
         res.status(404).send("User not found");
     }
     const booking_date = new Date();
@@ -197,7 +198,8 @@ app.get('/flights', (req, res) => {
                         destination_airport: AIRPORTS.find(a => a.id_airport == f.id_airport_destination),
                         flight_date : f.flight_date,
                         price: f.price,
-                        tickets: f.tickets
+                        tickets: f.tickets,
+                        id: f.id_flight
                     }));
     res.status(200).json(flights);
 })
