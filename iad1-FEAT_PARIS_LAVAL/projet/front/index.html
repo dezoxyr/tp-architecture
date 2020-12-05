@@ -11,7 +11,7 @@
 <body class="bg" style="margin-top: 20px" height="100%">
   <h1 class="text-center" style="margin-top: 50px">Welcome on board !</h1>
   <form action="page2.html" class="main-form" id="form">
-    <div class="form-group" onkeyup="manage(this)">
+    <div class="form-group">
       <label for="email">Email : </label>
       <input type="email" name="email" id="email" class="form-control" placeholder="exemple@abc.com" required>
     </div>
@@ -28,18 +28,31 @@
       height="150" style="margin-top: 50px">
   </div>
 
-  <script type="text/javascript">
-    function validateInput() {
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+      function validateInput() {
       var fieldValue = document.getElementById("email").value;
 
-      var mailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var mailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
       if (fieldValue.match(mailValidation)) {
-        // TODO : connecter l'utilisateur côté serveur
-        localStorage.setItem('email', email.value)
-        window.location.href = 'menu.html';
+        let url = "http://localhost:8080/users";
+        var data = {mail: email.value }
+        axios.post(url, data)
+          .then(function(){
+            localStorage.setItem('email', email.value)
+            window.location.href = 'menu.html';
+          })
+          .catch(function(err){
+            if(err.response.status == 409){
+              localStorage.setItem('email', email.value)
+              window.location.href = 'menu.html';
+            } else{
+              alert(err.reponse.data)
+            }
+          });
       } else {
-        alert('Email non valide !');
+          alert('Email non valide !');
       }
     }
   </script>

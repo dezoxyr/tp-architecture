@@ -18,61 +18,60 @@
   <div class="text-center" style="margin-top: 20px">
     <button class="btn btn-outline-dark" onclick="openBooking()">Aller aux réservations</button>
   </div>
-
-  <div class="row">
-    <div id="flights" class="card-deck" style="margin-top: 40px; margin-left: 30px; margin-right: 30px">
-
-    </div>
+  <div id="flights" class="row card-deck" style="margin-top: 40px; margin-left: 30px; margin-right: 30px;">
   </div>
   
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     const email = localStorage.getItem('email');
 
-    fetch('https://pokeapi.co/api/v2/pokemon/')
-      .then(response => response.json())
+    fetch('http://localhost:8080/flights')
+      .then(res => res.json())
       .then(function (json) {
+        for (let i = 0; i < json.length; i++) {
+          flight_id = json[i]['id']
+          flight_src = json[i]['source_airport']['name']
+          flight_dst = json[i]['destination_airport']['name']
+          flight_date = json[i]['flight_date'].slice(0, 10).split("-").reverse().join("/")
+          flight_price = json[i]['price']
+          flight_seat_nb = json[i]['tickets']
+          flight_code = json[i]['source_airport']['code'] + "-" + json[i]['destination_airport']['code'] + " " + flight_price
 
-        console.log(json);
-
-        for (let i = 0; i < json.results.length; i++) {
-          flight_code = "flight_" + i
-          flight_src = "src"
-          flight_dst = "dst"
-          flight_date = "date"
-          flight_price = "400"
-          flight_seat_nb = "38"
+          if(flight_seat_nb <= 0) continue;
 
           var flight_card = '\
-            <div class="col-sm-4" style="margin-bottom: 40px">\
+            <div class="col-sm-6" style="margin-bottom: 40px">\
               <div class="card">\
                 <div class="card-body">\
-                  <h5 class="card-title" id="identifiantVol">' + flight_code + '</h5>\
+                  <h5 class="card-title" id="flight_' + flight_id + '">' + flight_code + '</h5>\
                   <p class="card-text">\
                   <p>Aéroport de départ :<a id="departureAirport"> ' + flight_src + ' </a></p>\
                   <p>Aéroport d\'arrivée :<a id="landingAirport"> ' + flight_dst + ' </a></p>\
                   <p>Date :<a id="dateVol"> ' + flight_date + ' </a></p>\
                   <p>Prix :<a id="prixBillet"> ' + flight_price + ' </a> €</p>\
-                  <p>Places Disponibles :<a id="placeDispo"> ' + flight_seat_nb + ' </a></p>\
+                  <p>Places Disponibles :<a id="placeDispo_' + flight_id + '"> ' + flight_seat_nb + ' </a></p>\
                   </p>\
                 </div>\
                 <div class="card-footer" style="text-align: center">\
-                  <a href="#" id=reserve class="card-link" onclick="book(\'' + flight_code + '\')">Réserver</a>\
+                  <a href="#" id=reserve class="card-link" onclick="book(\'' + flight_id + '\')">Réserver</a>\
                 </div>\
               </div>\
             </div>\
           ';
 
-          document.getElementById("flights").innerHTML += flight_card
+          document.getElementById("flights").innerHTML += flight_card;
         }
-      });
+      }).catch(err => console.log(err.response.data));
 
       function book(flight_id) {
-        // let url = "";
-        // var data = {email: email, flight_id: flight_id}
-        // $.post(url, data, function (res) {
-        //     alert(res);
-        //   });
-        console.log(flight_id);
+        let url = "http://localhost:8080/bookings";
+        var data = { mail: email, id_flight: flight_id }
+        axios.post(url, data)
+          .then(function(res){
+            document.getElementById("placeDispo_" + flight_id).innerHTML = " " + (parseInt(document.getElementById("placeDispo_" + flight_id).innerHTML) - 1).toString();
+            alert("Vol reservé, voir réservations.");
+          })
+          .catch(err => alert(err));
       }
 
       function openMenu() {
