@@ -16,9 +16,6 @@
     <div id="app">
         <v-app>
             <div v-if="logged == false && showSignInForm != true && showSignUpForm != true">
-                <!--<v-data-table :headers="headersAeroports" :items="aeroports"></v-data-table>
-                
-                -->
                 <v-btn block @click="seConnecter">
                     Se Connecter
                 </v-btn>
@@ -126,20 +123,6 @@
                     this.password = ""
                 }
             },
-            /*mounted: function(){
-                fetch("http://localhost:5000/aeroport/all")
-                .then(function(response){
-                    return response.json()
-                }).then((json) =>
-                    this.aeroports = json //Pourquoi ça marche, on ne sait pas. function ne fonctionne pas
-                )
-                fetch("http://localhost:5000/vol/all")
-                .then(function(response){
-                    return response.json()
-                }).then((json) =>
-                    this.vols = json //Pourquoi ça marche, on ne sait pas. function ne fonctionne pas
-                )
-            }*/
         })
 
 
