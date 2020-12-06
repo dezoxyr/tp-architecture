@@ -11,3 +11,5 @@ Le serveur node.js utilise le port `8080`
 Lancer le serveur : `node index.js`
 
 Dans votre navigateur, ouvrir la page web `index.html` depuis le dossier `front`
+
+Si le serveur est redémarré, il faut se reconnecter (sur la page `index.html`)
