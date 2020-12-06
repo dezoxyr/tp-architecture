@@ -13,7 +13,7 @@ Le deuxième point comprend la liste des billets réservés par le client. S'il 
 
 La page web récupèrera les informations en faisant des appels HTTP à une API REST. Cette API s'interfacera avec le modèle de données pour renvoyer les informations demandées.   L'API sera implémentée via le serveur web Express.
 
-Pour stocker les données, nous allons utiliser un SGBD. Cela nous permettra de facilement faire évoluer notre modèle s'il on souhaite le modifier.La base de données sera propulsée par le SGBD MariaDB contenant les informations sur les utilisateurs, les vols, les réservations et les aéroports.
+Pour stocker les données, nous allons utiliser un SGBD. Cela nous permettra de facilement faire évoluer notre modèle s'il on souhaite le modifier. La base de données sera propulsée par le SGBD MariaDB contenant les informations sur les utilisateurs, les vols, les réservations et les aéroports.
 
 ![Le schéma de l'architecture](schema_architecture.png)
 
