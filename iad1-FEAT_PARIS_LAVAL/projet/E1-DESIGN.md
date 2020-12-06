@@ -32,8 +32,8 @@ Pour stocker les données, nous allons utiliser un SGBD. Cela nous permettra de 
 Nous avons choisi des technologies web (HTML/CSS/JS/JQuery) pour le front-end car ce format nous permet de distribuer l'application sur plusieurs plateformes tels que les smartphones, tablettes ou ordinateurs, sans besoin d'installer un applicatif.
 
 Nous avons choisi NodeJS pour le back-end et le framework Express.
-Ce choix technlogique permet de developper avec le même language (Javascript) en back-end et front-end.
-Le language JavaScript est relativement simple à utiliser, à mettre en place. De plus il est asynchrone et dispose d'une très bonne documentation et d'une communauté active.
+Ce choix technlogique permet de developper avec le même langage (Javascript) en back-end et front-end.
+Le langage JavaScript est relativement simple à utiliser, à mettre en place. De plus il est asynchrone et dispose d'une très bonne documentation et d'une communauté active.
 Tous ces éléments permettront la maintenabilité du projet.
 
 Le SGBD que nous avons choisi est MariaDB car c'est le SGBD que tous les membres du groupe maîtrisent.
