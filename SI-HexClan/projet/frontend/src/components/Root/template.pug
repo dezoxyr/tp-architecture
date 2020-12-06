@@ -12,7 +12,8 @@ b-container(fluid)#root.m-0.p-0
                         b-link(href="/login" :class="'link-' + $store.state.theme").nav-right Sign In
                 router-link(to="/register" v-if="$store.state.notLogged")
                     b-link(href="/register" :class="'link-' + $store.state.theme") Sign Up
-            
+                router-link(to="/" v-if="!$store.state.notLogged")
+                    b-link(href="/" :class="'link-' + $store.state.theme"  @click="logout()") Logout
 
     .row(:id="'component-viewer-' + $store.state.theme").m-0.p-0
         router-view#content

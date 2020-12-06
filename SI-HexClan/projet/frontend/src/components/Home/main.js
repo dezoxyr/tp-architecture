@@ -12,6 +12,9 @@ export default {
     methods: {
         updateTheme(value) {
             this.$store.commit('updateTheme', value)
+        },
+        logout(){
+            this.store.commit('logout')
         }
     },
     mounted: function() {

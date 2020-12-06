@@ -21,7 +21,11 @@ export default {
     methods: {
         updateTheme(value) {
             this.$store.commit('updateTheme', value)
-        }
+        },
+        logout: function () {
+            this.$session.destroy()
+            window.location.reload()
+          }
     },
     mounted:() => {
         

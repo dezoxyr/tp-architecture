@@ -24,7 +24,8 @@ export default {
                     obj.$session.start()
                     var token = response.data['token']
                     obj.$session.set('Token', token)
-                    //obj.$store.updateLoggedState('true');
+                    obj.$store.commit('updateLoggedState', false)
+                    obj.$router.push({ name: "Home" });
                 } else {
                     console.log("error")
                 }
