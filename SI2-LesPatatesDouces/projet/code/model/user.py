@@ -3,18 +3,18 @@ class User:
         self.name = name
         self.email = email
         self.password = password
-        self.billetReserve = list()
+        self.billet_reserves = list()
 
     #TODO
     def addReservation(self,billet :int):
-        self.billetReserve.append(billet)
+        self.billet_reserves.append(billet)
 
     #TODO
     def rmReservation(self,billet :int):
-        self.billetReserve.remove(billet)
+        self.billet_reserves.remove(billet)
 
     def getBillets(self):
-        return self.billetReserve
+        return self.billet_reserves
 
     def to_dict(self):
         return {

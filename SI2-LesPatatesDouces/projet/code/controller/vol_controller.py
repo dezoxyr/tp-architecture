@@ -1,4 +1,5 @@
 from flask import jsonify
+from copy import copy
 
 class VolController :
     def __init__(self, bdd):
@@ -8,9 +9,15 @@ class VolController :
         # TODO faire les check
         list_vol = []
         for vol in self.bdd.get_list_vol():
-            vol.aeroport_depart = vol.aeroport_depart.to_dict()
-            vol.aeroport_arrivee = vol.aeroport_arrivee.to_dict()
-            list_vol.append(vol.to_dict())
-
+            tmp_vol = copy(vol)
+            list_vol.append(tmp_vol.to_dict())
 
         return jsonify(list_vol) # Les met en forme pour la vue
+
+
+    def get_by_id(self, id:int):
+        for vol in self.bdd.get_list_vol():
+            if vol.id == int(id):
+                return jsonify(vol.to_dict())
+
+

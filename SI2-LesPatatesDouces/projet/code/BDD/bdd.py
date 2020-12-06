@@ -1,6 +1,6 @@
 from model.aeroport import Aeroport
 from model.vol import Vol
-from model.User import User
+from model.user import User
 
 
 class BDD:
@@ -14,9 +14,10 @@ class BDD:
         self.list_vol.append(Vol(2, self.list_aeroport[2], self.list_aeroport[1], "06/12/2020", "06/12/2020", 25))
         self.list_vol.append(Vol(3, self.list_aeroport[2], self.list_aeroport[1], "07/12/2020", "07/12/2020", 100))
         self.list_user = list()
-        self.list_user.append(User("nom","prenom","mdp"))
-        self.list_user.append(User("nom1","prenom1","mdp1"))
-        self.list_user.append(User("nom2","prenom2","mdp2"))
+        self.list_user.append(User("nom","toto","mdp"))
+        self.list_user.append(User("nom1","email1","mdp1"))
+        self.list_user.append(User("nom2","email2","mdp2"))
+        self.list_user_connected = list()
 
     def get_list_aeroport(self):
         return self.list_aeroport
@@ -24,5 +25,20 @@ class BDD:
     def get_list_vol(self):
         return self.list_vol
 
+    def add_user(self, user):
+        self.list_user.append(user)
+
     def get_list_user(self):
         return self.list_user
+
+    def add_user_connected(self, email):
+        self.list_user_connected.append(email)
+
+    def remove_user_connected(self, email):
+        index = 0
+        for user in range(len(self.list_user)):
+            if self.list_user_connected[user] == email:
+                index = user
+                break
+
+        self.list_user_connected.pop(index)
