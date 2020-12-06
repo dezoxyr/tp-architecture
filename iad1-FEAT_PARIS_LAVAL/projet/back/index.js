@@ -190,7 +190,7 @@ app.post('/bookings', (req, res) => {
     const flight = FLIGHTS
                     .find(f => f.id_flight === id_flight && f.flight_date.getTime() >= booking_date.getTime() && f.tickets > 0);
     if (flight == null) {
-        res.status(400).send("Flight not available");
+        res.status(404).send("Flight not available");
     }
     BOOKINGS.push({
         id_flight : flight.id_flight,

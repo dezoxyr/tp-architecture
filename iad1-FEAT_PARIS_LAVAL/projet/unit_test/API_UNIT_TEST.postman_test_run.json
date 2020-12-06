@@ -1,0 +1,483 @@
+{
+	"id": "690e0ed2-8e93-4f98-b83e-4f4ad733ecc4",
+	"name": "API_UNIT_TEST",
+	"timestamp": "2020-12-06T15:56:44.822Z",
+	"collection_id": "87735d3c-e66c-4bb4-9a2f-8cacb7c6404b",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 15,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "cd8d57ef-f968-4b76-8e0f-678c391f5f20",
+			"name": "get_user_404",
+			"url": "http://localhost:8080/users?mail=toto@gmail.com",
+			"time": 17,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "e957ce35-2fb6-4db7-a524-d9633ec4ec18",
+			"name": "get_user_200",
+			"url": "http://localhost:8080/users?mail=michel@gmail.com",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "f5b510ae-727e-49c6-aff4-c98e928dad81",
+			"name": "get_user_400",
+			"url": "http://localhost:8080/users?mail=michegml.com",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "552ef6ce-4b7d-46d6-9e2d-972fb2f1dedb",
+			"name": "create_user_201",
+			"url": "http://localhost:8080/users",
+			"time": 3,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "5f3c0ff7-9304-4aa9-b153-2307d0f14752",
+			"name": "create_user_409",
+			"url": "http://localhost:8080/users",
+			"time": 2,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Status code is 409": true
+			},
+			"testPassFailCounts": {
+				"Status code is 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is 409": true
+				}
+			]
+		},
+		{
+			"id": "1b727f8d-6aa3-41a1-8e10-b69348fcddfe",
+			"name": "create_user_400",
+			"url": "http://localhost:8080/users",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "c004d986-6505-4ec8-bd8d-5716694250d4",
+			"name": "get_bookings_200",
+			"url": "http://localhost:8080/bookings?mail=exemple@gmail.com",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "2888cbd5-1e96-44ae-b03b-dc06d5a79113",
+			"name": "get_bookings_400",
+			"url": "http://localhost:8080/bookings?mail=exemplegmail.com",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "de894414-427a-4bf4-84bc-8365300a8321",
+			"name": "get_bookings_200",
+			"url": "http://localhost:8080/bookings?mail=exemple@gmail.com",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "fc82938e-570a-49a3-84aa-c58be3764d6d",
+			"name": "get_bookings_404",
+			"url": "http://localhost:8080/bookings?mail=tessssssst@gmail.com",
+			"time": 2,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "4298a1d1-3e28-489f-b040-7c3035fccd1d",
+			"name": "post_booking_400",
+			"url": "http://localhost:8080/bookings",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "abbc6e5f-ee32-4507-9845-3f23c03db827",
+			"name": "post_booking_200",
+			"url": "http://localhost:8080/bookings",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "837c7c5c-b029-4416-ae81-8f10ea412b74",
+			"name": "post_booking_user_404",
+			"url": "http://localhost:8080/bookings",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "51517ede-9d95-4cb5-ac09-dc53c5a4b343",
+			"name": "post_booking_flight_404",
+			"url": "http://localhost:8080/bookings",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "0eb68462-911a-4d0b-a9ee-6bd29bec20ac",
+			"name": "get_flight_200",
+			"url": "http://localhost:8080/flights",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 77,
+	"collection": {
+		"requests": [
+			{
+				"id": "cd8d57ef-f968-4b76-8e0f-678c391f5f20",
+				"method": "GET"
+			},
+			{
+				"id": "e957ce35-2fb6-4db7-a524-d9633ec4ec18",
+				"method": "GET"
+			},
+			{
+				"id": "f5b510ae-727e-49c6-aff4-c98e928dad81",
+				"method": "GET"
+			},
+			{
+				"id": "552ef6ce-4b7d-46d6-9e2d-972fb2f1dedb",
+				"method": "POST"
+			},
+			{
+				"id": "5f3c0ff7-9304-4aa9-b153-2307d0f14752",
+				"method": "POST"
+			},
+			{
+				"id": "1b727f8d-6aa3-41a1-8e10-b69348fcddfe",
+				"method": "POST"
+			},
+			{
+				"id": "c004d986-6505-4ec8-bd8d-5716694250d4",
+				"method": "GET"
+			},
+			{
+				"id": "2888cbd5-1e96-44ae-b03b-dc06d5a79113",
+				"method": "GET"
+			},
+			{
+				"id": "de894414-427a-4bf4-84bc-8365300a8321",
+				"method": "GET"
+			},
+			{
+				"id": "fc82938e-570a-49a3-84aa-c58be3764d6d",
+				"method": "GET"
+			},
+			{
+				"id": "4298a1d1-3e28-489f-b040-7c3035fccd1d",
+				"method": "POST"
+			},
+			{
+				"id": "abbc6e5f-ee32-4507-9845-3f23c03db827",
+				"method": "POST"
+			},
+			{
+				"id": "837c7c5c-b029-4416-ae81-8f10ea412b74",
+				"method": "POST"
+			},
+			{
+				"id": "51517ede-9d95-4cb5-ac09-dc53c5a4b343",
+				"method": "POST"
+			},
+			{
+				"id": "0eb68462-911a-4d0b-a9ee-6bd29bec20ac",
+				"method": "GET"
+			}
+		]
+	}
+}
