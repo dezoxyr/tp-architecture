@@ -17,15 +17,6 @@ router.get('/', (req, res, next) => {
 
 
 router.get('/signin', (req, res, next) => {
-<<<<<<< HEAD
-    
-    console.log('Got body:', req);
-    console.log('Got res:', res);
-
-    //res.send("GigaPanda Sign In");
-=======
-
->>>>>>> clara
     res.render('users/signin', {
         title: 'hello'
     });
@@ -34,31 +25,6 @@ router.get('/signin', (req, res, next) => {
 
 router.post('/signin', (req, res, next) => {
     console.log(req.body);
-<<<<<<< HEAD
-    //let firstname = req.body.firstname;
-    //let lastname = req.body.lastname;
-    
-    //console.log('Got body:', req.body);
-    //res.sendStatus(200);
-    //console.log(firstname);
-    //console.log(lastname);
-    //res.json({firstname:firstname, lastname:lastname});
-    res.render('airport/index', {
-        data: req.body,
-        errors: {
-            message: {
-              msg: 'A message is required'
-            },
-            email: {
-              msg: 'That email doesn‘t look right'
-            }
-          },
-              
-        title: 'Airport',
-        //firstname: firstname,
-        //lastname: lastname
-    });
-=======
     
     return res.redirect('/airport/'+req.body.firstname+'&'+req.body.lastname);
 });
@@ -95,7 +61,6 @@ router.get('/mytickets/:firstname/:lastname', (req, res, next) => {
         lastname: req.params.lastname,
         user_tickets: user_tickets
     })
->>>>>>> clara
 });
 
 

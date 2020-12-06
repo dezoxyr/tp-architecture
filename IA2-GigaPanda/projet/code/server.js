@@ -41,25 +41,9 @@ app.use((req, res, next) => {
      next();
  });
 
-<<<<<<< HEAD
-
-/**
- * Server using
- */
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-//app.use(flash());
-//app.use(express.static(path.join(__dirname, 'public/')));
-
-=======
 
 app.use('/', routes);
 app.use('/user', userRoutes);
->>>>>>> clara
 
 /**
  * Catch 404 Error and Forward to Error Handler
