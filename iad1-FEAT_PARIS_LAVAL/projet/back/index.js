@@ -108,7 +108,7 @@ app.get('/users', (req,res) => {
         if (user != null) {
             res.status(200).json(user);
         } else {
-            res.send("User not found").status(404);
+            res.status(404).send("User not found");
         }
     }else{
         res.status(400).send(input.error.details[0].message);
