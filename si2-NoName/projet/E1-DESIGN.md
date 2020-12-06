@@ -1,13 +1,19 @@
-Voici l'architecture globale que nous avons imaginé pour ce projet :
+1 -  L'architecture globale : 
 
-![alt text](mvc.png)
+![alt text](architecture_globale.PNG)
 
-Voici le modele de donnée stocké que nous avons imaginé pour ce projet :
+Pour ce projet nous avons décidé de prendre une architecture 3-tiers, voici les 3 parties :
+- On aura une interface plus ou moins élaboré pour le front-end.
+- En ce qui concerne le back-end, on le gérer avec une API.
+- pour la partie base de donnée on va créer un fichier avec des objets défini en dur.
+
+2 - Le modele de donnée stocké :
 
 ![alt text](mld.png)
 
-Voici la stack technique que nous avons imaginé pour ce projet :
+Dans notre modele stocké on y trouve 4 tables.
 
-![alt text](stack_technique.png)
-
-language choisi : php
+3 - La stack technique :
+ - Application et Data : php, html, css, MySQL, JavaScript, Ajax
+ - Framework : slim
+ - DevOps : gitHub, Visual Studio Code et LiveShare
