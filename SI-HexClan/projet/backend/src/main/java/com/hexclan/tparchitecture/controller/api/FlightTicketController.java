@@ -95,8 +95,8 @@ public class FlightTicketController {
     @PostMapping("/{idFlight}")
     public ResponseEntity<?> bookFlightTicket(@PathVariable(name = "idFlight") String idFlight, HttpServletRequest httpRequest) {
         try {
+            
             Integer idFlightInt = Integer.parseInt(idFlight);
-
             String username = (String) httpRequest.getAttribute("username");
             User passenger = userService.findByUsername(username);
 

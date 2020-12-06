@@ -13,8 +13,21 @@ export default {
         updateTheme(value) {
             this.$store.commit('updateTheme', value)
         },
-        logout(){
-            this.store.commit('logout')
+        bookFlight(value) {
+
+            let config = {
+                headers: {
+                  'Authorization':  `Bearer ${this.$session.get('Token')}`,
+                  'Content-Type': 'application/json'
+                }
+              }
+            console.log(this.$session.get('Token'))
+            this.$axios.post("/flight-ticket/"+value, config).then((response) => {
+                console.log(response)
+                console.log("flight number"+ value +" is booked")
+            }).catch((error) => {
+                console.log(error)
+            })
         }
     },
     mounted: function() {

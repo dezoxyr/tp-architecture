@@ -35,6 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/api/user/login").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/flight-ticket/my-reservations").authenticated()
                 .antMatchers(HttpMethod.GET, "/api/flight-ticket/*").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/flight-ticket/*").permitAll()
                 .anyRequest().authenticated().and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class).logout()
                 .logoutUrl("/api/user/logout").permitAll()

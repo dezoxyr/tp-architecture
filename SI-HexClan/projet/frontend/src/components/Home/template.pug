@@ -6,3 +6,4 @@ b-container#deck.mt-5
                 b-card-text Departure: {{ flight.departureAirport.name }} {{ flight.departureAirport.code }}
                 b-card-text Arrival: {{ flight.arrivalAirport.name }} {{ flight.arrivalAirport.code }}
                 b-card-text Departure date: {{ flight.dateDeparture }}
+                b-button(variant="info" @click="bookFlight(flight.id)").rounded-pill Book
