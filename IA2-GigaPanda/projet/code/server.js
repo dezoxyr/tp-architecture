@@ -9,6 +9,7 @@ const expressHbs = require('express-handlebars');
 const mongoose = require('mongoose');
 
 const app = express();
+app.use(logger('dev'));
 
 /**
  * Routes
@@ -22,19 +23,25 @@ app.engine('.hbs', expressHbs({
 }));
 app.set('view engine', 'hbs');
 
+app.use(express.urlencoded({
+    extended: true
+}));
 
-app.use('/', routes);
-app.use('/user', userRoutes);
+app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public/')));
+
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Request-Headers', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    next();
-});
+     res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+     res.header('Access-Control-Allow-Credentials', 'true');
+     next();
+ });
 
+<<<<<<< HEAD
 
 /**
  * Server using
@@ -48,6 +55,11 @@ app.use(bodyParser.urlencoded({
 //app.use(flash());
 //app.use(express.static(path.join(__dirname, 'public/')));
 
+=======
+
+app.use('/', routes);
+app.use('/user', userRoutes);
+>>>>>>> clara
 
 /**
  * Catch 404 Error and Forward to Error Handler
@@ -60,24 +72,11 @@ app.use((req, res, next) => {
 /**
  * Print stacktrace when Development
  */
-if(app.get('env') === 'development') {
-    app.use((err, req, res, next) => {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-/**
- * Don't print when Production
- */
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
-        error: {}
+        error: err
     });
 });
 
