@@ -38,7 +38,7 @@ Le SGBD que nous avons choisi est MariaDB car c'est le SGBD que tous les membres
 
 Voici notre MCD :
 
-![Le MCD](mcd.png)
+![Le MCD](mld.png)
 
 Un utilisateur possède un nom.  
 Un vol contient un aéroport de départ et un aéroport d'arrivé.  
