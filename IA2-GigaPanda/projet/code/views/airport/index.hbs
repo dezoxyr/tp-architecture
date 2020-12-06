@@ -1,5 +1,4 @@
-<p id="firstname">{{firstname}}</p>
-<p id="lastname">{{lastname}}</p>
+<p>Connected as: {{firstname}} {{lastname}}</p>
 
 <style type="text/css">
 
@@ -139,6 +138,11 @@
                 <td><input id="btn6" type="submit" value="Choose" class="btn"/></td>
             </tr>
         </form>
-        
     </tbody>
 </table>
+
+<div>
+
+        <a href="/user/mytickets/{{firstname}}/{{lastname}}">My tickets 🐼</a>
+        <a href="/">Sign out</a>
+</div>

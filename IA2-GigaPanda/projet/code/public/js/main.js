@@ -33,26 +33,41 @@ $(document).ready(function() {
 
     $('#btn2').click(e => {
         e.preventDefault();
-        window.location.replace("/user/billet/2");
+        let firstname = $('#megafirstname').val();
+        let lastname = $('#megalastname').val();
+
+        window.location.replace("/user/billet/2?firstname="+firstname+"&lastname="+lastname);
     })
 
     $('#btn3').click(e => {
         e.preventDefault();
-        window.location.replace("/user/billet/3");
+        let firstname = $('#megafirstname').val();
+        let lastname = $('#megalastname').val();
+
+        window.location.replace("/user/billet/3?firstname="+firstname+"&lastname="+lastname);
     })
 
     $('#btn4').click(e => {
         e.preventDefault();
-        window.location.replace("/user/billet/4");
+        let firstname = $('#megafirstname').val();
+        let lastname = $('#megalastname').val();
+
+        window.location.replace("/user/billet/4?firstname="+firstname+"&lastname="+lastname);
     })
 
     $('#btn5').click(e => {
         e.preventDefault();
-        window.location.replace("/user/billet/5");
+        let firstname = $('#megafirstname').val();
+        let lastname = $('#megalastname').val();
+
+        window.location.replace("/user/billet/5?firstname="+firstname+"&lastname="+lastname);
     })
 
     $('#btn6').click(e => {
         e.preventDefault();
-        window.location.replace("/user/billet/6");
+        let firstname = $('#megafirstname').val();
+        let lastname = $('#megalastname').val();
+        
+        window.location.replace("/user/billet/6?firstname="+firstname+"&lastname="+lastname);
     })
 });
