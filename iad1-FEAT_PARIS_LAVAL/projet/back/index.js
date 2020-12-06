@@ -14,44 +14,56 @@ const booking_schema = joi.object().keys({
 });
 
 
-const USERS = [
-    {
-        id_user: 1,
-        mail: "michel@michel.be"
-    }
-];
-const BOOKINGS = [
-    {
-        id_booking: 1,
-        id_flight: 1,
-        id_user: 1,
-        booking_date : new Date()
-    }
-];
+const USERS = [];
+const BOOKINGS = [];
 const FLIGHTS = [
     {
         id_flight: 1,
         id_airport_source: 1,
         id_airport_destination: 2,
-        flight_date : new Date(2025, 11, 24, 10, 33, 30, 0),
+        flight_date : new Date(2020, 11, 24, 08, 30, 0, 0),
         price: 100, 
-        tickets : 0
+        tickets : 25
     },
     {
         id_flight: 2,
         id_airport_source: 1,
         id_airport_destination: 3,
-        flight_date : new Date(2028, 9, 11, 10, 33, 30, 0),
+        flight_date : new Date(2020, 11, 11, 10, 30, 0, 0),
         price: 125,
-        tickets : 128
+        tickets : 80
     },
     {
         id_flight: 3,
         id_airport_source: 2,
-        id_airport_destination: 3,
-        flight_date : new Date(2023, 8, 24, 10, 33, 30, 0),
+        id_airport_destination: 1,
+        flight_date : new Date(2020, 11, 08, 14, 30, 0, 0),
         price: 200, 
-        tickets : 5000
+        tickets : 10
+    },
+    {
+        id_flight: 4,
+        id_airport_source: 2,
+        id_airport_destination: 3,
+        flight_date : new Date(2020, 11, 31, 17, 30, 0, 0),
+        price: 250, 
+        tickets : 42
+    },
+    {
+        id_flight: 5,
+        id_airport_source: 3,
+        id_airport_destination: 1,
+        flight_date : new Date(2020, 11, 24, 18, 0, 0, 0),
+        price: 175, 
+        tickets : 64
+    },
+    {
+        id_flight: 6,
+        id_airport_source: 3,
+        id_airport_destination: 2,
+        flight_date : new Date(2020, 11, 25, 10, 33, 30, 0),
+        price: 400, 
+        tickets : 28
     }
 ];
 const AIRPORTS = [
@@ -96,7 +108,7 @@ app.get('/users', (req,res) => {
         if (user != null) {
             res.status(200).json(user);
         } else {
-            res.send("User not found").status(404);
+            res.status(404).send("User not found");
         }
     }else{
         res.status(400).send(input.error.details[0].message);
@@ -178,7 +190,7 @@ app.post('/bookings', (req, res) => {
     const flight = FLIGHTS
                     .find(f => f.id_flight === id_flight && f.flight_date.getTime() >= booking_date.getTime() && f.tickets > 0);
     if (flight == null) {
-        res.status(400).send("Flight not available");
+        res.status(404).send("Flight not available");
     }
     BOOKINGS.push({
         id_flight : flight.id_flight,

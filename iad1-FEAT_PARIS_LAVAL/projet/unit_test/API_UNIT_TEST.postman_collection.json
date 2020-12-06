@@ -1,0 +1,867 @@
+{
+	"info": {
+		"_postman_id": "87735d3c-e66c-4bb4-9a2f-8cacb7c6404b",
+		"name": "API_UNIT_TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "get_user_404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "698536ec-9267-48fe-b49a-99046373dc56",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users?mail=toto@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "toto@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_user_200",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b4e8390-a3fd-428c-9bd1-7490e2870d4f",
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://localhost:8080/users\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ mail: \"michel@gmail.com\"})\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "66833c5f-8e04-48d6-a33b-156273aac8a6",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users?mail=michel@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "michel@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_user_400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fe0f50bf-0aaf-4043-8417-9cab12c8d266",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users?mail=michegml.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "michegml.com"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "create_user_201",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb96f6e1-0dab-481a-a4a6-b9bb19d3edd7",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () { pm.response.to.have.status(201); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"loic.chesnadis@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_user_409",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c99548f6-99a5-48ec-9861-a1b15e0c752b",
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://localhost:8080/users\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ mail: \"exemple@gmail.com\"})\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "4395afa5-af0d-44a6-b8e8-d5c0395b61f7",
+										"exec": [
+											"pm.test(\"Status code is 409\", function () { pm.response.to.have.status(409); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"exemple@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_user_400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "94f29870-5d26-4804-bf71-9a32b60eee13",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"exemple.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "bookings",
+			"item": [
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "get_bookings_200",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "546d0760-77e0-4a41-a61c-06dbe340509b",
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://localhost:8080/users\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ mail: \"exemple@gmail.com\"})\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "2ea0443a-32d0-4ded-94f5-a49d8740daa5",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings?mail=exemple@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "exemple@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_bookings_400",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e441d59f-ce20-4eea-80fd-fc10b61db585",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "2022f2df-eef4-47a7-88c3-f88176be4b83",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings?mail=exemplegmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "exemplegmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_bookings_200",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3792d421-a1d9-461a-808d-77195f83f6c9",
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://localhost:8080/users\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ mail: \"exemple@gmail.com\"})\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"});\r",
+											"\r",
+											"pm.sendRequest({\r",
+											"    url: \"http://localhost:8080/bookings\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ mail: \"exemple@gmail.com\",  id_flight: 2})\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "8537dbd1-994c-4745-b75c-05b1c0318740",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings?mail=exemple@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "exemple@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_bookings_404",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "bf909e00-23ca-4b58-811a-93e27d000412",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "288739e5-b4c0-431c-9f68-79062c79b2d2",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings?mail=tessssssst@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "tessssssst@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "post_booking_400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9c4badf1-cdab-4085-8daa-81c52d414dd0",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"michemail.com\",\r\n    \"id_flight\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post_booking_200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a3d26d5e-733b-440a-a49b-613fd3bcb70f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "12a231de-51bf-4ef0-8e20-2cceb76f1fb2",
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://localhost:8080/users\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ mail: \"michel@gmail.com\"})\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"michel@gmail.com\",\r\n    \"id_flight\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post_booking_user_404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d1400619-6af1-40e3-b493-fb5b93360720",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"miche@mail.com\",\r\n    \"id_flight\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post_booking_flight_404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "97505c0c-00d8-4f82-a991-203191e56def",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3d4fff6c-bfe9-4192-a961-d610016da252",
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://localhost:8080/users\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ mail: \"michel@gmail.com\"})\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"michel@gmail.com\",\r\n    \"id_flight\": 10000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "flights",
+			"item": [
+				{
+					"name": "get_flight_200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a2d96095-28c0-4f74-8de6-dc0e9697ffb2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d708de95-de1b-454d-8c29-ab0f91909a5e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f6f688f8-e45f-47b3-9dab-3c6cc8003969",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
