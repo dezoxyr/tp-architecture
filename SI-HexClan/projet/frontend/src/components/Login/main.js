@@ -25,12 +25,18 @@ export default {
                     var token = response.data['token']
                     obj.$session.set('Token', token)
                     obj.$store.commit('updateLoggedState', false)
-                    obj.$router.push({ name: "Home" });
-                } else {
-                    console.log("error")
+                    obj.$refs.modal_success.show()
+                    setTimeout(function(){ obj.$router.push({ name: "Home" }); }, 2000);
                 }
             })
             .catch((error) => {
+                if(error.response.status === 400) {
+                    console.log("not found")
+                    obj.$refs.modal_user_not_found.show()
+                } else {
+                    console.log("error")
+                    obj.$refs.modal_error.show()
+                }
                 console.log(error);
                 if (error.response) {
                     this.$toast.error(error.response.data.message);
