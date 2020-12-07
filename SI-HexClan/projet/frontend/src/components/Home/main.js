@@ -4,6 +4,7 @@ export default {
     data: function() {
         return {
             flights: [],
+            userbooked: []
         };
     },
     computed: {},
@@ -18,9 +19,8 @@ export default {
                     "Content-Type": "application/json",
                 },
             };
-            console.log(this.$session.get("Token"));
             this.$axios
-                .post("/flight-ticket/" + value, _, config)
+                .post("/flight-ticket/" + value, {}, config)
                 .then((response) => {
                     console.log(response);
                     console.log("flight number" + value + " is booked");
@@ -31,16 +31,29 @@ export default {
         },
     },
     mounted: function() {
+        this.$session.start()
         this.$axios
             .get("/flight-ticket/")
             .then((response) => {
-                // console.log(response)
                 this.flights = response.data;
-                console.log(this.flights);
             })
             .catch((error) => {
                 console.log(error);
             });
+        this.$axios({
+            method:'get',
+            url: '/flight-ticket/my-reservations',
+            params: {},
+            headers: {
+                "Authorization": "Bearer " + this.$session.get("Token"),
+                "Content-Type": "application/json" 
+            }
+        }).then((response)=>{
+            console.log(response.data)
+            this.userbooked = response.data
+        }).catch((error)=>{
+            console.log(error)
+        })
     },
     components: {},
 };
