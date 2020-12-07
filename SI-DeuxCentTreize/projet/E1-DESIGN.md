@@ -25,8 +25,6 @@ Page 1
     
         Recherche vols
 
-Page 2  
-
         Affichage réservation
 
 
