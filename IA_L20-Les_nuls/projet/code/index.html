@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Réservation de vols</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!--<link rel="stylesheet" href="style.css">  -->
+  <script src="script.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		<button v-on:click="updateVols()">Mettre à jour les vols</button>
+		<ul>
+			<li v-for="vol in vols">Départ: {{ vol.code_depart }}, Arrivée: {{ vol.code_destination }}, au prix de {{ vol.prix }}
+				<button v-on:click="ajoutPanier(vol.id)">Ajouter Panier</button>
+			</li>
+		</ul>
+
+		<button v-on:click="updatePanier(panier.id)">Mettre à jour Panier</button>
+		<ul>
+			<li v-for="panier in paniers">Départ: {{ panier.code_depart }}, Arrivée: {{ panier.code_destination }}, au prix de {{ panier.prix }}
+				<button v-on:click="">Supprimer</button>
+			</li>
+		</ul>
+
+	</div>
+
+	<script language="javascript">
+		var app = new Vue({
+			el: '#app',
+			data:{
+				vols:[],
+				paniers:[]
+			},
+			methods:{
+				updateVols(){
+					axios.get('http://127.0.0.1:5000/fly').then(reponse => this.vols = reponse.data).catch(erreur => this.vols = [{title: "Erreur de chargement"}]);
+
+				},
+				ajoutPanier(index){
+					index.toString();
+					url="http://127.0.0.1:5000/fly/"+index
+					axios.put(url).then(reponse => this.paniers = reponse.data).catch(erreur => this.paniers = [{title: "Erreur de chargement"}]);
+				},
+				updatePanier(index){
+					index.toString();
+					url="http://127.0.0.1:5000/update_fly/"+index
+					axios.get(url).then(reponse => this.paniers = reponse.data).catch(erreur => this.paniers = [{title: "Erreur de chargement"}]);
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>
