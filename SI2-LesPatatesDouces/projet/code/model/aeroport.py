@@ -10,3 +10,6 @@ class Aeroport:
             "code": self.code,
             "ville": self.ville
         }
+
+    def getCode(self):
+        return self.code

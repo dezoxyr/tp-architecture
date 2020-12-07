@@ -142,7 +142,7 @@ var flightTable = {
     },
     methods:{
         seeTickets(item){
-            fetch("http://localhost:5000/vol/"+ item.id)
+            fetch("http://localhost:5000/billet/"+ item.id)
             .then(function(response){
                 return response.json()
             }).then((json) =>
