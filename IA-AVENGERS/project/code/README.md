@@ -2,6 +2,7 @@
 <p>Pour tester notre projet veuillez respecter l'arborescence définie par l'équipe sous peine de ne pas réussir à faire tourner le projet</p>
 <h1>Lancement des scripts</h1>
 <h2>Pré-requis</h2>
+<p>Ce projet à été complètement programmée en Python 3.9, vérifiez votre version de Python pour ne pas rencontrer de problèmes par la suite</p>
 <p>Afin de mener ce projet à bien, nous avons utilisé quelques livrairies, voici la liste non-exhaustive des librairies utilisées:</p>
 <ul>
   <li>flask: Cette librairie permet de lancer un serveur web sur votre machine et de "simuler" l'API</li>
