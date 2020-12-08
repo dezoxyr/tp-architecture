@@ -21,12 +21,12 @@
 <h1>Détails de l'interface graphique</h1>
 <p>Quand vous arriverez sur le site, vous allez arriver sur cette page:</p>
 <img src="/images/connexion.png">
-<p>Ici nous nous connectons commme l'utilisateur test@test.com</p>
-<p>Ensuite vous arriverez sur cette page</p>
+<p>Ici nous nous sommes connecté commme l'utilisateur test@test.com</p>
+<p>Ensuite vous arriverez sur cette page:</p>
 <img src="/images/accueil.png">
-<p>Pour réserver un vol cliquez sur le bouton "Réserver" du vol correspondant</p>
-<p>Si vous vous êtes trompé de vol, vous pouvous annuler votre réservation en cliquant sur le bouton "Annuler" du vol correspondant</p>
+<p>Pour réserver un vol cliquez sur le bouton "Réserver" du vol correspondant.</p>
+<p>Si vous vous êtes trompé de vol, vous pouvous annuler votre réservation en cliquant sur le bouton "Annuler" du vol correspondant:</p>
 <img src="/images/reservation.png">
-<p>Ensuite, lorsque vous cherchez un vol, vous pouvez filtrer votre recherche avec la barre de recherche</p>
+<p>Ensuite, lorsque vous cherchez un vol, vous pouvez filtrer votre recherche avec la barre de recherche:</p>
 <img src="/images/filtrage.png">
-<p>Enfin, vous pouvez changer de compte en appuyant sur le bouton "Changer de compte"</p>
+<p>Enfin, vous pouvez changer de compte en appuyant sur le bouton "Changer de compte".</p>
