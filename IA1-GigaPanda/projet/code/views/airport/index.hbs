@@ -1,148 +1,92 @@
-<p>Connected as: {{firstname}} {{lastname}}</p>
-
-<style type="text/css">
-
-    * { 
-        font-family: 'Open Sans', 
-        sans-serif;
-    }
-    body {
-        background: #ffffff ;
-    }
-    h1 {
-        margin: 70px;
-        color: rgb(15, 9, 9);
-        display: flex;
-        justify-content: center;
-    }
-    .content-table{
-        border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 0.9em;
-        min-width: 400px;
-        border-radius: 5px 5px 0 0;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
-        align-self: center;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .content-table thead tr{
-        background-color: #076296;
-        color: white;
-        text-align: left;
-        font-weight: bold;
-    }
-    .content-table th, .content-table td{
-        padding: 12px 15px;
-    }
-    .content-table tbody tr{
-        border-bottom: 1px solid #dddddd;
-    }
-    .content-table tbody tr:nth-of-type(even){
-        background-color: #f3f3f3;
-    }
-    .content-table tbody tr:last-of-type{
-        border-bottom: 2px solid #076296;
-    }
-    .btn{
-        background: #9bcae9 ;
-        width:125px;
-        padding-top:5px;
-        padding-bottom:5px;
-        color:white;
-        border-radius:4px;
-        border: #9bcae9  1px solid;
-        float:left;
-        font-weight:800;
-        font-size:0.8em;
-    }
-    .btn:hover{
-        background: #9bcae9 ; 
-    }
-</style>
-
-<h1>Choose a flight</h1>
-
-<table class="content-table">
-    <thead>
-        <tr>
-            <th>Departure</th>
-            <th>Destination</th>
-            <th>Airport Departure</th>
-            <th>Buy flight</th>
-        </tr>
-    </thead>
-    <tbody>
-        <form action="/airport" method="post">
-
-            <input id="megafirstname" name="megafirstname" type="hidden" value="{{firstname}}">
-            <input id="megalastname" name="megalastname" type="hidden" value="{{lastname}}">
-            
+<div class="airport_index">
+    
+    <div class ="view_tickets">
+        <h1>{{title}}</h1>
+        <p>Connected as: {{firstname}} {{lastname}}</p>
+        <button onclick="window.location.href='/user/mytickets/{{firstname}}/{{lastname}}';">
+                    My tickets 🐼
+            </button>
+    </div>
+    <div class="table-container">
+    <table class="content-table">
+        <thead>
             <tr>
-                <td id="departure" name="departure" type="text" value="Paris">Paris</td>
-                <td id="destination" name="destination" type="text" value="New York">New York</td>
-                <td id="code" name="code" type="text" value="CDG">CDG</td>
+                <th>Departure</th>
+                <th>Destination</th>
+                <th>Airport Departure</th>
+                <th>Buy flight</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form action="/airport" method="post">
 
+                <input id="megafirstname" name="megafirstname" type="hidden" value="{{firstname}}">
+                <input id="megalastname" name="megalastname" type="hidden" value="{{lastname}}">
                 
-                <td>
-                    <input id="btn1" type="submit" value="Choose" class="btn"/>
-                </td>
-            </tr>
-        </form>
+                <tr>
+                    <td id="departure" name="departure" type="text" value="Paris">Paris</td>
+                    <td id="destination" name="destination" type="text" value="New York">New York</td>
+                    <td id="code" name="code" type="text" value="CDG">CDG</td>
 
-        <form action="/airport" method="post">
-            <tr>
-                <td id="departure" name="departure" type="text" value="New York">New York</td>
-                <td id="destination" name="destination" type="text" value="Paris">Paris</td>
-                <td id="code" name="code" type="text" value="JFK">JFK</td>
-                <td><input id="btn2" type="submit" value="Choose" class="btn"/></td>
-            </tr>
-        </form>
+                    
+                    <td>
+                        <input id="btn1" type="submit" value="Choose" class="btn"/>
+                    </td>
+                </tr>
+            </form>
+
+            <form action="/airport" method="post">
+                <tr>
+                    <td id="departure" name="departure" type="text" value="New York">New York</td>
+                    <td id="destination" name="destination" type="text" value="Paris">Paris</td>
+                    <td id="code" name="code" type="text" value="JFK">JFK</td>
+                    <td><input id="btn2" type="submit" value="Choose" class="btn"/></td>
+                </tr>
+            </form>
 
 
-        <form action="/airport" method="post">
-            <tr>
-                <td id="departure" name="departure" type="text" value="Paris">Paris</td>
-                <td id="destination" name="destination" type="text" value="Detroit">Detroit</td>
-                <td id="code" name="code" type="text" value="CDG">CDG</td>
-                <td><input id="btn3" type="submit" value="Choose" class="btn"/></td>
-            </tr>
-        </form>
+            <form action="/airport" method="post">
+                <tr>
+                    <td id="departure" name="departure" type="text" value="Paris">Paris</td>
+                    <td id="destination" name="destination" type="text" value="Detroit">Detroit</td>
+                    <td id="code" name="code" type="text" value="CDG">CDG</td>
+                    <td><input id="btn3" type="submit" value="Choose" class="btn"/></td>
+                </tr>
+            </form>
 
-        <form action="/airport" method="post">
-            <tr>
-                <td id="departure" name="departure" type="text" value="Detroit">Detroit</td>
-                <td id="destination" name="destination" type="text" value="Paris">Paris</td>
-                <td id="code" name="code" type="text" value="DTW">DTW</td>
-                <td><input id="btn4" type="submit" value="Choose" class="btn"/></td>
-            </tr>
-        </form>
+            <form action="/airport" method="post">
+                <tr>
+                    <td id="departure" name="departure" type="text" value="Detroit">Detroit</td>
+                    <td id="destination" name="destination" type="text" value="Paris">Paris</td>
+                    <td id="code" name="code" type="text" value="DTW">DTW</td>
+                    <td><input id="btn4" type="submit" value="Choose" class="btn"/></td>
+                </tr>
+            </form>
 
-        <form action="/airport" method="post">
-            <tr>
-                <td id="departure" name="departure" type="text" value="Detroit">Detroit</td>
-                <td id="destination" name="destination" type="text" value="New York">New York</td>
-                <td id="code" name="code" type="text" value="DTW">DTW</td>
-                <td><input id="btn5" type="submit" value="Choose" class="btn"/></td>
-            </tr>
-        </form>
+            <form action="/airport" method="post">
+                <tr>
+                    <td id="departure" name="departure" type="text" value="Detroit">Detroit</td>
+                    <td id="destination" name="destination" type="text" value="New York">New York</td>
+                    <td id="code" name="code" type="text" value="DTW">DTW</td>
+                    <td><input id="btn5" type="submit" value="Choose" class="btn"/></td>
+                </tr>
+            </form>
 
-        <form action="/airport" method="post">
-            <tr>
-                <td id="departure" name="departure" type="text" value="New York">New York</td>
-                <td id="destination" name="destination" type="text" value="Detroit">Detroit</td>
-                <td id="code" name="code" type="text" value="JFK">JFK</td>
-                <td><input id="btn6" type="submit" value="Choose" class="btn"/></td>
-            </tr>
-        </form>
-    </tbody>
-</table>
+            <form action="/airport" method="post">
+                <tr>
+                    <td id="departure" name="departure" type="text" value="New York">New York</td>
+                    <td id="destination" name="destination" type="text" value="Detroit">Detroit</td>
+                    <td id="code" name="code" type="text" value="JFK">JFK</td>
+                    <td><input id="btn6" type="submit" value="Choose" class="btn"/></td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+    </div>
 
-<div>
+    
+    <div>
+            <a href="/">Sign out</a>
+    </div>
 
-        <a href="/user/mytickets/{{firstname}}/{{lastname}}">My tickets 🐼</a>
-        <a href="/">Sign out</a>
 </div>
