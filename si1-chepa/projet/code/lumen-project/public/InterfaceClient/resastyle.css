@@ -25,3 +25,26 @@ tfoot {
     background-color: #333;
     color: #fff;
 }
+
+.list-arrea {
+	float: bottom;
+	list-style: none;
+	margin-top: auto;
+	margin-left: auto;	
+}
+.list-arrea li {
+	display: inline-block;
+}
+.list-arrea li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.list-arrea li a:hover {
+	background: #fff;
+	color: #333;
+}
+
