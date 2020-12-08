@@ -1,0 +1,25 @@
+html, body {
+  height: 100%;
+}
+
+.mainArea {
+  height: 100vh;
+  background-image: url("../src/images/signup.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.sidePanel>h1 {
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.sidePanel>h3 {
+  margin-top: 15%;
+  margin-bottom: 5%;
+}
+
+#error {
+  display: none;
+  margin-bottom: 5%;
+}

@@ -7,7 +7,7 @@ var init = function () {
 var loadFlights = function () {
   const sToken = localStorage.getItem('auth_token');
   $.ajax({
-    url: "http://localhost:8080/flights/",
+    url: "http://localhost:8080/flight/",
     type: 'get',
     headers: {"Authorization": "Bearer " + sToken},
     success : function (result) {
@@ -38,7 +38,7 @@ var addFlight = function (index, codeDep, codeDest, date, price) {
   '<td class="codeDest">' + codeDest + '</td>' +
   '<td class="date">' + date + '</td>' +
   '<td class="price">' + price + '</td>' +
-  '<td><button id="btnBook" class="btn btn-success" onclick="bookFlight();">Réserver</button></td>'
+  '<td><button id="btnBook" class="btn btn-success" onclick="bookFlight();">Réserver</button></td>' +
   '</tr>');
 };
 
@@ -53,7 +53,7 @@ var bookFlight = function () {
       codeDest: oInfo.codeDest,
       date: oInfo.date,
       price: oInfo.price
-    }
+    },
     headers: {"Authorization": "Bearer " + sToken},
     success : function (result) {
       loadFlights();
