@@ -16,4 +16,6 @@
   <li>flightAPI.py : Ce programme permet de lancer le serveur web sur lequel est hébergée l'API (donc indispensable pour faire les requêtes depuis le site web de réservation)</li>
   <li>websiteHosting.py : Ce programme permet d'héberger le site internet de réservation de vols (normalement hébergé sur le port 8000 de votre machine)</li>
 </ul>
-<h1>Explications de l'interface graphique</h1>
+<p>Pour accéder au site web de l'API rendez-vous à cette addresse: 127.0.0.1:5000 sur votre navigateur (il se peut que flask ait changé le port sur lequel tourne l'API, veuillez vérifier dans le terminal le port choisi par flask par défaut)</p>
+<p>Pour accéder au site web de réservation de vols rendez-vous à cette addresse: 127.0.0.1:8000 sur votre navigateur (Normalement configuré sur le port 8000, si vous ne pouvez pas y accéder, changer de port peut-être que celui là était utilisé)</p>
+<h1>Détails de l'interface graphique</h1>
