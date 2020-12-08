@@ -8,10 +8,11 @@
   <li>flask_cors: Cette librairie permet d'activer le Cross-origin resource sharing (CORS) sur le serveur lancé avec flask</li>
   <li>random: Cette librairie nous permet de générer un numéro de place alétoire pour chaque réservation</li>
 </ul>
-<p>Assurez vous aussi d'être connecté à internet pour pouvoir profiter de notre interface graphique créée avec Bootstrap</p>
+<p>Assurez vous aussi d'être connecté à internet pour pouvoir profiter de notre interface graphique créée avec Bootstrap mais aussi pour faire les requêtes AJAX à l'API</p>
 <h2>Lancements</h2>
 <p>Pour utiliser le site de réservation de billets d'avion, vous devez lancer deux scripts (pour le lancement des scripts, nous vous conseillons de les lancer avec python3 et non python pour éviter des conflits):</p>
 <ul>
-  <li>```flightAPI.py```: Ce programme permet de lancer le serveur web sur lequel est hébergée l'API (donc indispensable pour faire les requêtes depuis le site web de réservation)</li>
-  <li>```websiteHosting.py```: Ce programme permet d'héberger le site internet de réservation de vols</li>
+  <li>flightAPI.py : Ce programme permet de lancer le serveur web sur lequel est hébergée l'API (donc indispensable pour faire les requêtes depuis le site web de réservation)</li>
+  <li>websiteHosting.py : Ce programme permet d'héberger le site internet de réservation de vols (normalement hébergé sur le port 8000 de votre machine)</li>
 </ul>
+<h1>Explications de l'interface graphique</h1>
