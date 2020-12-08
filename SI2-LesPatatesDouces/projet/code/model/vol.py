@@ -17,3 +17,6 @@ class Vol:
             "date_arrivee": self.date_arrivee,
             "nombre_billets": self.nombre_billets
         }
+
+    def getId(self):
+        return self.id

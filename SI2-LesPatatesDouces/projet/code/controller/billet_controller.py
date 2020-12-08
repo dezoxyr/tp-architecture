@@ -4,11 +4,12 @@ class BilletController :
     def __init__(self, bdd):
         self.bdd = bdd
 
-    def get_all(self):
+    def get_all(self, id: int):
         # TODO faire les check
         list_billet = []
         for billet in self.bdd.get_list_billet():
-            list_billet.append(billet.to_dict())
+            if billet.vol == int(id) and billet.user == None:
+                list_billet.append(billet.to_dict())
 
         return jsonify(list_billet) # Les met en forme pour la vue
 

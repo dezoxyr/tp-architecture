@@ -19,9 +19,9 @@ app.secret_key='toto'
 @app.route("/")
 
 
-@app.route("/aeroport/all")
+@app.route("/aeroport/all", methods=["GET"])
 def get_all_aeroports():
-    return aeroport_controller.get_all() # considéré comme la vue. La vue affiche les données normalement mais nous on les renvoie via une requete http.
+    return aeroport_controller.get_all(), 200 # considéré comme la vue. La vue affiche les données normalement mais nous on les renvoie via une requete http.
 
 
 @app.route("/vol/all", methods=["GET"])
@@ -29,21 +29,21 @@ def get_all_vols():
     return vol_controller.get_all(), 200 # considéré comme la vue. La vue affiche les données normalement mais nous on les renvoie via une requete http.
 
 
-@app.route("/vol/<id>")
+@app.route("/vol/<id>", methods=["GET"])
 def get_vol_by_id(id):
     print(vol_controller.get_by_id(id))
-    return vol_controller.get_by_id(id)
+    return vol_controller.get_by_id(id), 200
 
 
-@app.route("/billet/all")
-def get_all_billets():
-    return billet_controller.get_all()
+@app.route("/billet/all/<id>", methods=["GET"])
+def get_all_billets(id):
+    return billet_controller.get_all(id), 200
 
 
-@app.route("/billet/<id>")
+@app.route("/billet/<id>", methods=["GET"])
 def get_billet_by_id(id):
     print(billet_controller.get_by_id(id))
-    return billet_controller.get_by_id(id)
+    return billet_controller.get_by_id(id), 200
 
 
 @app.route("/sign-up", methods=["GET","POST"])
