@@ -20,4 +20,4 @@
 <p>Pour accéder au site web de réservation de vols rendez-vous à cette addresse: 127.0.0.1:8000 sur votre navigateur (Normalement configuré sur le port 8000, si vous ne pouvez pas y accéder, changer de port peut-être que celui là était utilisé)</p>
 <h1>Détails de l'interface graphique</h1>
 <p>Quand vous arriverez sur le site, vous allez arriver sur cette page:</p>
-<img src="../../../../images/connexion.png">
+<img src="/images/connexion.png">
