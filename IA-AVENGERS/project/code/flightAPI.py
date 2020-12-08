@@ -2,7 +2,6 @@
 import flask
 from flask_cors import CORS
 from random import randint
-from json import dumps
 
 app = flask.Flask(__name__)
 CORS(app)
