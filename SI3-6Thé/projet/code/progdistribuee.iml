@@ -19,7 +19,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" />
-          <factory-entry name="progweb" />
+          <factory-entry name="progdistribuee" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

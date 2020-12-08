@@ -7,10 +7,12 @@ import com.esiea.progdistribuee.data.Flight;
 import com.esiea.progdistribuee.data.User;
 import com.esiea.progdistribuee.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class FlightServiceImpl implements FlightService {
 
     @Autowired

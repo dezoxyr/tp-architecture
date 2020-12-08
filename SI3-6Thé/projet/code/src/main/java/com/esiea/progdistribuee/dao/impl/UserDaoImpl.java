@@ -2,12 +2,19 @@ package com.esiea.progdistribuee.dao.impl;
 
 import com.esiea.progdistribuee.dao.UserDao;
 import com.esiea.progdistribuee.data.User;
+import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class UserDaoImpl implements UserDao {
 
 	private static List<User> users;
+
+	public UserDaoImpl() {
+		users = new ArrayList<>();
+	}
 
 	@Override
 	public List<User> allUsers() {
