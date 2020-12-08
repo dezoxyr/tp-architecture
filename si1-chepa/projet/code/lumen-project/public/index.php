@@ -10,7 +10,7 @@
 | is ready to receive HTTP / Console requests from the environment.
 |
 */
-$home = require 'interfaceClient/acceuil.html';
+$home = require 'interfaceClient/acceuilphp.html';
 $app = require __DIR__.'/../bootstrap/app.php';
 
 /*
