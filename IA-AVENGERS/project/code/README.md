@@ -12,6 +12,6 @@
 <h2>Lancements</h2>
 <p>Pour utiliser le site de réservation de billets d'avion, vous devez lancer deux scripts (pour le lancement des scripts, nous vous conseillons de les lancer avec python3 et non python pour éviter des conflits):</p>
 <ul>
-  <li>flightAPI.py: Ce programme permet de lancer le serveur web sur lequel est hébergée l'API (donc indispensable pour faire les requêtes depuis le site web de réservation)</li>
-  <li>websiteHosting.py: Ce programme permet d'héberger le site internet de réservation de vols</li>
+  <li>```flightAPI.py```: Ce programme permet de lancer le serveur web sur lequel est hébergée l'API (donc indispensable pour faire les requêtes depuis le site web de réservation)</li>
+  <li>```websiteHosting.py```: Ce programme permet d'héberger le site internet de réservation de vols</li>
 </ul>
