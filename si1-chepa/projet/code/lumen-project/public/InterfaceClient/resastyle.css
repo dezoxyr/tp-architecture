@@ -1,11 +1,23 @@
 table,
 td {
+
     border: 1px solid #333;
+    border-color: black;
+    color: white;
 }
 
 .center {
   margin-left: auto;
   margin-right: auto;
+}
+
+body {
+	background: linear-gradient(rgba(1, 1, 1, 0), rgba(1, 1, 1, 1.5)), url(https://vivre-en-thailande.com/files/2017/07/avion-1170x660.jpg);
+	height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
 }
 
 thead,
