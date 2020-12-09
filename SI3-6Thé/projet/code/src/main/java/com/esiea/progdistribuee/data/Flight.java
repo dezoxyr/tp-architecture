@@ -21,6 +21,26 @@ public class Flight {
         this.capacity = capacity;
     }
 
+    public Airport getArrivalAirport() {
+        return arrivalAirport;
+    }
+
+    public Airport getDepartureAirport() {
+        return departureAirport;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
     public boolean isAvailable() {
         return capacity > 0;
     }

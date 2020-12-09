@@ -14,6 +14,9 @@ public class AirportDaoImpl implements AirportDao {
 
     public AirportDaoImpl() {
         airports = new ArrayList<>();
+        createAirport(new Airport("JFK", "New York"));
+        createAirport(new Airport("CDG", "CDG Paris"));
+        createAirport(new Airport("DTW", "Detroit"));
     }
 
     @Override

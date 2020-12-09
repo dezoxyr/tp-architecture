@@ -13,4 +13,11 @@ public class Airport {
         this.airportName = airportName;
     }
 
+    public String getAirportCode() {
+        return airportCode;
+    }
+
+    public String getAirportName() {
+        return airportName;
+    }
 }

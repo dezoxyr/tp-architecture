@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
 @RequestMapping("/flight")
 public class FlightController {
 

@@ -13,11 +13,11 @@ var loadFlights = function () {
     success : function (result) {
       if (result) {
         for (let i = 0; i < result.length; i++) {
-          const sCodeDep = result[i].departureAirport;
-          const sCodeDest = result[i].arrivalAirport;
+          const sCodeDep = result[i].departureAirport.airportName;
+          const sCodeDest = result[i].arrivalAirport.airportName;
           const sDate = result[i].date;
           const sPrice = result[i].price;
-          addFlight(index, sCodeDep, sCodeDest, sDate, sPrice);
+          addFlight(i, sCodeDep, sCodeDest, sDate, sPrice);
         }
       }
     }
@@ -37,7 +37,7 @@ var addFlight = function (index, codeDep, codeDest, date, price) {
   '<td class="codeDep">' + codeDep + '</td>' +
   '<td class="codeDest">' + codeDest + '</td>' +
   '<td class="date">' + date + '</td>' +
-  '<td class="price">' + price + '</td>' +
+  '<td class="price">' + price + ' €</td>' +
   '<td><button id="btnBook" class="btn btn-success" onclick="bookFlight();">Réserver</button></td>' +
   '</tr>');
 };

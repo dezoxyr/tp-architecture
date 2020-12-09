@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User getUserbyUsername(String username) {
 		for (User user: users) {
-			if(user.getUsername() == username) {
+			if(user.getUsername().equals(username)) {
 				return user;
 			}
 		}
@@ -54,7 +54,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public Boolean userExists(String username, String password) {
 		for (User user: users) {
-			if(user.getUsername() == username && user.getPassword() == password) {
+			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
 				return true;
 			}
 		}
