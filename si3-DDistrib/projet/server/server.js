@@ -99,7 +99,6 @@ app.post('/myFlights/:idFlight&:idClient', (req, res) => {
 	airfares.push(data);
 	fs.writeFile('./data/airfares.json', JSON.stringify(airfares), 'utf8', (err) => {
 		if (err) console.log('Error writing file : ' + err);
-		// else console.log("File is written successfully !");
 	});
 	res.status(200).json(airfares);
 });

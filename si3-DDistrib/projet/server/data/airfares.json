@@ -1,1 +1,3 @@
-[{"id":1,"idFlight":"1","idClient":"6","label":"JFK-CDG 500","departure_time":"10h00","arrival_time":"18h00","date":"01/01/2021"},{"id":2,"idFlight":"1","idClient":"4","label":"JFK-CDG 500","departure_time":"10h00","arrival_time":"18h00","date":"01/01/2021"},{"id":3,"idFlight":"2","idClient":"4","label":"CDG-JFK 800","departure_time":"10h00","arrival_time":"18h00","date":"15/01/2021"},{"id":4,"idFlight":"1","idClient":"6","label":"JFK-CDG 500","departure_time":"10h00","arrival_time":"18h00","date":"01/01/2021"},{"id":5,"idFlight":"2","idClient":"6","label":"CDG-JFK 800","departure_time":"10h00","arrival_time":"18h00","date":"15/01/2021"}]
+[
+	
+]
