@@ -16,24 +16,31 @@ Réalisation d'une architecture distribuée où une solution simplifiée qui per
 
 1) Cloner le projet et se positionner dans le répertoire 'code'
 
+```bash
 > git clone https://github.com/Yulypso/tp-architecture.git
 > cd tp-architecture
 > git pull
 > git checkout IA1-GigaPanda
 > cd IA1-GigaPanda/projet/code
-
+```
 
 2) Installer les packages nécessaires depuis le package.json
 
+```bash
 > npm install
+```
 
 3) Démarrer le server 
 
+```bash
 > npm start
+````
 
 4) Ouvrir un navigateur web (client) 
 
+```bash
 > http://localhost:8080
+```
 
 ---
 
