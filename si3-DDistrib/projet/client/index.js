@@ -37,6 +37,14 @@ app.get('/myFlights/:id', async (req, res) => {
 	res.json(json);
 })
 
+app.get('/Airfares', async (req, res) => {
+	logInfo('/Airfares');
+	const url = "http://localhost:8000/Airfares";
+	const fetch_response = await fetch(url);
+	const json = await fetch_response.json();
+	res.json(json);
+})
+
 app.post('/myFlights/:idFlight&:idClient', async (req, res) => {
 	logInfo("/myFlight/" + req.params.idFlight + "&" + req.params.idClient);
 	const url = "http://localhost:8000/myFlights/" + req.params.idFlight + "&" + req.params.idClient;

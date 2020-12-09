@@ -12,37 +12,9 @@ function logInfo(str){
 	console.log("[ INFO ] CLIENT CONNECTED TO : " + str)
 }
 
-// app.use(express.json());
-
 app.get('/', (req, res) => { // OK
-	logInfo("/");
-	clients.forEach((c) => {
-		console.log(c.firstname);
-		if (c.email == req.query.email) {
-			console.log("match and redirect")
-			return res.redirect('/home')
-		}
-	})
-	res.send("<!DOCTYPE html>" +
-	"<html lang='en'>" +
-	"<head>" +
-	"	<meta charset='UTF-8'>" +
-	"	<meta name='viewport' content='width=device-width, initial-scale=1.0'>" +
-	"	<title>si3-DDistrib</title>" +
-	"</head>" +
-	"<body>" +
-	"	<form>" +
-	"		<input type='text' name='email' id='email'>" +
-	"		<button onclick='submit()' type='button'>Se connecter</button>" +
-	"	</form>" +
-	"</body>" +
-	"</html>");
+	res.send("SERVER API : Architecture Distribuée");
 });
-
-app.get('/home', (req, res) => {
-	logInfo("/home")
-	res.send('hello world');
-})
 
 app.get('/Flights', (req, res) => { // OK
 	logInfo("/Flight")
@@ -66,6 +38,23 @@ app.get('/myFlights/:id', (req, res) => {
 		if (item.idClient == id) myFlights.push(item)
 	})
 	res.status(200).json(myFlights)
+})
+
+app.get("/Airfares", (req, res) => {
+	logInfo("/Airfares")
+	var airfaresJSON = [];
+	for (var i = 1; i <= flights.length; i++) {
+		airfaresJSON[i] = 0;
+	}
+	airfares.forEach((item) => {
+		const id = parseInt(item.idFlight);
+		if (airfaresJSON[id] == undefined) {
+			airfaresJSON[id] = 1;
+		} else {
+			airfaresJSON[id] = parseInt(airfaresJSON[id]) + 1;
+		}
+	});
+	res.status(200).json(airfaresJSON)
 })
 
 app.post('/myFlights/:idFlight&:idClient', (req, res) => {

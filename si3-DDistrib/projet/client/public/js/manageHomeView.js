@@ -43,9 +43,10 @@ function rechercheButtonAction(){
 	window.location.href = "http://localhost:80/home.html?idClient=" + (getIdClient()) + "&from=" + this.from + "&to=" + this.to;
 }
 
-function addOneBillet(id, from, to, date, departure_time, arrival_time, price){
-	return '<div class="billet" id="'+id+'"><div class="textArea"><label>De :</label><label class="from">'+from+'</label><label>à :</label><label class="to">'+to+'</label><br><label>Départ :</label><label class="departure_time">'+date + "-" + departure_time+'</label><label>arrivé :</label><label class="arrival_time">'+date+"-"+arrival_time+'</label></div><div class="addButton"><input type="button" onClick="addToMyBillet(' + id + ')" value="Add"></div><div class="price"><label>'+price+'</label></div></div>'
+function addOneBillet(id, from, to, date, departure_time, arrival_time, price, nbseat){
+	return '<div class="billet" id="'+id+'"><div class="textArea f3"><label>De :</label><label class="from">'+from+'</label><label> à : </label><label class="to">'+to+'</label><br><label>Départ :</label><label class="departure_time">'+date + "-" + departure_time+'</label><label>arrivé :</label><label class="arrival_time">'+date+"-"+arrival_time+'</label></div><div class="nbseat f1"><label>'+nbseat+'</label></div><div class="price f1"><label>'+price+'</label></div><input type="button" onClick="addToMyBillet(' + id + ', ' + nbseat + ')" value="Add" class="button f1"></div>'
 }
+
 
 function addMyOneBillet(id, label, departure_time, arrival_time){
 	return '<div class="billetClient" id="'+id+'"><div class="billetClientTop"><label>'+label+'</label></div><br><div><label>Départ :</label><label>'+departure_time+'</label><br><label>Arrivé :</label><label>'+arrival_time+'</label></div> </div>'
@@ -56,24 +57,34 @@ function addAllBillet(from, to){
 	var req = new XMLHttpRequest();  
 	req.open("GET", "http://localhost:80/Flights", false);
 	req.send(null);
-	const resJson = JSON.parse(req.responseText);
-	console.log(from, to)
+	const flightsJSON = JSON.parse(req.responseText);
+	
+	req.open("GET", "http://localhost:80/Airfares", false);
+	req.send(null);
+	const airfaresJSON = JSON.parse(req.responseText);
+	airfaresJSON.forEach((e, i) => {
+		if (e == null) {
+			airfaresJSON[i] = 0;
+		}
+	});
 
-	resJson.forEach((i) => {
+	flightsJSON.forEach((i) => {
+		console.log(airfaresJSON, i.seats_count, airfaresJSON[i.id]);
+		i.seats_count = parseInt(i.seats_count) - parseInt(airfaresJSON[i.id]);
 		if (from == "Tous" && to == "Tous")
-			result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price);
+			result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price, i.seats_count);
 		else if (from == "Tous" && to != "Tous") {
 			if (i.to == to) {
-				result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price);
+				result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price, i.seats_count);
 			}
 		} else if (from != "Tous" && to == "Tous") {
 			console.log(i.from)
 			if (i.from == from) {
-				result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price);
+				result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price, i.seats_count);
 			}
 		} else if (from != "Tous" && to != "Tous") {
 			if (from == i.from && to == i.to)
-			result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price);
+			result += addOneBillet(i.id, i.from, i.to, i.date, i.departure_time, i.arrival_time, i.price, i.seats_count);
 		}
 	})
 	return result;
@@ -92,12 +103,18 @@ function addAllMyBillet(idClient){
 	return result;
 }
 
-function addToMyBillet(idFlight) {
+function addToMyBillet(idFlight, nb_seat) {
 	idClient = getIdClient()
-	var req = new XMLHttpRequest();
-	var url = ("http://localhost:80/myFlights/" + idFlight + "&" + idClient);
-	req.open("POST",url, false);
-	req.send(null);
-	const resJson = JSON.parse(req.responseText);
-	window.location.href = "http://localhost:80/home.html?idClient=" + idClient;
+	
+	if (nb_seat != 0) {
+		var req = new XMLHttpRequest();
+		var url = ("http://localhost:80/myFlights/" + idFlight + "&" + idClient);
+		req.open("POST",url, false);
+		req.send(null);
+		const resJson = JSON.parse(req.responseText);
+		window.location.href = "http://localhost:80/home.html?idClient=" + idClient;
+	} else {
+		console.log("error : no more places");
+		alert("Plus de place pour ce vol")
+	}
 }
