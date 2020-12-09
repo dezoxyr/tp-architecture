@@ -8,7 +8,7 @@
 
 Réalisation d'une architecture distribuée où une solution simplifiée qui permet à des utilisateurs de réserver un billet d'avion a été mis en place. 
 
-<img align="center" width="200" height="200" src="./projet/code/public/images/Logo.png"/>
+<img align="center" width="200" height="200" src="./code/public/images/Logo.png"/>
 
 ---
 
@@ -43,13 +43,13 @@ Réalisation d'une architecture distribuée où une solution simplifiée qui per
 
 > En se connectant sur http://localhost:8080, on arrive sur la page d'accueil
 
-<img align="center" width="900" height="768" src="./projet/code/public/images/welcome.png"/>
+<img align="center" width="900" height="768" src="./code/public/images/welcome.png"/>
 
 ### Page Login
 
 > Après avoir cliqué sur le bouton 'Sign in', on arrive sur la page de Login
 
-<img align="center" width="900" height="768" src="./projet/code/public/images/login.png"/>
+<img align="center" width="900" height="768" src="./code/public/images/login.png"/>
 
 ### Page Flights
 
@@ -58,24 +58,24 @@ Réalisation d'une architecture distribuée où une solution simplifiée qui per
 > - vérifier la liste des vols enregistrés
 > - Se déconnecter
 
-<img align="center" width="900" height="768" src="./projet/code/public/images/flights.png"/>
+<img align="center" width="900" height="768" src="./code/public/images/flights.png"/>
 
 ### Page billet enregistré
 
 > On choisit par exemple le vol de Paris à New York (CDG) et on confirme. 
 
-<img align="center" width="900" height="768" src="./projet/code/public/images/enregistre.png"/>
+<img align="center" width="900" height="768" src="./code/public/images/enregistre.png"/>
 
 
 ### Page mes billets 
 
 > On clique sur 'My tickets' qui nous permet d'afficher la liste de nos billets d'avion
 
-<img align="center" width="900" height="768" src="./projet/code/public/images/billets.png"/>
+<img align="center" width="900" height="768" src="./code/public/images/billets.png"/>
 
 
 ### Gestion d'erreur 
 
 > Si une route n'existe pas, nous affichons le code Erreur et sa trace
 
-<img align="center" width="900" height="768" src="./projet/code/public/images/404.png"/>
+<img align="center" width="900" height="768" src="./code/public/images/404.png"/>
