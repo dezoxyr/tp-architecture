@@ -7,7 +7,13 @@ class database
 
     // déclaration des méthodes
     function __construct() {
-        $this->listeVol = array(
+
+        $content = json_decode(file_get_contents('./database.json'), true);
+        $this->listeVol = $content[0];
+        $this->listeReserv = $content[1];
+
+
+        /*$this->listeVol = array(
             1 => array(
                 'departPlace' => 'JFK',
                 'arrivePlace' => 'CDG',
@@ -101,6 +107,9 @@ class database
             ),
         );
 
+        $content = array($this->listeVol, $this->listeReserv);
+        file_put_contents("./database.json", json_encode($content));
+*/
     }
 
     function getListVol(){
@@ -109,12 +118,18 @@ class database
 
     function reservation($id, $client){
         if($this->listeVol[$id]){
-            $this->listeReserv[strtolower($client['nom'].$client['prenom'])] = array(
+            $this->listeReserv[strtolower($client['nom'].$client['prenom'])][] = array(
                         'client' => $client,
                         'vol' => $this->listeVol[$id]
                     );
 
-            return $this->listeReserv[strtolower($client['nom'].$client['prenom'])];
+            $content = array($this->listeVol, $this->listeReserv);
+            file_put_contents("./database.json", json_encode($content));
+
+            return array(
+                'client' => $client,
+                'vol' => $this->listeVol[$id]
+            );
         }else{
             return null;
         }
@@ -122,7 +137,7 @@ class database
     }
 
     function getReservation($client){
-        return $this->listeReserv[strtolower($client['nom'].$client['prenom'])];
+        return (array_key_exists(strtolower($client['nom'].$client['prenom']), $this->listeReserv)? $this->listeReserv[strtolower($client['nom'].$client['prenom'])] : [] );
     }
 }
 ?>

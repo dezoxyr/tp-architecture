@@ -126,20 +126,19 @@ function getReservation(){
         data : {"client": client},
         dataType : 'json',
         success : function(json){
-            if(json.error){
+            console.log(json);
+            if(json['error']){
                 document.getElementById('error').innerHTML = json.error;
             }else{
                 var html = "";
-                var i = 1;
-                while(json[i]){
+                json.forEach(function (value) {
                     html += "<tr>\
-                            <td>"+json[i].vol['departPlace']+" "+json[i].vol['dateDepart']+"</td>\
-                            <td>"+json[i].vol['arrivePlace']+" "+json[i].vol['dateArrive']+"</td>\
-                            <td>"+json[i].vol['prix']+"</td>\
-                            <td>"+json[i].vol['code']+"</td>\
+                            <td>"+value['vol']['departPlace']+" "+value['vol']['dateDepart']+"</td>\
+                            <td>"+value['vol']['arrivePlace']+" "+value['vol']['dateArrive']+"</td>\
+                            <td>"+value['vol']['prix']+"</td>\
+                            <td>"+value['vol']['code']+"</td>\
                         </tr>";
-                    i++;
-                }
+                });
                 document.getElementById('listeReserv').innerHTML = html;
             }
         },
