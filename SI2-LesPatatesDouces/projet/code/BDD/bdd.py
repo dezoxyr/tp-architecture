@@ -53,6 +53,10 @@ class BDD:
     def get_list_billet(self):
         return self.list_billet
 
+    def update_billet(self, billet):
+        index = self.list_billet.index()
+        self.list_billet[index] = billet
+
     def add_user(self, user):
         self.list_user.append(user)
 

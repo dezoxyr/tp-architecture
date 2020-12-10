@@ -137,17 +137,14 @@ var flightTable = {
                 { text: 'Date d\'Arrivée', value: 'date_arrivee' },
                 { text: 'Places disponibles', value: 'nombre_billets' },
                 { text: 'Action', value: 'action' }
-            ]
+            ],
+            id: 0
         }
     },
     methods:{
         seeTickets(item){
-            fetch("http://localhost:5000/billet/all/"+ item.id)
-            .then(function(response){
-                return response.json()
-            }).then((json) =>
-                console.log(json)
-            )
+            this.id = item.id
+            this.$emit("tickets", this.id)
         }
     },
     mounted: function () {
@@ -168,6 +165,48 @@ var flightTable = {
         <v-data-table :headers="headersVols" :items="vols">
         <template v-slot:item.action="{ item }">
         <v-btn @click="seeTickets(item)">Voir les billets disponibles</v-btn>
+        </template>
+        </v-data-table>
+    </div>
+    `
+}
+
+var ticketsTable = {
+    props:['vol'],
+    data: function () {
+        return {
+            billets: [],
+            headersBillets: [
+                { text: 'Code aéroport départ', value: 'codeDepart' },
+                { text: 'Code aéroport d\'arrivée', value: 'codeArrivee' },
+                { text: 'Prix', value: 'prix' },
+                { text: 'Action', value: 'action' }
+            ]
+        }
+    },
+    mounted: function () {
+        fetch("http://localhost:5000/billet/all/" + this.vol)
+            .then(function(response){
+                return response.json()
+            }).then((json) =>
+                {
+                this.billets = json
+                for(let i =0; i<this.billets.length; ++i){
+                        this.billets[i].action = `` //To instantiate action
+                    }
+                }
+            )
+    },
+    template: `
+    <div>
+        <v-data-table :headers="headersBillets" :items="billets">
+        <template v-slot:item.action="{ item }">
+        <v-btn class="ma-2" color="primary" dark>
+            Ajouter
+            <v-icon dark right>
+                mdi-checkbox-marked-circle
+            </v-icon>
+        </v-btn>
         </template>
         </v-data-table>
     </div>

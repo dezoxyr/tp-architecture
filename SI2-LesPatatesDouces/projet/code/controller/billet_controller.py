@@ -17,3 +17,8 @@ class BilletController :
         for billet in self.bdd.get_list_billet():
             if billet.id == int(id):
                 return jsonify(billet.to_dict())
+
+    def set_user(self, id: int, user: str):
+        billet = self.get_by_id(id)
+        billet.user = user
+        self.bdd.update_billet()
