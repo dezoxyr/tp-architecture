@@ -45,4 +45,19 @@ public class FlightServiceImpl implements FlightService {
         user.addBooking(booking);
     }
 
+    @Override
+    public List<Flight> getUserFlights(int userId) {
+        return dao.getUserFlights(userId);
+    }
+
+    @Override
+    public void cancelBooking(Flight flight, User user) {
+        List<Booking> bookings = user.getBookings();
+        for(Booking booking: bookings) {
+            if(booking.getFlight().getId() == flight.getId()) {
+                user.removeBooking(booking);
+            }
+        }
+    }
+
 }

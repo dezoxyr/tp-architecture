@@ -21,6 +21,10 @@ public class Flight {
         this.capacity = capacity;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public Airport getArrivalAirport() {
         return arrivalAirport;
     }

@@ -15,4 +15,6 @@ public interface FlightDao {
     void deleteFlight(Flight flight);
 
     int getLastId();
+
+    List<Flight> getUserFlights(int userId);
 }

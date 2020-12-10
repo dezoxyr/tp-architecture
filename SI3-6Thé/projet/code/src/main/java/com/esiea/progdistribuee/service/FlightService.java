@@ -18,4 +18,8 @@ public interface FlightService {
     void deleteFlight(Flight flight);
 
     void book(Flight flight, User user);
+
+    List<Flight> getUserFlights(int userId);
+
+    void cancelBooking(Flight flight, User user);
 }

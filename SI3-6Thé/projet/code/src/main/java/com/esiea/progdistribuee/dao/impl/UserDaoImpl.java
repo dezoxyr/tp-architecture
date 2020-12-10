@@ -14,6 +14,7 @@ public class UserDaoImpl implements UserDao {
 
 	public UserDaoImpl() {
 		users = new ArrayList<>();
+		users.add(new User("test","test"));
 	}
 
 	@Override

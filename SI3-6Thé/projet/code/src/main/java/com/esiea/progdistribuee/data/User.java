@@ -42,4 +42,14 @@ public class User {
 		bookings.add(booking);
 	}
 
+	public List<Booking> getBookings() {
+    	return bookings;
+	}
+
+	public void removeBooking(Booking booking) {
+    	if (bookings.contains(booking)) {
+    		bookings.remove(booking);
+		}
+	}
+
 }

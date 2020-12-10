@@ -2,7 +2,9 @@ package com.esiea.progdistribuee.dao.impl;
 
 import com.esiea.progdistribuee.dao.AirportDao;
 import com.esiea.progdistribuee.dao.FlightDao;
+import com.esiea.progdistribuee.dao.UserDao;
 import com.esiea.progdistribuee.data.Airport;
+import com.esiea.progdistribuee.data.Booking;
 import com.esiea.progdistribuee.data.Flight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,6 +15,9 @@ import java.util.List;
 
 @Repository
 public class FlightDaoImpl implements FlightDao {
+
+    @Autowired
+    private UserDao userDao;
 
     private static List<Flight> flights;
 
@@ -49,5 +54,16 @@ public class FlightDaoImpl implements FlightDao {
     @Override
     public int getLastId() {
         return flights.size();
+    }
+
+    @Override
+    public List<Flight> getUserFlights(int userId) {
+        List<Flight> flights = new ArrayList<>();
+        List<Booking> bookings = userDao.getUser(userId).getBookings();
+        for(Booking booking: bookings) {
+            flights.add(booking.getFlight());
+        }
+
+        return flights;
     }
 }

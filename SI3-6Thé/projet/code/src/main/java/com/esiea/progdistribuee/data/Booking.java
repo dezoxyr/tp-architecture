@@ -12,4 +12,8 @@ public class Booking {
         this.flight = flight;
         this.user = user;
     }
+
+    public Flight getFlight() {
+        return flight;
+    }
 }
