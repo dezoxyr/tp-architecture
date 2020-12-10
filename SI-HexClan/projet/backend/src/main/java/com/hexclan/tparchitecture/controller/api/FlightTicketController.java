@@ -92,14 +92,25 @@ public class FlightTicketController {
         return ResponseEntity.ok(flights);
     }
 
-    @PostMapping("/{idFlight}")
+    @PatchMapping("/{idFlight}/book")
     public ResponseEntity<?> bookFlightTicket(@PathVariable(name = "idFlight") Integer idFlight, HttpServletRequest httpRequest) {
         try {
-            
             String username = (String) httpRequest.getAttribute("username");
             User passenger = userService.findByUsername(username);
 
             return ResponseEntity.ok(flightTicketService.bookFlightTicket(idFlight, passenger));
+        } catch (NumberFormatException e) {
+            throw new BadRequestException("Invalid id");
+        }
+    }
+
+    @PatchMapping("/{idFlight}/cancel")
+    public ResponseEntity<?> cancelFlightTicket(@PathVariable(name = "idFlight") Integer idFlight, HttpServletRequest httpRequest) {
+        try {
+            String username = (String) httpRequest.getAttribute("username");
+            User passenger = userService.findByUsername(username);
+
+            return ResponseEntity.ok(flightTicketService.cancelFlightTicket(idFlight, passenger));
         } catch (NumberFormatException e) {
             throw new BadRequestException("Invalid id");
         }
