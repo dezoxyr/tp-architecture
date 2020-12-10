@@ -10,4 +10,6 @@ __SQL lite__ : est une bibliothèque écrite en langage C qui propose un moteur 
 
 __Tkinter__ : Mettre en place une interface pour faciliter la réservation de billet grâce à notre API 
 
+# Modèle de données
+
 ![alt text](https://raw.githubusercontent.com/Amza99/tp-architecture/main/IA-MaghrebUnited/Projet/modeleRelation.png)
