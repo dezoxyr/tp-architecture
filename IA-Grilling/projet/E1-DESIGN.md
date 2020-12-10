@@ -1,15 +1,17 @@
 # Architecture globale:
 Nous avons choisi de faire une architecture de type REST.<br>
-L'utilisateur ne vera qu'une interface sous la forme d'un site web sur laquelle il pourra se connecter pour voir la liste des vols disponibles et réserver un billet.<br>
-2 fichiers .json sont stockés sur ce repository github, un fichier pour la liste des vols disponibles et un fichier contenant les utilisateurs avec la liste des réservations de chaque utilisateur.<br>
+Le client interragit avec une API via des requêtes de type GET ou POST<br>
+L'API va ensuite soit récupérer des données sur la base de données s'il s'agit d'une requête de type GET, ou modifier des données s'il s'agit d'une requête POST.<br>
 
-![Architecture](https://user-images.githubusercontent.com/44286703/100917526-9c24a080-351a-11eb-9b70-052bec924434.png)
+![Architecture_globale](https://user-images.githubusercontent.com/44286703/101782231-19b06800-3b3c-11eb-80b0-f96eae134d20.png)
 
 # Modèle de données:
 Modèle textuel: fichiers .json stockés en ligne (github)
+Nous avons 2 tables sous forme de fichiers .json: <br>
+- La première table contient une liste de string, chaque élément de cette liste représentant un billet.
+- La seconde table contient une liste d'objet User, chaque User contient un Username et une liste de string contenant les billets qu'il a réservé.
 
-![data_model](https://user-images.githubusercontent.com/44286703/100915909-5ebf1380-3518-11eb-8f4d-b1431246ebdc.png)
-
+![data_model2](https://user-images.githubusercontent.com/44286703/101782056-e968c980-3b3b-11eb-9a48-ed4b25eebc70.png)
 # Stack technique:
 Langages: HTML, Javascript, CSS<br>
-Outils: Notepad++, GitHub, Teams, Discord
+Outils: Notepad++, GitHub, Microsoft Teams, Discord, Express JS
