@@ -1,6 +1,7 @@
 package api.controller;
 
 import classes.Airport;
+import classes.Client;
 import classes.Company;
 import classes.Flight;
 import org.springframework.boot.SpringApplication;
@@ -45,6 +46,16 @@ public class RestServiceApplication {
         company.addFlight(new Flight(310, date10, newyork, paris, 325. ));
         company.addFlight(new Flight(243, date11, detroit, newyork, 556. ));
         company.addFlight(new Flight(19, date12, detroit, paris, 423. ));
+
+        Client c1 = new Client("Sam");
+        Client c2 = new Client("Léo");
+        Client c3 = new Client("Thibaud");
+        Client c4 = new Client("Loïc");
+
+        company.addUser(c1);
+        company.addUser(c2);
+        company.addUser(c3);
+        company.addUser(c4);
 
         SpringApplication.run(RestServiceApplication.class, args);
     }

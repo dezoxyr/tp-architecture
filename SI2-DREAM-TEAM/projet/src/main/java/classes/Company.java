@@ -1,8 +1,6 @@
 package classes;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Company {
 
@@ -10,7 +8,7 @@ public class Company {
     private List<Client> clientlist;
     private static Company company;
 
-    public static Company getInstance(){
+    public static Company getInstance() {
         if (company == null)
             return company = new Company(new LinkedList<Flight>(), new LinkedList<Client>());
         else
@@ -22,7 +20,7 @@ public class Company {
         this.clientlist = clientlist;
     }
 
-    public void addFlight(Flight flight){
+    public void addFlight(Flight flight) {
         flightlist.add(flight);
     }
 
@@ -32,5 +30,46 @@ public class Company {
 
     public List<Client> getClientlist() {
         return company.clientlist;
+    }
+
+    public List<Ticket> getUsersTickets(String user) {
+        return findClientByName(user).getTickets();
+    }
+
+    public Client findClientByName(String user) {
+        for (Client client : clientlist)
+            if (client.getName().toLowerCase().equals(user.toLowerCase())) {
+                System.out.println("user trouvé " + client.getName() );
+                return client;
+            }
+            return null;
+    }
+
+    public Flight findFlightByID(int id){
+        for (Flight idf : flightlist)
+            if (idf.getId()==id) {
+                System.out.println("vol trouvé : " + idf);
+                return idf;
+            }
+            return null;
+    }
+
+    public List<Flight> getAvailableFlights() {
+        List<Flight> flights = new LinkedList<>();
+
+        for (Flight flight : flightlist)
+            if (flight.getDepartureDate().after(new Date()) && flight.getSeats() > 0)
+                flights.add(flight);
+        return flights;
+    }
+
+    public Ticket bookFlight(String user, int flightID) {
+        Client c = findClientByName(user);
+        Flight f = findFlightByID(flightID);
+        return c.addNewTicket(f);
+    }
+
+    public void addUser(Client c) {
+        clientlist.add(c);
     }
 }

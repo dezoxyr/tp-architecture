@@ -3,6 +3,8 @@ package api.controller;
 import classes.Client;
 import classes.Company;
 import classes.Flight;
+import classes.Ticket;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,19 +34,20 @@ public class FlightController {
      */
     @GetMapping("/available_flights")
     public List<Flight> getAvailableFlights() {
-        LinkedList<Flight> flights = new LinkedList<>();
-
-        for (Flight flight : company.getFlightlist())
-            if (flight.getDepartureDate().after(new Date()) && flight.getSeats() > 0)
-                flights.add(flight);
-
-        return flights;
+        return company.getAvailableFlights();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value="/reservation")
-    public ResponseEntity<?> getReservation(@RequestBody Map<String,String> json) {
+    @RequestMapping(method = RequestMethod.GET, value = "/tickets")
+    public List<Ticket> getReservedFlights(@RequestParam("name") String user) {
+        return company.getUsersTickets(user);
+    }
 
-        return ResponseEntity.status(201).body("{ name: "+json.get("name")+", id: "+json.get("id")+"}");
+    @RequestMapping(method = RequestMethod.POST, value = "/reservation")
+    public ResponseEntity<Ticket> getReservation(@RequestBody Map<String, String> json) {
+        String user = json.get("name");
+        int flightID = Integer.parseInt(json.get("id"));
+        return ResponseEntity.status(HttpStatus.CREATED).body(company.bookFlight(user,flightID));
+        //return ResponseEntity.status(201).body("{ name: " + json.get("name") + ", id: " + json.get("id") + "}");
     }
 
 }
