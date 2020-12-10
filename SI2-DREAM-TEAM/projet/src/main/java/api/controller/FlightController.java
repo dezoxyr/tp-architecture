@@ -1,12 +1,15 @@
 package api.controller;
 
+import classes.Client;
 import classes.Company;
 import classes.Flight;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class FlightController {
@@ -38,14 +41,10 @@ public class FlightController {
         return flights;
     }
 
-    /*@RequestMapping(method = RequestMethod.POST, value="/reservation")
-    public String getReservation() {
-        return "coucou";
-    }*/
+    @RequestMapping(method = RequestMethod.POST, value="/reservation")
+    public ResponseEntity<?> getReservation(@RequestBody Map<String,String> json) {
 
-   /* @GetMapping("/reservation")
-    public String getReservation() {
-        return "coucou";
-    }*/
+        return ResponseEntity.status(201).body("{ name: "+json.get("name")+", id: "+json.get("id")+"}");
+    }
 
 }
