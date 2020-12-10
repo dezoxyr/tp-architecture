@@ -1,6 +1,6 @@
 # Design SYSTEM API
 
-![alt text](https://raw.githubusercontent.com/Amza99/tp-architecture/main/IA-MaghrebUnited/Projet/communicationSYS.png)
+![alt text](https://github.com/Amza99/tp-architecture/blob/IA-MaghrebUnited/IA-MaghrebUnited/Projet/communicationSYS.png)
 
 # Technologies utilisée TP Architecture Distribué
 
