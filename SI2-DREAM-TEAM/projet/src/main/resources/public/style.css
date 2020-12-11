@@ -58,7 +58,6 @@ nav
 #onglets
 {
 	line-width: 100%;
-	margin:auto auto auto auto;
 	padding:0 0 0 0;
 	line-height:40px;
 	list-style-type:none;
@@ -68,7 +67,6 @@ nav
 {
 /*Empeche le retour à la ligne*/
 	display:inline-block;
-	
 }
 
 #onglets a
@@ -77,7 +75,7 @@ nav
 	padding-right:10px;
 	color: white;
 	text-decoration: none;
-	
+
 	display:inline-block;
 }
 
@@ -95,8 +93,8 @@ footer
 	padding:0 0 0 0;
 	background-color:#00001f; /* a19a77 */
 	font-size:0.7em;
-	position: absolute; 
-	bottom: 0;	
+	position: absolute;
+	bottom: 0;
 }
 
 #contacts
@@ -166,6 +164,22 @@ footer
 	width:60%;
 	min-height:calc(100% - 370px);
 	margin:0 auto 0 auto;
+}
+
+.form-submit-button {
+	font-family: "Montserrat", sans-serif;
+	height: 100%;
+	background: #00001f;
+	color: white;
+	padding: 10px 20px;
+	border: 0px;
+
+}
+
+.form-submit-button:hover {
+	background: white;
+	color: #00001f;
+	padding: 10px 20px;
 }
 
 .img1{

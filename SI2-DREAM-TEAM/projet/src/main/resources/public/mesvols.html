@@ -1,69 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-		<script src="scripts/myflights.js"></script>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="style.css"/>
-		<center>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="style.css"/>
+	<center>
 		<title>DREAM-TEAM Airlines</title>
-		</center>
-	</head>
-	
+	</center>
+</head>
+
 <header>
 	<div id="banniere">
 		<strong>DREAM-TEAM Airlines</strong>
 	</div>
 	<nav>
-		<ul id="onglets">
-		<a href="index.html"><li class="onglet">Accueil</li></a>
-		<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
-		<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
-		</ul>
+		<form action="index.html" method="GET">
+			<ul id="onglets">
+				<a href="index.html"><li class="onglet">Accueil</li></a>
+				<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
+				<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
+				<a> <li class="txt"> <div> <input type="text" id="name" name="name" required minlength="3" maxlength="20" size="20"></div> </li></a>
+				<a> <li> <input class="form-submit-button" type="submit" value="Connexion"> </li> </a>
+			</ul>
+		</form>
 	</nav>
 </header>
 
 <body>
-	<div id="main3">
-		<br>
-		<h2>Mes réservations</h2>
-		<br>
-		<center>
-			<table border="1" width="80%" cellspacing="0" cellpadding="6">
-				<thead>
-				<tr>
-					<th id="C1"> N° de vol</th>
-					<th id="C2"> Date</th>
-					<th id="C3"> Aéroport de départ</th>
-					<th id="C4"> Aéroport d'arrivée</th>
-					<th id="C5"> Prix(€)</th>
-				</tr>
-				</thead>
-				<tbody id="reserved_flights">
-				<!--<tr>
-					<td>1</td>
-					<td>01/01/2021 15:00</td>
-					<td>New-york (JFK)</td>
-					<td>Paris (CDG)</td>
-					<td>300</td>
-				</tr> -->
+<div id="main3">
 
-				</tbody>
-			</table>
-		</center>
-		
-	</div>	
-	
-	<div>
-		</br>
-	</div>
+</div>
+
+<div>
+	</br>
+</div>
 
 </body>
 
 <footer>
 	<ul id="contacts">
-	<li><a class="contact" href="https://github.com/T2Clubber/tp-architecture/tree/SI2-DREAM-TEAM">Notre repository Git</a></li>
-	<p class = "contact2">DREAM-TEAM Team</p>
+		<li><a class="contact" href="https://github.com/T2Clubber/tp-architecture/tree/SI2-DREAM-TEAM">Notre repository Git</a></li>
+		<p class = "contact2">DREAM-TEAM Team</p>
 	</ul>
 </footer>
 </html>
