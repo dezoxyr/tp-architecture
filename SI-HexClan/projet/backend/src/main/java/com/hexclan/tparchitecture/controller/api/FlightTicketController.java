@@ -48,6 +48,25 @@ public class FlightTicketController {
         flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
         flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
         flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
+        flightTicketService.save(new FlightTicket(airport1, airport2, 300.0, LocalDate.now().plusMonths(1)));
+        flightTicketService.save(new FlightTicket(airport2, airport3, 300.0, LocalDate.now().plusDays(1)));
+        flightTicketService.save(new FlightTicket(airport3, airport2, 300.0, LocalDate.now().plusWeeks(2)));
     }
 
     @GetMapping("/")
@@ -73,15 +92,25 @@ public class FlightTicketController {
         return ResponseEntity.ok(flights);
     }
 
-    @PostMapping("/{idFlight}")
-    public ResponseEntity<?> bookFlightTicket(@PathVariable(name = "idFlight") String idFlight, HttpServletRequest httpRequest) {
+    @PatchMapping("/{idFlight}/book")
+    public ResponseEntity<?> bookFlightTicket(@PathVariable(name = "idFlight") Integer idFlight, HttpServletRequest httpRequest) {
         try {
-            Integer idFlightInt = Integer.parseInt(idFlight);
-
             String username = (String) httpRequest.getAttribute("username");
             User passenger = userService.findByUsername(username);
 
-            return ResponseEntity.ok(flightTicketService.bookFlightTicket(idFlightInt, passenger));
+            return ResponseEntity.ok(flightTicketService.bookFlightTicket(idFlight, passenger));
+        } catch (NumberFormatException e) {
+            throw new BadRequestException("Invalid id");
+        }
+    }
+
+    @PatchMapping("/{idFlight}/cancel")
+    public ResponseEntity<?> cancelFlightTicket(@PathVariable(name = "idFlight") Integer idFlight, HttpServletRequest httpRequest) {
+        try {
+            String username = (String) httpRequest.getAttribute("username");
+            User passenger = userService.findByUsername(username);
+
+            return ResponseEntity.ok(flightTicketService.cancelFlightTicket(idFlight, passenger));
         } catch (NumberFormatException e) {
             throw new BadRequestException("Invalid id");
         }

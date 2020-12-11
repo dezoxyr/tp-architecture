@@ -1,0 +1,19 @@
+b-container(fluid)#root.m-0.p-0
+    .row.m-0.p-0
+        b-navbar(:type = "$store.state.theme" :variant = "$store.state.theme")#navbar
+            b-navbar-brand 
+                router-link(to="/")
+                    b-link(href="/" :class="'link-' + $store.state.theme") HexClan
+            .col-2.offset-md-4.offset-sm-3.offset-lg-6.col-md-1
+                b-dropdown(text="Theme" right :variant="$store.state.theme")#theme-selector
+                    b-dropdown-item(v-for="theme in themes" :key="theme.name" @click="updateTheme(theme.value)") {{ theme.name }}
+            .col-4.col-lg-3.col-md-3.offset-lg-1.offset-sm-2
+                router-link(to="/login" v-show="this.$session.get('Token') === undefined")
+                        b-link(href="/login" :class="'link-' + $store.state.theme").nav-right Sign In
+                router-link(to="/register" v-show="this.$session.get('Token') === undefined")
+                    b-link(href="/register" :class="'link-' + $store.state.theme") Sign Up
+                router-link(to="/" v-show="this.$session.get('Token') !== undefined")
+                    b-link(href="/" :class="'link-' + $store.state.theme"  @click="logout()") Logout
+
+    .row(:id="'component-viewer-' + $store.state.theme").m-0.p-0
+        router-view#content

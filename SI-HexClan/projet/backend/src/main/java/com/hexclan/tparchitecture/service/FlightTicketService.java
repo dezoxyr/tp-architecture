@@ -3,6 +3,7 @@ package com.hexclan.tparchitecture.service;
 import com.hexclan.tparchitecture.entity.Airport;
 import com.hexclan.tparchitecture.entity.FlightTicket;
 import com.hexclan.tparchitecture.entity.User;
+import com.hexclan.tparchitecture.exception.apirequestexception.BadRequestException;
 import com.hexclan.tparchitecture.exception.apirequestexception.ForbiddenException;
 import com.hexclan.tparchitecture.exception.apirequestexception.NotFoundException;
 import com.hexclan.tparchitecture.repository.AirportRepository;
@@ -27,7 +28,11 @@ public class FlightTicketService {
     private AirportRepository airportRepository;
 
     public List<FlightTicket> findAllAvailableFlights() {
-        return flightTicketRepository.findAll().stream().filter(flightTicket -> flightTicket.isAvailable()).collect(Collectors.toList());
+        return flightTicketRepository.findAll()
+                .stream()
+                .filter(flightTicket -> flightTicket.isAvailable())
+                .sorted((o1, o2) -> o1.getId().compareTo(o2.getId()))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -67,6 +72,26 @@ public class FlightTicketService {
         }
 
         ft.book(passenger);
+        return ft;
+    }
+
+    public FlightTicket cancelFlightTicket(Integer idFlight, User passenger){
+        Optional<FlightTicket> flightTicketOptional = flightTicketRepository.findById(idFlight);
+        if (flightTicketOptional.isEmpty()) {
+            throw new NotFoundException(String.format("Flight=%s not found", idFlight));
+        }
+
+        FlightTicket ft = flightTicketOptional.get();
+
+        if (ft.isAvailable()){
+            throw new BadRequestException(String.format("Flight=%s was not booked", idFlight));
+        }
+
+        if (!ft.getPassenger().equals(passenger)){
+            throw new ForbiddenException(String.format("User=%s did not book this flight", passenger.getUsername()));
+        }
+
+        ft.cancelReservation();
         return ft;
     }
 

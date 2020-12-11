@@ -88,6 +88,10 @@ public class FlightTicket {
         this.setPassenger(passenger);
     }
 
+    public void cancelReservation(){
+        this.passenger = null;
+    }
+
     public boolean isAvailable() {
         return this.passenger == null;
     }
