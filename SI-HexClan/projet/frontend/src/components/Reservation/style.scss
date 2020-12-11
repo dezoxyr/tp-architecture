@@ -1,0 +1,30 @@
+[class^="flights"] {
+    margin-top: 5%;
+}
+
+// .flights-dark {
+//     width: 90vw;
+//     // display: ;
+
+//     // height: 10vh;
+// }
+
+#deck {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+[class^="noRecord"] {
+    font-size: xxx-large;
+    margin-top: 25vh;
+}
+
+[class$="-light"] {
+    color: #1c313a;
+}
+
+[class$="-dark"] {
+    color: #f4f4f4;
+}

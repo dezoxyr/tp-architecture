@@ -4,6 +4,8 @@ b-container(fluid)#root.m-0.p-0
             b-navbar-brand 
                 router-link(to="/")
                     b-link(href="/" :class="'link-' + $store.state.theme") HexClan
+                router-link(to="/reservation" v-show="this.$session.get('Token') !== undefined")
+                    b-link(href="/reservation" :class="'link-' + $store.state.theme") Reservation
             .col-2.offset-md-4.offset-sm-3.offset-lg-6.col-md-1
                 b-dropdown(text="Theme" right :variant="$store.state.theme")#theme-selector
                     b-dropdown-item(v-for="theme in themes" :key="theme.name" @click="updateTheme(theme.value)") {{ theme.name }}

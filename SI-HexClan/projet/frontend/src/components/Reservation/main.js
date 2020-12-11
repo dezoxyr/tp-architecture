@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 export default {
-    name: "Home",
+    name: "Reservation",
     data: function() {
         return {
-            flights: [],
-            userbooked: [],
+            userbooked: []
         };
     },
     computed: {},
@@ -12,7 +11,7 @@ export default {
         updateTheme(value) {
             this.$store.commit("updateTheme", value);
         },
-        bookFlight(value) {
+        unBookFlight(value) {
             let config = {
                 headers: {
                     "Authorization": `Bearer ${this.$session.get("Token")}`,
@@ -20,11 +19,11 @@ export default {
                 },
             };
             this.$axios
-                .patch("/flight-ticket/" + value + "/book", {}, config)
+                .patch("/flight-ticket/" + value + "/cancel", {}, config)
                 .then(() => {
-                    this.flights = this.flights.filter((e) => e.id !== value);
+                    this.userbooked = this.userbooked.filter((e) => e.id !== value);
                     this.$toast.open({
-                        message: "Booked successfully",
+                        message: "Unbooked successfully",
                         type: "success",
                         position: "bottom-right",
                     });
@@ -40,18 +39,27 @@ export default {
     },
     mounted: function() {
         this.$session.start();
-        this.$axios
-            .get("/flight-ticket/")
-            .then((response) => {
-                this.flights = response.data;
+        if (this.$session.get("Token") !== undefined) {
+            this.$axios({
+                method: "get",
+                url: "/flight-ticket/my-reservations",
+                params: {},
+                headers: {
+                    "Authorization": "Bearer " + this.$session.get("Token"),
+                    "Content-Type": "application/json",
+                },
             })
-            .catch((error) => {
-                this.$toast.open({
-                    message: error.response.data.message,
-                    type: "error",
-                    position: "bottom-right",
+                .then((response) => {
+                    this.userbooked = response.data;
+                })
+                .catch((error) => {
+                    this.$toast.open({
+                        message: error.response.data.message,
+                        type: "error",
+                        position: "bottom-right",
+                    });
                 });
-            });
+        }
     },
     components: {},
 };
