@@ -40,14 +40,26 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
-    public void book(Flight flight, User user) {
-        Booking booking = new Booking(flight, user);
+    public void book(Flight flight, User user, int nbPersons) {
+        Booking booking = new Booking(flight, user, nbPersons);
         user.addBooking(booking);
+        flight.add(nbPersons);
     }
 
     @Override
-    public List<Flight> getUserFlights(int userId) {
-        return dao.getUserFlights(userId);
+    public List<Booking> getUserBookings(int userId) {
+        return dao.getUserBookings(userId);
+    }
+
+    @Override
+    public boolean alreadyBook(User user, int flightId) {
+        List<Booking> bookings = user.getBookings();
+        for (Booking booking: bookings) {
+            if (booking.getFlight().getId() == flightId) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -55,6 +67,7 @@ public class FlightServiceImpl implements FlightService {
         List<Booking> bookings = user.getBookings();
         for(Booking booking: bookings) {
             if(booking.getFlight().getId() == flight.getId()) {
+                flight.remove(booking.getNbPersons());
                 user.removeBooking(booking);
             }
         }

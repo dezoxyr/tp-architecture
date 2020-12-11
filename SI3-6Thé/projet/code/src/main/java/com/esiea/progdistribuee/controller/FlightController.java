@@ -1,6 +1,7 @@
 package com.esiea.progdistribuee.controller;
 
 import com.esiea.progdistribuee.data.Airport;
+import com.esiea.progdistribuee.data.Booking;
 import com.esiea.progdistribuee.data.Flight;
 import com.esiea.progdistribuee.service.FlightService;
 import com.esiea.progdistribuee.service.UserService;
@@ -21,11 +22,13 @@ public class FlightController {
     private UserService userService;
 
     @GetMapping("/")
-    public List<Flight> allFlights(@RequestParam(required = false, defaultValue = "-1") int userId) {
-        if(userId < 0) {
-            return service.getAllFlights();
-        }
-        return service.getUserFlights(userId);
+    public List<Flight> allFlights() {
+        return service.getAllFlights();
+    }
+
+    @GetMapping("/bookings")
+    public List<Booking> userBookings(@RequestParam int userId) {
+        return service.getUserBookings(userId);
     }
 
     @GetMapping("/{id}")
@@ -44,8 +47,12 @@ public class FlightController {
     }
 
     @PostMapping("/book")
-    public void bookFlight(@RequestParam int flightId, @RequestParam String userId) {
-        service.book(service.getFlight(flightId), userService.getUser(Integer.parseInt(userId)));
+    public void bookFlight(@RequestParam int flightId, @RequestParam String userId, @RequestParam String nbPersons) throws Exception {
+        if (!service.getFlight(flightId).isAvailableFor(Integer.parseInt(nbPersons)))
+            throw new Exception("Plus assez de places disponibles");
+        if (service.alreadyBook(userService.getUser(Integer.parseInt(userId)), flightId))
+            throw new Exception("Vol déjà réservé");
+        service.book(service.getFlight(flightId), userService.getUser(Integer.parseInt(userId)), Integer.parseInt(nbPersons));
     }
 
     @PostMapping("/cancel")

@@ -43,7 +43,7 @@ var saveUserId = function() {
       }
     },
     error : function() {
-      alert('Erreur connexion')
+      location.href = "index.html";
     }
   });
 };
@@ -56,6 +56,19 @@ var addFlight = function (id, codeDep, codeDest, date, price) {
   '<td class="codeDest">' + codeDest + '</td>' +
   '<td class="date">' + date + '</td>' +
   '<td class="price">' + price + ' €</td>' +
+  '<td>' +
+  '<select class="custom-select custom-select-sm sm-3 persons' + id + '">' +
+  '<option value="1" selected>1</option>' +
+  '<option value="2">2</option>' +
+  '<option value="3">3</option>' +
+  '<option value="4">4</option>' +
+  '<option value="5">5</option>' +
+  '<option value="6">6</option>' +
+  '<option value="7">7</option>' +
+  '<option value="8">8</option>' +
+  '<option value="9">9</option>' +
+  '</select>' +
+  '</td>' +
   '<td><button id="btnBook' + id + '" class="btn btn-success">Réserver</button></td>' +
   '</tr>');
   $('#btnBook' + id).click(() => bookFlight(id));
@@ -63,19 +76,42 @@ var addFlight = function (id, codeDep, codeDest, date, price) {
 
 var bookFlight = function (id) {
   const sToken = localStorage.getItem('auth_token');
+  const sNbPersons = getNbPersons(id);
   $.ajax({
     url: "http://localhost:8080/flight/book",
     type: 'post',
     data: {
       flightId: id,
-      userId: localStorage.getItem('Id')
+      userId: localStorage.getItem('Id'),
+      nbPersons: sNbPersons
     },
     headers: {"Authorization": "Bearer " + sToken},
     success : function (result) {
-
+      $('#message').html(
+      "<div id=\"alert\" class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">" +
+      "La réservation pour le vol numéro " + id + " a été effectuée avec succès" +
+      "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">" +
+      "<span aria-hidden=\"true\">&times;</span>" +
+      "</button>" +
+      "</div>");
+    },
+    error: function (xhr) {
+      if (xhr.status === 500) {
+        $('#message').html(
+        "<div id=\"alert\" class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">" +
+        "Vous avez déjà réservé ce vol" +
+        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">" +
+        "<span aria-hidden=\"true\">&times;</span>" +
+        "</button>" +
+        "</div>");
+      }
     }
   });
 };
+
+var getNbPersons = function (id) {
+  return $(".persons" + id).val();
+}
 
 $(document).ready(function () {
   init();

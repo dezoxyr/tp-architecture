@@ -1,6 +1,7 @@
 package com.esiea.progdistribuee.service;
 
 import com.esiea.progdistribuee.data.Airport;
+import com.esiea.progdistribuee.data.Booking;
 import com.esiea.progdistribuee.data.Flight;
 import com.esiea.progdistribuee.data.User;
 
@@ -17,9 +18,11 @@ public interface FlightService {
 
     void deleteFlight(Flight flight);
 
-    void book(Flight flight, User user);
+    void book(Flight flight, User user, int nbPersons);
 
-    List<Flight> getUserFlights(int userId);
+    List<Booking> getUserBookings(int userId);
+
+    boolean alreadyBook(User user, int flightId);
 
     void cancelBooking(Flight flight, User user);
 }

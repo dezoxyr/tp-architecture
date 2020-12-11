@@ -11,6 +11,7 @@ public class Flight {
     private double price;
     private Date date;
     private int capacity;
+    private int nbPersons;
 
     public Flight(Airport departureAirport, Airport arrivalAirport, double price, Date date, int capacity) {
         this.id = flightCpt++;
@@ -19,6 +20,7 @@ public class Flight {
         this.price = price;
         this.date = date;
         this.capacity = capacity;
+        this.nbPersons = 0;
     }
 
     public int getId() {
@@ -45,7 +47,15 @@ public class Flight {
         return capacity;
     }
 
-    public boolean isAvailable() {
-        return capacity > 0;
+    public void add(int nbPersons) {
+        this.nbPersons += nbPersons;
+    }
+
+    public void remove(int nbPersons) {
+        this.nbPersons -= nbPersons;
+    }
+
+    public boolean isAvailableFor(int nbPersonsBooking) {
+        return capacity >= nbPersons + nbPersonsBooking;
     }
 }

@@ -9,6 +9,8 @@ import com.esiea.progdistribuee.data.Flight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,9 +28,13 @@ public class FlightDaoImpl implements FlightDao {
         Airport jfkAirport = new Airport("JFK", "New York");
         Airport cdgAirport = new Airport("CDG", "CDG Paris");
         Airport dtwAirport = new Airport("DTW", "Detroit");
-        createFlight(new Flight(jfkAirport, cdgAirport, 450, new Date(), 120));
-        createFlight(new Flight(cdgAirport, dtwAirport, 678, new Date(), 226));
-        createFlight(new Flight(dtwAirport, jfkAirport, 462, new Date(), 124));
+        try {
+            createFlight(new Flight(jfkAirport, cdgAirport, 450, new SimpleDateFormat("MM/dd/yyyy").parse("12/11/2020"), 120));
+            createFlight(new Flight(cdgAirport, dtwAirport, 678, new SimpleDateFormat("MM/dd/yyyy").parse("02/25/2021"), 226));
+            createFlight(new Flight(dtwAirport, jfkAirport, 462, new SimpleDateFormat("MM/dd/yyyy").parse("03/08/2021"), 124));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -57,13 +63,7 @@ public class FlightDaoImpl implements FlightDao {
     }
 
     @Override
-    public List<Flight> getUserFlights(int userId) {
-        List<Flight> flights = new ArrayList<>();
-        List<Booking> bookings = userDao.getUser(userId).getBookings();
-        for(Booking booking: bookings) {
-            flights.add(booking.getFlight());
-        }
-
-        return flights;
+    public List<Booking> getUserBookings(int userId) {
+        return userDao.getUser(userId).getBookings();
     }
 }

@@ -1,5 +1,6 @@
 package com.esiea.progdistribuee.dao;
 
+import com.esiea.progdistribuee.data.Booking;
 import com.esiea.progdistribuee.data.Flight;
 
 import java.util.List;
@@ -16,5 +17,5 @@ public interface FlightDao {
 
     int getLastId();
 
-    List<Flight> getUserFlights(int userId);
+    List<Booking> getUserBookings(int userId);
 }

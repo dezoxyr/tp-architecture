@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Vos réservations</title>
+    <title>Mes réservations</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./css/homeStyle.css">
@@ -33,7 +33,7 @@
             <a class="nav-link" href="home.html">Accueil <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="reservations.html">Vos réservations</a>
+            <a class="nav-link" href="reservations.html">Mes réservations</a>
           </li>
         </ul>
       </div>
@@ -45,8 +45,9 @@
     <div class="container-fluid overflow-auto">
       <div class="row">
         <div class="col-md-12">
+          <div id="message"></div>
           <div class="title">
-            <h2>Vos réservations</h2>
+            <h2>Mes réservations</h2>
           </div>
         </div>
       </div>
@@ -60,6 +61,7 @@
                 <th scope="col">Destination</th>
                 <th scope="col">Date</th>
                 <th scope="col">Prix</th>
+                <th scope="col">Nombre de personnes</th>
                 <th scope="col"></th>
               </tr>
             </thead>
