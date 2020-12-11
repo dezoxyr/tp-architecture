@@ -19,6 +19,11 @@ body {
 	background-position: center center;
 	position: relative;
 }
+h1{
+	color:white;
+	margin-right: 1100px;
+
+}
 
 thead,
 tfoot {
@@ -27,10 +32,10 @@ tfoot {
 }
 
 .list-arrea {
-	float: bottom;
+	float: right;
 	list-style: none;
 	margin-top: auto;
-	margin-left: auto;	
+	margin-right: auto;	
 }
 .list-arrea li {
 	display: inline-block;
@@ -47,4 +52,6 @@ tfoot {
 	background: #fff;
 	color: #333;
 }
+
+
 
