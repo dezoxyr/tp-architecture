@@ -95,11 +95,11 @@ var bookFlight = function (id) {
       "</button>" +
       "</div>");
     },
-    error: function (xhr) {
+    error: function (xhr, result) {
       if (xhr.status === 500) {
         $('#message').html(
         "<div id=\"alert\" class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">" +
-        "Vous avez déjà réservé ce vol" +
+        xhr.responseText +
         "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">" +
         "<span aria-hidden=\"true\">&times;</span>" +
         "</button>" +

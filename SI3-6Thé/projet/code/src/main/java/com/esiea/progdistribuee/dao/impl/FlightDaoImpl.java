@@ -1,6 +1,5 @@
 package com.esiea.progdistribuee.dao.impl;
 
-import com.esiea.progdistribuee.dao.AirportDao;
 import com.esiea.progdistribuee.dao.FlightDao;
 import com.esiea.progdistribuee.dao.UserDao;
 import com.esiea.progdistribuee.data.Airport;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -31,7 +29,7 @@ public class FlightDaoImpl implements FlightDao {
         try {
             createFlight(new Flight(jfkAirport, cdgAirport, 450, new SimpleDateFormat("MM/dd/yyyy").parse("12/11/2020"), 120));
             createFlight(new Flight(cdgAirport, dtwAirport, 678, new SimpleDateFormat("MM/dd/yyyy").parse("02/25/2021"), 226));
-            createFlight(new Flight(dtwAirport, jfkAirport, 462, new SimpleDateFormat("MM/dd/yyyy").parse("03/08/2021"), 124));
+            createFlight(new Flight(dtwAirport, jfkAirport, 462, new SimpleDateFormat("MM/dd/yyyy").parse("03/08/2021"), 7));
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -8,6 +8,7 @@ import com.esiea.progdistribuee.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -47,11 +48,15 @@ public class FlightController {
     }
 
     @PostMapping("/book")
-    public void bookFlight(@RequestParam int flightId, @RequestParam String userId, @RequestParam String nbPersons) throws Exception {
-        if (!service.getFlight(flightId).isAvailableFor(Integer.parseInt(nbPersons)))
-            throw new Exception("Plus assez de places disponibles");
-        if (service.alreadyBook(userService.getUser(Integer.parseInt(userId)), flightId))
-            throw new Exception("Vol déjà réservé");
+    public void bookFlight(HttpServletResponse response, @RequestParam int flightId, @RequestParam String userId, @RequestParam String nbPersons) throws Exception {
+        if (!service.getFlight(flightId).isAvailableFor(Integer.parseInt(nbPersons))) {
+            response.setStatus(500);
+            response.getWriter().write("Plus assez de places disponibles");
+        }
+        if (service.alreadyBook(userService.getUser(Integer.parseInt(userId)), flightId)) {
+            response.setStatus(500);
+            response.getWriter().write("Le vol est deja reserve");
+        }
         service.book(service.getFlight(flightId), userService.getUser(Integer.parseInt(userId)), Integer.parseInt(nbPersons));
     }
 

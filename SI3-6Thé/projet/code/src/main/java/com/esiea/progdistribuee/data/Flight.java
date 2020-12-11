@@ -1,5 +1,6 @@
 package com.esiea.progdistribuee.data;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Flight {
@@ -35,8 +36,8 @@ public class Flight {
         return departureAirport;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return new SimpleDateFormat("dd-MM-yyyy").format(date);
     }
 
     public double getPrice() {
