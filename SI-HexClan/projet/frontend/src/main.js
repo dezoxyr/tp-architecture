@@ -7,18 +7,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import axios from "axios";
 import VueToast from "vue-toast-notification";
-import VueSession from 'vue-session'
+import VueSession from "vue-session";
+import "vue-toast-notification/dist/theme-sugar.css";
 
-Vue.use(VueSession)
+Vue.use(VueSession);
 Vue.use(BootstrapVue);
-Vue.use(axios)
+Vue.use(axios);
 Vue.config.productionTip = false;
 Vue.use(VueToast);
 
 axios.defaults.baseURL = "http://localhost:8081/api";
 Vue.prototype.$axios = axios;
 Vue.prototype.$store = store;
- 
 
 new Vue({
     router,

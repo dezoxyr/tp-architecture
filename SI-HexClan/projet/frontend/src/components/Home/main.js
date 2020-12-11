@@ -4,7 +4,7 @@ export default {
     data: function() {
         return {
             flights: [],
-            userbooked: []
+            userbooked: [],
         };
     },
     computed: {},
@@ -20,40 +20,68 @@ export default {
                 },
             };
             this.$axios
-                .post("/flight-ticket/" + value, {}, config)
-                .then((response) => {
-                    console.log(response);
-                    console.log("flight number" + value + " is booked");
+                .patch("/flight-ticket/" + value + "/book", {}, config)
+                .then(() => {
+                    this.flights = this.flights.filter((e) => e.id !== value);
+                    this.$toast.open({
+                        message: "Booked successfully",
+                        type: "success",
+                        position: "bottom-right",
+                    });
                 })
                 .catch((error) => {
-                    console.log(error);
+                    this.$toast.open({
+                        message: error.response.data.message,
+                        type: "error",
+                        position: "bottom-right",
+                    });
                 });
         },
     },
     mounted: function() {
-        this.$session.start()
+        this.$session.start();
         this.$axios
             .get("/flight-ticket/")
             .then((response) => {
                 this.flights = response.data;
             })
             .catch((error) => {
-                console.log(error);
+                this.$toast.open({
+                    message: error.response.data.message,
+                    type: "error",
+                    position: "bottom-right",
+                });
             });
-        this.$axios({
-            method:'get',
-            url: '/flight-ticket/my-reservations',
-            params: {},
-            headers: {
-                "Authorization": "Bearer " + this.$session.get("Token"),
-                "Content-Type": "application/json" 
-            }
-        }).then((response)=>{
-            console.log(response.data)
-            this.userbooked = response.data
-        }).catch((error)=>{
-            console.log(error)
-        })
+
+        if (this.$session.get("Token") != undefined) {
+            this.$axios({
+                method: "get",
+                url: "/flight-ticket/my-reservations",
+                params: {},
+                headers: {
+                    "Authorization": "Bearer " + this.$session.get("Token"),
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((response) => {
+                    this.userbooked = response.data;
+                })
+                .catch((error) => {
+                    this.$toast.open({
+                        message: error.response.data.message,
+                        type: "error",
+                        position: "bottom-right",
+                    });
+
+                    // else{
+                    //     this.$toast.open({
+                    //         message: error.response.data.message,
+                    //         type: "error",
+                    //         position: "bottom-right",
+                    //     });
+                    // }
+                });
+        }
     },
     components: {},
 };
