@@ -1,0 +1,65 @@
+{
+  "results":
+[
+  {
+	"id": 1, 
+    "billet": "CDG-DTW 500"
+  },
+  {
+	"id": 2, 
+    "billet": "DTW-CDG 530"
+  },
+  {
+	"id": 3,  
+    "billet": "JFK-DTW 250"
+  },
+  {
+	"id": 4,
+    "billet": "DTW-JFK 175"
+  },
+  {
+  	"id": 5,
+    "billet": "CDG-JFK 600"
+  },
+  {
+  	"id": 6,
+    "billet": "JFK-CDG 450"
+  },
+  {
+  	"id": 7,
+    "billet": "JFK-CDG 400"
+  },
+  {
+  	"id": 8,
+    "billet": "DTW-CDG 650"
+  },
+  {
+  	"id": 9,
+    "billet": "DTW-JFK 200"
+  },
+  {
+  	"id": 10,
+    "billet": "CDG-DTW 420"
+  },
+  {
+  	"id": 11,
+    "billet": "CDG-JFK 425"
+  },
+  {
+  	"id": 12,
+    "billet": "DTW-CDG 615"
+  },
+  {
+  	"id": 13,
+    "billet": "DTW-JFK 230"
+  },
+  {
+  	"id": 14,
+    "billet": "DTW-JFK 240"
+  },
+  {
+  	"id": 15,
+    "billet": "JFK-DTW 180"
+  }
+]
+}
