@@ -167,19 +167,37 @@ footer
 }
 
 .form-submit-button {
-	font-family: "Montserrat", sans-serif;
-	height: 100%;
-	background: #00001f;
-	color: white;
-	padding: 10px 20px;
-	border: 0px;
+	border: 0;
+    line-height: 2.0;
+    padding: 0 20px;
+    font-size: 1.1rem;
+    text-align: rightwards;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #00001f;
 
 }
 
 .form-submit-button:hover {
-	background: white;
+	background-color: #ffffe0;
 	color: #00001f;
-	padding: 10px 20px;
+}
+/*		bouton déconnexion 		*/
+.form-submit-button2 {
+	border: 0;
+    line-height: 2.2;
+    padding: 0px 10px;
+    font-size: 1.1rem;
+    text-align: right;
+    color: black;
+    align: right;
+    background-color: white;
+
+}
+
+.form-submit-button2:hover {
+	background-color: white;
+	color: #00001f;
 }
 
 .img1{

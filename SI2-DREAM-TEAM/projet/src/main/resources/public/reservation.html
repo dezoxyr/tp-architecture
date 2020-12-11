@@ -13,15 +13,12 @@
 		<strong>DREAM-TEAM Airlines</strong>
 	</div>
 	<nav>
-		<form action="index.html" method="GET">
-			<ul id="onglets">
-				<a href="index.html"><li class="onglet">Accueil</li></a>
-				<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
-				<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
-				<a> <li class="txt"> <div> <input type="text" id="name" name="name" required minlength="3" maxlength="20" size="20"></div> </li></a>
-				<a> <li> <input class="form-submit-button" type="submit" value="Connexion"> </li> </a>
-			</ul>
-		</form>
+		<ul id="onglets">
+			<a href="index.html"><li class="onglet">Accueil</li></a>
+			<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
+			<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
+			<a> <input class="form-submit-button2" type="submit" value="Déconnexion"></a>
+		</ul>
 	</nav>
 </header>
 
@@ -87,9 +84,8 @@
 		</table>
 	</center>
 </div>
-<div id="name"> </div>
 <div id="main1">
-	<br></br>
+
 	<p>
 		<label for="flight-select">Numéro de vol:</label>
 		<select name="flights" id="flight-select">
@@ -102,13 +98,12 @@
 			<option value="6">N°6: DTW-JFK</option>
 		</select>
 	</p>
-	<br> </br>
-	<p>
-		<label for="name">Nom:</label>
+	<!--<p>
+    <label for="name">Nom:</label>
 
-		<input type="text" id="name" name="name" required
-			   minlength="3" maxlength="60" size="60">
-	</p>
+    <input type="text" id="name" name="name" required
+    minlength="3" maxlength="60" size="60">
+    </p>-->
 	<br> </br>
 	<p>
 		<button class="favorite styled"	type="button"> Réserver	</button>

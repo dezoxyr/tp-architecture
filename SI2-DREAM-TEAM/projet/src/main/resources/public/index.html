@@ -13,15 +13,12 @@
 		<strong>DREAM-TEAM Airlines </strong>
 	</div>
 	<nav>
-		<form action="index.html" method="GET">
-			<ul id="onglets">
-				<a href="index.html"><li class="onglet">Accueil</li></a>
-				<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
-				<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
-				<a> <li class="txt"> <div> <input type="text" id="name" name="name" required minlength="3" maxlength="20" size="20"></div> </li></a>
-				<a> <li> <input class="form-submit-button" type="submit" value="Connexion"> </li> </a>
-			</ul>
-		</form>
+		<ul id="onglets">
+			<a href="index.html"><li class="onglet">Accueil</li></a>
+			<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
+			<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
+			<a> <input class="form-submit-button2" type="submit" value="Déconnexion"></a>
+		</ul>
 	</nav>
 </header>
 
@@ -29,7 +26,7 @@
 <div id="main1">
 	<br> </br>
 	<h2> DREAM-TEAM Airlines: ne rêvez plus de voyager </h2>
-
+	<br>
 	<p>
 		<img class ="img1" src="Images/photo8.jpg" alt="AvionAccueil" title="avion"/>
 	<div id="paragraphe1">
@@ -43,13 +40,17 @@
 	</p>
 	<br> </br>
 	<p>
-
-		<a href="./reservation.html">
-			<button class="favorite styled"	type="button" >
-				S'envoler dès maintenant
-			</button>
-		</a>
-		<br> </br>
+	<form action="index.html" method="GET">
+		<input type="text" id="name" name="name" required minlength="3" maxlength="20" size="20">
+		<input class="form-submit-button" type="submit" value="Connexion">
+	</form>
+	<br> </br>
+	<a href="./reservation.html">
+		<button class="favorite styled"	type="button" >
+			S'envoler dès maintenant
+		</button>
+	</a>
+	<br> </br>
 	</p>
 </div>
 </body>

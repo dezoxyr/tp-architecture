@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="style.css"/>
-		<center>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="style.css"/>
+	<center>
 		<title>DREAM-TEAM Airlines</title>
-		</center>
-	</head>
-	
+	</center>
+</head>
+
 <header>
 	<div id="banniere">
 		<strong>DREAM-TEAM Airlines </strong>
 	</div>
 	<nav>
 		<ul id="onglets">
-		<a href="index.html"><li class="onglet">Accueil</li></a>
-		<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
-		<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
+			<a href="index.html"><li class="onglet">Accueil</li></a>
+			<a href="reservation.html"><li class="onglet">Réserver un vol</li></a>
+			<a href="mesvols.html"><li class="onglet">Vols réservés</li></a>
+			<a> <input class="form-submit-button2" type="submit" value="Déconnexion"></a>
 		</ul>
 	</nav>
 </header>
 
 <body>
-	<div id="main1">
+<div id="main1">
 	<br> </br>
-		<h2> DREAM-TEAM Airlines: ne rêvez plus de voyager </h2>
-		
-		<p> 
+	<h2> DREAM-TEAM Airlines: ne rêvez plus de voyager </h2>
+	<br>
+	<p>
 		<img class ="img1" src="Images/photo8.jpg" alt="AvionAccueil" title="avion"/>
-		<div id="paragraphe1">
-			<strong>Paris, New-York, Detroit </strong> <br> 
-			N'avez vous jamais rêvé de les visiter ? <br> <br>Grâce à DREAM-TEAM Airlines, c'est possible !
-			Découvrez la Tour Eiffel, le Sacré-Coeur, mais aussi la Statue de la Liberté, l'Empire State Building, ou encore le Musée Henry Ford et l'Institut des Arts de Detroit, 
-			tout cela <strong>à moindre prix</strong> ! <br>
-			Partez depuis Paris CDG, New-York JFK, ou encore Détroit DTW pour enfin vivre vos rêves d'évasions ! <strong> OSEZ décoller ! </strong>	
-			
-		</div>
-		</p>
-		<br> </br>
-		<p>
-			
-			<a href="./reservation.html">
-			<button class="favorite styled"	type="button" >
-			S'envoler dès maintenant
-			</button>
-			</a>	
-			<br> </br>	
-		</p>
+	<div id="paragraphe1">
+		<strong>Paris, New-York, Detroit </strong> <br>
+		N'avez vous jamais rêvé de les visiter ? <br> <br>Grâce à DREAM-TEAM Airlines, c'est possible !
+		Découvrez la Tour Eiffel, le Sacré-Coeur, mais aussi la Statue de la Liberté, l'Empire State Building, ou encore le Musée Henry Ford et l'Institut des Arts de Detroit,
+		tout cela <strong>à moindre prix</strong> ! <br>
+		Partez depuis Paris CDG, New-York JFK, ou encore Détroit DTW pour enfin vivre vos rêves d'évasions ! <strong> OSEZ décoller ! </strong>
+
 	</div>
-	</body>
+	</p>
+	<br> </br>
+	<p>
+	<form action="index.html" method="GET">
+		<input type="text" id="name" name="name" required minlength="3" maxlength="20" size="20">
+		<input class="form-submit-button" type="submit" value="Connexion">
+	</form>
+	<br> </br>
+	<a href="./reservation.html">
+		<button class="favorite styled"	type="button" >
+			S'envoler dès maintenant
+		</button>
+	</a>
+	<br> </br>
+	</p>
+</div>
+</body>
 
 <footer>
 	<ul id="contacts">
-	<li><a class="contact" href="https://github.com/T2Clubber/tp-architecture/tree/SI2-DREAM-TEAM">Notre repository Git</a></li>
-	<p class = "contact2">DREAM-TEAM Team</p>
+		<li><a class="contact" href="https://github.com/T2Clubber/tp-architecture/tree/SI2-DREAM-TEAM">Notre repository Git</a></li>
+		<p class = "contact2">DREAM-TEAM Team</p>
 	</ul>
 </footer>
 </html>
