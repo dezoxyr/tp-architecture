@@ -1,25 +1,21 @@
 class Billet:
-    def __init__(self, id: str, vol: int, codeDepart: str, codeArrivee: str, prix: int):
+    def __init__(self, id: str, id_vol: int, codeDepart: str, codeArrivee: str, prix: int):
         self.id = id
-        self.vol = vol
+        self.id_vol = id_vol
         self.codeDepart = codeDepart
         self.codeArrivee = codeArrivee
         self.prix = prix
-        self.user = None
-
+        self.booked = False
 
     def to_dict(self):
         return {
             "id": self.id,
-            "vol": self.vol,
+            "id_vol": self.id_vol,
             "codeDepart": self.codeDepart,
             "codeArrivee": self.codeArrivee,
             "prix": self.prix,
-            "user": self.user
+            "booked": self.booked
         }
 
-    def setUser(self, user: str):
-        self.user = user
-
-    def getVol(self):
-        return self.vol
+    def get_vol(self):
+        return self.id_vol

@@ -1,11 +1,10 @@
-from flask import Flask, session, request, Response, jsonify
+from flask import Flask, request, jsonify
 from BDD.bdd import BDD
 from controller.aeroport_controller import AeroportController
 from controller.vol_controller import VolController
 from controller.user_controller import UserController
 from controller.billet_controller import BilletController
 from flask_cors import CORS
-import sys
 
 bdd = BDD()
 aeroport_controller = AeroportController(bdd)
@@ -15,55 +14,53 @@ user_controller = UserController(bdd)
 
 app = Flask(__name__)
 CORS(app)
-app.secret_key='toto'
-
-@app.route("/")
 
 
 @app.route("/aeroport/all", methods=["GET"])
 def get_all_aeroports():
-    return aeroport_controller.get_all(), 200 # considéré comme la vue. La vue affiche les données normalement mais nous on les renvoie via une requete http.
+    return aeroport_controller.get_all(), 200
 
 
 @app.route("/vol/all", methods=["GET"])
 def get_all_vols():
-    return vol_controller.get_all(), 200 # considéré comme la vue. La vue affiche les données normalement mais nous on les renvoie via une requete http.
+    return vol_controller.get_all(), 200
 
 
-@app.route("/vol/<id>", methods=["GET"])
-def get_vol_by_id(id):
-    print(vol_controller.get_by_id(id))
-    return vol_controller.get_by_id(id), 200
+@app.route("/vol/<id_vol>", methods=["GET"])
+def get_vol_by_id(id_vol):
+    return vol_controller.get_by_id(id_vol), 200
 
 
-@app.route("/billet/all/<id>", methods=["GET"])
-def get_all_billets(id):
-    return billet_controller.get_all(id), 200
+@app.route("/billet/all/<id_vol>", methods=["GET"])
+def get_all_billets(id_vol):
+    return billet_controller.get_all_from_vol(id_vol), 200
 
 
-@app.route("/billet/<id>", methods=["GET"])
-def get_billet_by_id(id):
-    return billet_controller.get_by_id(id), 200
+'''@app.route("/billet/<id_billet>", methods=["GET"])
+def get_billet_by_id(id_billet):
+    return billet_controller.get_by_id(id_billet), 200'''
 
 
-@app.route("/billet/add/<id>/<user>", methods=["GET","POST"])
-def add_user_to_billet(id, user):
-    userConnected = user_controller.get_user_connected(user)
-    user_controller.add_ticket(userConnected, id)
-    volId = billet_controller.set_user(id, userConnected.getId())
-    vol_controller.decrease_tickets(volId)
-    result = {'status': 'success'}
-    return jsonify(result), 200
+@app.route("/<user>/billet/add/<id_billet>", methods=["GET","POST"])
+def book_ticket(id_billet, user):
+    if user_controller.add_billet(user, id_billet):
+        id_vol = billet_controller.get_vol_by_id_billet(id_billet)
+        billet_controller.book(id_billet)
+        vol_controller.decrease_billets(id_vol)
+        result = {'status': 'success'}
+        return jsonify(result), 200
 
-@app.route("/billet/<user>", methods=["GET"])
+
+@app.route("/<user>/billets/all", methods=["GET"])
 def get_billets_user(user):
-    billets = []
     list_billets = user_controller.get_billets(user)
     for billet in list_billets:
-        objectBillet = billet_controller.get_by_id(billet)
-        billets.append(objectBillet.to_dict())
-    return jsonify(billets), 200
+        id_vol = billet_controller.get_vol_by_id_billet(billet['id'])
+        vol = vol_controller.get_by_id(id_vol)
+        billet['dateDepart'] = vol.date_depart
+        billet['dateArrivee'] = vol.date_arrivee
 
+    return jsonify(list_billets), 200
 
 
 @app.route("/sign-up", methods=["GET","POST"])
@@ -78,7 +75,6 @@ def sign_up():
 
 @app.route("/sign-in", methods=["GET", "POST"])
 def sign_in():
-    print(user_controller.check_user(request.json['email'], request.json['password']))
     if user_controller.check_user(request.json['email'], request.json['password']):
         result = {'status':'success'}
         user_controller.add_user_connected(request.json['email'])

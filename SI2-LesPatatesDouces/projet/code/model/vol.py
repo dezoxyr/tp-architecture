@@ -20,6 +20,3 @@ class Vol:
 
     def getId(self):
         return self.id
-
-    def decreaseTickets(self):
-        self.nombre_billets -= 1

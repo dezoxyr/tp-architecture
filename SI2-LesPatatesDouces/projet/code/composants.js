@@ -37,6 +37,7 @@ var signingIn = {
         <v-text-field
         label="Mot De Passe"
         v-model="password"
+        type="password"
         required
         ></v-text-field>
         <v-row align="center" justify="space-around">
@@ -93,6 +94,7 @@ var signingUp = {
         <v-text-field
         label="Mot De Passe"
         v-model="password"
+        type="password"
         required
         ></v-text-field>
         <v-row align="center" justify="space-around">
@@ -127,6 +129,7 @@ var btnReturn = {
 }
 
 var flightTable = {
+    props: ['flag'],
     data: function () {
         return {
             vols: [],
@@ -144,12 +147,10 @@ var flightTable = {
     methods:{
         seeTickets(item){
             this.id = item.id
-            console.log(this.id)
             this.$emit("tickets", this.id)
-        }
-    },
-    mounted: function () {
-        fetch("http://localhost:5000/vol/all")
+        },
+        fetchAll(){
+            fetch("http://localhost:5000/vol/all")
             .then(function (response) {
                 return response.json()
             }).then((json) =>
@@ -160,6 +161,15 @@ var flightTable = {
                     }
                 }
             )
+        }
+    },
+    mounted: function () {
+        this.fetchAll()
+    },
+    watch: {
+        flag: function(){
+            this.fetchAll()
+        }
     },
     template: `
     <div>
@@ -182,43 +192,42 @@ var ticketsTable = {
                 { text: 'Code aéroport d\'arrivée', value: 'codeArrivee' },
                 { text: 'Prix', value: 'prix' },
                 { text: 'Action', value: 'action' }
-            ]
+            ],
+            ticketBooked: false
         }
     },
     methods:{
         bookTicket(item){
-            fetch("http://localhost:5000/billet/add/" + item.id + "/" + this.user)
+            fetch("http://localhost:5000/" +  this.user + "/billet/add/" + item.id)
                 .then(function(response){
                     return response.json()
                 }).then((json) =>
                 {
-                    console.log(json)
+                    this.ticketBooked = (json.status == "success")
+                    this.$emit("ticketbooked", this.ticketBooked)
+                    this.fetchAll()
                 }
             )
+            alert("Billet réservé !")
+        },
+        fetchAll(){
+            fetch("http://localhost:5000/billet/all/" + this.vol)
+            .then(function (response) {
+                return response.json()
+            }).then((json) => {
+                this.billets = json
+                for (let i = 0; i < this.billets.length; ++i) {
+                    this.billets[i].action = `` //To instantiate action
+                }
+            })
         }
     },
     mounted: function() {
-        fetch("http://localhost:5000/billet/all/" + this.vol)
-                .then(function (response) {
-                    return response.json()
-                }).then((json) => {
-                    this.billets = json
-                    for (let i = 0; i < this.billets.length; ++i) {
-                        this.billets[i].action = `` //To instantiate action
-                    }
-                })
+       this.fetchAll()
     },
     watch: {
         vol:function () {
-            fetch("http://localhost:5000/billet/all/" + this.vol)
-                .then(function (response) {
-                    return response.json()
-                }).then((json) => {
-                    this.billets = json
-                    for (let i = 0; i < this.billets.length; ++i) {
-                        this.billets[i].action = `` //To instantiate action
-                    }
-                })
+            this.fetchAll()
         }
     },
     template: `
@@ -232,6 +241,46 @@ var ticketsTable = {
             </v-icon>
         </v-btn>
         </template>
+        </v-data-table>
+    </div>
+    `
+}
+
+var billetsReserves = {
+    props: ['user', 'flag'],
+    data: function () {
+        return {
+            billets: [],
+            headersBillets: [
+                { text: 'Code aéroport départ', value: 'codeDepart' },
+                { text: 'Code aéroport d\'arrivée', value: 'codeArrivee' },
+                { text: 'Date de départ', value: 'dateDepart' },
+                { text: 'Date d\'arrivée', value: 'dateArrivee' },
+                { text: 'Prix', value: 'prix' },
+            ],
+        }
+    },
+    methods: {
+        fetchAll(){
+            fetch("http://localhost:5000/" + this.user + "/billets/all")
+            .then(function(response){
+                return response.json()
+            }).then((json) => {
+                this.billets = json
+            })
+        }
+    },
+    mounted: function(){
+        this.fetchAll()
+    },
+    watch:{
+        flag:function(){
+            this.fetchAll()
+        }
+    },
+    template: `
+    <div>
+        <v-data-table :headers="headersBillets" :items="billets">
         </v-data-table>
     </div>
     `

@@ -39,9 +39,8 @@ class BDD:
 
 
         self.list_user = list()
-        self.list_user.append(User("nom", "toto", "mdp"))
-        self.list_user.append(User("nom1", "email1", "mdp1"))
-        self.list_user.append(User("nom2", "email2", "mdp2"))
+        self.list_user.append(User("azerty@gmail.com", "mdp"))
+        self.list_user.append(User("qwerty@gmail.com", "mdp"))
         self.list_user_connected = list()
 
     def get_list_aeroport(self):
@@ -50,16 +49,25 @@ class BDD:
     def get_list_vol(self):
         return self.list_vol
 
-    def update_vol(self, vol, volUpdated):
-        index = self.list_vol.index(vol)
-        self.list_vol[index] = volUpdated
+    def decrement_billets(self, vol):
+        for v in self.list_vol:
+            if v.id == vol.id:
+                v.nombre_billets -=1
 
     def get_list_billet(self):
         return self.list_billet
 
-    def update_billet(self, billet, billetUpdated):
-        index = self.list_billet.index(billet)
-        self.list_billet[index] = billetUpdated
+    # Récupère les billets d'un utilisateur grâce à son email
+    def get_billets_by_email(self, email):
+        list_billets= []
+        for u in self.list_user:
+            if u.email == email:
+                for billet_reserve in u.billets_reserves:
+                    for billet in self.list_billet:
+                        if billet_reserve == billet.id:
+                            list_billets.append(billet)
+
+                return list_billets
 
     def add_user(self, user):
         self.list_user.append(user)
@@ -67,21 +75,16 @@ class BDD:
     def get_list_user(self):
         return self.list_user
 
-    def update_user(self, user, userUpdated):
-        index = self.list_user.index(user)
-        self.list_user[index] = userUpdated
+    def book_billet(self, index_user, id_billet):
+        self.list_user[index_user].billets_reserves.append(id_billet)
 
     def add_user_connected(self, email):
         self.list_user_connected.append(email)
 
-    def get_user_connected(self):
-        return self.list_user_connected
-
     def remove_user_connected(self, email):
-        index = 0
-        for user in range(len(self.list_user)):
+        for user in range(len(self.list_user_connected)):
+            print(len(self.list_user))
             if self.list_user_connected[user] == email:
                 index = user
+                self.list_user_connected.pop(index)
                 break
-
-        self.list_user_connected.pop(index)

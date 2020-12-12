@@ -1,58 +1,74 @@
 from BDD.bdd import BDD
 from model.user import User
 from flask import jsonify
-from copy import copy
-import sys
 
 
-class UserController :
+class UserController:
     def __init__(self, bdd):
         self.bdd = bdd
 
+    # Récupère tous les utilisateurs de la base de données
     def get_all(self):
-        # TODO faire les check
         list_user = []
         for users in self.bdd.get_list_user():
             list_user.append(users.to_dict())
 
-        return jsonify(list_user) # Les met en forme pour la vue
+        return jsonify(list_user)
 
-    def get_by_id(self, id:str):
+    # Récupère l'utilisateur grâce à son email/identifiant
+    def get_by_email(self, email: str):
         for user in self.bdd.get_list_user():
-            if user.id == str(id):
+            if user.id == str(email):
                 return user
 
-    def check_user(self, email:str, password:str):
+    # Vérifie si l'utilisateur existe
+    def check_user(self, email: str, password: str):
         for user in self.bdd.get_list_user():
             if email == user.email and password == user.password:
                 return True
 
         return False
 
+    # Ajoute un utilisateur à la base de données
     def add_user(self, email: str, password: str):
         for user in self.bdd.get_list_user():
             if email == user.email:
                 return False
 
-        self.bdd.add_user(User("user:" + email, email, password))
+        self.bdd.add_user(User(email, password))
         return True
 
-    def add_user_connected(self, email:str):
+    # Ajoute un utilisateur à la liste des utilisateurs connectés
+    def add_user_connected(self, email: str):
         self.bdd.add_user_connected(email)
 
-    def get_user_connected(self, email:str):
+    ''' # Récupère l'utilisateur parmi ceux connectés
+    def get_user_connected(self, email: str):
         for user in self.bdd.get_list_user():
             if user.email == str(email):
                 return user
+    '''
 
-    def remove_user_connected(self, email:str):
+    # Supprime un utilisateur des utilisateurs connectés
+    def remove_user_connected(self, email: str):
         self.bdd.remove_user_connected(email)
 
-    def add_ticket(self, user, idTicket:str):
-        userUpdated = copy(user)
-        userUpdated.addTicket(idTicket)
-        self.bdd.update_user(user, userUpdated)
+    # Ajoute un billet à la liste des billets réservés
+    def add_billet(self, user, id_billet: str):
+        list_user = self.bdd.get_list_user()
+        for u in range(len(list_user)):
+            if list_user[u].email == user:
+                self.bdd.book_billet(u, id_billet)
+                return True
 
-    def get_billets(self, user:str):
-        userSelected = self.get_by_id(user)
-        return userSelected.getBillets()
+        return False
+
+    # Récupère tous les billets réservés d'un utilisateur
+    def get_billets(self, email: str):
+        list_billets =[]
+        for billet in self.bdd.get_billets_by_email(email):
+            list_billets.append(billet.to_dict())
+
+        return list_billets
+
+

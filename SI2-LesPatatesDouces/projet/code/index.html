@@ -36,18 +36,18 @@
                 </v-row>
             </div>
             <div v-if="logged == true">
-                <flight-table v-on:tickets="showTickets"></flight-table>
-                <div v-if="vol != 0">
-                    <tickets-table :vol="vol" :user="email"></tickets-table>
+                <flight-table :flag="updateFlag" v-on:tickets="showTickets"></flight-table>
+                <div v-if="volClique != 0">
+                    <tickets-table v-on:ticketbooked="ticketBooked" :vol="volClique" :user="email"></tickets-table>
                 </div>
                 <v-row align="center" justify="space-around">
-                    <v-btn @click="seeReservation">Voir mes billets réservés</v-btn>
+                    <v-btn @click="seeReservation">{{ textReservationBouton }} </v-btn>
                     <v-btn color="error" class="mr-4" @click="signOut">Se déconnecter</v-btn>
                 </v-row>
+                <div v-if="showBilletsReserves == true">
+                    <billets-reserves :flag="updateFlag" :user="email"></billets-reserves>
+                </div>
 
-            </div>
-            <div v-if="showTickets == true">
-                <h1>Hello</h1>
             </div>
 
         </v-app>
@@ -61,11 +61,6 @@
             el: '#app',
             vuetify: new Vuetify(),
             data: {
-                aeroports: [],
-                headersAeroports: [
-                    { text: 'Ville', value: 'ville' },
-                    { text: 'Code', value: 'code' }
-                ],
                 user: {},
                 email: "",
                 password: "",
@@ -73,21 +68,34 @@
                 isSignedUp: null,
                 showSignUpForm: false,
                 showSignInForm: false,
-                vol: 0
+                showBilletsReserves: false,
+                updateFlag: false,
+                volClique: 0,
+                textReservationBouton: "Voir mes billets réservés"
             },
             components: {
                 'signing-in': signingIn,
                 'signing-up': signingUp,
                 'btn-return': btnReturn,
                 'flight-table': flightTable,
-                'tickets-table': ticketsTable
+                'tickets-table': ticketsTable,
+                'billets-reserves': billetsReserves
             },
             methods: {
                 seeReservation() {
-
+                    
+                    this.showBilletsReserves = !this.showBilletsReserves
+                    if (this.showBilletsReserves){
+                        this.textReservationBouton = "Masquer mes billets réservés"
+                    } else {
+                        this.textReservationBouton ="Voir mes billets réservés"
+                    }
                 },
                 showTickets(id) {
-                    this.vol = id
+                    this.volClique = id
+                },
+                ticketBooked(){
+                    this.updateFlag = !this.updateFlag
                 },
                 retour() {
                     this.logged = false
@@ -115,15 +123,16 @@
                 },
                 seConnecter() {
                     this.showSignInForm = true
-                    this.vol = 0
+                    this.volClique = 0
                 },
                 sInscrire() {
                     this.showSignUpForm = true
+                    this.volClique = 0
                 },
 
                 signOut() {
                     this.logged = false
-                    this.signedUp = null
+                    this.isSignedUp = null
                     this.vol = 0
                     fetch("http://localhost:5000/sign-out", {
                         method: 'POST',
