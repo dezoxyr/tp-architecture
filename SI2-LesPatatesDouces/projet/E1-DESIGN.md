@@ -3,7 +3,7 @@
 ## Architecture globale
 
 L'architecture choisie pour ce projet et une architecture 3-tiers.
-Nous avons choisi cette architecture, car c'est selon nous la plus simple à mettre en place. Notre solution ne nécessitant pas d'architecture plus complexe, nous décidons d'utiliser celle-ci.
+Nous avons choisi cette architecture, car c'est selon nous la plus simple à mettre en place. Notre solution ne nécessitant pas d'architecture plus complexe (pas de micro-services), nous décidons d'utiliser celle-ci.
 Nous pouvons représenter cette architecture de cette façon :
 
 ![image_3-tiers.png](./image_3-tiers.png)
