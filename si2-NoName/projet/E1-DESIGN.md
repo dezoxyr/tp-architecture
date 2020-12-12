@@ -3,7 +3,7 @@
 ![alt text](architecture_globale.PNG)
 
 Pour ce projet nous avons décidé de prendre une architecture 3-tiers, voici les 3 parties :
-- On aura une interface plus ou moins élaboré pour le front-end.
+- On aura une interface plus ou moins élaborée pour le front-end.
 - En ce qui concerne le back-end, on utilise l'API que nous avons développée.
 - Pour la partie base de données on va créer un fichier avec des objets définis en dur.
 
