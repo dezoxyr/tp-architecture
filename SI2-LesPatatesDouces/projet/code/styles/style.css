@@ -1,0 +1,23 @@
+
+#titre{
+	font-size: 2rem;
+	text-align: center;
+	
+}
+
+#app{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
+#boite{
+	margin-top: 50px;
+	
+}
+
+.bouton{
+	margin: 10px;
+}

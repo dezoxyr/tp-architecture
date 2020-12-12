@@ -11,9 +11,12 @@ class Vol:
     def to_dict(self):
         return {
             "id": self.id,
-            "depart": self.aeroport_depart,
-            "arrivee": self.aeroport_arrivee,
+            "depart": self.aeroport_depart.to_dict(),
+            "arrivee": self.aeroport_arrivee.to_dict(),
             "date_depart": self.date_depart,
             "date_arrivee": self.date_arrivee,
             "nombre_billets": self.nombre_billets
         }
+
+    def getId(self):
+        return self.id
