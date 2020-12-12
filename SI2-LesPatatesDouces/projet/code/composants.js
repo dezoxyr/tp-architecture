@@ -144,6 +144,7 @@ var flightTable = {
     methods:{
         seeTickets(item){
             this.id = item.id
+            console.log(this.id)
             this.$emit("tickets", this.id)
         }
     },
@@ -172,7 +173,7 @@ var flightTable = {
 }
 
 var ticketsTable = {
-    props:['vol'],
+    props:['vol', 'user'],
     data: function () {
         return {
             billets: [],
@@ -184,24 +185,47 @@ var ticketsTable = {
             ]
         }
     },
-    mounted: function () {
-        fetch("http://localhost:5000/billet/all/" + this.vol)
-            .then(function(response){
-                return response.json()
-            }).then((json) =>
+    methods:{
+        bookTicket(item){
+            fetch("http://localhost:5000/billet/add/" + item.id + "/" + this.user)
+                .then(function(response){
+                    return response.json()
+                }).then((json) =>
                 {
-                this.billets = json
-                for(let i =0; i<this.billets.length; ++i){
-                        this.billets[i].action = `` //To instantiate action
-                    }
+                    console.log(json)
                 }
             )
+        }
+    },
+    mounted: function() {
+        fetch("http://localhost:5000/billet/all/" + this.vol)
+                .then(function (response) {
+                    return response.json()
+                }).then((json) => {
+                    this.billets = json
+                    for (let i = 0; i < this.billets.length; ++i) {
+                        this.billets[i].action = `` //To instantiate action
+                    }
+                })
+    },
+    watch: {
+        vol:function () {
+            fetch("http://localhost:5000/billet/all/" + this.vol)
+                .then(function (response) {
+                    return response.json()
+                }).then((json) => {
+                    this.billets = json
+                    for (let i = 0; i < this.billets.length; ++i) {
+                        this.billets[i].action = `` //To instantiate action
+                    }
+                })
+        }
     },
     template: `
     <div>
         <v-data-table :headers="headersBillets" :items="billets">
         <template v-slot:item.action="{ item }">
-        <v-btn class="ma-2" color="primary" dark>
+        <v-btn class="ma-2" color="primary" dark @click="bookTicket(item)">
             Ajouter
             <v-icon dark right>
                 mdi-checkbox-marked-circle

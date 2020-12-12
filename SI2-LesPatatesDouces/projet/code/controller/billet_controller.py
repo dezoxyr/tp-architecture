@@ -1,4 +1,5 @@
 from flask import jsonify
+from copy import copy
 
 class BilletController :
     def __init__(self, bdd):
@@ -13,12 +14,14 @@ class BilletController :
 
         return jsonify(list_billet) # Les met en forme pour la vue
 
-    def get_by_id(self, id: int):
+    def get_by_id(self, id: str):
         for billet in self.bdd.get_list_billet():
-            if billet.id == int(id):
-                return jsonify(billet.to_dict())
+            if billet.id == str(id):
+                return billet
 
     def set_user(self, id: int, user: str):
         billet = self.get_by_id(id)
-        billet.user = user
-        self.bdd.update_billet()
+        billetUpdated = copy(billet)
+        billetUpdated.setUser(user)
+        self.bdd.update_billet(billet, billetUpdated)
+        return billet.getVol()

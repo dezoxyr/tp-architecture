@@ -17,3 +17,9 @@ class Billet:
             "prix": self.prix,
             "user": self.user
         }
+
+    def setUser(self, user: str):
+        self.user = user
+
+    def getVol(self):
+        return self.vol

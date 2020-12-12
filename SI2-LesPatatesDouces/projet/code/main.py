@@ -5,6 +5,7 @@ from controller.vol_controller import VolController
 from controller.user_controller import UserController
 from controller.billet_controller import BilletController
 from flask_cors import CORS
+import sys
 
 bdd = BDD()
 aeroport_controller = AeroportController(bdd)
@@ -42,8 +43,16 @@ def get_all_billets(id):
 
 @app.route("/billet/<id>", methods=["GET"])
 def get_billet_by_id(id):
-    print(billet_controller.get_by_id(id))
     return billet_controller.get_by_id(id), 200
+
+
+@app.route("/billet/add/<id>/<user>", methods=["GET","POST"])
+def add_user_to_billet(id, user):
+    userConnected = user_controller.get_user_connected(user)
+    volId = billet_controller.set_user(id, userConnected.getId())
+    vol_controller.decrease_tickets(volId)
+    result = {'status': 'success'}
+    return jsonify(result), 200
 
 
 @app.route("/sign-up", methods=["GET","POST"])

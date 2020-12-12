@@ -38,7 +38,7 @@
             <div v-if="logged == true">
                 <flight-table v-on:tickets="showTickets"></flight-table>
                 <div v-if="vol != 0">
-                    <tickets-table v-bind:vol="vol"></tickets-table>
+                    <tickets-table :vol="vol" :user="email"></tickets-table>
                 </div>
                 <v-row align="center" justify="space-around">
                     <v-btn @click="seeReservation">Voir mes billets réservés</v-btn>
@@ -130,7 +130,7 @@
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(email)
+                        body: JSON.stringify(this.email)
                     })
                     this.email = ""
                     this.password = ""

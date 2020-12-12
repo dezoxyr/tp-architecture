@@ -50,12 +50,16 @@ class BDD:
     def get_list_vol(self):
         return self.list_vol
 
+    def update_vol(self, vol, volUpdated):
+        index = self.list_vol.index(vol)
+        self.list_vol[index] = volUpdated
+
     def get_list_billet(self):
         return self.list_billet
 
-    def update_billet(self, billet):
-        index = self.list_billet.index()
-        self.list_billet[index] = billet
+    def update_billet(self, billet, billetUpdated):
+        index = self.list_billet.index(billet)
+        self.list_billet[index] = billetUpdated
 
     def add_user(self, user):
         self.list_user.append(user)
@@ -65,6 +69,9 @@ class BDD:
 
     def add_user_connected(self, email):
         self.list_user_connected.append(email)
+
+    def get_user_connected(self):
+        return self.list_user_connected
 
     def remove_user_connected(self, email):
         index = 0
