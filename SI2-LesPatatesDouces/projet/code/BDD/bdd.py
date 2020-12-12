@@ -67,6 +67,10 @@ class BDD:
     def get_list_user(self):
         return self.list_user
 
+    def update_user(self, user, userUpdated):
+        index = self.list_user.index(user)
+        self.list_user[index] = userUpdated
+
     def add_user_connected(self, email):
         self.list_user_connected.append(email)
 

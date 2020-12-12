@@ -49,10 +49,21 @@ def get_billet_by_id(id):
 @app.route("/billet/add/<id>/<user>", methods=["GET","POST"])
 def add_user_to_billet(id, user):
     userConnected = user_controller.get_user_connected(user)
+    user_controller.add_ticket(userConnected, id)
     volId = billet_controller.set_user(id, userConnected.getId())
     vol_controller.decrease_tickets(volId)
     result = {'status': 'success'}
     return jsonify(result), 200
+
+@app.route("/billet/<user>", methods=["GET"])
+def get_billets_user(user):
+    billets = []
+    list_billets = user_controller.get_billets(user)
+    for billet in list_billets:
+        objectBillet = billet_controller.get_by_id(billet)
+        billets.append(objectBillet.to_dict())
+    return jsonify(billets), 200
+
 
 
 @app.route("/sign-up", methods=["GET","POST"])

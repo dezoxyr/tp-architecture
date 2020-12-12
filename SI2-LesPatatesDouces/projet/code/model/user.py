@@ -9,11 +9,11 @@ class User:
         self.billet_reserves = list()
 
     #TODO
-    def addReservation(self,billet :int):
+    def addTicket(self,billet :str):
         self.billet_reserves.append(billet)
 
     #TODO
-    def rmReservation(self,billet :int):
+    def deleteTicket(self,billet :str):
         self.billet_reserves.remove(billet)
 
     def getBillets(self):
@@ -21,6 +21,9 @@ class User:
 
     def getId(self):
         return self.id
+
+    def getBillets(self):
+        return self.billet_reserves
 
     def to_dict(self):
         return {
