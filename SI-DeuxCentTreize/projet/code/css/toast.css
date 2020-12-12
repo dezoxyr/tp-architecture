@@ -1,0 +1,58 @@
+.toastify {
+  padding: 12px 20px;
+  color: #ffffff;
+  display: inline-block;
+  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+  background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5);
+  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  position: fixed;
+  top: -150px;
+  right: 15px;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.toastify.on { opacity: 1; }
+
+
+.modale{
+  position: fixed;
+  top: 10;
+  left: 0;
+  
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 100;
+
+  background: rgba(0, 0, 0, .7);
+  
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.boite{
+  position: relative;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+
+.boite .fermer{
+  position:absolute;
+  top: 20px;
+  right:20px;
+  
+  cursor:pointer;
+  
+  transform:scale(1);
+  transition:.3s;
+}
+
+.boite .fermer:hover{
+  transform:scale(1.3);
+}
