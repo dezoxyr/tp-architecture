@@ -53,11 +53,12 @@ public class FlightController {
             response.setStatus(500);
             response.getWriter().write("Plus assez de places disponibles");
         }
-        if (service.alreadyBook(userService.getUser(Integer.parseInt(userId)), flightId)) {
+        else if (service.alreadyBook(userService.getUser(Integer.parseInt(userId)), flightId)) {
             response.setStatus(500);
             response.getWriter().write("Le vol est deja reserve");
+        } else {
+            service.book(service.getFlight(flightId), userService.getUser(Integer.parseInt(userId)), Integer.parseInt(nbPersons));
         }
-        service.book(service.getFlight(flightId), userService.getUser(Integer.parseInt(userId)), Integer.parseInt(nbPersons));
     }
 
     @PostMapping("/cancel")
