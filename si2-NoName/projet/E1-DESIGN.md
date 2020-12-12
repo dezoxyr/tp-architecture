@@ -4,8 +4,8 @@
 
 Pour ce projet nous avons décidé de prendre une architecture 3-tiers, voici les 3 parties :
 - On aura une interface plus ou moins élaboré pour le front-end.
-- En ce qui concerne le back-end, on le gérer avec une API.
-- pour la partie base de donnée on va créer un fichier avec des objets défini en dur.
+- En ce qui concerne le back-end, on utilise avec une API.
+- Pour la partie base de données on va créer un fichier avec des objets définis en dur.
 
 2 - Le modele de donnée stocké :
 
@@ -14,6 +14,6 @@ Pour ce projet nous avons décidé de prendre une architecture 3-tiers, voici le
 Dans notre modele stocké on y trouve 4 tables.
 
 3 - La stack technique :
- - Application et Data : php, html, css, MySQL, JavaScript, Ajax
- - Framework : slim
+ - Application et Data : php, html, MySQL, JavaScript, Ajax
+ - Framework : slim, bootstrap
  - DevOps : gitHub, Visual Studio Code et LiveShare
