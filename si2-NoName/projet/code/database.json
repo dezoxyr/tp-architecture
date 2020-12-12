@@ -33,7 +33,7 @@
             "dateDepart": "2020-10-11 14:05",
             "dateArrive": "2020-10-11 22:55",
             "prix": 600,
-            "place": 0,
+            "place": 1,
             "code": "CDG-DTW 600"
         }
     },
