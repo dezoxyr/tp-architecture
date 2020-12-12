@@ -36,13 +36,8 @@ def get_all_billets(id_vol):
     return billet_controller.get_all_from_vol(id_vol), 200
 
 
-'''@app.route("/billet/<id_billet>", methods=["GET"])
-def get_billet_by_id(id_billet):
-    return billet_controller.get_by_id(id_billet), 200'''
-
-
 @app.route("/<user>/billet/add/<id_billet>", methods=["GET","POST"])
-def book_ticket(id_billet, user):
+def book_billet(id_billet, user):
     if user_controller.add_billet(user, id_billet):
         id_vol = billet_controller.get_vol_by_id_billet(id_billet)
         billet_controller.book(id_billet)

@@ -16,7 +16,7 @@ class BDD:
         self.list_vol = list()
         self.list_vol.append(Vol(1, self.list_aeroport[0], self.list_aeroport[1], "05/12/2020", "05/12/2020", 2))
         self.list_vol.append(Vol(2, self.list_aeroport[2], self.list_aeroport[1], "06/12/2020", "06/12/2020", 3))
-        self.list_vol.append(Vol(3, self.list_aeroport[2], self.list_aeroport[1], "07/12/2020", "07/12/2020", 2))
+        self.list_vol.append(Vol(3, self.list_aeroport[1], self.list_aeroport[2], "07/12/2020", "07/12/2020", 2))
 
 
         self.list_billet = list()

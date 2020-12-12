@@ -147,6 +147,7 @@ var flightTable = {
     methods:{
         seeTickets(item){
             this.id = item.id
+
             this.$emit("tickets", this.id)
         },
         fetchAll(){
@@ -174,9 +175,9 @@ var flightTable = {
     template: `
     <div>
         <v-data-table :headers="headersVols" :items="vols">
-        <template v-slot:item.action="{ item }">
-        <v-btn @click="seeTickets(item)">Voir les billets disponibles</v-btn>
-        </template>
+            <template v-slot:item.action="{ item }">
+                <v-btn @click="seeTickets(item)">Voir les billets disponibles</v-btn>
+            </template>
         </v-data-table>
     </div>
     `

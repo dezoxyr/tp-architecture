@@ -30,6 +30,8 @@ Nous avons utilisé les outils suivant:
 * **PyCharm**, l'IDE utilisé sur notre projet
   
 * **Flask**, avec *flask-cors*, un micro framework pour le développement WEB
+
+* **Vue**, un framework front-end
   
 * **Vuetify**, une librairie *vue* pour embellir notre page WEB
   
@@ -38,3 +40,4 @@ Nous avons utilisé les outils suivant:
 
 Nous avons utilisé Python, car la majorité des membres du groupe était à l'aise avec ce langage programmation.
 Nous avions alors le choix entre *Flask* et *Django* pour le framework. Nous avons choisi *Flask* pour sa simplicité d'implémentation, réputée pour les petites applications WEB.
+Nous avons utilisé *Vue* car tous les membres du groupe l'ont étudié en cours et c'était une bonne opportunité pour s'améliorer.
