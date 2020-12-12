@@ -1,11 +1,10 @@
 <?php
 class database
 {
-    // déclaration d'une propriété
+    
     private $listeVol;
     private $listeReserv;
 
-    // déclaration des méthodes
     function __construct() {
 
         $content = json_decode(file_get_contents('./database.json'), true);
