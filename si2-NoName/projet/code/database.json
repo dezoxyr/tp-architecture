@@ -1,1 +1,41 @@
-[{"1":{"departPlace":"JFK","arrivePlace":"CDG","dateDepart":"2020-08-19 14:55","dateArrive":"2020-08-19 23:14","prix":400,"code":"JFK-CDG 400"},"2":{"departPlace":"CDG","arrivePlace":"JFK","dateDepart":"2020-08-20 13:55","dateArrive":"2020-08-20 22:14","prix":250,"code":"CDG-JFK 250"},"3":{"departPlace":"DTW","arrivePlace":"CDG","dateDepart":"2020-10-10 10:02","dateArrive":"2020-10-10 18:52","prix":300,"code":"DTW-CDG 300"},"4":{"departPlace":"CDG","arrivePlace":"DTW","dateDepart":"2020-10-11 14:05","dateArrive":"2020-10-11 22:55","prix":600,"code":"CDG-DTW 600"}},{}]
+[
+    {
+        "1": {
+            "departPlace": "JFK",
+            "arrivePlace": "CDG",
+            "dateDepart": "2020-08-19 14:55",
+            "dateArrive": "2020-08-19 23:14",
+            "prix": 400,
+            "place": 515,
+            "code": "JFK-CDG 400"
+        },
+        "2": {
+            "departPlace": "CDG",
+            "arrivePlace": "JFK",
+            "dateDepart": "2020-08-20 13:55",
+            "dateArrive": "2020-08-20 22:14",
+            "prix": 250,
+            "place": 349,
+            "code": "CDG-JFK 250"
+        },
+        "3": {
+            "departPlace": "DTW",
+            "arrivePlace": "CDG",
+            "dateDepart": "2020-10-10 10:02",
+            "dateArrive": "2020-10-10 18:52",
+            "prix": 300,
+            "place": 425,
+            "code": "DTW-CDG 300"
+        },
+        "4": {
+            "departPlace": "CDG",
+            "arrivePlace": "DTW",
+            "dateDepart": "2020-10-11 14:05",
+            "dateArrive": "2020-10-11 22:55",
+            "prix": 600,
+            "place": 0,
+            "code": "CDG-DTW 600"
+        }
+    },
+    {}
+]

@@ -11,19 +11,20 @@
     </div>
 </head>
 <body>
+<br>
 
-<div id="error" style="color: red;"></div>
-<div id="success" style="color: green;"></div>
+<div id="error"></div>
+<div id="success"></div>
 
 <div class="m-4">
     <h1>Utilisateur :</h1>
     <input type="text" id="nom" placeholder="Nom">
     <input type="text" id="prenom" placeholder="Prénom">
-    <button class="bg-success" onclick="getReservation()">Vos réservations</button>
+    <button class="btn btn-success" onclick="getReservation()">Vos réservations</button>
 </div>
 <div class="m-4">
     <h1>Liste des reservations :</h1>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Départ</th>
@@ -35,17 +36,19 @@
         <tbody id="listeReserv" >
         </tbody>
     </table>
-    <button class="bg-success" onclick="listeVol();">Liste des vols</button>
+    <button class="btn btn-success" onclick="listeVol();">Liste des vols</button>
 </div>
 <div class="m-4">
     <h1>Liste des vols :</h1>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Départ</th>
                 <th>Arrivé</th>
                 <th>Prix</th>
                 <th>Code</th>
+                <th>place</th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="listeVol" >
@@ -75,7 +78,8 @@ function listeVol(){
                         <td>"+json[i]['arrivePlace']+" "+json[i]['dateArrive']+"</td>\
                         <td>"+json[i]['prix']+"</td>\
                         <td>"+json[i]['code']+"</td>\
-                        <td><button onclick=\"reserver("+i+")\">Réserver</button></td>\
+                        <td>"+json[i]['place']+"</td>\
+                        <td>"+(json[i]['place'] == 0 ? "<span class=\"alert alert-danger\">Place indisponible</span>" : "<button class=\"btn btn-success\" onclick=\"reserver("+i+")\">Réserver</button>")+"</td>\
                     </tr>";
                 i++;
             }
@@ -92,7 +96,7 @@ function reserver(id){
         client["nom"] = document.getElementById("nom").value;
         client["prenom"] = document.getElementById("prenom").value;
     }else{
-        document.getElementById('error').innerHTML = "Vous n'avez pas renseigné vos informations !";
+        document.getElementById('error').innerHTML = "<div class=\"alert alert-danger\">Vous n'avez pas renseigné vos informations !</div>";
         return;
     }
     
@@ -105,7 +109,9 @@ function reserver(id){
             if(json.error){
                 document.getElementById('error').innerHTML = json.error;
             }else{
-                document.getElementById('success').innerHTML = "Un billet pour le vol "+json.vol.code+" a été reservé.";
+                document.getElementById('success').innerHTML = "<div  class=\"alert alert-success\">Un billet pour le vol "+json.vol.code+" a été reservé.</div>";
+                listeVol();
+                getReservation();
             }
         },
     
@@ -120,7 +126,7 @@ function getReservation(){
         client["nom"] = document.getElementById("nom").value;
         client["prenom"] = document.getElementById("prenom").value;
     }else{
-        document.getElementById('error').innerHTML = "Vous n'avez pas renseigné vos informations !";
+        document.getElementById('error').innerHTML = "<div class=\"alert alert-danger\">Vous n'avez pas renseigné vos informations !</div>";
         return;
     }
 

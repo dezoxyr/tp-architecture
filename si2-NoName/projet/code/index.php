@@ -17,7 +17,7 @@ $app->addBodyParsingMiddleware();
 // Add Error Handling Middleware
 //$app->addErrorMiddleware(false, false, false);
 
-// Add route callbacks
+// route donnant la liste des vols
 $app->post('/liste_vol', function (Request $request, Response $response, array $args) {
     $database = new Database();
     $response->getBody()->write(json_encode($database->getListVol()));
@@ -25,6 +25,7 @@ $app->post('/liste_vol', function (Request $request, Response $response, array $
     return $response->withHeader('Content-Type', 'application/json');
 });
 
+// route permettant de reservé
 $app->post('/reserv_vol', function (Request $request, Response $response, array $args) {
     $data = $request->getParsedBody();    
     $database = new Database();
@@ -36,6 +37,7 @@ $app->post('/reserv_vol', function (Request $request, Response $response, array 
     return $response->withHeader('Content-Type', 'application/json');
 });
 
+// route de savoir ce qui a été reservé
 $app->post('/voir_reserv', function (Request $request, Response $response, array $args) {
     $data = $request->getParsedBody();    
     $database = new Database();
