@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+	<head>
+		<link href="GrillingAirVolsCSS.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https.//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+		<title>Vols</title>
+	</head>
+
+	<body>
+		<div class="header">
+			<span href="projecthtml.html">Grilling Air</span>
+			<div class="header-right">
+				<a href="persopageHTML.html">Placeholder</a>
+				<a class="active" href="GrillingAirVols.html">Listes vols</a>
+
+			</div>
+		</div>
+		<br>
+		<div class="container">
+			<hr>
+			<h3>Liste des Vols Utilisateur</h3>
+			<hr>
+			<div>
+				<div class="row" id="billetsuti">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<hr>
+			<h3>Liste des Vols</h3>
+			<hr>
+			<div>
+				<div class="row" id="billets">
+				</div>
+			</div>
+		</div>
+		<div id="editBilletModal" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+
+
+					<div class="modal-body">
+						<form id="editForm" action="http://localhost:3000/billet" method="POST" target="_blank">
+							<div class="form-group">
+								<label for="Billet">Numero Billet</label>
+								<input class="form-control" name="billet">
+							</div>
+
+							<button type="submit" class="btn btn-primary" value="n°Vol">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	
+	
+<script src="billets-list.js"></script>
+
+
+</html>
