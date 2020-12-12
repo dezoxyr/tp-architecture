@@ -15,6 +15,7 @@ class Ticket
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"tickets_available"})
      */
     private $id;
 

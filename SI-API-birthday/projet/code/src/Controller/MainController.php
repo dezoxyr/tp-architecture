@@ -18,6 +18,14 @@ use Symfony\Component\Serializer\SerializerInterface;
 class MainController extends AbstractController
 {
     /**
+     * @Route("/", name="index", methods={"GET"})
+     */
+    public function index()
+    {
+        return new Response(file_get_contents("../templates/index.html"));
+    }
+
+    /**
      * @Route("/tickets/available", name="ticket_available", methods={"GET"})
      */
     public function ticket_available(SerializerInterface $serializer, TicketRepository $ticket_repo): Response
@@ -28,7 +36,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/tickets/booking", name="booking_ticket", methods={"PATCH"})
+     * @Route("/tickets/booking", name="booking_ticket", methods={"POST"})
      */
     public function booking_ticket(SerializerInterface $serializer, TicketRepository $ticket_repo, CustomerRepository $customer_repo, EntityManagerInterface $em, Request $req): Response
     {
@@ -60,9 +68,10 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/booking/customer/{id}", name="booking_customer", requirements={"id"="\d+"})
+     * @Route("/booking/customer/{id}", name="booking_customer", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function booking_customer(SerializerInterface $serializer, BookingRepository $bookingRepository, CustomerRepository $customer_repo, int $id): Response{
+    public function booking_customer(SerializerInterface $serializer, BookingRepository $bookingRepository, CustomerRepository $customer_repo, int $id): Response
+    {
 
         $customer = $customer_repo->findById($id);
         if($customer == null)
@@ -72,6 +81,18 @@ class MainController extends AbstractController
         $models = $bookingRepository->finbByCustomer($customer);
 
         $ret = $serializer->serialize($models, 'json', ['groups' => 'booking_customer']);
+        return new Response($ret, 200, ['Content-Type' => 'application/json']);
+    }
+
+    /**
+     * @Route("/customers", name="customers", methods={"GET"})
+     */
+    public function list_customers(SerializerInterface $serializer, CustomerRepository $customer_repo): Response
+    {
+
+        $models = $customer_repo->findAll();
+
+        $ret = $serializer->serialize($models, 'json', ['groups' => 'list_customers']);
         return new Response($ret, 200, ['Content-Type' => 'application/json']);
     }
 
