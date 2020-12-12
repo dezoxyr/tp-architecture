@@ -76,7 +76,7 @@ function listeVol(){
                 html += "<tr>\
                         <td>"+json[i]['departPlace']+" "+json[i]['dateDepart']+"</td>\
                         <td>"+json[i]['arrivePlace']+" "+json[i]['dateArrive']+"</td>\
-                        <td>"+json[i]['prix']+"</td>\
+                        <td>"+json[i]['prix']+" €</td>\
                         <td>"+json[i]['code']+"</td>\
                         <td>"+json[i]['place']+"</td>\
                         <td>"+(json[i]['place'] == 0 ? "<span class=\"alert alert-danger\">Place indisponible</span>" : "<button class=\"btn btn-success\" onclick=\"reserver("+i+")\">Réserver</button>")+"</td>\
@@ -145,7 +145,7 @@ function getReservation(){
                     html += "<tr>\
                             <td>"+value['vol']['departPlace']+" "+value['vol']['dateDepart']+"</td>\
                             <td>"+value['vol']['arrivePlace']+" "+value['vol']['dateArrive']+"</td>\
-                            <td>"+value['vol']['prix']+"</td>\
+                            <td>"+value['vol']['prix']+" €</td>\
                             <td>"+value['vol']['code']+"</td>\
                         </tr>";
                 });
