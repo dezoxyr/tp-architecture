@@ -13,6 +13,11 @@ public class Client {
         this.ticketlist = new LinkedList<>();
     }
 
+    public Client(String name, List<Ticket> ticketlist){
+        this.name = name;
+        this.ticketlist = ticketlist;
+    }
+
     public Ticket addNewTicket(Flight f){
         Ticket ticket = new Ticket(f);
         ticketlist.add(ticket);

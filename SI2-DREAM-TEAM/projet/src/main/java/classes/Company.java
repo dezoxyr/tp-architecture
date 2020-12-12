@@ -1,5 +1,8 @@
 package classes;
 
+import org.apache.catalina.User;
+import org.springframework.http.ResponseEntity;
+
 import java.util.*;
 
 public class Company {
@@ -66,10 +69,17 @@ public class Company {
     public Ticket bookFlight(String user, int flightID) {
         Client c = findClientByName(user);
         Flight f = findFlightByID(flightID);
+        System.out.println("new booking : " + c + " " + f);
         return c.addNewTicket(f);
     }
 
     public void addUser(Client c) {
         clientlist.add(c);
+    }
+
+    public Client signIn(String name) {
+        Client client = new Client(name);
+        addUser(client);
+        return client;
     }
 }

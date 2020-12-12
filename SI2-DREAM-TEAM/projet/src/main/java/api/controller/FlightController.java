@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin
 @RestController
 public class FlightController {
     Company company = Company.getInstance();
@@ -42,7 +43,7 @@ public class FlightController {
         return company.getUsersTickets(user);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/reservation")
+    @RequestMapping(method = RequestMethod.POST, value = "/book")
     public ResponseEntity<Ticket> getReservation(@RequestBody Map<String, String> json) {
         String user = json.get("name");
         int flightID = Integer.parseInt(json.get("id"));
