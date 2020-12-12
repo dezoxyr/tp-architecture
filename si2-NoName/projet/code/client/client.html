@@ -136,7 +136,6 @@ function getReservation(){
         data : {"client": client},
         dataType : 'json',
         success : function(json){
-            console.log(json);
             if(json['error']){
                 document.getElementById('error').innerHTML = json.error;
             }else{
