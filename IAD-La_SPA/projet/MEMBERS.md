@@ -1,5 +1,9 @@
-Paul Allaire
-Thibaut Bellanger
-Nicolas Cisternas
-Kevin Jean
-Lucas Voyer
+ALLAIRE Paul
+
+BELLANGER Thibaut
+
+CISTERNAS Nicolas
+
+JEAN Kevin
+
+VOYER Lucas
