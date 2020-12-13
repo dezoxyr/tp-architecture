@@ -1,0 +1,124 @@
+
+.conteneur{ 
+	
+	margin: 0 auto; 
+	
+}
+/**************************************************** HAUT ************************************************/
+header { 
+
+	background: linear-gradient(#0080FF 70%, #7acaff); 
+	padding: 40px; 
+	text-align: left;
+}
+ 
+
+header  span{ 
+	
+	color: #fff; 
+	font-weight: bold; 
+	text-transform: uppercase; 
+	margin-right: 20%; 
+}
+
+header  nav{ 
+	
+	display: inline; 
+}
+
+header  a{ 
+
+	color: #000000; 
+	text-decoration: none; 
+	text-align: to left;
+	padding: 5px; 
+	font-size: 0.5cm;
+	font-weight: bolder;
+	font-family: Cambria;
+}
+
+header h1{
+
+	color: #ebfc00; 
+	text-decoration: none; 
+	text-align: to left;
+	padding: 5px; 
+	font-size: 2cm;
+	font-family: URW Chancery L, cursive;
+}
+
+header h2{
+
+	color: #ebfc00; 
+	text-decoration: none; 
+	text-align: to left;
+	padding: 5px; 
+	font-size: 1.2cm;
+	text-shadow:1px 1px 2px gray;
+	font-family: URW Chancery L, cursive;
+}
+
+header nav a:hover{ 
+
+	background: linear-gradient(to top, #00bb40, #beffd5); 
+}
+/**************************************************** MILIEU ************************************************/
+section{ 
+	
+	background: linear-gradient(to bottom, #7acaff, #aaddff, #beffd5); 
+	padding: 30px; 
+	min-height: 800px; 
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bold;
+	font-size: 0.4cm;
+	color: #4c00fc; 
+	text-shadow:1px 1px 2px gray;
+}
+
+section h1{
+
+	background: #beffd5;
+	font-family: Cambria;
+	font-weight: bold;
+	font-size: 0.5cm;
+	color: #00bb40; 
+	text-shadow:1px 1px 2px gray;
+}
+
+section h3{
+
+	font-family: Cambria;
+	font-weight: bold;
+	font-size: 0.5cm;
+	color: #ffffffda; 
+	text-shadow:1px 1px 2px gray;
+}
+
+
+/**************************************************** BAS ************************************************/
+footer{ 
+	
+	background: linear-gradient(#beffd5,  #99ffbd,  #91ffb7, #00bb40); 
+	color: #775900; 
+	text-align: center; 
+	padding: 30px 0;
+	font-weight: bolder;
+}
+/**************************************************** GENERAL ************************************************/
+.erreur{ 
+	
+	background:#fcbd008c;
+	color: #fc0000;
+	font-size: 0.75cm;
+	text-shadow:1px 1px 2px gray;
+	
+}
+
+.validation{ 
+	
+	background: #a3ffe8;
+	color: #00bb40; 
+	font-size: 0.75cm;
+	text-shadow:1px 1px 2px gray;
+}
+
