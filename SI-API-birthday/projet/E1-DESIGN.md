@@ -1,6 +1,7 @@
 # Résumé :
 
-- Architecture : 3 tiers (Client-Application-Stockage).
+- Architecture : 3 tiers (Client-Application-Stockage) :
+![](https://raw.githubusercontent.com/MisterDelaunay/tp-architecture/SI-API-birthday/SI-API-birthday/projet/ARCHI.png)
 - Modele de donnée stocké : 
 ![](https://raw.githubusercontent.com/MisterDelaunay/tp-architecture/SI-API-birthday/SI-API-birthday/projet/BDD.PNG)
 - Stack technique : 
