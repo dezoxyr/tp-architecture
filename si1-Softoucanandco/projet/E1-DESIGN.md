@@ -5,7 +5,7 @@ Pour ce projet nous avons imaginé une architecture avec 3 composantes principal
 
 ## Le schéma d'architecture :
 
-![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/picture/sch%C3%A9maArchitecture.jpg)
+![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/picture/sch%C3%A9maArchitecture2.jpg)
 
 Ce schéma illustre la manière dont notre projet va se comporter. Premièrement, il y a la partie client qui va être la face visible de tout le reste. C'est d'ici que l'utilisateur va accéder à notre site et va pouvoir faire toutes les actions voulut.
 Ensuite il y a la partie serveur qui est l'endroit où les actions des utilisateurs sont traitées. Les technologies utilisés ici sont celles décrites dans le stack technique.
@@ -13,7 +13,7 @@ Et pour finir, il y a la partie base de donnée qui regroupe toutes les informat
 
 ## Le stack technique :
 
-![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/picture/stackTechnique.png)
+![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/picture/stackTechnique2.png)
 
 La Stack Technique est importante car elle permet de résumer de façon claire les différents langages de programmation, les frameworks et les outils dont les développeurs aura besoin pour interagir avec une application. 
 
@@ -25,7 +25,7 @@ La gestion de base de données se fera par le langage SQLite.
 
 ## Structure de la base de donnée :
 
-![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/picture/StructureBDD.png)
+![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/picture/StructureBDD2.png)
 
 La base de données que nous avons imaginée regroupe les 3 tables suivantes permettant : 
 - de définir le user et ses informations personnelles, 
