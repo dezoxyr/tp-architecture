@@ -1,0 +1,21 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: url('https://www.gannett-cdn.com/-mm-/9e1f6e2ee20f44aa1f3be4f71e9f3e52b6ae2c7e/c=0-110-2121-1303/local/-/media/2020/04/02/USATODAY/usatsports/airport-airplanes-source-getty.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    margin: auto;
+    background: #fcfcfc;
+}

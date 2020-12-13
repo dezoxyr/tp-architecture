@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/common.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/login.css" />
+</head>
+<body>
+    <div id="main">
+        <form method="POST" action="login" class="login-container">
+            <div class="field-container">
+                <div class="field-title">Nom d'utilisateur</div>
+                <div class="field-input"><input type="text" name="username" placeholder="Nom d'utilisateur" /></div>
+            </div>
+            <div class="field-container">
+                <div class="field-title">Mot de passe</div>
+                <div class="field-input"><input type="password" name="password" placeholder="Mot de passe" /></div>
+            </div>
+            <input type="submit" value="Se connecter" class="login-button" />
+			<a href="signup" class="sign-up-button">Créer un compte</a>
+        </div>
+    </div>
+</body>
+</html>

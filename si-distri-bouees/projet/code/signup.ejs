@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/common.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/signup.css" />
+</head>
+<body>
+    <div id="main">
+        <form method="POST" action="signup" class="login-container" onsubmit="return checkstring()">
+            <div class="field-container">
+                <div class="field-title">Nom d'utilisateur</div>
+                <div class="field-input"><input type="text" id="user" name="username" placeholder="Nom d'utilisateur" /></div>
+            </div>
+            <div class="field-container">
+                <div class="field-title">Mot de passe</div>
+                <div class="field-input"><input type="password" id="mdp" name="password" placeholder="Mot de passe" /></div>
+            </div>
+            <input type="submit" value="Créer mon compte" class="login-button"/>
+        </div>
+    </div>
+    <script>
+        function checkstring()
+        {
+            if(document.getElementById("user").value == "")
+            {
+                alert("Merci de renseigner un nom d'utilisateur");
+                return false;
+            }
+            if(document.getElementById("mdp").value == "")
+            {
+                alert("Merci de renseigner un mot de passe");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
