@@ -15,3 +15,12 @@ http-server -p 5060
 Cela permet d'ouvrir le site internet localement
 
 - Pour finir ouvrir un onglet sur votre browser favoris et aller à l'URL : [http://localhost:5060/](http://localhost:5060/)
+
+
+# Comment fonctionne notre projet ?
+
+- Au démarrage de la page internet vous vous retrouverez sur notre page d'accueil où vous retrouverez notre liste de destination ainsi qu'un premier module de réservation
+
+- Ensuite si vous cliquez sur lancer la recherche ou sur une des trois destinations vous vous retrouverez sur notre module de réservation où vous pourrez choisir un vol.
+
+- Quand votre choix est fais vous vous retrouverez fasse à un récapitulatif et vous pourrez revenir sur la page d'accueil.
