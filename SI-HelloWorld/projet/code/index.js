@@ -41,9 +41,6 @@ app.get('/reservations', reservationsHandler.showAll)
 // Renvoie la liste des réservations de l'utilisateur au format JSON.
 app.get('/api/reservations', reservationsHandler.getAll)
 
-// Renvoie la page HTML des détails d'une réservation.
-//app.get('/reservations/:id', reservationsHandler.showOneById)
-
 // Renvoie les détails d'une réservation au format JSON.
 app.get('/api/reservations/:id', reservationsHandler.getOneById)
 
