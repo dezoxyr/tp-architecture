@@ -21,14 +21,28 @@ Elle comporte toute les caractérisitiques necessaire pour la réservation d'un 
 - NodeJS 
 - ExpressJS
 - MySQL
-- ReactJS
+- HTML / CSS / JS
 
 ## Démonstration
 ### Lancement du server de l'API
-	- node server/server.js
+	- node code/server/server.js
 
 ### Lancement du server client
-	- node client/client.js
+	- node code/client/index.js
 
 ### Aller sur le site client
 	- Lancer votre navigateur l'url suivante : http://localhost:80
+	- Les identifiants client sont :
+		- ernult@et.esiea.fr
+		- fenzar@et.esiea.fr
+		- omrane@et.esiea.fr
+		- serkesti@et.esiea.fr
+		- sorel@et.esiea.fr
+		- tourari@et.esiea.fr
+
+### Remarque sur le site
+#### D'un point de vu technique
+Nous avons fait le choix de séparer la partie server de donnée de la partie server client dans le but de distinguer chaque utilisation.
+
+#### D'un point de vu utilisation
+Notre site client contient uniquement les fonctionnalités de base. Il n'a aucune sécurité pour la connexion et pour l'accès à la page d'un client.
