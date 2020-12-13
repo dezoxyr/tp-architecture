@@ -31,17 +31,13 @@ public class Company {
         return company.flightlist;
     }
 
-    public List<Client> getClientlist() {
-        return company.clientlist;
-    }
-
     public List<Ticket> getUsersTickets(String user) {
         return findClientByName(user).getTickets();
     }
 
     public Client findClientByName(String user) {
         for (Client client : clientlist)
-            if (client.getName().toLowerCase().equals(user.toLowerCase())) {
+            if (client.getName().equalsIgnoreCase(user)) {
                 System.out.println("user trouvé " + client.getName() );
                 return client;
             }
@@ -70,6 +66,7 @@ public class Company {
         Client c = findClientByName(user);
         Flight f = findFlightByID(flightID);
         System.out.println("new booking : " + c + " " + f);
+        f.removeOneSeat();
         return c.addNewTicket(f);
     }
 

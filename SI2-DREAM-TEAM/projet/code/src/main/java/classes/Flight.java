@@ -48,4 +48,8 @@ public class Flight {
     public String toString() {
         return  departure.getCode()+'-'+ destination.getCode();
     }
+
+    public void removeOneSeat() {
+        --seats;
+    }
 }
