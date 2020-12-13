@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teams - Réservations</title>
+    <link rel="stylesheet" href="stylesheet/tp.css">
+    <title>Teams-2</title>
 </head>
 <body>
-    <div class="contentPage">
-        <h1 class="title">Réservation</h1>
-
-        <form action="">
-            <label for="departureLocation">Départ de:</label><br>
-            <input type="text" name="departureLocation" id="departureLocation" value=""><br>
-            <label for="arrivalLocation">Arrivée à:</label><br>
-            <input type="text" name="arrivalLocation" id="arrivalLocation" value=""><br>
-            <label for="arrivalLocation">Prix:</label><br>
-            <input type="text" name="arrivalLocation" id="arrivalLocation" value=""><br>
-            <label for="clientNom">Nom</label><br>
-            <input type="text" name="clientName" id="clientName"><br>
-            <label for="clientPrénom">Prénom</label><br>
-            <input type="text" name="clientName" id="clientName"><br><br>
-
-            <input type="submit" value="Réserver">
-        </form>
+    <div id="base">  
+        <h1>Teams, cheapest plane tickets on the market</h1> 
     </div>
+    <div class="contentPage">
+        <h1 class="title">Réservation !</h1>
+        <h2 class="title">Information du billet</h2>
+
+        <div class="affichageBillet">
+            <form action="#">
+                <label for="departure">Départ de:</label><br>
+                <input type="text" name="departure" id="" placeholder="Paris"><br>
+
+                <label for="arrival">Arrivée à:</label><br>
+                <input type="text" name="arrival" id="" placeholder="Detroit"><br>
+
+                <label for="priceBi">Prix :</label><br>
+                <input type="text" name="priceBi" id="" placeholder="20€"><br>
+
+                <label for="userName">Nom :</label><br>
+                <input type="text" name="userName" id="" placeholder="Jean"><br><br>
+
+                <input type="submit" value="Acheter">
+                <a href="index.html" class="reservationButton">Page d'accueil</a>
+
+            </form>
+        </div>
+    </div>
+    
 </body>
 </html>

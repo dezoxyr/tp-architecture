@@ -1,82 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teams-2</title>
+    <link rel="stylesheet" href="stylesheet/tp.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+    <script>
+        $(function () {
+            var fliths = [];
+            $.getJSON('reservation.json', function (data) {
+                $.each(data.vol, function (i, f) {
+                    var tblRow = "<div class='tt'>" + "<div class='informationBillet'>" + "<p> Départ de: " + f.ville_depart + "</p>" +
+                        "<p> Arrivée à: " + f.ville_destination + "</p>" + "</div>" + "<div class='informationPrice'>" + "<p>" + f.prix + "</p>" + "<a href='reservation.html' class='reservationButon'>Réserver</a>" +"</div>" +"</div>"
+                    $(tblRow).appendTo("#userdata");
+                })
+            })
+        });
+    </script>
 </head>
+
 <body>
+    <div id="base">  
+        <h1>Teams, cheapest plane tickets on the market</h1> 
+    </div>
     <div class="contentPage">
         <h1 class="title">Bienvenue !</h1>
         <h2 class="title">Billet d'avion disponible</h2>
 
-        <div class="affichageBillet">
-            <div class="informationsBillet">
-                <div class="informationBillet">
-                    <p>Départ de: JFK - New York</p>
-                    <p>Arrivée à: CDG - Paris</p>
-                </div>
-                <div class="informationPrice">
-                    <p>25€</p>
-                    <a href="reservation.html" class="reservationButon">Réserver</a>
-                </div>
-            </div>
-
-            <div class="informationsBillet">
-                <div class="informationBillet">
-                    <p>Départ de: JFK - New York</p>
-                    <p>Arrivée à: DTW - Detroit</p>
-                </div>
-                <div class="informationPrice">
-                    <p>25€</p>
-                    <a href="reservation.html" class="reservationButon">Réserver</a>
-                </div>
-            </div>
-
-            <div class="informationsBillet">
-                <div class="informationBillet">
-                    <p>Départ de: CDG - Paris</p>
-                    <p>Arrivée à: JFK - New York</p>
-                </div>
-                <div class="informationPrice">
-                    <p>25€</p>
-                    <a href="reservation.html" class="reservationButon">Réserver</a>
-                </div>
-            </div>
-
-            <div class="informationsBillet">
-                <div class="informationBillet">
-                    <p>Départ de: CDG - Paris</p>
-                    <p>Arrivée à: DTW - Detroit</p>
-                </div>
-                <div class="informationPrice">
-                    <p>25€</p>
-                    <a href="reservation.html" class="reservationButon">Réserver</a>
-                </div>
-            </div>
-
-            <div class="informationsBillet">
-                <div class="informationBillet">
-                    <p>Départ de: DTW - Detroit</p>
-                    <p>Arrivée à: JFK - New York</p>
-                </div>
-                <div class="informationPrice">
-                    <p>25€</p>
-                    <a href="reservation.html" class="reservationButon">Réserver</a>
-                </div>
-            </div>
-
-            <div class="informationsBillet">
-                <div class="informationBillet">
-                    <p>Départ de: DTW - Detroit</p>
-                    <p>Arrivée à: CDG - Paris</p>
-                </div>
-                <div class="informationPrice">
-                    <p>25€</p>
-                    <a href="reservation.html" class="reservationButon">Réserver</a>
-                </div>
-            </div>
+        <div class="affichageBillet" id="userdata">
         </div>
     </div>
 </body>
+
 </html>
