@@ -1,0 +1,158 @@
+* {
+    font-family: 'Acme', sans-serif;
+}
+
+body {
+    background-color: #DBDBD9;
+    margin: 80px 0 0 0;
+    color: #DBDBD9;
+}
+
+header {
+    background: url(http://localhost:5060/images/header-section.jpg) 100% fixed;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2px;
+}
+
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+<img src="paris.jpg" alt="Paris">
+
+h1{
+    font-size: 20px;
+    margin-top: 140px;
+    text-transform: uppercase;
+	width: 40vw;
+}
+
+h3.slogan {
+    font-size: 35px;
+    font-style: italic;
+}
+
+/* Destinations */
+
+section#destinations {
+    margin: 0px 20% 0 20%;
+}
+
+section#destinations h3 {
+    padding-top: 50px;
+    opacity: 0.5;
+    color: #373737;
+}
+
+div.destination-item {
+    color: #373737;
+    height: 300px;
+    margin: 15px;
+    position: relative;
+    flex: 1 0 29%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+div.destination-item:hover {
+    transform: scale(0.98);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.2s all;
+}
+
+div.destinations-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.newyork { background: url(http://localhost:5060/images/newyork.png); }
+.detroit { background: url(http://localhost:5060/images/detroit.png); }
+.paris { background: url(http://localhost:5060/images/paris.jpg); }
+
+
+.overlay { 
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+span.nom {
+    position: relative;
+    color: #373737;
+    background-color: #33caff;
+    top: 20px;
+    float: right;
+    padding: 12px;
+    font-size: 22px;
+}
+
+/*span.prix {
+    position: relative;
+    color: #fff;
+    background-color: #EF8F1D;
+    padding: 12px;
+    font-size: 25px;
+    top: 220px;
+}*/
+
+/* Formulaire de recherche */
+
+header form {
+    background-color: #33caff;
+    padding: 20px;
+}
+
+.search-form {
+    transform: translateY(75px);
+}
+
+.form-group {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.form-group input, select, option{
+    border: none;
+    padding: 5px;
+    background-color: bisque;
+}
+
+.form-group label {
+    margin: 5px;
+    padding: 10px;
+}
+
+.button-submit{
+    text-align: center;
+}
+
+.button-submit input {
+    background-color: #373737;
+    border: none;
+    color: #DBDBD9;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+/* Pied de page */
+
+footer p {
+    text-align: center;
+    color: #373737;
+    padding: 10px;
+}
