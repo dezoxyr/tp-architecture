@@ -23,9 +23,6 @@ function add(req, res) {
     const flights = require("./flights.json")
     const theFlight = flights.find(flight => flight.id === flightId)
 
-    console.log("nbPassengers : " + nbPassengers)
-    console.log("parseInt(theFlight.price * nbPassengers) : " + parseInt(theFlight.price * nbPassengers))
-
     var newReservation = {
         "id": reservations.length + 1,
         "flight": theFlight,
@@ -37,8 +34,6 @@ function add(req, res) {
     };
 
     reservations.push(newReservation);
-
-    console.log(reservations)
 
     res.status(200).json("")
 }
