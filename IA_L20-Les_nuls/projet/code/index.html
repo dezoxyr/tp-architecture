@@ -8,24 +8,30 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <!--<link rel="stylesheet" href="style.css">  -->
-  <script src="script.js"></script>
 </head>
 <body>
 
 	<div id="app">
 		<button v-on:click="updateVols()">Mettre à jour les vols</button>
 		<ul>
-			<li v-for="vol in vols">Départ: {{ vol.code_depart }}, Arrivée: {{ vol.code_destination }}, au prix de {{ vol.prix }}
-				<button v-on:click="ajoutPanier(vol.id)">Ajouter Panier</button>
+			<li v-for="vol in vols">{{ vol.code_depart }}-{{ vol.code_destination }} {{ vol.prix }}                         
+				
+				<button v-on:click="ajoutPanier(vol.id, vol.code_depart, vol.code_destination, vol.prix)">Ajouter Panier</button>
 			</li>
 		</ul>
 
-		<button v-on:click="updatePanier(panier.id)">Mettre à jour Panier</button>
+
+		<span>Mon Panier</span>
 		<ul>
-			<li v-for="panier in paniers">Départ: {{ panier.code_depart }}, Arrivée: {{ panier.code_destination }}, au prix de {{ panier.prix }}
-				<button v-on:click="">Supprimer</button>
+			<li v-for="(panier, index) in paniers" :key="'panier'+index">{{ panier.code_depart }}-{{ panier.code_destination }} {{ panier.prix }}  
+			<input type="text" value="1">  
+			<button v-on:click="supprimerPanier(panier.id)">Retirer</button>
+			
+		
 			</li>
 		</ul>
+
+		<button v-on:click="">Paiement</button>
 
 	</div>
 
@@ -34,22 +40,29 @@
 			el: '#app',
 			data:{
 				vols:[],
-				paniers:[]
+				paniers:[],
+				objets:[],
 			},
 			methods:{
-				updateVols(){
+				updateVols:function()
+				{
 					axios.get('http://127.0.0.1:5000/fly').then(reponse => this.vols = reponse.data).catch(erreur => this.vols = [{title: "Erreur de chargement"}]);
 
 				},
-				ajoutPanier(index){
+				ajoutPanier:function(index, dep, des, price){
+					
 					index.toString();
+					this.objets.push({id:index})
+
+
 					url="http://127.0.0.1:5000/fly/"+index
-					axios.put(url).then(reponse => this.paniers = reponse.data).catch(erreur => this.paniers = [{title: "Erreur de chargement"}]);
+					axios.get(url).then(reponse => this.paniers.push(reponse.data)).catch(erreur => this.paniers = [{title: "Erreur de chargement"}]);
+
+					console.log(this.paniers)
 				},
-				updatePanier(index){
-					index.toString();
-					url="http://127.0.0.1:5000/update_fly/"+index
-					axios.get(url).then(reponse => this.paniers = reponse.data).catch(erreur => this.paniers = [{title: "Erreur de chargement"}]);
+				supprimerPanier:function(index)
+				{
+					this.paniers.pop()
 				}
 			}
 		});
@@ -57,3 +70,4 @@
 
 </body>
 </html>
+
