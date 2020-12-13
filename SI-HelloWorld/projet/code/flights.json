@@ -14,7 +14,7 @@
         "code_airport_dest": "DTW",
         "dep_time": "12/24/2020 10:15:00",
         "arrival_time": "12/24/2020 12:15:00",
-        "price": 90.0,
+        "price": 65.0,
         "company": "Easy Jet",
         "nb_seats": 63
     },
@@ -24,7 +24,7 @@
         "code_airport_dest": "DTW",
         "dep_time": "12/24/2020 10:15:00",
         "arrival_time": "12/24/2020 12:15:00",
-        "price": 90.0,
+        "price": 85.0,
         "company": "Ryanair",
         "nb_seats": 63
     }

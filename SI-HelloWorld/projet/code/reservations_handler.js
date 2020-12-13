@@ -1,27 +1,27 @@
-const reservations = require("./reservations.json")
+const reservations = require("./reservations.json");
 var qs = require('querystring');
 
 // Renvoie la page HTML de la liste des réservations de l'utilisateur.
 function showAll(req, res) {
     var templateParameters = {
-        reservations: reservations.reverse()
+        reservations: reservations
     };
     res.render(__dirname + '/templates/reservations_list.ejs', templateParameters);
 }
 
 // Renvoie la liste des réservations de l'utilisateur au format JSON.
 function getAll(req, res) {
-    res.status(200).json(reservations)
+    res.status(200).json(reservations);
 }
 
 // Permet d'ajouter une réservation.
 // Renvoie 200 si le billet a bien été réservé, sinon 500.
 function add(req, res) {
-    const flightId = parseInt(req.params.id)
-    const nbPassengers = req.body.nbPassengers
+    const flightId = parseInt(req.params.id);
+    const nbPassengers = req.body.nbPassengers;
 
-    const flights = require("./flights.json")
-    const theFlight = flights.find(flight => flight.id === flightId)
+    const flights = require("./flights.json");
+    const theFlight = flights.find(flight => flight.id === flightId);
 
     var newReservation = {
         "id": reservations.length + 1,
@@ -33,22 +33,22 @@ function add(req, res) {
         "is_flight_cancelled": "false"
     };
 
-    reservations.push(newReservation);
+    reservations.unshift(newReservation);
 
-    res.status(200).json("")
+    res.status(200).json("");
 }
 
 // Renvoie la page HTML des détails d'une réservation.
 function showOneById(req, res) {
-    const id = parseInt(req.params.id)
-    res.status(200).send("<h1>Détails de votre réservation (n°" + id + ")</h1>")
+    const id = parseInt(req.params.id);
+    res.status(200).send("<h1>Détails de votre réservation (n°" + id + ")</h1>");
 }
 
 // Renvoie les détails d'une réservation au format JSON.
 function getOneById(req, res) {
-    const id = parseInt(req.params.id)
-    const reservation = reservations.find(reservation => reservation.id === id)
-    res.status(200).json(reservation)
+    const id = parseInt(req.params.id);
+    const reservation = reservations.find(reservation => reservation.id === id);
+    res.status(200).json(reservation);
 }
 
 exports.showAll = showAll;

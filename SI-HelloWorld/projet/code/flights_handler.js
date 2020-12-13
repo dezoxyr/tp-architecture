@@ -1,5 +1,5 @@
-const flights = require("./flights.json")
-const reservations = require("./reservations.json")
+const flights = require("./flights.json");
+const reservations = require("./reservations.json");
 
 function showAll(req, res) {
     var templateParameters = {
@@ -10,12 +10,12 @@ function showAll(req, res) {
 
 // Renvoie la liste des vols disponibles au format JSON.
 function getAll(req, res) {
-    res.status(200).json(flights)
+    res.status(200).json(flights);
 }
 
 // Renvoie la page HTML des détails d'un vol.
 function showOneById(req, res) {
-    const id = parseInt(req.params.id)
+    const id = parseInt(req.params.id);
     var templateParameters = {
         flight: flights[id]
     };
@@ -24,9 +24,9 @@ function showOneById(req, res) {
 
 // Renvoie les détails d'un vol au format JSON.
 function getOneById(req, res) {
-    const id = parseInt(req.params.id)
-    const flight = flights.find(flight => flight.id === id)
-    res.status(200).json(flight)
+    const id = parseInt(req.params.id);
+    const flight = flights.find(flight => flight.id === id);
+    res.status(200).json(flight);
 }
 
 exports.showAll = showAll;
