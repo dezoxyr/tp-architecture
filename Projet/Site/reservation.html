@@ -4,16 +4,51 @@
 <head>
 	<title>MalESIEA-Airlines</title>
 	<link rel="stylesheet" href="styles.css"/>
+	<meta charset="UTF-8">
 </head>
 <body>
 
 <br>
     <div class="element">
-<h1>Réservation</h1>
+	<h1>Réservation</h1>
+	<h3>Sélectionner votre vol:</h3>
+    <form>
+        <p>
+            <label for="adress">Votre mail</label> :
+            <input type="text" name="mail" id="mail" required>
+        </p>
+        <p>
+            <label for="Depart"> Depart :</label><br>
+            <input type="radio" name="Depart" id="NYC" value="NYC" checked>
+            <label for="NYC">New-York City</label>
+            <br>
+            <input type="radio" name="Depart" id="CDG" value="CDG">
+            <label for="CDG">Paris</label>
+            <br>
+            <input type="radio" name="Depart" id="DTW" value="DTW">
+            <label for="DTW">Détroit</label>
+            <br>
+        </p>
+        <p>
+            <label for="Arrivee"> Arrivee : </label><br>
+            <input type="radio" name="Arrivee" id="ANYC" value="NYC" checked>
+            <label for="ANYC">New-York City</label>
+            <br>
+            <input type="radio" name="Arrivee" id="ACDG" value="CDG">
+            <label for="ACDG">Paris</label>
+            <br>
+            <input type="radio" name="Arrivee" id="ADTW" value="DTW">
+            <label for="ADTW">Détroit</label>
+            <br>
+        </p>
+        <input type="submit" value="Confirmer">
+    </form>
+	</div>
+	<script src="./javascript/ajax.js"></script>
+    <script src="./javascript/reservation.js"></script>
 
-        
-        
-        
-        </div>
+
+
+<button> <a href="./mesvol.html">Mes vols</a> </button>
 </body>
 </html>

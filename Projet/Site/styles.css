@@ -7,7 +7,9 @@
 html
 {
     text-align: center;  
-    background: rgba(239, 232, 220, 0.49);
+    background: no-repeat url('./data/WelcomeBackground.jpeg');
+
+    /*background: rgba(239, 232, 220, 0.49);
    /* text-align: center;*/
 }
 
@@ -20,8 +22,11 @@ h1
 p
 {
  	text-align: center;   
-        font-size: 25px;
+    font-size: 25px;
 }
+
+
+
 .button
 {
     text-align: center;
