@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css" />
+    <body>
+
+        
+        <header>
+            
+            <!-- Titre de la page -->
+            <h1 class="titre">MAC AIR</h1>
+        </header>
+            <!-- Slogan -->
+           <h3 class="slogan">«La tête dans les nuages !»</h3>
+
+            <center><div class="search-form">
+                <form action="action.php" method="post">
+                                
+                    <div class="form-group">
+
+                        <label for="email">Votre email</label>
+                        <input type="text" name="email" id="email" placeholder="tapez votre email">
+                        
+                        <label for="provenance">Ville de départ</label>
+                        <input type="text" name="provenance" id="provenance" placeholder="Paris, New-York, ...">
+
+                        <label for="arrivee">Ville d'arrivée</label>
+                        <input type="text" name="arrivee" id="arrivee" placeholder="Paris, New-York, ...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="depart">Date de départ</label>
+                        <input type="date" name="depart" id="depart" value="15/01/2021">
+
+                        <label for="retour">Date de Retour</label>
+                        <input type="date" name="retour" id="retour" value="25/01/2021">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adultes">Nombre d'adultes</label>
+                        <select name="adultes" id="adultes">
+                            <option selected="selected">0 Adulte</option>
+                            <option>1 Adulte</option>
+                            <option>2 Adultes</option>
+                            <option>3 Adultes</option>
+                        </select>
+
+                        <label for="enfants">Nombre d'enfants</label>
+                        <select name="enfants" id="enfants">
+                            <option selected="selected">0 Enfant</option>
+                            <option>1 Enfant</option>
+                            <option>2 Enfants</option>
+                        </select>
+
+                        <label for="type">Categorie</label>
+                        <select name="type" id="type">
+                            <option selected="selected">Classe Economique</option>
+                            <option>Classe Affaires</option>
+                        </select>
+                    </div>
+
+                    <div class="button-submit">
+                        <input type="submit" value="Lancer la recherche" name="recherche" id="recherche">
+                    </div>
+                    
+                </form>
+                <section id="destinations">
+
+            <h3>Trois destinations</h3>
+
+            <div class="destinations-group">
+                <!-- destination 1 -->
+                <div class="destination-item paris">
+                    <div class="overlay">
+                        <span class="prix">Dès 80€</span>
+                        <span class="nom">Paris</span>
+                    </div>
+                </div>
+
+                <!-- destination 2 -->
+                <div class="destination-item newyork">
+                    <div class="overlay">
+                        <span class="prix">Dès 300€</span>
+                        <span class="nom">New_york</span>
+                    </div>
+                </div>
+
+                <!-- destination 3 -->
+                <div class="destination-item detroit">
+                    <div class="overlay">
+                        <span class="prix">Dès 1200€</span>
+                        <span class="nom">Détroit</span>
+                    </div>
+                </div>
+
+            </div><center>
+
+
+</body>
+
+
+</html>

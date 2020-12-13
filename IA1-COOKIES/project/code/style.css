@@ -1,0 +1,207 @@
+html{
+  min-height: 100%;
+  font-family: 'Acme', sans-serif;
+}
+
+body{
+color:black;
+background-color:grey;
+background-position: center;
+}
+
+#nom{
+  text-transform: uppercase;
+}
+
+.btn{
+  background-color: #14b0f3;
+}
+.btn:hover{
+  background-color: #0093d2;
+}
+
+header{
+  padding: 7em 5em 4em 5em;
+}
+
+title{
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  color:white;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.titre{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1{
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  color:white;
+
+}
+h2{
+  color:white;
+  
+
+}
+td{
+  color: white;
+}
+
+#rectangle{
+  border: solid 2px white;
+  background-color: white;
+  padding: 2em 2em 2em 2em;
+  -webkit-box-shadow: 3px 4px 4px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 4px -2px rgba(0,0,0,0.75);
+  box-shadow: 3px 4px 4px -2px rgba(0,0,0,0.75);
+}
+
+#blanc{
+  max-width: 50%;
+  min-width: 50%;
+}
+
+h3.slogan {
+    font-size: 35px;
+    font-style: italic;
+    margin-right: auto;
+    margin-left: auto;
+}
+header {
+    background-image: url(images/ouhou.jpg) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+     
+}
+
+.search-form {
+    transform: translateY(75px);
+}
+
+.form-group {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.form-group input, select, option{
+    border: none;
+    padding: 5px;
+    background-color: bisque;
+}
+
+.form-group label {
+    margin: 5px;
+    padding: 10px;
+}
+
+.button-submit{
+    text-align: center;
+}
+
+.button-submit input {
+    background-color: #373737;
+    border: none;
+    color: #DBDBD9;
+    font-size: 25px;
+    margin-top: 15px;
+}
+a{
+  background-color: #373737;
+  border: none;
+  color: #DBDBD9;
+  font-size: 25px;
+  margin-top: 15px;
+  text-align: center;
+
+}
+span.nom {
+    position: relative;
+    color: #373737;
+    background-color: #DBDBD9;
+    top: 20px;
+    float: right;
+    padding: 12px;
+    font-size: 22px;
+}
+
+span.prix {
+    position: relative;
+    color: #fff;
+    background-color: #EF8F1D;
+    padding: 12px;
+    font-size: 25px;
+    top: 220px;
+}
+
+/* Formulaire de recherche */
+
+header form {
+    background-color: #EF8F1D;
+    padding: 20px;
+}
+h1.titre {
+    font-size: 100px;
+    margin-top: 140px;
+    text-transform: uppercase;
+}
+
+h3.slogan {
+    font-size: 35px;
+    font-style: italic;
+}
+
+/* Destinations */
+
+section#destinations {
+    margin: 0px 20% 0 20%;
+}
+
+section#destinations h3 {
+    padding-top: 50px;
+    opacity: 0.5;
+    color: #373737;
+}
+
+div.destination-item {
+    color: #373737;
+    height: 300px;
+    margin: 15px;
+    position: relative;
+    flex: 1 0 29%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+div.destination-item:hover {
+    transform: scale(0.98);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.2s all;
+}
+
+div.destinations-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.detroit { background: url(images/detroit.jpg); }
+.newyork { background: url(images/newyork.jpg); }
+.paris { background: url(images/paris.jpg); }
+
+.overlay { 
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
