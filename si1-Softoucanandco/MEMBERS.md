@@ -1,5 +1,5 @@
-Pierric Loedel
-Arun Balasingam
-Aymeric Noblanc
-Benjamin Normand
-Victoria Cal-Adelaide
+- Pierric Loedel
+- Arun Balasingam
+- Aymeric Noblanc
+- Benjamin Normand
+- Victoria Cal-Adelaide
