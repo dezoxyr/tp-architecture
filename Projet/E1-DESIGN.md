@@ -7,7 +7,7 @@ Projet de programmation distribuée réalisant une application de réservation d
 
 ## Architecture globale 
 
-![Home screen](Projet/archivrai.png)
+![Home screen](https://image.noelshack.com/fichiers/2020/50/7/1607852380-archivrai.png)
 
 ## Stack technique 
 
