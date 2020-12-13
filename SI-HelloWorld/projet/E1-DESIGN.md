@@ -8,20 +8,25 @@ Le schéma d’architecture suivant présente, de manière synthétique, les ent
 - Une fois la requête traitée par MySQL, une réponse au format JSON est renvoyée à la méthode JavaScript concernée du serveur Node.js. Ensuite, cette réponse est traitée, puis les données nécessaires et suffisantes, demandées par le client, sont renvoyées à ce dernier au format JSON.
 - Enfin, le client reçoit les données au format JSON, puis sont traitées par du code JavaScript. Dans la plupart des cas, ce traitement se traduira par un affichage ou une modification des données.
 ### Modèle de données
-Notre modèle de données contiendra les entités et attributs suivants :
-- **Flight :** id, code_airport_dep, code_airport_dest, dep_time, arrival_time, price, id_company, nb_seats
+
+Le modèle conceptuel de données suivant présente les entités de notre projet et leurs relations.
+
+![Modèle conceptuel de données de notre solution de réservation de billets d’avion.](./MCD.png?raw=true "Modèle conceptuel de données de notre solution de réservation de billets d’avion.")
+
+En traduisant traduire les relations de notre modèle conceptuel en attributs, on obtient le schéma relationnel suivant :
+- **Flight :** id, code_airport_dep, code_airport_dest, dep_time, arrival_time, price, id_company, nb_seats, is_flight_cancelled
   - Un vol est identifié de manière unique par un *id* (entier auto-incrémenté).
   - Les heures d’arrivée et de départ, dans leurs représentations en format JSON, suivent le format du type *DATETIME* de MySQL : *YYYY-MM-DD hh:mm:ss*
   - Les heures de départ et d'arrivée sont les heures locales des aéroports de départ et d'arrivée.
   - Un vol est associé à une compagnie aérienne.
   - *nb_seats* est le nombre de places maximales qu’accepte le vol.
+  - *is_flight_cancelled* indique si le vol a été annulé.
 - **Company :** id, name
-- **Reservation :** id, id_cust, id_flight, id_reservation_status, nb_passengers, amount_paid, date_paid, is_flight_cancelled
+- **Reservation :** id, id_cust, id_flight, id_reservation_status, nb_passengers, amount_paid, date_paid
   - Une réservation est effectuée par un client, et concerne un seul vol.
   - *nb_passengers* indique le nombre de passagers pour cette réservation.
   - Une réservation possède un état, représenté par un identifiant nommé *Id_Reservation_Status*.
   - *amount_paid* est le prix qui a été réglé, et *date_paid* est la date à laquelle le règlement a été effectué.
-  - *is_flight_cancelled* indique si le vol correspondant à la réservation a été annulé.
 - **Reservation_Status :** id, label
   - Cette table de définition représente les états possibles des réservations.
   - Un état de réservation est identifié par un *id* (entier auto-incrémenté).
@@ -31,7 +36,7 @@ Notre modèle de données contiendra les entités et attributs suivants :
     - "Remboursé"
 - **Airport :** code, name
   - Un aéroport est identifié de manière unique par son code : JFK, CDG, DTW.
-- **Customer :** id, first_name, last name, mail, password
+- **Customer :** id, first_name, last_name, mail, password
   - Un client est identifié de manière unique par un *id*.
   - Pour s’identifier, tout client doit posséder une adresse mail et un mot de passe.
 
