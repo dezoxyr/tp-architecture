@@ -7,16 +7,15 @@ Un API en Python permetant d'interagir avec la base de données et récuperer le
 Une base de données ayant les informations des billets, des vols et des réservations.
 
 ![Screenshot](archi.png)
-
 ## Modèle de données stockées 
 ![Screenshot](db.jpg)
-
 ## Stack Technique
 ### Application et data
   - Python
   - HTML
   - PHP
   - CSS
+  - Flask
   - MariaDB
 
 ### Utilitaire
@@ -26,7 +25,6 @@ Une base de données ayant les informations des billets, des vols et des réserv
 
 ### DevOps
   - Visual Studio Code
-  - Visual Studio
   - Github
   - Git
   - Wamp
