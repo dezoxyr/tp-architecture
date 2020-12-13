@@ -6,7 +6,7 @@ L'API va ensuite soit récupérer des données sur la base de données s'il s'ag
 ![Architecture_globale](https://user-images.githubusercontent.com/44286703/101782231-19b06800-3b3c-11eb-80b0-f96eae134d20.png)
 
 # Modèle de données:
-Modèle textuel: fichiers .json stockés en ligne (github)
+Modèle textuel: fichiers .json stockés en ligne
 Nous avons 2 tables sous forme de fichiers .json: <br>
 - La première table contient une liste de string, chaque élément de cette liste représentant un billet.
 - La seconde table contient une liste d'objet User, chaque User contient un Username et une liste de string contenant les billets qu'il a réservé.
