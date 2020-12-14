@@ -5,6 +5,13 @@ html
 { margin: 0;
   padding: 0;}
 
+.logo
+{
+  backhground-image:('logo2.png');
+  max-height: 40%;
+  max-width: 40%;
+}
+
 body
 { font: normal .80em 'trebuchet ms', arial, sans-serif;
   background: #F0EFE2 url(background.png) repeat;
