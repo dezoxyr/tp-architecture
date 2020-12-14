@@ -7,6 +7,7 @@ var app = express();
 app.use(serve_static(__dirname+"/api"));
 var serveur = http.Server(app);
 
+//Listen to port 8080
 serveur.listen(8080,function()
 {
     console.log("Listening to the port 8080");
