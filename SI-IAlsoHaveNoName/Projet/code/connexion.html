@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>IAHNN</title>
+</head>
+
+<body>
+    <div id="main">
+
+        <div id="main">
+            <div id="header">
+                <div id="logo">
+                    <div id="logo_text">
+                        <h1><a href="page_web.html"><span class="logo_colour">Réservation Billets</span></a></h1>
+                       <!--  <h2>?Sous titre?</h2> -->
+                    </div>
+                </div>
+                <div id="menubar">
+                    <ul id="menu">
+                        <li><a href="page_web.html">Accueil</a></li>
+                        <li><a href="inscription.html">Inscription</a></li>
+                        <li class="selected"><a href="connexion.html">Connexion</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="site_content">
+                <div id="Connection" >
+                    <form id="form_connexion">
+                        <div class="form_div" id="name">
+                            <input type="text" name="name" placeholder="Nom" required>
+                            <p class="error"></p>
+                        </div>
+                        <div class="form_div" id="firstname">
+                            <input type="text" name="firstname" placeholder="Prénom" required>
+                            <p class="error"></p>
+                        </div>
+                        <div class="form_div" id="mail">
+                            <input type="email" name="mail" placeholder="Mail"required>
+                            <p class="error"></p>
+                        </div>
+                        <div class="form_div" id="button_send">
+                            <input type="button" onclick="addUser()" name="Connection" value="Connexion">
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <table id="trips_list">
+                        <thead></thead>
+                        <tbody id="trips_list"></tbody>
+                    </table>	
+                </div>
+            </div>
+
+            <div id="footer">
+                <a href="page_web.html">Accueil</a> | <a href="inscription.html">Inscription</a> | <a
+                    href="connexion.html">Connexion</a>
+            </div>
+        </div>
+</body>
+</html>
