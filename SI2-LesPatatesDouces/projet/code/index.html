@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
+    <title>Site réservation de vols en ligne</title>
+</head>
+
+<body>
+    <div id="titre">Bienvenue sur votre site de réservation de vols !</div>
+    <div id="app">
+        <v-app>
+            <div v-if="logged == false && showSignInForm != true && showSignUpForm != true">
+                <v-btn block @click="seConnecter">
+                    Se Connecter
+                </v-btn>
+                <v-btn block @click="sInscrire">
+                    S'Inscrire
+                </v-btn>
+            </div>
+            <div v-if="showSignInForm == true">
+                <signing-in v-on:logged="loggedF"></signing-in>
+                <v-row align="center" justify="space-around">    
+                    <btn-return v-on:retour="retour"></btn-return>
+                </v-row>
+            </div>
+            <div v-if="showSignUpForm == true">
+                <signing-up v-on:signedup="signedUp"></signing-up>
+                <v-row align="center" justify="space-around">
+                    <btn-return v-on:retour="retour"></btn-return>
+                </v-row>
+            </div>
+            <div v-if="logged == true">
+                <flight-table :flag="updateFlag" v-on:tickets="showTickets"></flight-table>
+                <div v-if="volClique != 0">
+                    <tickets-table v-on:ticketbooked="ticketBooked" :vol="volClique" :user="email"></tickets-table>
+                </div>
+                <v-row align="center" justify="space-around">
+                    <v-btn @click="seeReservation">{{ textReservationBouton }} </v-btn>
+                    <v-btn color="error" class="mr-4" @click="signOut">Se déconnecter</v-btn>
+                </v-row>
+                <div v-if="showBilletsReserves == true">
+                    <billets-reserves :flag="updateFlag" :user="email"></billets-reserves>
+                </div>
+
+            </div>
+
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="./composants.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                user: {},
+                email: "",
+                password: "",
+                logged: false,
+                isSignedUp: null,
+                showSignUpForm: false,
+                showSignInForm: false,
+                showBilletsReserves: false,
+                updateFlag: false,
+                volClique: 0,
+                textReservationBouton: "Voir mes billets réservés"
+            },
+            components: {
+                'signing-in': signingIn,
+                'signing-up': signingUp,
+                'btn-return': btnReturn,
+                'flight-table': flightTable,
+                'tickets-table': ticketsTable,
+                'billets-reserves': billetsReserves
+            },
+            methods: {
+                seeReservation() {
+                    
+                    this.showBilletsReserves = !this.showBilletsReserves
+                    if (this.showBilletsReserves){
+                        this.textReservationBouton = "Masquer mes billets réservés"
+                    } else {
+                        this.textReservationBouton ="Voir mes billets réservés"
+                    }
+                },
+                showTickets(id) {
+                    this.volClique = id
+                },
+                ticketBooked(){
+                    this.updateFlag = !this.updateFlag
+                },
+                retour() {
+                    this.logged = false
+                    this.showSignInForm = false
+                    this.showSignUpForm = false
+                },
+                loggedF(email, status) {
+                    if (status) {
+                        this.email = email
+                        this.logged = true
+                        this.showSignInForm = false
+
+                    } else {
+                        alert("Identifiants de connexion incorrects.")
+                    }
+                },
+                signedUp(email, password, status) {
+                    if (status) {
+                        this.email = email
+                        this.logged = true
+                        this.showSignUpForm = false
+                    } else {
+                        alert("Cette adresse mail est déjà utilisée.")
+                    }
+                },
+                seConnecter() {
+                    this.showSignInForm = true
+                    this.volClique = 0
+                },
+                sInscrire() {
+                    this.showSignUpForm = true
+                    this.volClique = 0
+                },
+
+                signOut() {
+                    this.logged = false
+                    this.isSignedUp = null
+                    this.vol = 0
+                    fetch("http://localhost:5000/sign-out", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(this.email)
+                    })
+                    this.email = ""
+                    this.password = ""
+                }
+            },
+        })
+
+
+
+    </script>
+</body>
+
+</html>
