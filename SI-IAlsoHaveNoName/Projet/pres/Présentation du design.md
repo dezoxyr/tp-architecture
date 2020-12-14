@@ -11,11 +11,6 @@ Page d'acceuil :
 - Possibilité de se crée un compte via un bouton « s'inscrire ».
 - Si déjà connecté, possibilité de se déconnecter.
 
-Page de réservation du billet :
-
-- Affiche les informations sur le billet.
-- Permet d'acheter un billet.
-
 Page d'inscription :
 
 - Crée un compte utilisateur en fonction des paramètres entrés.
@@ -35,6 +30,11 @@ Page de connexion :
 
 ## Stack technique :
 
-- Rendu visuel de l'API -> Python
-- Gestion de la base de données -> SQL (Php My Admin)
-- Fonctionnalités et interaction avec la base de données -> Python
+- Rendu visuel de l'application -> Html
+- Ressources de l'API -> JavaScript
+
+Fichiers:
+- "data.json" contient les informations des 3 aéroports
+- "server.js" récupère les données enregistrées dans la page Web
+- Les fichiers Html restants servent à la navigation utilisateur
+ 
