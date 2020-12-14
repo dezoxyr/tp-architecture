@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+
+.center{
+	
+	text-align: center;
+}
+
+.decal{
+	margin: 10px;
+	
+}
+
+.fontgray{
+	
+	color: #DDDDDD;
+}
+
+.gras{
+	
+	font-size: 20px;
+	font-weight: bold;
+
+}
+
+.fontitalic{
+	
+	font-style: italic;
+}
+
+
+
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+.header p {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px; 
+  line-height: 25px;
+  border-radius: 5px;
+}
+
+.header span {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 30px; 
+  line-height: 40px;
+  border-radius: 5px;
+  font-family: 'Times New Roman', serif;
+
+}
+
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header span{
+	float: none;
+    display: block;
+    text-align: left;
+  }
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+
+}
+
+
+
+
+
+
