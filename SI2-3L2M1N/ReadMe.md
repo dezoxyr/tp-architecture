@@ -3,6 +3,7 @@
 * Démarrer votre serveur PHP
 * Se connecter à l'adresse _http://localhost/SI2-3L2M1N/projet/Code/login2/login.php_
 * S'identifier à l'aide des identifiants présents dans users.txt
+* Pour tester le fonctionnement nous n'avons mis que des vols de JFK vers CDG,DTW et CDG vers DTW pour le 4 décembre 2020
 
 
 ## Un petit aperçu des différentes fonctionnalités :
