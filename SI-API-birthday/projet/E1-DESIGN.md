@@ -15,6 +15,10 @@ Nous avons décidé de faire une application web, car l'application se doit d'ê
 Pour l'architecture nous avons choisi une architecture 3 tiers monolithique, qui est un modèle en couche. En effet, ce type d'architecture est particulièrement bien adaptée aux applications web. D'autre part, elle a l'avantage de nous permettre de facilement séparer les différentes tâches selon les membres du groupe et est relativement simple, ce qui convient vis à vis du cahier des charges.  
 Pour le choix du monolithique, l'architecture micro-services ne nous se semblait pas pertinente au vu du peu de fonctionnalités à implémenter.  
 Nous sommes partis sur une architecture REST, qui n'est ni trop récente, ni trop ancienne et qui correspond au besoin.    
+### Routes :
+- Lister les tickets disponibles : http://example.com/tickets/available (GET) Paramètres : Aucun
+- Faire une réservation : http://example.com/tickets/booking (POST) Paramètres : _id_customer_ = id du client qui souhaite réserver, _id_ticket_ = id du ticket à reserver.
+- Lister les réservation par client ; http://example.com/booking/customer/:id (GET) Paramètres : _:id_ = id du client
 
 ## Modèle de donnée stocké
 Nous avons décidé de représenter chacun des éléments sous forme d'objets avec des liens entre chacun. Une autre possibilité aurait été de représenter les données sous forme de documents, mais ce choix n'est pertinent que pour certains types de données spécifiques ou lorsque l'on souhaite avoir de très bonnes performances.  
