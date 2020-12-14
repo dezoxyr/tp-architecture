@@ -1,0 +1,3 @@
+JFK|John Fitzgerald Kennedy (New York)
+CDG|Charles de Gaulle (Paris)
+DTW|Detroit

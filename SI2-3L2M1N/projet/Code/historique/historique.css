@@ -1,0 +1,172 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    overflow-y: scroll;
+  }
+
+body {
+    background: #c1bdba;
+    font-family: 'Titillium Web', sans-serif;
+  }
+.form {
+    background: rgba(19, 35, 47, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  }
+
+  legend {
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    margin: 0 0 40px;
+  }
+
+  label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16.5px;
+
+  }
+
+  .fs0 {
+    border:1px solid #a0b3b0;
+
+
+  }
+
+
+
+  fieldset {
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;  
+    border-radius:4px;
+
+
+  }
+
+
+
+
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #1ab188;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 15%;
+    margin-left: 30%;
+    margin-bottom: 5%;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 10px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+
+  select option {  
+      margin: 40px;   
+      background: rgba(40,144,110, 0.85);   
+      color: #fff;   
+      text-shadow: 0 1px 0 rgba(20, 20, 20, 0.5);  
+  }  
+      
+
+.select{
+
+  position: relative;
+  margin-bottom: 100%;
+
+}
+table{
+  background-color: rgb(196,194,192, 0.85)
+}
+
+h1 { color: white; }
+
+
+
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  background-color: white;
+  
+}
+
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+
+.button-retour {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#1ab188;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 10%;
+
+}
+.button-retour span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-retour span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button-retour:hover span {
+  padding-left: 10px;
+}
+
+.button-retour:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+

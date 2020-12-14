@@ -1,0 +1,159 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+body {
+  background: #c1bdba;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+legend {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+
+a, input {
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  background-color:#4682B4;
+}
+
+p{
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16.5px;
+}
+
+input {
+  position:relative;
+  left: 41%;
+}
+
+
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #1ab188;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 2%;
+  margin-left: 30%;
+  margin-bottom: 5%;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 10px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+fieldset {
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;	
+  border-radius:4px;
+
+
+}
+
+.fs0 {
+  border-radius:4px;
+
+
+}
+
+
+.button2 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#D11313;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+
+}
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-left: 10px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  left: 0;
+}
