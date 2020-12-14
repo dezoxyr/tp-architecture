@@ -1,0 +1,1 @@
+Pour que le code fonctionne, il faut lancer l'api sur un pc en local dans l'invite de commande avec la commande: npm start ou node billets.js

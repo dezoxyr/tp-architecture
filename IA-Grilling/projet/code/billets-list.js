@@ -6,7 +6,7 @@ const loadUserVols = () => {
     xhttp.send();
 
     const billets = JSON.parse(xhttp.responseText);
-
+	// On récupère les billets de l'utilisateut depuis la page ou ils sont déposé
     for (let b of billets) {
         const x = `
             <div>
@@ -28,7 +28,7 @@ const loadVols = () => {
 
     xhttp.open("GET", "http://localhost:3000/vols", false);
     xhttp.send();
-
+	// ON recupère les différents vols existant qui sont enregistré sur une mage en ligne
     const billets = JSON.parse(xhttp.responseText);
 
     for (let b of billets.results) {
@@ -48,6 +48,6 @@ const loadVols = () => {
 }
 
 
-
+// Ces deux fonctions sont executées lors de l'ouverture de la page du site 
 loadUserVols();
 loadVols();
