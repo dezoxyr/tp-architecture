@@ -1,0 +1,41 @@
+body{
+	margin:0;
+	padding: 0;
+	background: #E4E4E4;
+}
+
+:root{
+    --color-ban:#333;
+}
+
+#top_ban{
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background: var(--color-ban);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height:80px;
+	width:100%;
+	box-shadow: 1px 0px 10px;
+}
+
+.el_top{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height:100%;
+	width:calc(100%/3);
+}
+
+.el_top h1{
+	text-shadow:0px 2px 5px;
+    color:#fff;
+    cursor: pointer;
+}
+
+.el_top img{
+	cursor: pointer;
+	height:50%;
+}

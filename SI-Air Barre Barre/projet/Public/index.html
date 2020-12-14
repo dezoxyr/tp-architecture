@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+	<link rel="stylesheet" type="text/css" href="style/top_ban.css">
+	<link rel="stylesheet" type="text/css" href="style/connexion.css">
+	<script type="text/javascript" src="javascript/include.js"></script>
+	<title>Air Barre Barre</title>
+</head>
+<body>
+	<div id="top_ban" ></div>
+	<div id="connexion" >
+		<form id="form_connexion" >
+			<div class="form_div" id="title_form">
+				<div class="bloc" onclick="closePopup()">
+					<img src="Ressources/close.png" >
+				</div>
+				<div class="bloc">
+					<h2 id="title_reservation"></h2>
+				</div>
+				<div class="bloc"></div>
+			</div>
+			<div class="form_div" id="nom_user">
+				<input type="text" name="nom_user" placeholder="Nom" required>
+				<p class="erreur"></p>
+			</div>
+			<div class="form_div" id="prenom_user">
+				<input type="text" name="prenom_user" placeholder="Prenom" required>
+				<p class="erreur"></p>
+			</div>
+			<div class="form_div" id="address_user">
+				<input type="email" name="mail" placeholder="Adresse mail"required>
+				<p class="erreur"></p>
+			</div>
+			<div class="form_div" id="button_send">
+				<input type="button" onclick="newUser()" name="connexion" value="Connexion">
+			</div>
+		</form>
+	</div>
+	<div id="bottom_ban">
+		<table id="list_vols">
+			<thead id="head_list_vols" ></thead>
+			<tbody id="list_voyages"></tbody>
+		</table>	
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.21.0/dist/axios.min.js"></script>
+<script type="text/javascript" src="API/classes.js"></script>
+<script type="text/javascript" src="javascript/index.js"></script>
+</html>

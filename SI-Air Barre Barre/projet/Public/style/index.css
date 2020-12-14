@@ -1,0 +1,48 @@
+
+#bottom_ban{
+	margin-top: 1%;
+	display: flex;
+	justify-content: center;
+	width:100%;
+	height: 90%;
+}
+
+#list_vols{
+	padding: 10px;
+	background: white;
+	width: 70%;
+	border-collapse: collapse;
+}
+
+th{
+	width:100px;
+	height:50px;
+	background: #88959C;
+	color:white;
+	font-weight: 900;
+	font-size: 20px;
+
+}
+
+table{
+	border-right:1px solid #88959C;
+	border-left:1px solid #88959C;
+}
+
+tbody tr:nth-child(even){
+	background: #E4E4E4;
+}
+
+
+.vols h3{
+	margin-left:auto;
+	margin-right:auto;
+	width:50%;
+	padding:1% 10%;
+	font-size: 18px;
+}
+
+.prix,
+.in_action{
+	text-align: center;
+}

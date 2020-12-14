@@ -1,0 +1,34 @@
+[
+        {
+                "departure":"DTW",
+                "arrival":"JFK",
+                "plane":{
+                        "name":"AE340",
+                        "seats":"300"
+                }
+        },
+        {
+                "departure":"DTW",
+                "arrival":"CDG",
+                "plane":{
+                        "name":"AE340",
+                        "seats":"400"
+                }
+        },
+        {
+                "departure":"CDG",
+                "arrival":"JFK",
+                "plane":{
+                        "name":"AE340",
+                        "seats":"600"
+                }
+        },
+        {
+                "departure":"CDG",
+                "arrival":"DTW",
+                "plane":{
+                        "name":"AE340",
+                        "seats":"300"
+                }
+        }
+]
