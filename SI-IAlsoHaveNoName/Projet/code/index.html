@@ -3,22 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style/style.css" />
-	<script type="text/javascript" src="javascript/include.js"></script>
 	<title>IAHNN</title>
 </head>
 <body>
-	<div id="top_ban" ></div>
 	<div id="Connection" >
-		<form id="form_connexion" >
-			<div class="form_div" id="title_form">
-				<div class="bloc" onclick="closePopup()">
-					<img src="api/close.png" >
-				</div>
-				<div class="bloc">
-					<h2 id="book_title"></h2>
-				</div>
-				<div class="bloc"></div>
-			</div>
+		<form id="form_connexion">
 			<div class="form_div" id="name">
 				<input type="text" name="name" placeholder="Name" required>
 				<p class="error"></p>
@@ -37,7 +26,7 @@
 		</form>
 	</div>
 	<div>
-		<table id="list_vols">
+		<table id="trips_list">
 			<thead></thead>
 			<tbody id="trips_list"></tbody>
 		</table>	
