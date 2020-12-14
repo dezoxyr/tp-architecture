@@ -1,0 +1,40 @@
+{
+  "billets":[
+    {
+      "id":0,
+      "code_depart":"JFK",
+      "nom_depart":"New york",
+      "code_arrivee":"CDG",
+      "nom_arrivee":"Paris",
+      "prix":300
+          
+    },
+    {
+        "id":1,
+        "code_depart":"CDG",
+        "nom_depart":"Paris",
+        "code_arrivee":"JFK",
+        "nom_arrivee":"New York",
+        "prix":200
+
+    },
+    {
+         "id":2,
+         "code_depart":"DTW",
+         "nom_depart":"Detroit",
+         "code_arrivee":"CDG",
+         "nom_arrivee":"Paris",
+         "prix":500
+    },
+    {
+        "id":3,
+        "code_depart":"JFK",
+        "nom_depart":"New York",
+        "code_arrivee":"DTW",
+        "nom_arrivee":"Detroit",
+        "prix":700
+
+    }
+  ]
+
+}
