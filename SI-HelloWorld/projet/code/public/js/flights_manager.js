@@ -1,4 +1,7 @@
-function bookFlight(flightId) {
+var $j = jQuery.noConflict();
+$j('#datepicker').datepicker({ dateFormat: 'dd-mm-yy' });
+
+function bookFlight(flightId, date) {
     var nbPassengers = document.getElementById("num-nb-passengers").value;
 
     // Element affichant un message de feedback sur la réservation (succès ou erreur).
@@ -25,7 +28,11 @@ function bookFlight(flightId) {
     };
 
     // On initialise et envoie la requête.
-    bookRequest.open("POST", "/api/flights/" + flightId + "/book", true);
+    bookRequest.open("POST", "/api/flights/" + flightId + "/" + date + "/book", true);
     bookRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     bookRequest.send("nbPassengers=" + nbPassengers);
+}
+
+function changeDate() {
+    document.location.href = "/flights/" + $j("#datepicker").val();
 }

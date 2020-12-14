@@ -16,23 +16,31 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 }));
 
 // La page d'accueil redirige vers la page de la liste des vols.
-app.get(["/", "/index.html"], flightsHandler.showAll);
+app.get(["/", "/index.html", "/flights"], (req, res) => {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    res.writeHead(302, { "Location": "/flights/" + dd + "-" + mm + "-" + yyyy });
+    res.end();
+});
 
 // = GESTION DES VOLS =
 // Renvoie la page HTML des vols disponibles.
-app.get("/flights", flightsHandler.showAll);
+app.get("/flights/:date(\\d{2}-\\d{2}-\\d{4})", flightsHandler.showAll);
 
 // Renvoie la liste des vols disponibles au format JSON.
-app.get('/api/flights', flightsHandler.getAll);
+app.get('/api/flights/:date(\\d{2}-\\d{2}-\\d{4})', flightsHandler.getAll);
 
 // Renvoie la page HTML des détails d'un vol.
-app.get('/flights/:id', flightsHandler.showOneById);
+app.get('/flights/:id/:date(\\d{2}-\\d{2}-\\d{4})', flightsHandler.showOneById);
 
 // Renvoie les détails d'un vol au format JSON.
-app.get('/api/flights/:id', flightsHandler.getOneById);
+app.get('/api/flights/:id/:date(\\d{2}-\\d{2}-\\d{4})', flightsHandler.getOneById);
 
 // Permet de réserver un billet.
-app.post('/api/flights/:id/book', reservationsHandler.add);
+app.post('/api/flights/:id/:date(\\d{2}-\\d{2}-\\d{4})/book', reservationsHandler.add);
 
 // = GESTION DES RESERVATIONS =
 // Renvoie la page HTML de la liste des réservations de l'utilisateur.

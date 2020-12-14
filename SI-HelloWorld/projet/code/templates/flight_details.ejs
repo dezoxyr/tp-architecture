@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>Détails du vol</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <%- include('navbar.ejs') %>
         <div id="main">
-            <script src="../js/flights_manager.js"></script>
+            <script src="/js/flights_manager.js"></script>
             <div class="card-body">
                 <h5 class="card-title">
                     ✈
@@ -24,7 +24,7 @@
                     <%= flight.company %>
                 </p>
                 <p class="card-text"><b>Prix : </b>
-                    <%= flight.price %>€
+                    <%= flight.base_price %>€
                 </p>
                 <p class="card-text"><i>Encore
         <%= flight.nb_seats %> places disponibles !</i>
@@ -35,7 +35,7 @@
                         <input id="num-nb-passengers" class="form-control" type="number" value="1" min="1" max="<%= flight.nb_seats %>">
                     </div>
                 </div>
-                <a id="btn-book" class="btn btn-primary" onclick="bookFlight('<%= flight.id %>')">Réserver</a>
+                <a id="btn-book" class="btn btn-primary" onclick="bookFlight('<%= flight.id %>', '<%= date %>')">Réserver</a>
                 <p id="book-message"></p>
             </div>
         </div>

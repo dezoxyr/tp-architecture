@@ -1,31 +1,43 @@
 [{
-        "id": 1,
+        "id": "1",
         "code_airport_dep": "JFK",
         "code_airport_dest": "DTW",
-        "dep_time": "12/24/2020 10:15:00",
-        "arrival_time": "12/24/2020 12:15:00",
-        "price": 90.0,
+        "dep_time": "24/12/2020 10:15:00",
+        "arrival_time": "24/12/2020 12:15:00",
+        "base_price": 90.0,
         "company": "Air France",
-        "nb_seats": 63
+        "availability": 63,
+        "plane": {
+            "name": "AIRBUS350",
+            "total_seats": 500
+        }
     },
     {
-        "id": 1,
+        "id": "2",
         "code_airport_dep": "JFK",
         "code_airport_dest": "DTW",
-        "dep_time": "12/24/2020 10:15:00",
-        "arrival_time": "12/24/2020 12:15:00",
-        "price": 65.0,
+        "dep_time": "24/12/2020 10:15:00",
+        "arrival_time": "24/12/2020 12:15:00",
+        "base_price": 65.0,
         "company": "Easy Jet",
-        "nb_seats": 63
+        "availability": 63,
+        "plane": {
+            "name": "AIRBUS950",
+            "total_seats": 1100
+        }
     },
     {
-        "id": 1,
+        "id": "3",
         "code_airport_dep": "JFK",
         "code_airport_dest": "DTW",
-        "dep_time": "12/24/2020 10:15:00",
-        "arrival_time": "12/24/2020 12:15:00",
-        "price": 85.0,
+        "dep_time": "24/12/2020 10:15:00",
+        "arrival_time": "24/12/2020 12:15:00",
+        "base_price": 85.0,
         "company": "Ryanair",
-        "nb_seats": 63
+        "availability": 63,
+        "plane": {
+            "name": "AIRBUS350",
+            "total_seats": 800
+        }
     }
 ]

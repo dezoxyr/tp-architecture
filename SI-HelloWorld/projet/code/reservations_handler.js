@@ -1,5 +1,6 @@
 const reservations = require("./reservations.json");
 var qs = require('querystring');
+const flightsHandler = require("./flights_handler");
 
 // Renvoie la page HTML de la liste des réservations de l'utilisateur.
 function showAll(req, res) {
@@ -17,25 +18,26 @@ function getAll(req, res) {
 // Permet d'ajouter une réservation.
 // Renvoie 200 si le billet a bien été réservé, sinon 500.
 function add(req, res) {
-    const flightId = parseInt(req.params.id);
+    const flightId = req.params.id;
+    const date = req.params.date;
+
     const nbPassengers = req.body.nbPassengers;
 
-    const flights = require("./flights.json");
-    const theFlight = flights.find(flight => flight.id === flightId);
+    flightsHandler.retrieveOneById(flightId, date, (jsonRes) => {
+        var newReservation = {
+            "id": reservations.length + 1,
+            "flight": jsonRes,
+            "id_reservation_status": 1,
+            "nb_passengers": nbPassengers,
+            "amount_paid": parseInt(jsonRes.base_price * nbPassengers),
+            "date_paid": "12/03/2020 09:35:43",
+            "is_flight_cancelled": "false"
+        };
 
-    var newReservation = {
-        "id": reservations.length + 1,
-        "flight": theFlight,
-        "id_reservation_status": 1,
-        "nb_passengers": nbPassengers,
-        "amount_paid": parseInt(theFlight.price * nbPassengers),
-        "date_paid": "12/03/2020 09:35:43",
-        "is_flight_cancelled": "false"
-    };
+        reservations.unshift(newReservation);
 
-    reservations.unshift(newReservation);
-
-    res.status(200).json("");
+        res.status(200).json("");
+    });
 }
 
 // Renvoie la page HTML des détails d'une réservation.
