@@ -14,7 +14,7 @@ http-server -p 5060
 ```
 Cela permet d'ouvrir le site internet localement
 
-- Pour finir ouvrir un onglet sur votre browser favoris et aller à l'URL : [http://127.0.0.1:5060/](http://localhost:5060/)
+- Pour finir ouvrir un onglet sur votre browser favoris et aller à l'URL : [http://127.0.0.1:5060/](http://127.0.0.1:5060/)
 
 
 # Comment fonctionne notre projet ?
