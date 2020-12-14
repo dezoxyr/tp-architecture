@@ -1,0 +1,48 @@
+﻿@model Reservation
+@{ Layout = "_Layout"; ViewBag.Title = "Update a Reservation";}
+
+<h2>Mettre a jour une reservation <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Id"></label>
+        <input class="form-control" asp-for="Id" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Prix"></label>
+        <input class="form-control" asp-for="Prix" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Depart"></label>
+        <input class="form-control" asp-for="Depart" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Arriver"></label>
+        <input class="form-control" asp-for="Arriver" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+    </div>
+</form>
+
+@if (ViewBag.Result == "Success")
+{
+    <h2>Reservation</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Prix</th>
+                <th>Depart</th>
+                <th>Arriver</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Prix</td>
+                <td>@Model.Depart</td>
+                <td>@Model.Arriver</td>
+            </tr>
+        </tbody>
+    </table>
+}

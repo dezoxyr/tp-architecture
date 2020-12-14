@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Reservation>
+@{ Layout = "_Layout"; ViewBag.Title = "All Reservations";}
+
+<h2>All Reservations</h2>
+<a asp-action="AddReservation" class="btn btn-sm btn-primary">Ajouter une Reservation</a>
+<a asp-action="GetReservation" class="btn btn-sm btn-secondary">Verifier une Reservation</a>
+
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Prix</th>
+            <th>Depart</th>
+            <th>Arriver</th>
+            <th>mettre a jour</th>
+            <th>supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Id</td>
+                <td>@r.Prix</td>
+                <td>@r.Depart</td>
+                <td>@r.Arriver</td>
+                <td>
+                    <a asp-action="UpdateReservationPatch" asp-route-id="@r.Id">
+                        <img src="/icon/update.png" />
+                    </a>
+                </td>
+                <td>
+                    <form asp-action="DeleteReservation" method="post">
+                        <input type="hidden" value="@r.Id" name="ReservationId" />
+                        <input type="image" src="/icon/delete-32.png" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

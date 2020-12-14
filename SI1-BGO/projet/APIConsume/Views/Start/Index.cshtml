@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Reservation>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Index";
+
+}
+<br />
+<h1>BGO</h1>
+<br />
+<h2>Site de réservation de billet d'avion en ligne</h2>
+<br />
+
+<h3>Vérifier que le WEB-API fonctionne puis  <a href="/Home" target="_blank">Cliquer ici</a></h3>
+<br />
+
+<h4>Liste des vole allez retour sur la periode 01/01/21 - 31/01/21</h4>
+<br />
+<h5>En raison de la crise sanitaire mondiale actuel le nombre de vole ainsi que le nombre de destination disponible est grandement réduit</h5>
+<br />
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+           
+            <th>Prix</th>
+            <th>Origine</th>
+            <th>Destination</th>
+        </tr>
+    </thead>
+    <tr>
+    
+        <th>600€</th>
+        <th>JFK</th>
+        <th>CDG</th>
+    </tr>
+    <tr>
+        <th>200€</th>
+        <th>JFK</th>
+        <th>DTW</th>
+    </tr>
+    <tr>
+        <th>700€</th>
+        <th>CDG</th>
+        <th>DTW</th>
+    </tr>
+    <tr>
+        <th>600€</th>
+        <th>CDG</th>
+        <th>JFK</th>
+    </tr>
+    <tr>
+        <th>200€</th>
+        <th>DTW</th>
+        <th>JFK</th>
+    </tr>
+    <tr>
+        <th>700€</th>
+        <th>DTW</th>
+        <th>CDG</th>
+    </tr>
+</table>
