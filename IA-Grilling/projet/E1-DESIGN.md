@@ -14,4 +14,4 @@ Nous avons 2 tables sous forme de fichiers .json: <br>
 ![data_model2](https://user-images.githubusercontent.com/44286703/101782056-e968c980-3b3b-11eb-9a48-ed4b25eebc70.png)
 # Stack technique:
 Langages: HTML, Javascript, CSS<br>
-Outils: Notepad++, GitHub, Microsoft Teams, Discord, Node.js, Express JS
+Outils: Notepad++, GitHub, Microsoft Teams, Discord, Node.js, Express JS avec 6 dependencies: body-parser; cors; express; helmet; morgan; node-fetch. 
