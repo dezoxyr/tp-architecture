@@ -1825,6 +1825,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
+axios@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.0.tgz#26df088803a2350dff2c27f96fef99fe49442aca"
+  integrity sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 babel-eslint@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.1.0.tgz#6968e568a910b78fb3779cdd8b6ac2f479943232"
@@ -3955,6 +3962,11 @@ follow-redirects@^1.0.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
+
+follow-redirects@^1.10.0:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
+  integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -8409,6 +8421,11 @@ vue-router@^3.2.0:
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.9.tgz#c016f42030ae2932f14e4748b39a1d9a0e250e66"
   integrity sha512-CGAKWN44RqXW06oC+u4mPgHLQQi2t6vLD/JbGRDAXm0YpMv0bgpKuU5bBd7AvMgfTz9kXVRIWKHqRwGEb8xFkA==
 
+vue-session@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-session/-/vue-session-1.0.0.tgz#ca642c751f569a48f8dd66f356f1727fbe081f7c"
+  integrity sha512-Ep9lRKGgCZdcGV3In3R3zoSp5Wr+hlcIc8WJ9BG+QKzibwaFZnnvp9HBVdd+dU8d6HGLSi5sWywDmd5MkrkfoQ==
+
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -8429,6 +8446,11 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
+
+vue-toast-notification@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vue-toast-notification/-/vue-toast-notification-0.6.0.tgz#71afe87b7daeb77df223ad56cc0b8be6045a88a5"
+  integrity sha512-GSXLTemx/+YLDpeObuMcz+gQ6NxvBcJxGhj5PB8CZDDBUQWbeAp0ZUPZEixDun/GtbxBOA9jLxo4MFPHTbIBYw==
 
 vue@^2.6.11:
   version "2.6.12"
