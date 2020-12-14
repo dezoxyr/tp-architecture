@@ -1,0 +1,181 @@
+[{
+        "id": 1,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 1,
+        "nb_passengers": 2,
+        "amount_paid": 180.0,
+        "date_paid": "12/03/2020 09:35:43",
+        "is_flight_cancelled": "false"
+    },
+    {
+        "id": 2,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 1,
+        "nb_passengers": 2,
+        "amount_paid": 179.0,
+        "date_paid": "11/09/2020 10:35:41",
+        "is_flight_cancelled": "false"
+    },
+    {
+        "id": 3,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 2,
+        "nb_passengers": 1,
+        "amount_paid": 67.0,
+        "date_paid": "12/03/2020 22:52:24",
+        "is_flight_cancelled": "false"
+    },
+    {
+        "id": 4,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 2,
+        "nb_passengers": 3,
+        "amount_paid": 230.0,
+        "date_paid": "11/06/2020 09:22:33",
+        "is_flight_cancelled": "true"
+    },
+    {
+        "id": 5,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 2,
+        "nb_passengers": 1,
+        "amount_paid": 57.0,
+        "date_paid": "07/14/2020 11:53:53",
+        "is_flight_cancelled": "false"
+    },
+    {
+        "id": 6,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 1,
+        "nb_passengers": 3,
+        "amount_paid": 254.0,
+        "date_paid": "03/26/2020 14:34:24",
+        "is_flight_cancelled": "false"
+    },
+    {
+        "id": 7,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 1,
+        "nb_passengers": 2,
+        "amount_paid": 90.0,
+        "date_paid": "05/06/2020 16:12:45",
+        "is_flight_cancelled": "false"
+    },
+    {
+        "id": 8,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 2,
+        "nb_passengers": 1,
+        "amount_paid": 90.0,
+        "date_paid": "11/09/2020 16:12:45",
+        "is_flight_cancelled": "true"
+    },
+    {
+        "id": 9,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 2,
+        "nb_passengers": 1,
+        "amount_paid": 86.0,
+        "date_paid": "01/21/2020 21:12:45",
+        "is_flight_cancelled": "true"
+    },
+    {
+        "id": 10,
+        "flight": {
+            "id": 1,
+            "code_airport_dep": "JFK",
+            "code_airport_dest": "DTW",
+            "dep_time": "12/24/2020 10:15:00",
+            "arrival_time": "12/24/2020 12:15:00",
+            "price": 90.0,
+            "company": "Air France",
+            "nb_seats": 63
+        },
+        "id_reservation_status": 2,
+        "nb_passengers": 4,
+        "amount_paid": 353.0,
+        "date_paid": "03/14/2020 16:12:45",
+        "is_flight_cancelled": "false"
+    }
+]
