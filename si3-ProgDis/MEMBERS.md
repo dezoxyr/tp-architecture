@@ -1,6 +1,6 @@
-PROVOST Nicolas
-RAHIL Samy
-SINNAH Tom
-PIERRE David
-DROISSART Théodore
-TEKOU Baudouin Théodule
+Nicolas PROVOST
+Samy RAHIL
+Tom SINNAH
+David PIERRE
+Théodore DROISSART
+Baudoin Théodule TEKOU
