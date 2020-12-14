@@ -1,17 +1,17 @@
-#Le Design 
+# Le Design 
 
 l'application aura la structure (FrontEnd + BackEnd + Data) 
 
 on a L'architecture globale:
 
-![alt text](https://user-images.githubusercontent.com/62150718/102027245-24206b00-3da3-11eb-89a5-46c365f98e14.JPG)
+![alt text](https://github.com/sambaahm/tp-architecture/blob/SI1-BGO/SI1-BGO/projet/pics/architecture.JPG)
 
 on a Le stack technique :
 
-![alt text](https://user-images.githubusercontent.com/62150718/102027244-2387d480-3da3-11eb-828e-b8da280e8b51.JPG) 
+![alt text](https://github.com/sambaahm/tp-architecture/blob/SI1-BGO/SI1-BGO/projet/pics/stacktech.JPG) 
 
  
 et on a la Structure des données:
 
-![alt text](https://user-images.githubusercontent.com/62150718/102027243-2387d480-3da3-11eb-99dc-7d61a8fa02bd.JPG)
+![alt text](https://github.com/sambaahm/tp-architecture/blob/SI1-BGO/SI1-BGO/projet/pics/model%20donnees.JPG)
 
