@@ -28,7 +28,31 @@
             </div>
 
             <div id="site_content">
-                Connexion
+                <div id="Connection" >
+                    <form id="form_connexion">
+                        <div class="form_div" id="name">
+                            <input type="text" name="name" placeholder="Nom" required>
+                            <p class="error"></p>
+                        </div>
+                        <div class="form_div" id="firstname">
+                            <input type="text" name="firstname" placeholder="Prénom" required>
+                            <p class="error"></p>
+                        </div>
+                        <div class="form_div" id="mail">
+                            <input type="email" name="mail" placeholder="Mail"required>
+                            <p class="error"></p>
+                        </div>
+                        <div class="form_div" id="button_send">
+                            <input type="button" onclick="addUser()" name="Connection" value="Connexion">
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <table id="trips_list">
+                        <thead></thead>
+                        <tbody id="trips_list"></tbody>
+                    </table>	
+                </div>
             </div>
 
             <div id="footer">

@@ -35,6 +35,6 @@ Page de connexion :
 
 Fichiers:
 - "data.json" contient les informations des 3 aéroports
-- "server.js" récupère les données enregistrées dans la page Web
+- "server.js" établit le serveur et récupère les données enregistrées dans la page Web
 - Les fichiers Html restants servent à la navigation utilisateur
  
