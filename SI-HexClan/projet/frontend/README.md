@@ -1,24 +1,36 @@
-# frontend
+# Frontend instructions
 
 ## Project setup
-```
-npm install
+```sh
+user@user:~/$ npm install
 ```
 
 ### Compiles and hot-reloads for development
-```
-npm run serve
+```sh
+user@user:~/$ npm run serve
 ```
 
 ### Compiles and minifies for production
-```
-npm run build
+```sh
+user@user:~/$ npm run build
 ```
 
 ### Lints and fixes files
-```
-npm run lint
+```sh
+user@user:~/$ npm run lint
 ```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Technologies
+
+<table>
+    <tr>
+        <td>VueJS</td>
+        <td>Pug (ex-Jade)</td>
+        <td>NPM</td>
+        <td>NodeJS</td>
+        <td>Sass</td>
+    </tr>
+</table>
