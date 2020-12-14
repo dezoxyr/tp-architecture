@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/*****************************************************************************/
+/*********** style.css - TP - Prog distribuee - Groupe WestCoast *************/
+/*****************************************************************************/
+
+body{
+	padding: 15px;
+	background: #ffffff;
+}
+
+/********** On organise l'en-tête et le corps de la page en flexbox **********/
+.wrapperR{
+	font-family: arial;
+	font-weight: bold;
+	margin:  0 1vw ;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+/*****************************************************************************/
+
+/********************** Mise en forme des billets ****************************/
+#section_billets{
+	padding: 30px;
+	align-items: left;
+	display: flex;
+	flex-direction: column;
+}
+
+#section_achats{
+	padding: 30px;
+	align-items: center;
+	display: none;
+	flex-direction: column;
+}
+
+#title{
+	font-family: arial;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 1vw ;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+#billets{
+	margin: 5px;
+	padding: 16px 0;
+	text-align: center;
+	border:3px solid #29ABDF;
+	border-radius: 10px;
+
+	display: flex;
+	flex-flow: row;
+	flex-wrap : wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.billet{
+
+	margin :1.5vh 1.5vw;
+	padding: 10px;
+	min-width: 5vw;
+	min-height: 6vh;
+
+	font-family: arial;
+	font-size: 18px;
+	font-weight:bold;
+	color: #29ABDF !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+
+	border:1.5px solid black;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(55, 59, 71, 0.95);
+
+}
+
+.billet:hover{
+	font-family: arial;
+	font-size: 18px;
+	font-weight:bold;
+	cursor: pointer;
+	box-shadow: -4px -4px 4px rgba(55, 59, 71, 0.95);
+}
+
+
+/*****************************************************************************/
+
+/****************** On organise les items du header **************************/
+header{
+
+	align-items: center;
+	background: #ffffff;
+}
+/*****************************************************************************/
+
+/**************** On met en forme les deux parties du header *****************/
+#headerRight{
+	
+	flex: 1;
+	color: #29ABDF;
+	font-size: 32px;
+	text-align: left;
+}
+#headerLeft{
+	flex: 	1;
+	margin-left: 35px;
+	margin-right: 35px;
+	max-width: 	60px;
+	max-height:60px;
+}
+/*****************************************************************************/
+
+/***************** On met en forme le bouton de recherche ********************/
+.example_c {
+margin-right: 20px;
+font-size: 18px;
+font-weight:bold;
+color: #29ABDF !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #ffffff;
+padding: 7px;
+border: 3px solid #29ABDF; !important;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.4s ease 0s;
+}
+.example_c:hover {
+cursor: pointer;
+color: #ffffff !important;
+background: #29ABDF;
+border-color: #29ABDF !important;
+transition: all 0.4s ease 0s;
+}
+
+#mess{
+	margin-top: 10%;
+	text-align: center;
+}
+
+#mess2{
+	width: 	100%;
+	position: absolute;
+	visibility:	hidden;
+	padding-top: 30%;
+	text-align: center;
+}
+/*****************************************************************************/
+
+.button_rev{
+	display: none;
+}
+.grey{
+	background-color: #29ABDF;
+	color: white !important;
+}
