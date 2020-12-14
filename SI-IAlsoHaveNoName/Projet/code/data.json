@@ -1,0 +1,16 @@
+{
+	"Airports":[
+		{
+			"name":"New York", 
+			"code":"JFK"
+		},
+                {
+                	"name":"Paris", 
+                	"code":"CDG"
+                },
+                {
+                	"name":"Detroit", 
+                	"code":"DTW"
+                }
+	]
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style/style.css" />
+	<script type="text/javascript" src="javascript/include.js"></script>
+	<title>IAHNN</title>
+</head>
+<body>
+	<div id="top_ban" ></div>
+	<div id="Connection" >
+		<form id="form_connexion" >
+			<div class="form_div" id="title_form">
+				<div class="bloc" onclick="closePopup()">
+					<img src="api/close.png" >
+				</div>
+				<div class="bloc">
+					<h2 id="book_title"></h2>
+				</div>
+				<div class="bloc"></div>
+			</div>
+			<div class="form_div" id="name">
+				<input type="text" name="name" placeholder="Name" required>
+				<p class="error"></p>
+			</div>
+			<div class="form_div" id="firstname">
+				<input type="text" name="firstname" placeholder="FirstName" required>
+				<p class="error"></p>
+			</div>
+			<div class="form_div" id="mail">
+				<input type="email" name="mail" placeholder="Mail"required>
+				<p class="error"></p>
+			</div>
+			<div class="form_div" id="button_send">
+				<input type="button" onclick="addUser()" name="Connection" value="Connection">
+			</div>
+		</form>
+	</div>
+	<div>
+		<table id="list_vols">
+			<thead></thead>
+			<tbody id="trips_list"></tbody>
+		</table>	
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.21.0/dist/axios.min.js"></script>
+<script type="text/javascript" src="API/class.js"></script>
+<script type="text/javascript" src="javascript/index.js"></script>
+</html>
