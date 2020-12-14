@@ -12,7 +12,7 @@ serveur.listen(8080,function()
     console.log("Listening to the port 8080");
 });
 
-let data = JSON.parse(fs.readFileSync('data.json'));
+let data = JSON.parse(fs.readFileSync('data.json')); //On parse les données du fichier json
 let trip = new Array();
 let airports = data.Airports;
 
@@ -56,9 +56,8 @@ app.post('/register',function(req,res)
 app.post('/user',function(req,res)
 {
 	let newUser = JSON.parse(req.body.data);
-	console.log("checking...");
 
-    var i = existUser(newUser);
+    	var i = existUser(newUser);
 	if(i < 0)
 		res.send('-1');
 	else
@@ -84,8 +83,6 @@ app.post('/saveUser',function(req,res)
 
 function randomInt(min=0, max=1)
 {
-	min = Math.ceil(min);
-	max = Math.floor(max);
   	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -95,30 +92,26 @@ function randomTab(tab)
     {
 		console.log("It's not an array");
 		return false;
-	}
+}
 
     if(tab.length < 1)
     {
 		console.log("The array length is egual to 0")
 		return false;
-	}
+    }
 
 	return Math.floor(Math.random() * tab.length);
 }
 
-function existUser(newUser)
+function existUser(addUser)
 {
 
     for (var i = 0; i < user.length; i++)
     {
 		
-		if(user[i].nom == newUser.nom
-			&& user[i].prenom == newUser.prenom
-            && user[i].mail == newUser.mail)
-            {
+		if(user[i].nom == addUser.nom && user[i].prenom == addUser.prenom && user[i].mail == addUser.mail)
 			return i;
-		}
-	}
+    }
 	
 	return -1;
 }
@@ -129,21 +122,20 @@ function saveUserAccount(newUser,oldUser)
     if(oldUser.nom != newUser.nom)
     {
 		oldUser.nom = newUser.nom;
-	}
+    }
 
     if(oldUser.prenom != newUser.prenom)
     {
 		oldUser.prenom = newUser.prenom;
-	}
+    }
 
     if(oldUser.mail != newUser.mail)
     {
 		oldUser.mail = newUser.mail;
-	}
+    }
 
-	if(JSON.stringify(oldUser.trips) != JSON.stringify(newUser.trips)){
+	if(JSON.stringify(oldUser.trips) != JSON.stringify(newUser.trips))
 		oldUser.trips = newUser.trips;
-	}
-
+	
 	return oldUser;
 }
