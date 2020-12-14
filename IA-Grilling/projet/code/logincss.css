@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
-
 .center{
 	
 	text-align: center;
@@ -29,8 +28,6 @@
 }
 
 
-
-
 .header {
   overflow: hidden;
   background-color: #f1f1f1;
@@ -38,7 +35,7 @@
   box-sizing: border-box;
 }
 
-.header p {
+.header a {
   float: left;
   color: black;
   text-align: center;
@@ -56,13 +53,19 @@
   padding: 10px;
   text-decoration: none;
   font-size: 30px; 
-  line-height: 40px;
+  line-height: 25px;
   border-radius: 5px;
   font-family: 'Times New Roman', serif;
 
 }
-
-
+.header a:hover {
+  color: white;
+  background-color: purple;
+}
+.header a.active {
+  background-color: dodgerblue;
+  color: black;
+}
 .header-right {
   float: right;
 }
@@ -84,8 +87,24 @@
 
 }
 
+#loginbox {
+	
+	width: 30%;
+	height: 50%;
+	position: fixed;
+	top: 25%;
+	left: 35%;
+	box-shadow: 2px 2px 2px gray;
+	background: #f1f1f1;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	
+}
 
-
-
-
-
+#enterName {
+	
+	
+}
