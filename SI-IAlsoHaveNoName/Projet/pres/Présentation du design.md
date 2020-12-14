@@ -2,7 +2,7 @@
 
 ## Architecture Globale :
 
-Page d'acceuil :
+Page d'accueil :
 
 - Affiche les vols disponibles en son centre, avec le nombre de billets restants.
 - Contient une barre de recherche pour trouver le vol souhaité.
@@ -21,7 +21,6 @@ Page de connexion :
 
 - Connecte un utilisateur à sa session.
 - Accessible depuis toutes les pages lorsque l'on n'est pas connecté.
-
 
 
 ## Modèle de données stockées :
