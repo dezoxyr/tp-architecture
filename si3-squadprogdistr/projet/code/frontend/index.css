@@ -1,0 +1,45 @@
+.body1 {
+  background:url("back3.jpg") no-repeat 0px 0px;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.body2 {
+  background:url("back4.jpg") no-repeat 0px 0px;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.body3 {
+  background:url("back5.jpg") no-repeat 0px 0px;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.body4 {
+  background:url("back6.jpg") no-repeat 0px 0px;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+
+
+.main-form {
+  width: 450px;
+  margin: auto;
+  opacity: 0.8;
+  margin-top: 120px;
+}

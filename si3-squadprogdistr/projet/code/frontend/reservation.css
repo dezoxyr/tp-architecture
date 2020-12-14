@@ -1,0 +1,29 @@
+.body3 {
+    background:url("back5.jpg") no-repeat 0px 0px;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+body {
+    background-color: #000000
+}
+
+.bg-blue {
+    background: rgb(255, 123, 0)
+}
+
+.dotted-line {
+    border: 1px dashed #856d6d
+}
+
+.img-fluid {
+    width: 114px;
+    height: auto
+}
+
+.bg-top {
+    background: #d11b1b
+}

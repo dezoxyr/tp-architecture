@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+  </head>
+
+  <body class="body1" style="margin-top: 20px" height="100%">
+    <h1 class="text-center font-weight-bold text-warning" style="margin-top: 90px">Squad Distrib Airline</h1>
+    <form action="page2.html" class="main-form" id="form">
+      <div class="form-group font-weight-bold">
+        <input type="prenom" name="prenom" id="prenom" class="form-control" placeholder="Veuillez entrer votre prenom" required>
+        <div class="form-group font-weight-bold"></div>
+        <input type="nom" name="nom" id="nom" class="form-control" placeholder="Veuillez entrer votre nom" required>
+      </div>
+        <div class="form-group font-weight-bold"></div>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Veuillez entrer votre adresse mail" required>
+      </div>
+      </div>
+
+      <div class="text-center font-weight-bold">
+        <button id="button" type="button" class="btn btn-warning" onclick="validateInput()">Se connecter</button>
+      </div>
+
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        function validateInput() {
+        var fieldValue = document.getElementById("email").value;
+
+        var validateEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (fieldValue.match(validateEmail)) {
+          let url = "http://localhost:8000/clients";
+          var data = {mail: email.value }
+          axios.post(url, data)
+            .then(function(){
+              localStorage.setItem('email', email.value)
+              window.location.href = 'vols.html';
+            })
+            .catch(function(err){
+              if(err.response.status == 409){
+                localStorage.setItem('email', email.value)
+                window.location.href = 'vols.html';
+              } else{
+                alert(err)
+              }
+            });
+          } else {
+            alert('Email non valide !');
+          }
+      }
+    </script>
+  </body>
+</html>

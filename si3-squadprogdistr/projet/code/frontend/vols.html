@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des vols</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+  </head>
+  <body class="body4">
+    <body class="body2">
+      <nav class="navbar navbar-dark bg-dark">
+          <button class="btn btn-warning font-weight-bold" onclick="deconnexion()">DECONNEXION</button>
+          <button class="btn btn-outline-light font-weight-bold" onclick="allonsReservation()">RESERVATIONS</button>
+      </nav>
+    <h1 class="text-center font-weight-bold" style="margin-top: 40px">VOLS DISPONIBLES</h1>
+    <div id="vols" class="row card-deck" style="margin-top: 40px; margin-left: 30px; margin-right: 30px;">
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const email = localStorage.getItem('email');
+      document.getElementById("vols").innerHTML = "Aucun vol n'est disponible";
+      fetch('http://localhost:8000/vols')
+        .then(res => res.json())
+        .then(function (json) {
+          document.getElementById("vols").innerHTML = "";
+          json.forEach((e, i) => {
+            vol_id = e.id;
+            vol_src = e.provenance_aeroport.ville;
+            vol_dst = e.destination_aeroport.ville;
+            vol_date_dep = e.date_dep;
+            vol_date_arr = e.date_arr;
+            vol_prix = e.prix;
+            vol_seat_nb = e.nbplace;
+            vol_code = `${e.provenance_aeroport.code} - ${e.destination_aeroport.code} ${vol_prix}`;
+
+            if(vol_seat_nb > 0) {
+              let vol_card = `<div class="col-sm-3" style="margin-bottom: 40px">
+                <div class="card-deck">
+                <div class="card">
+                  <img class="card-img-top" src="SDA.JPG" alt="Card image cap">
+                  <div class="card-header font-weight-bold bg-secondary mb-3" style="text-align: center" id="vol_${vol_id}">${vol_code}</div>
+                  <div class="card-body " style="text-align: center">
+                    <p>Départ de <a id="departAerop">${vol_src}</a></p>
+                    <p>Arrivée à <a id="arriveeAerop">${vol_dst}</a></p>
+                    <p>Départ le <a id="dateVoldep">${vol_date_dep}</a></p>
+                    <p>Arrivée le <a id="dateVolarr">${vol_date_arr}</a></p>
+                    <p>Prix :<a id="prixdubillet">${vol_prix}</a> €</p>
+                    <p>Places Restantes : <a id="nbPlaceDispo${vol_id}">${vol_seat_nb}</a></p>
+                  </div>
+                  <div class="card-footer font-weight-bold bg-secondary mb-3" style="text-align: center">
+                    <a href="#" id="reserve" class="btn btn-light font-weight-bold " onclick="book(${vol_id})">Réserver</a>
+                  </div>
+                </div>
+              </div>
+              </div>`;
+
+              document.getElementById("vols").innerHTML += vol_card;
+            }
+          });
+        }).catch(err => console.error(err));
+
+        function book(vol_id) {
+          let url = "http://localhost:8000/reservation";
+          var data = { mail: email, id_vol: vol_id }
+          axios.post(url, data)
+            .then(function(res){
+              window.location.href = 'vols.html'
+            })
+            .catch(err => alert(err));
+        }
+
+        function deconnexion() {
+        localStorage.removeItem('email');
+        window.location.href = 'menu.html';
+      }
+
+        function allonsReservation() {
+          window.location.href = 'reservation.html';
+        }
+    </script>
+  </body>
+</html>
