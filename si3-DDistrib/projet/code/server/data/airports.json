@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"name": "Charles de Gaulle (Paris)",
+		"label": "CDG" 
+	},
+	{
+		"id": 2,
+		"name": "New York",
+		"label": "JFK" 
+	},
+	{
+		"id": 1,
+		"name": "Detroit",
+		"label": "DTW" 
+	}
+]
