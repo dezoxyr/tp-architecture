@@ -22,7 +22,7 @@ function book(ID_Trip)
     {
 		let user = sessionStorage.getItem('userCurrent');
 		user = JSON.parse(user);
-		user = new USER(user.name,user.firstname,user.mail,user.trips);
+		user = new User(user.name,user.firstname,user.mail,user.trips);
 
 		user.booking(trips.getTrip(ID_Trip));
 		sessionStorage.setItem('userCurrent',JSON.stringify(user));
@@ -133,11 +133,6 @@ function userAccount()
 	else
 		document.location.href="../user.html";
 	
-}
-
-function closePopup()
-{
-	document.getElementById('connection').removeAttribute('style');
 }
 
 function homeBack()

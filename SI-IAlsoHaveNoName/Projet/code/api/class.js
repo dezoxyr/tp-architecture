@@ -67,7 +67,7 @@ class User
 			}
         }
         else
-			this.trips = new 	Array();
+			this.trips = new Array();
 		
 	}
 
@@ -89,7 +89,9 @@ class User
 			<tr>\
 				<td colspan='3' style='text-align:center'>No booked trips.</td>\
 			</tr>";
-		}else{
+        }
+        else
+        {
             for (var i = 0; i < this.trips.length; i++)
             {
 				list.innerHTML += this.trips[i].displayTrips(i,true);
@@ -115,7 +117,8 @@ class ListTrip
 
 		let departure,arrival,price;
 
-		for(var i = 0 ; i < res.data.length; i++){
+        for(var i = 0 ; i < res.data.length; i++)
+        {
 			departure = this.AirportsList[res.data[i][0]];
 			arrival = this.AirportsList[res.data[i][1]];
 			price = res.data[i][2];
@@ -160,7 +163,7 @@ class ListAirports
 		var res = await axiosLoad(this.data);
         for (var i = 0; i < res.data.length; i++)
         {
-		 	this.AirportsList.push(new AEROPORT(res.data[i].name,res.data[i].code));
+		 	this.AirportsList.push(new Airport(res.data[i].name,res.data[i].code));
 		}
 		console.log('update airports');
 	}
