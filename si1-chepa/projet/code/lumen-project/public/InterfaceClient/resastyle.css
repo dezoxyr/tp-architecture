@@ -1,0 +1,57 @@
+table,
+td {
+
+    border: 1px solid #333;
+    border-color: black;
+    color: white;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+	background: linear-gradient(rgba(1, 1, 1, 0), rgba(1, 1, 1, 1.5)), url(https://vivre-en-thailande.com/files/2017/07/avion-1170x660.jpg);
+	height: 100vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+h1{
+	color:white;
+	margin-right: 1100px;
+
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+.list-arrea {
+	float: right;
+	list-style: none;
+	margin-top: auto;
+	margin-right: auto;	
+}
+.list-arrea li {
+	display: inline-block;
+}
+.list-arrea li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.list-arrea li a:hover {
+	background: #fff;
+	color: #333;
+}
+
+
+
