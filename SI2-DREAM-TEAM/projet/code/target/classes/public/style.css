@@ -1,0 +1,233 @@
+*{
+
+margin:0;
+
+padding:0;
+
+}
+html, body{	
+	font-family: "Montserrat", sans-serif;
+	height: 100%;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	text-align:center;
+	text-color:#00001f
+}
+
+body{
+	background-color:#CCC;
+	background-image:url("Images/fond.jpg");
+	background-size:cover;
+	min-height:100%;
+	min-width:auto;
+	background-repeat:no-repeat;
+	position: relative;
+}
+
+header{
+	width:60%;
+	margin:0 auto 0 auto;
+	padding:0 0 0 0;
+	/*background-color:white;*/
+}
+
+#banniere{
+	height:100px;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	font-size:3em;
+	line-height:100px;
+	color: white;
+	
+}
+
+#banniere img{
+	float:left;
+	width: 79px;
+    height: 64px;
+}
+
+nav
+{
+	background-color:#00001f; 
+	font-size:1em;
+	height:40px;
+	width: 100%;
+}
+
+#onglets
+{
+	line-width: 100%;
+	padding:0 0 0 0;
+	line-height:40px;
+	list-style-type:none;
+}
+
+.onglet
+{
+/*Empeche le retour à la ligne*/
+	display:inline-block;
+}
+
+#onglets a
+{
+	padding-left:10px;
+	padding-right:10px;
+	color: white;
+	text-decoration: none;
+
+	display:inline-block;
+}
+
+#onglets a:hover
+{
+	color: #00001f;
+	background-color: white;
+}
+
+footer
+{
+	width:100%;
+	height:50px;
+	margin:0 auto 0 auto;
+	padding:0 0 0 0;
+	background-color:#00001f; /* a19a77 */
+	font-size:0.7em;
+	position: absolute;
+	bottom: 0;
+}
+
+#contacts
+{
+	margin:0 0 0 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#C1 /*N° vol*/
+{
+	width:10%;
+}
+#C2 /*Date*/
+{
+	width:20%;
+}
+#C3 /*Aéroport départ*/
+{
+	width:40%;
+}
+#C4 /*Aéroport Arrivée*/
+{
+	width:40%;
+}
+#C5 /*Prix*/
+{
+	width:10%;
+}
+
+.contact
+{
+	text-decoration: none;
+	color: white;
+}
+
+.contact2
+{
+	text-decoration: none;
+	color: white;
+}
+
+.contact:hover
+{
+	text-decoration: underline;
+}
+
+#main
+{
+	background-color: white;
+	width:60%;
+	min-height:calc(100% - 270px);
+	margin:0 auto 0 auto;
+}
+
+#main1
+{
+	background-color: white;
+	width:60%;
+	min-height:calc(100% - 470px);
+	margin:0 auto 0 auto;
+}
+
+#main3
+{
+	background-color: white;
+	width:60%;
+	min-height:calc(100% - 370px);
+	margin:0 auto 0 auto;
+}
+
+.form-submit-button {
+	border: 0;
+    line-height: 2.0;
+    padding: 0 20px;
+    font-size: 1.1rem;
+    text-align: rightwards;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #00001f;
+
+}
+
+.form-submit-button:hover {
+	background-color: #ffffe0;
+	color: #00001f;
+}
+/*		bouton déconnexion 		*/
+.form-submit-button2 {
+	border: 0;
+    line-height: 2.2;
+    padding: 0px 10px;
+    font-size: 1.1rem;
+    text-align: right;
+    color: black;
+    align: right;
+    background-color: white;
+
+}
+
+.form-submit-button2:hover {
+	background-color: white;
+	color: #00001f;
+}
+
+.img1{
+	width: 45%;
+	float: right;
+	border-radius: 5px;
+	margin: 5px 15px 15px 5px;
+}
+
+
+h2{
+		text-align: center;
+		margin-block-start: 0em;	
+		background-color: white;
+}
+
+.styled {	/* Bouton main page vers réservation */
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #00001f;
+}
+
+.styled:hover {
+    background-color: #ffffe0;
+	color: #00001f;
+}
+
+

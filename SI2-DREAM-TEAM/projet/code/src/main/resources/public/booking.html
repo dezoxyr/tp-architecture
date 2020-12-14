@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css"/>
+    <center>
+        <title>DREAM-TEAM Airlines</title>
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/booking.js"></script>
+</head>
+
+<header>
+    <div id="banniere">
+        <strong>DREAM-TEAM Airlines</strong>
+    </div>
+    <nav>
+        <ul id="onglets">
+            <a href="index.html">
+                <li class="onglet">Accueil</li>
+            </a>
+            <a href="booking.html">
+                <li class="onglet">Réserver un vol</li>
+            </a>
+            <a href="myflights.html">
+                <li class="onglet">Vols réservés</li>
+            </a>
+            <a> <input class="form-submit-button2" id="btn_disconnect" type="submit" value="Déconnexion"></a>
+        </ul>
+    </nav>
+</header>
+
+<body>
+<div id="main1">
+    <!-- <h2> Vols disponibles </h2> -->
+    <br> </br>
+    <center>
+        <table border="1" width="80%" cellspacing="0" cellpadding="6">
+            <thead>
+            <tr>
+                <th id="C1"> N° de vol</th>
+                <th id="C2"> Date</th>
+                <th id="C3"> Aéroport de départ</th>
+                <th id="C4"> Aéroport d'arrivée</th>
+                <th id="C5"> Prix(€)</th>
+            </tr>
+            </thead>
+            <tbody id="available_flights_tab">
+<!--            <tr>-->
+<!--                <td>1</td>-->
+<!--                <td>01/01/2021 15:00</td>-->
+<!--                <td> New-york (JFK)</td>-->
+<!--                <td>Paris (CDG)</td>-->
+<!--                <td>300</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>2</td>-->
+<!--                <td>02/02/2021 09:57</td>-->
+<!--                <td>New-York (JFK)</td>-->
+<!--                <td>Détroit (DTW)</td>-->
+<!--                <td>115</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>3</td>-->
+<!--                <td>03/03/2021 06:23</td>-->
+<!--                <td>Paris (CDG)</td>-->
+<!--                <td>New-York (JFK)</td>-->
+<!--                <td>310</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>4</td>-->
+<!--                <td>04/04/2021 22:41</td>-->
+<!--                <td>Paris (CDG)</td>-->
+<!--                <td>Détroit (DTW)</td>-->
+<!--                <td>250</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>5</td>-->
+<!--                <td>05/05/2021 23:01</td>-->
+<!--                <td>Détroit (DTW)</td>-->
+<!--                <td>Paris (CDG)</td>-->
+<!--                <td>275</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>6</td>-->
+<!--                <td>06/06/2021 16:30</td>-->
+<!--                <td>Détroit (DTW)</td>-->
+<!--                <td>New-york (JFK)</td>-->
+<!--                <td>100</td>-->
+<!--            </tr>-->
+            </tbody>
+        </table>
+    </center>
+</div>
+<div id="main1">
+
+    <p>
+        <label for="available_flights_select">Numéro de vol:</label>
+        <select name="flights" id="available_flights_select">
+            <!--			<option value="">&#45;&#45;Choisissez un N° de vol s'il vous plaît&#45;&#45;</option>-->
+            <!--			<option value="1">N°1: JFK-CDG </option>-->
+            <!--			<option value="2">N°2: JFK-DTW</option>-->
+            <!--			<option value="3">N°3: CDG-JFK</option>-->
+            <!--			<option value="4">N°4: CDG-DTW</option>-->
+            <!--			<option value="5">N°5: DTW-CDG</option>-->
+            <!--			<option value="6">N°6: DTW-JFK</option>-->
+        </select>
+    </p>
+    <!--<p>
+    <label for="name">Nom:</label>
+
+    <input type="text" id="name" name="name" required
+    minlength="3" maxlength="60" size="60">
+    </p>-->
+    <br> </br>
+    <p>
+        <button class="favorite styled" type="button" id="btn_book"> Réserver</button>
+    <p id="lbl_booked">Vol <strong id="strg_booked"></strong> réservé</p>
+    </p>
+    <br> </br>
+</div>
+
+</body>
+
+<footer>
+    <ul id="contacts">
+        <li><a class="contact" href="https://github.com/T2Clubber/tp-architecture/tree/SI2-DREAM-TEAM">Notre repository
+            Git</a></li>
+        <p class="contact2">DREAM-TEAM Team</p>
+    </ul>
+</footer>
+</html>
+
+
