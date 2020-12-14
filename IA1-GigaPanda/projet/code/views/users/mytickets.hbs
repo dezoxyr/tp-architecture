@@ -1,0 +1,14 @@
+<h1>{{firstname}} {{lastname}}</h1>
+<h2>My flights</h2>
+<div>
+
+    {{#user_tickets}}
+            <ul>
+                <li>{{firstname}}</li>
+                <li>{{lastname}}</li>
+                <li>{{departure}}</li>
+                <li>{{destination}}</li>
+                <li>{{code}}</li>
+            </ul>
+    {{/user_tickets}}
+</div>      
