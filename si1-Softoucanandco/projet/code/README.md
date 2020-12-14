@@ -28,6 +28,10 @@ Cela permet d'ouvrir le site internet localement
 
 ![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/code/images/Capture3.JPG)
 
-- Quand votre choix est fait vous vous retrouverez face à un récapitulatif et vous pourrez revenir sur la page d'accueil.
+- Quand votre choix est fait vous vous retrouverez face à un récapitulatif et vous pourrez revenir sur la page d'accueil ainsi que voir toutes les réservations que vous avez faites.
 
 ![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/code/images/Capture4.JPG)
+
+- Sur cette page on voit un résumé de toutes les commandes réalisées sur ce site.
+
+![](https://github.com/PierricL/tp-architecture/blob/si1-Softoucanandco/si1-Softoucanandco/projet/code/images/Capture5.JPG)
