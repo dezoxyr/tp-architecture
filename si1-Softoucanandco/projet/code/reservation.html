@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Plane Booking Form</title>
+	</head>
+	<body>
+		<form action="mesreservations.html" onsubmit="return results();" methode="POST">
+
+			<h1>Thanks a lot for your confidence !
+				<h2>Below are your plane plan details</h2>
+
+		  <br>
+		  <fieldset>
+		  	<legend> booking details:</legend>
+			  <br>
+			  <p>Departure details:</p>
+			  <p id="date">The date of departure is : /*récupérer date*/ </p>
+			  <p id="departure">The departure airport is : /*récupérer aéroport départ*/</p>
+		  	<br>
+		  	<p>Arrival details :</p>
+			  <p id="arrival">The arrival airport is : /*récupérer aéroport arrivée*/</p>
+		<p id="price">The price is : /*récupérer prix*/ €</p>
+		  	<br>
+		  	<br>
+			<a href="index.html" ><img src="bouton.png" alt="Back home"></a>
+			<input id="submit" type="submit" value="Confirm reservation"/>
+
+		  </fieldset>
+		</form>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script>
+		
+		var nbVol = localStorage.getItem("nbVol");
+	
+		var x = "The date of departure is : " + localStorage.getItem("date" + nbVol);
+        document.getElementById("date").innerHTML = x;
+		x = "The departure airport is : " + localStorage.getItem("departure" + nbVol);
+        document.getElementById("departure").innerHTML = x;
+		x = "The arrival airport is : " + localStorage.getItem("arrival" + nbVol);
+        document.getElementById("arrival").innerHTML = x;
+		x = "The price is : " + localStorage.getItem("price" + nbVol) + " €";
+        document.getElementById("price").innerHTML = x;
+	</script>
+</html>

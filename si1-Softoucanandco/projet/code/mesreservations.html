@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My reservation</title>
+		<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet"href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+		<style>
+			h1 {
+			  text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<h1>
+			Order summary :
+		</h1>
+		
+		</br></br>
+	
+		<table id="example" class="display" style="width:100%">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Departure</th>
+					<th>Arrival</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		
+		<a href="index.html" ><img src="bouton.png" alt="Back home"></a>
+				
+	</body>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var t = $('#example').DataTable();
+
+			var nbVol = localStorage.getItem("nbVol");
+			
+			for(var i = 0; i <= nbVol; i++){
+			
+				t.row.add( [
+					localStorage.getItem("date" + i),
+					localStorage.getItem("departure" + i),
+					localStorage.getItem("arrival" + i),
+					localStorage.getItem("price" + i)
+				] ).draw( false );
+			
+			}
+		} );
+	</script>
+	
+<html>

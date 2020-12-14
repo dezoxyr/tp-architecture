@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Liste des vols</title>
+		<link rel="stylesheet" href="tableau.css">
+		<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet"href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+		
+	</head>
+		
+<body >
+<header>
+		<meta charset="utf-8" />
+			
+		
+		<table id='exemple' class='display'>
+			
+		</table>
+
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+	<script>
+
+		$(document).ready(function() {
+			var t=$('#exemple').DataTable( {"ajax":{"url":"http://www.json-generator.com/api/json/get/bQHxSwpfFK?indent=2", "dataSrc": ""}, columns: [{"data":"date",title:"Date"},{ "data":"dep", title: "Departure" },{ "data":"arr", title: "Arrival" },{ "data":"prix", title: "Price" },{data: null,render: function ( data, type, row ) {return '<a><input id="0" type="submit" value="Choisir"/></a>';}}]});
+			t.clear().draw();
+			
+			$('#exemple tbody').on('dblclick', 'tr', function () {
+				var tableData = $(this).children("td").map(function () {
+					return $(this).text();
+				}).get();
+				
+				var nbVol;
+				
+				if(localStorage.getItem("nbVol")==null){
+					localStorage.setItem("nbVol", 0);
+					nbVol=0;
+				}else{
+					nbVol=parseInt(localStorage.getItem("nbVol"));
+					nbVol=++nbVol;
+					localStorage.setItem("nbVol", nbVol.toString());
+				}
+				
+				localStorage.setItem("date"+nbVol, tableData[0]);
+				localStorage.setItem("departure"+nbVol, tableData[1]);
+				localStorage.setItem("arrival"+nbVol, tableData[2]);
+				localStorage.setItem("price"+nbVol, tableData[3]);
+				
+				document.location.href = "reservation.html";
+			});
+			
+		});
+
+		
+	</script>
+	<a href="index.html" ><img src="images/bouton.png" alt="Back home"></a>
+	</header>
+</body>
+
+
+</html>
