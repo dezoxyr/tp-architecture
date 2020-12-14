@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/common.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
+</head>
+<body>
+    <div id="main">
+        <div class="travel-list-title">Liste des vols</div>
+        <div class="travel-list">
+            <% travels.forEach((t) => {  %>
+                <div class="travel-item">
+                    <div class="travel-item-left">
+                        <div class="travel-item-left-name"><%= t.origin.name %> - <%= t.destination.name %></div>
+                        <div class="travel-item-left-code"><%= t.origin.code %>-<%= t.destination.code %>-<%= t.price %></div>
+                    </div>
+                    <div class="travel-item-right">
+                        <div class="travel-item-right-price"><%= t.price %> €</div>
+                        <div class="travel-item-right-buy" value="<%= t.id %>">Réserver</div>
+                    </div>
+                </div>
+            <% }); %> 
+        </div>
+        <a id="buy-button" href="/reservation">Voir les billets réservés</a>
+    </div>
+    <script language="javascript">
+        let buttons = document.getElementsByClassName('travel-item-right-buy');
+        for (let i = 0; i < buttons.length; i++) {
+            let button = buttons[i];
+            let path = '/reserve';
+            button.addEventListener('click', (e) => {
+                let id = button.getAttribute('value');
+                httpRequest = new XMLHttpRequest();
+                httpRequest.onreadystatechange = () => {
+                    if (httpRequest.status != 200) return;
+                        console.log(httpRequest.responseText);
+                    button.innerHTML = "Réservé";
+                };
+                httpRequest.open('POST', path);
+                httpRequest.setRequestHeader('Content-Type', 'application/json');
+                httpRequest.send(JSON.stringify({ id: id }));
+            });
+        }
+
+        let buy = document.getElementById('buy-button');
+    </script>
+</body>
+</html>

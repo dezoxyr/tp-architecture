@@ -1,0 +1,82 @@
+.travel-list-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.travel-list {
+    width: 100%;
+}
+
+.travel-item {
+    display: flex;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    transition: background .1s ease-out;
+}
+
+.travel-item-left-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.travel-item-left-code {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.travel-item-right-price {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #c42700;
+    margin-right: 20px;
+}
+
+.travel-item-right-buy {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #0567c2;
+    border: solid #0567c2 2px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .1s ease-out, color .1s ease-out;
+}
+
+.travel-item:hover {
+    background: #f0f0f0;
+}
+
+.travel-item-right-buy:hover {
+    background: transparent;
+    color: #0567c2;
+}
+
+#buy-button {
+    display: block;
+    width: 650px;
+    margin: 10px;
+    padding: 10px;
+    background: #0567c2;
+    border: solid #0567c2 2px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background .1s ease-out, color .1s ease-out;
+}
+
+#buy-button:hover {
+    background: transparent;
+    color: #0567c2;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/common.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/reservation.css" />
+</head>
+
+<body>
+    <div id="main">
+        <div class="reservation-list-title">Vos réservations</div>
+        <div class="reservation-list">
+            <% if (!bookings || bookings.length <= 0) { %>
+                Aucune réservation
+            <% } else {
+                bookings.forEach((t) => {  %>   
+                <div class="reservation-item">
+                    <div class="reservation-item-left">
+                        <div class="reservation-item-left-name"><%= t.travel.origin.name %> - <%= t.travel.destination.name %></div>
+                        <div class="reservation-item-left-code"><%= t.travel.origin.code %>-<%= t.travel.destination.code %>-<%= t.travel.price %></div>
+                    </div>
+                    <div class="reservation-item-right">
+                        <div class="reservation-item-right-price"><%= t.travel.price %> €</div>
+                        <div class="reservation-item-right-buy" value="<%= t.id %>">Annuler</div>
+                    </div>
+                </div>
+            <% })}; %>  
+        </div>
+        <a id="buy-button" href="/">Réserver d'autres billets</a>
+    </div>
+	
+    <script language="javascript">
+        let items = document.getElementsByClassName('reservation-item');
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+            let button = item.getElementsByClassName('reservation-item-right-buy')[0];
+            console.log(item, button);
+            button.addEventListener('click', (e) => {
+                let id = button.getAttribute('value');
+                httpRequest = new XMLHttpRequest();
+                httpRequest.onreadystatechange = () => {
+                    if (httpRequest.status != 200) return;
+                    console.log(item);
+                    item.parentElement.removeChild(item);
+                };
+                httpRequest.open('POST', '/unreserve');
+                httpRequest.setRequestHeader('Content-Type', 'application/json');
+                httpRequest.send(JSON.stringify({ id: id }));
+            });
+        }
+    </script>
+</body>
+</html>
