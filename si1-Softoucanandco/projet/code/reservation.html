@@ -5,7 +5,7 @@
 		<title>Plane Booking Form</title>
 	</head>
 	<body>
-		<form action="index.html" onsubmit="return results();" methode="POST">
+		<form action="mesreservations.html" onsubmit="return results();" methode="POST">
 
 			<h1>Thanks a lot for your confidence !
 				<h2>Below are your plane plan details</h2>
@@ -23,7 +23,7 @@
 		<p id="price">The price is : /*récupérer prix*/ €</p>
 		  	<br>
 		  	<br>
-			<a href="index.html" ><img src="bouton.png" alt="Revenir au Menu"></a>
+			<a href="index.html" ><img src="bouton.png" alt="Back home"></a>
 			<input id="submit" type="submit" value="Confirm reservation"/>
 
 		  </fieldset>
@@ -31,39 +31,16 @@
 	</body>
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script>
-		var x = "The date of departure is : " + localStorage.getItem("date");
+		
+		var nbVol = localStorage.getItem("nbVol");
+	
+		var x = "The date of departure is : " + localStorage.getItem("date" + nbVol);
         document.getElementById("date").innerHTML = x;
-		x = "The departure airport is : " + localStorage.getItem("departure");
+		x = "The departure airport is : " + localStorage.getItem("departure" + nbVol);
         document.getElementById("departure").innerHTML = x;
-		x = "The arrival airport is : " + localStorage.getItem("arrival");
+		x = "The arrival airport is : " + localStorage.getItem("arrival" + nbVol);
         document.getElementById("arrival").innerHTML = x;
-		x = "The price is : " + localStorage.getItem("price") + " €";
+		x = "The price is : " + localStorage.getItem("price" + nbVol) + " €";
         document.getElementById("price").innerHTML = x;
-	</script>
-	<script>
-		
-		$(document).ready(function() {
-		
-			//document.getElementById("test").write(localStorage.getItem("name"));
-			$.ajax({
-					url: "http://127.0.0.1:5000/api/admzlad@kzvzajh.zafjhcvzaj/orders",
-					type: "GET",
-					success: function (result) {
-						$("#ordersTable").empty();
-						var orderList = jQuery.parseJSON(JSON.stringify(result));
-						var orderContainer = document.getElementById("ordersTable");
-						cancel_index = [];
-						var label;
-						if(orderList.length > 0){
-							for (var i = 0; i < orderList.length; i++) {
-							
-								document.getElementById("departureAirport").value=orderList[i].dep;
-						}
-					},
-					error: function (error) {
-						console.log(error);
-					}
-				})
-		});
 	</script>
 </html>
