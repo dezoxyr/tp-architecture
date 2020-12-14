@@ -1,0 +1,25 @@
+.img
+{
+ width: 100px;
+ height: 100px;
+ margin-left:60px;
+}
+
+h1
+{
+    color: black;
+    font-size: 25px;
+}
+
+h2
+{
+    color: green;
+    font-size: 25px;
+}
+
+#affich,#affichr{
+	color: blue;
+	border: 1px solid;
+	border-color: black;
+	padding: 5px;
+}
