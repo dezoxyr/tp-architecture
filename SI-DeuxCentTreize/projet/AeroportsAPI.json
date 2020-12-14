@@ -1,0 +1,76 @@
+{
+	"aeroports" :{
+			"New York":"JFK",
+			"CDG Paris":"CDG",
+			"Detroit":"DTW"
+		},
+	"vols" :{
+		"JFK" :{
+			"CDG":[
+				{
+					"date":"04/12/2020",
+					"prix":300,
+					"code":"JFK-CDG 300"
+				},
+				{
+					"date":"04/12/2020",
+					"prix":400,
+					"code":"JFK-CDG 400"
+				},
+				{
+					"date":"05/12/2020",
+					"prix":700,
+					"code":"JFK-CDG 700"
+				}
+			],
+			"DTW":[
+				{
+					"date":"06/12/2020",
+					"prix":700,
+					"code":"JFK-DTW 700"
+				},
+				{
+					"date":"06/12/2020",
+					"prix":900,
+					"code":"JFK-DTW 900"
+				}
+			]
+		},
+		"CDG" :{
+			"JFK":{
+				"date":"04/12/2020",
+				"prix":450,
+				"code":"CDG-JFK 450"
+			},
+			"DTW":{
+				"date":"07/12/2020",
+				"prix":290,
+				"code":"CDG-DTW 290"
+			}
+		},
+		"DTW" :{
+			"JFK":[
+				{
+					"date":"05/12/2020",
+					"prix":470,
+					"code":"DTW-JFK 470"
+				},
+				{
+					"date":"05/12/2020",
+					"prix":500,
+					"code":"DTW-JFK 500"
+				},
+				{
+					"date":"05/12/2020",
+					"prix":600,
+					"code":"DTW-JFK 600"
+				}
+			],
+			"CDG":{
+				"date":"06/12/2020",
+				"prix":120,
+				"code":"DTW-CDG 120"
+			}
+		}
+	}
+}

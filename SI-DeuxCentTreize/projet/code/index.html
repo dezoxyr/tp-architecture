@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    	<title>Flight - Travel and Tour</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/toast.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/tooplate-style.css">
+        <script src="js/toastify.js"></script>
+    </head>
+
+<body>
+    <script type="text/javascript">
+
+        var reservation = 0;
+
+        function Book(num){
+            var obj;
+            var existe = false;
+            var code = "#code" + num;
+            var prix = "#prix" + num;
+            var heur = "#heur" + num;
+            var name = $("#name").get(0).value;
+            code = $(code).get(0).innerText;
+            prix = $(prix).get(0).innerText;
+            heur = $(heur).get(0).innerText;
+
+            for (var i = 0; i < reservation; i++) {
+                chaine = 'reservation' + i;
+                reservJSON = localStorage.getItem(chaine);
+                mesReservation = reservJSON && JSON.parse(reservJSON);
+                if(mesReservation.nom == name && mesReservation.code == code){
+                    existe = true;
+                    break;
+                }
+            }
+            var ReservToast = Toastify({
+                text: "Ticket reservé!",
+                duration: 5000
+            })
+
+            var NoToast = Toastify({
+                text: "Ticket déjà reservé!",
+                duration: 5000
+            })
+
+            var NoName = Toastify({
+                text: "Veuillez entrer un nom!",
+                duration: 5000
+            })
+
+            if(!existe && name.trim() != ""){
+                obj = {"code":code,"nom":name,"heur":heur,"prix":prix};
+                chaine = 'reservation' + reservation;
+                localStorage.setItem(chaine, JSON.stringify(obj));
+                reservation++;
+
+                ReservToast.showToast();
+            }else{
+                if(name.trim() == ""){
+                    NoName.showToast();
+                }else{
+                    NoToast.showToast();
+                }
+            }
+        } 
+    </script>
+
+    <div class="modale">
+        <div class="boite">
+            <div id="ModalScreen"><h4>Vous avez 0 reservation</h4></div>
+            <span class="fermer">
+                <i class="material-icons">X</i>
+            </span>
+        </div>
+    </div>
+
+    <section class="banner" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="left-side">
+                        <div class="logo">
+                            <img src="img/logo.png" alt="Flight Template">
+                        </div>
+                        <div class="tabs-content">
+            
+                        </div>
+                        <div class="page-direction-button">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <div class="submit-form">
+                                <h4>Check availability for <em>direction</em>:</h4>
+                                    <h5>Airport: New York, Detroit, CDG Paris.<h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="from">From:</label>
+                                                <input name="from" type="text" class="form-control" id="from" placeholder="Select a location..."  required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="to">To:</label>
+                                                <input name="to" type="text" class="form-control" id="to" placeholder="Select a location..."  required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="departure">Departure date:</label>
+                                                <input name="deparure" type="text" class="form-control" id="deparure" placeholder="Select date..." required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="name">Name:</label>
+                                                <input name="name" type="text" class="form-control" id="name" placeholder="Name"  required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <button class="btn" id="connect">Order Ticket Now</button>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <button class="btn" id="Ticket">My Tickets</button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="volsListe">
+    </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $.getJSON("https://raw.githubusercontent.com/ChristianStephenn/tp-architecture/SI-DeuxCentTreize/SI-DeuxCentTreize/projet/AeroportsAPI.json", function(result){      
+            localStorage.setItem('liste', JSON.stringify(result));
+        }); 
+
+        $('#Ticket').on('click',function(){ 
+
+            var NameToast = Toastify({
+                text: "Veuillez entrer un nom !",
+                duration: 5000
+            })
+
+            var PrivateJSON;
+            var PrivateListe;
+            var reservationHTML = "<center>";
+            var tmp = 0;
+
+            var name = $("#name").get(0).value;
+            if(name.trim() != ""){
+
+                for (var i = 0; i < reservation; i++) {
+                    chaine = 'reservation' + i;
+                    PrivateJSON = localStorage.getItem(chaine);
+                    PrivateListe = PrivateJSON && JSON.parse(PrivateJSON);
+                    if(name == PrivateListe.nom){
+                        tmp++;
+                        reservationHTML = reservationHTML + "<h4>" + PrivateListe.code + "</h4><h5><Strong>Heure de départ :</Strong> " + PrivateListe.heur + " <Strong>Prix :</Strong> " + PrivateListe.prix + "</h5><hr/>";
+                    }
+                }
+                reservationHTML = reservationHTML + "</center>";
+
+                if(reservation > 0 && tmp > 0){
+                    $('#ModalScreen').html(reservationHTML);
+                }else{
+                    $('#ModalScreen').html("<h4>Vous avez 0 reservation</h4>");
+                }
+                $('.modale').css('display','flex');
+            }else{
+                NameToast.showToast();
+            }
+        });
+          
+          
+        $('.boite > .fermer').on('click',function(){
+            $('.modale').css('display','none');
+        });
+
+        var aeroportToast = Toastify({
+            text: "Entrez un aéroport valide !",
+            duration: 5000
+        })
+
+        $('#connect').click(function(event) {
+            event.preventDefault();
+
+            var dep = $("input#from").get(0).value;
+            var arr = $("input#to").get(0).value;
+            if(dep == "New York" || dep == "CDG Paris" || dep == "Detroit"){
+                if(arr == "New York" || arr == "CDG Paris" || arr == "Detroit"){
+                    connect();
+                }else{
+                    aeroportToast.showToast();
+                    $("#volsListe").html("");
+                }
+            }else{
+                aeroportToast.showToast();
+                $("#volsListe").html("");
+            }
+        });
+
+        function connect() {
+            listeJSON = localStorage.getItem('liste');
+            maListe = listeJSON && JSON.parse(listeJSON);
+
+            var dep = $("input#from").get(0).value;
+            var arr = $("input#to").get(0).value;
+            var date = $("#deparure").get(0).value;
+
+            dep = maListe["aeroports"][dep];
+            arr = maListe["aeroports"][arr];
+
+            var size = maListe["vols"][dep][arr].length;
+
+            //console.log(maListe["vols"][dep][arr]);
+            var event = maListe["vols"][dep][arr][0].date;
+            var html = "<center><div><h2>" + size + " results</h2><hr/>";
+            for (var i = 0; i < size; i++) {
+                html = html + "<h4 id='code" + i + "'>" + maListe["vols"][dep][arr][i].code + "</h4><div><p id='prix" + i + "'>" + maListe["vols"][dep][arr][i].prix + " €</p>";
+                html = html + "<p id='heur" + i + "'>1" + i*3 + "h00</p></div><button class='btnRes btn' name='"+i+"' onclick=\"Book($(this).attr('name'))\">Book</button><hr/>";
+            }
+            html = html + "</div></center>";
+
+
+            if(event == date){
+                $("#volsListe").html(html);
+            }else{
+                $("#volsListe").html("<center><h2>0 result</h2></center><hr/>");
+            }
+        }
+
+    });
+    
+    </script>
+</body>
+</html>
