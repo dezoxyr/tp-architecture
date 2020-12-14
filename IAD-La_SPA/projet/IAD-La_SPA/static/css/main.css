@@ -1,0 +1,342 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+/* footer */
+footer {
+  background-image: linear-gradient(125deg, #187bcd, #2a9df4);
+  color: #fff;
+  text-align: center;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+}
+
+.copyright{
+  margin-top: -30px;
+  font-size: 15px;
+}
+
+.sm a{
+  color: #fff;
+  font-size: 22px;
+  margin: 15px 20px;
+  transition: .2s linear;
+}
+
+.sm a:hover{
+  color: #48dbfb;
+}
+
+/*Main CSS*/
+#main-content{
+  opacity: 1;
+  height: calc(100vh - 150px);
+  width: 100%;
+  overflow: auto;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("./bg_50.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#main-content .vol-ticket{
+  background-color: none;
+  width: 60%;
+  margin: 10px auto;
+  border: 5px solid #187bcd;
+}
+
+#main-content .head-ticket{
+  display:flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right:10px;
+  font-size: 12px;
+}
+
+.btn-reserve input{
+  width: 200px;
+  background: #2a9df4;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.4s;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.btn-reserve input:hover{
+  background: #187bcd;
+}
+
+.btn-reserve{
+  display:flex;
+  justify-content: center;
+}
+
+/* login */
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+.body-login{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+  background: url('./bg_10.png') no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.login-box{
+  width: 280px;
+  position: absolute;
+  padding: 50px;
+  background-image: linear-gradient(125deg, #187bcd, #2a9df4);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+}
+.login-box h1{
+  float: left;
+  font-size: 60px;
+  border-bottom: 6px solid cyan;
+  margin-bottom: 50px;
+  padding: 13px 0;
+}
+.login-box h2{
+  float: left;
+  font-size: 30px;
+  margin-bottom: 20px;
+  padding: 13px 0;
+}
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid cyan;
+}
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+.textbox ::placeholder {
+  color: white;
+}
+.textbox input[type = "text"]:focus::placeholder{
+  opacity: 0.4;
+}
+.textbox input[type = "password"]:focus::placeholder{
+  opacity: 0.4;
+}
+
+.login-box a{
+  margin-top: 100px;
+}
+.btn{
+  width: 100%;
+  background: none;
+  border: 2px solid cyan;
+  color: white;
+  padding: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 12px 0;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.btn:hover{
+  transition: 0.4s;
+  background: rgb(49, 121, 121);
+}
+
+.link{
+  text-align:center;
+}
+.link-register{
+  text-decoration: none;
+  color:white;
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+}
+.link-register:hover{
+  color: cyan;
+}
+.error_message{
+  text-align: center;
+  font-size: 13px;
+}
+
+/* liste */
+.menu{
+  position: absolute;
+  width: 300px;
+  height: calc(100vh - 150px);
+  left: -350px;
+  background-color: #d0efff;
+  transition: 0.7s;
+  list-style: none;
+}
+
+.hide_menu_btn {
+  position: absolute;
+  padding-top: 10px;
+  margin-left: 315px;
+  padding-left:5px;
+  font-size: 30px;
+  transition: 0.4s;
+  cursor: pointer;
+  color: #03245C;
+  z-index: 1111;
+}
+
+.show_menu_btn{
+  position: absolute;
+  margin-top: 5px;
+  padding-top: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  font-size: 30px;
+  color: #03245C;
+  cursor:pointer;
+}
+
+.show_menu_btn:hover{
+  color: #1167b1;
+}
+.hide_menu_btn:hover{
+  color: #1167b1;
+}
+
+#chk_menu{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+#chk_menu:checked ~ .menu{
+  left: 0;
+}
+#chk_menu:checked ~ .show_menu_btn{
+  display:none;
+}
+
+/*Menu Content*/
+.item{
+  border-top: 1px solid #2a9df4;
+  overflow: hidden;
+}
+.btn2{
+  display: block;
+  padding: 16px 20px;
+  background: #187bcd;
+  color: white;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn2:before{
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background:#187bcd;
+  left: 20px;
+  bottom: -7px;
+  transform: rotate(45deg);
+}
+.btn2 i{
+  margin-right: 10px;
+}
+.smenu{
+  background: #2a9df4;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+}
+.smenu a{
+  display: block;
+  padding: 16px 26px;
+  color: white;
+  font-size: 14px;
+  margin: 4px 0;
+  position: relative;
+  text-decoration: none;
+}
+.smenu a:before{
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: white;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+.smenu a:hover:before{
+  opacity: 1;
+}
+.item:target .smenu{
+  max-height: 10em;
+}
+
+/*Header CSS*/
+header{
+  display: flex;
+  height: 50px;
+  background-image: linear-gradient(125deg, #2a9df4, #187bcd);
+  display:flex;
+  justify-content: space-between;
+}
+header a{
+  text-decoration: none;
+}
+
+header h1{
+  color: white;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+header h2{
+  color: white;
+  font-size: 20px;
+  margin-top: 13px;
+  margin-right: 20px;
+}

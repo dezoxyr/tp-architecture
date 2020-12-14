@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>L'arche de Kanoë</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+<link rel="icon" type="image/png" href="static/styles/bg_10.png" />
+{% endblock %}
+
+{% block body %}
+
+<div class="bg">
+  <header>
+    <a href="/list"><h1>L'arche de Kanoë</h1></a>
+  </header>
+  <menu>
+    <div class="main">
+      {% if session %}
+      <input type="checkbox" id="chk_menu">
+      <label for="chk_menu" class="show_menu_btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <div class="menu">
+        <label for="chk_menu" class="hide_menu_btn">
+          <i class="fas fa-times"></i>
+        </label>
+        <li class="item" id='profile'>
+          <a href="#profile" class="btn2"><i class="fas fa-plane-departure"></i>Trouver un vol</a>
+          <div class="smenu">
+            <a href="/list">Liste des vols</a>
+          </div>
+        </li>
+
+        <li class="item" id="messages">
+          <a href="#messages" class="btn2"><i class="fas fa-sliders-h"></i>Gérer mes réservations</a>
+          <div class="smenu">
+            <a href = '/booked'>Voir mes vols</a>
+          </div>
+        </li>
+
+        <li class="item">
+
+          <a class="btn2" href = '/logout'><i class="fas fa-sign-out-alt"></i>logout  {{ session.name_users }}</a>
+          {% endif %}
+        </li>
+      </div>
+    </div>
+  </menu>
+
+  <div id="main-content" >
+    {% if booked == True %}
+    <p>Billet réservé</p>
+    
+
+    {% elif booked == False %}
+    <p>Echec de la réservation</p>
+
+    {% endif %}
+    {% for i in result %}
+    <div class="vol-ticket">
+
+      <h1 class="title">{{ i[6] }}
+        <i class="fas fa-arrow-right"></i>
+        {{ i[7] }}
+      </h1>
+      <h2>date du départ : {{ i[4] }}</h2>
+      <h2>nombre de places restantes : {{ i[5] }}</h2>
+      <h1 class="price">{{ i[3] }} €</h1>
+
+      <div class="btn-reserve">
+        <form method="post">
+          <input type="submit" value="Réserver ce vol">
+          <input type="hidden" value="{{ i[0] }}" name="id_flights">
+        </form>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
