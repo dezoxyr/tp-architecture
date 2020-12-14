@@ -24,7 +24,7 @@
 	<script>
 
 		$(document).ready(function() {
-			var t=$('#exemple').DataTable( {"ajax":{"url":"http://www.json-generator.com/api/json/get/cgtFhgfKKW?indent=2", "dataSrc": ""}, columns: [{"data":"date",title:"Date"},{ "data":"dep", title: "Departure" },{ "data":"arr", title: "Arrival" },{ "data":"prix", title: "Price" },{data: null,render: function ( data, type, row ) {return '<a><input id="0" type="submit" value="Choisir"/></a>';}}]});
+			var t=$('#exemple').DataTable( {"ajax":{"url":"http://www.json-generator.com/api/json/get/bQHxSwpfFK?indent=2", "dataSrc": ""}, columns: [{"data":"date",title:"Date"},{ "data":"dep", title: "Departure" },{ "data":"arr", title: "Arrival" },{ "data":"prix", title: "Price" },{data: null,render: function ( data, type, row ) {return '<a><input id="0" type="submit" value="Choisir"/></a>';}}]});
 			t.clear().draw();
 			
 			$('#exemple tbody').on('dblclick', 'tr', function () {
@@ -32,22 +32,22 @@
 					return $(this).text();
 				}).get();
 				
-				/*if(localStorage.getItem("nbVol")==null){
+				var nbVol;
+				
+				if(localStorage.getItem("nbVol")==null){
 					localStorage.setItem("nbVol", 0);
+					nbVol=0;
 				}else{
-					localStorage.setItem("nbVol", localStorage.getItem("nbVol")+1);
-					nbVol
-				}*/
+					nbVol=parseInt(localStorage.getItem("nbVol"));
+					nbVol=++nbVol;
+					localStorage.setItem("nbVol", nbVol.toString());
+				}
 				
-				localStorage.setItem("date", tableData[0]);
-				localStorage.setItem("departure", tableData[1]);
-				localStorage.setItem("arrival", tableData[2]);
-				localStorage.setItem("price", tableData[3]);
-				
-				/*localStorage.setItem("date"+nbVol, tableData[0]);
+				localStorage.setItem("date"+nbVol, tableData[0]);
 				localStorage.setItem("departure"+nbVol, tableData[1]);
 				localStorage.setItem("arrival"+nbVol, tableData[2]);
-				localStorage.setItem("price"+nbVol, tableData[3]);*/
+				localStorage.setItem("price"+nbVol, tableData[3]);
+				
 				document.location.href = "reservation.html";
 			});
 			
@@ -55,7 +55,7 @@
 
 		
 	</script>
-	<a href="index.html" ><img src="images/bouton.png" alt="Retour à la page d'accueil"></a>
+	<a href="index.html" ><img src="images/bouton.png" alt="Back home"></a>
 	</header>
 </body>
 
