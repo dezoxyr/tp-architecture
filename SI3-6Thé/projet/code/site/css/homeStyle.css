@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+}
+
+.title {
+  margin: 3%;
+}
+
+.table td, .table th {
+  text-align: center;
+}
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
+#message {
+  margin-top: 1%;
+}

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc60dc76-3a7a-4998-ab63-fdd6abff1cf1" name="Default Changelist" comment="fix options create">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/esiea/progdistribuee/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/esiea/progdistribuee/controller/FlightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/esiea/progdistribuee/dao/impl/FlightDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/esiea/progdistribuee/dao/impl/FlightDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/esiea/progdistribuee/data/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/esiea/progdistribuee/data/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/controller/FlightController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/controller/FlightController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/dao/FlightDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/dao/FlightDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/dao/impl/FlightDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/dao/impl/FlightDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/data/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/data/Booking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/data/Flight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/data/Flight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/service/FlightService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/service/FlightService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/service/impl/FlightServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/progdistribuee/service/impl/FlightServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../site/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../site/js/home.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\Tanguy\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hGhap38lFPaOf4bYNYmr5miBRh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Programmation web/prog-web" />
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.esiea.progweb" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.esiea.progdistribuee.exception" />
+      <recent name="com.esiea.progweb.data" />
+      <recent name="com.esiea.progweb.dao.impl" />
+      <recent name="com.esiea.progweb.dao" />
+      <recent name="com.esiea.progweb.service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Google Drive\Cours\ESIEA\4A\Programmation distribuée\prog-distribuee\src\main\java\com\esiea\progweb" />
+      <recent name="D:\Documents\Google Drive\Cours\ESIEA\4A\Programmation web\prog-web\src\main\resources" />
+      <recent name="D:\Documents\Google Drive\Cours\ESIEA\4A\Programmation web\prog-web\src\main\java\com\esiea\progweb\appli" />
+      <recent name="D:\Documents\Google Drive\Cours\ESIEA\4A\Programmation web\prog-web\src\main\java\com\esiea\progweb\dao" />
+      <recent name="D:\Documents\Google Drive\Cours\ESIEA\4A\Programmation web\prog-web\src\main\java\com\esiea\progweb\service\impl" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="progdistribuee" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.esiea.progdistribuee.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc60dc76-3a7a-4998-ab63-fdd6abff1cf1" name="Default Changelist" comment="" />
+      <created>1599643405466</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599643405466</updated>
+      <workItem from="1599643407313" duration="499000" />
+      <workItem from="1599809827580" duration="2227000" />
+      <workItem from="1600206562433" duration="3434000" />
+      <workItem from="1600254478308" duration="13000" />
+      <workItem from="1600378458319" duration="5354000" />
+      <workItem from="1602522542036" duration="231000" />
+      <workItem from="1604648987572" duration="11912000" />
+      <workItem from="1604758156448" duration="599000" />
+      <workItem from="1605039854762" duration="7359000" />
+      <workItem from="1605906659577" duration="5805000" />
+      <workItem from="1606117631501" duration="47000" />
+      <workItem from="1606117689333" duration="5755000" />
+      <workItem from="1606126327080" duration="654000" />
+      <workItem from="1606134897801" duration="3876000" />
+      <workItem from="1606204590760" duration="5148000" />
+      <workItem from="1606407950381" duration="2918000" />
+      <workItem from="1606481003910" duration="3988000" />
+      <workItem from="1606915755417" duration="64000" />
+      <workItem from="1606918996771" duration="72000" />
+      <workItem from="1607084545438" duration="80000" />
+      <workItem from="1607085852112" duration="88000" />
+      <workItem from="1607086070162" duration="7000" />
+      <workItem from="1607086297490" duration="5450000" />
+      <workItem from="1607448962729" duration="554000" />
+      <workItem from="1607503630001" duration="4000" />
+      <workItem from="1607552008990" duration="5978000" />
+      <workItem from="1607689372997" duration="14000" />
+      <workItem from="1607722717627" duration="3786000" />
+    </task>
+    <task id="LOCAL-00001" summary="Create project">
+      <created>1599643819956</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599643819956</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create login role and user">
+      <created>1599819031117</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599819031117</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Connect to database">
+      <created>1600209829786</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600209829786</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix session factory and create poll">
+      <created>1600382443560</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600382443560</updated>
+    </task>
+    <task id="LOCAL-00005" summary="role controller">
+      <created>1600383993353</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600383993353</updated>
+    </task>
+    <task id="LOCAL-00006" summary="delete firebase config key">
+      <created>1602522630628</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602522630628</updated>
+    </task>
+    <task id="LOCAL-00007" summary="role api">
+      <created>1604657595353</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604657595353</updated>
+    </task>
+    <task id="LOCAL-00008" summary="edit user service">
+      <created>1604661833396</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604661833396</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Login api">
+      <created>1605047323768</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605047323768</updated>
+    </task>
+    <task id="LOCAL-00010" summary="user and role api work">
+      <created>1605047467756</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605047467756</updated>
+    </task>
+    <task id="LOCAL-00011" summary="create poll">
+      <created>1605912940665</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605912940665</updated>
+    </task>
+    <task id="LOCAL-00012" summary="create poll works">
+      <created>1606138900686</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606138900686</updated>
+    </task>
+    <task id="LOCAL-00013" summary="user strawpolls">
+      <created>1606215625265</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606215625265</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix options create">
+      <created>1606490253316</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606490253316</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create project" />
+    <MESSAGE value="Create login role and user" />
+    <MESSAGE value="Connect to database" />
+    <MESSAGE value="fix session factory and create poll" />
+    <MESSAGE value="role controller" />
+    <MESSAGE value="delete firebase config key" />
+    <MESSAGE value="role api" />
+    <MESSAGE value="edit user service" />
+    <MESSAGE value="Login api" />
+    <MESSAGE value="user and role api work" />
+    <MESSAGE value="create poll" />
+    <MESSAGE value="create poll works" />
+    <MESSAGE value="user strawpolls" />
+    <MESSAGE value="fix options create" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix options create" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="859" y="411" width="370" height="217" key="#Assign_Data_Sources" timestamp="1605911787607">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="859" y="411" width="370" height="217" key="#Assign_Data_Sources/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1605911787607" />
+    <state x="859" y="411" width="323" height="217" key="#Assign_Data_Sources/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600381951986" />
+    <state x="414" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607449017670">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607449017670" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1607724854259">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607724854259" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1599818184281" />
+    <state x="743" y="389" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1600380941617">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="389" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600380941617" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607087760446">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607087760446" />
+    <state x="707" y="364" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605911732079">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="707" y="364" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1605911732079" />
+    <state x="505" y="107" key="CommitChangelistDialog2" timestamp="1607085889277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="505" y="107" key="CommitChangelistDialog2/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607085889277" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607689385116">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607689385116" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="274" key="GridCell.Tab.1.bottom" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="274" key="GridCell.Tab.1.center" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.1.center/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.1.center/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="274" key="GridCell.Tab.1.left" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.1.left/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.1.left/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="274" key="GridCell.Tab.1.right" timestamp="1607726700988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="274" key="GridCell.Tab.1.right/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607726700988" />
+    <state width="1877" height="274" key="GridCell.Tab.1.right/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600384036406" />
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom" timestamp="1607449525814">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607449525814" />
+    <state width="1877" height="348" key="GridCell.Tab.2.center" timestamp="1607449525814">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607449525814" />
+    <state width="1877" height="348" key="GridCell.Tab.2.left" timestamp="1607449525814">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607449525814" />
+    <state width="1877" height="348" key="GridCell.Tab.2.right" timestamp="1607449525814">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607449525814" />
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1600208107881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600208107881" />
+    <state x="641" y="222" key="RollbackChangesDialog" timestamp="1607085921039">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="641" y="222" key="RollbackChangesDialog/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607085921039" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1607555383786">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607555383786" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606215628453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1606215628453" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1602522730308" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607723514394">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1607723514394" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1600.139.1600.860@0.0.1920.1040" timestamp="1600206577308" />
+    <state x="342" y="140" key="new project wizard" timestamp="1606919067572">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040/-1440.139.1440.860@0.0.1920.1040" timestamp="1606919067572" />
+  </component>
+</project>
